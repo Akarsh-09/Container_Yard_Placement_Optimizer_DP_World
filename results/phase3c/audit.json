@@ -1,0 +1,767 @@
+{
+  "fit_cutoff_exclusive": "2025-01-13T00:00:00",
+  "fit_events": 13197,
+  "fit": {
+    "cohorts": {
+      "missed_load": {
+        "hours": 28884.889722222026,
+        "background_exits": 0,
+        "truck_exits": 0,
+        "off_s3_LOADs": 0,
+        "rotation_opportunities": 132,
+        "rotation_LOADs": 0,
+        "alpha": 0.0,
+        "mu_per_hour": 0.0
+      },
+      "expired_no_rot": {
+        "hours": 58638.34000000009,
+        "background_exits": 76,
+        "truck_exits": 76,
+        "off_s3_LOADs": 0,
+        "rotation_opportunities": 0,
+        "rotation_LOADs": 0,
+        "alpha": 0.0,
+        "mu_per_hour": 0.0012960803460670934
+      },
+      "unscheduled_active": {
+        "hours": 178220.1330555565,
+        "background_exits": 131,
+        "truck_exits": 131,
+        "off_s3_LOADs": 0,
+        "rotation_opportunities": 0,
+        "rotation_LOADs": 0,
+        "alpha": 0.0,
+        "mu_per_hour": 0.0007350460228820691
+      },
+      "sched_overdue": {
+        "hours": 572611.1680555597,
+        "background_exits": 418,
+        "truck_exits": 418,
+        "off_s3_LOADs": 0,
+        "rotation_opportunities": 352,
+        "rotation_LOADs": 83,
+        "alpha": 0.23579545454545456,
+        "mu_per_hour": 0.0007299892550461782
+      },
+      "sched_init_active": {
+        "hours": 707680.0936111107,
+        "background_exits": 314,
+        "truck_exits": 314,
+        "off_s3_LOADs": 0,
+        "rotation_opportunities": 3717,
+        "rotation_LOADs": 1392,
+        "alpha": 0.3744955609362389,
+        "mu_per_hour": 0.00044370331006166676
+      },
+      "sched_disch_active": {
+        "hours": 154238.26111111286,
+        "background_exits": 159,
+        "truck_exits": 159,
+        "off_s3_LOADs": 0,
+        "rotation_opportunities": 4872,
+        "rotation_LOADs": 2008,
+        "alpha": 0.4121510673234811,
+        "mu_per_hour": 0.0010308726178224791
+      },
+      "sched_truck_active": {
+        "hours": 81602.38194444423,
+        "background_exits": 73,
+        "truck_exits": 73,
+        "off_s3_LOADs": 0,
+        "rotation_opportunities": 791,
+        "rotation_LOADs": 382,
+        "alpha": 0.4829329962073325,
+        "mu_per_hour": 0.0008945817298531698
+      }
+    },
+    "subfeatures": [
+      {
+        "cohort": "sched_disch_active",
+        "feature": "etd_vs_s3",
+        "level": "earlier_or_other",
+        "hours": 7308.871944444396,
+        "background_exits": 16,
+        "truck_exits": 16,
+        "off_s3_LOADs": 0,
+        "rotation_opportunities": 0,
+        "rotation_LOADs": 0,
+        "alpha": 0.0,
+        "mu_per_hour": 0.0021891203077051974
+      },
+      {
+        "cohort": "sched_disch_active",
+        "feature": "etd_vs_s3",
+        "level": "later",
+        "hours": 8957.228055555554,
+        "background_exits": 11,
+        "truck_exits": 11,
+        "off_s3_LOADs": 0,
+        "rotation_opportunities": 127,
+        "rotation_LOADs": 40,
+        "alpha": 0.31496062992125984,
+        "mu_per_hour": 0.0012280584944108302
+      },
+      {
+        "cohort": "sched_disch_active",
+        "feature": "etd_vs_s3",
+        "level": "match",
+        "hours": 137972.1611111112,
+        "background_exits": 132,
+        "truck_exits": 132,
+        "off_s3_LOADs": 0,
+        "rotation_opportunities": 4745,
+        "rotation_LOADs": 1968,
+        "alpha": 0.4147523709167545,
+        "mu_per_hour": 0.0009567147382267809
+      },
+      {
+        "cohort": "sched_disch_active",
+        "feature": "in_discharge_window",
+        "level": "False",
+        "hours": 72024.3761111111,
+        "background_exits": 65,
+        "truck_exits": 65,
+        "off_s3_LOADs": 0,
+        "rotation_opportunities": 420,
+        "rotation_LOADs": 185,
+        "alpha": 0.44047619047619047,
+        "mu_per_hour": 0.0009024722393946922
+      },
+      {
+        "cohort": "sched_disch_active",
+        "feature": "in_discharge_window",
+        "level": "True",
+        "hours": 82213.88499999951,
+        "background_exits": 94,
+        "truck_exits": 94,
+        "off_s3_LOADs": 0,
+        "rotation_opportunities": 4452,
+        "rotation_LOADs": 1823,
+        "alpha": 0.40947888589398024,
+        "mu_per_hour": 0.0011433591783188515
+      },
+      {
+        "cohort": "sched_disch_active",
+        "feature": "lead_bucket",
+        "level": "24-72h",
+        "hours": 30279.56305555538,
+        "background_exits": 28,
+        "truck_exits": 28,
+        "off_s3_LOADs": 0,
+        "rotation_opportunities": 1263,
+        "rotation_LOADs": 520,
+        "alpha": 0.4117181314330958,
+        "mu_per_hour": 0.0009247161178854214
+      },
+      {
+        "cohort": "sched_disch_active",
+        "feature": "lead_bucket",
+        "level": "<24h",
+        "hours": 55453.88750000082,
+        "background_exits": 72,
+        "truck_exits": 72,
+        "off_s3_LOADs": 0,
+        "rotation_opportunities": 3308,
+        "rotation_LOADs": 1364,
+        "alpha": 0.41233373639661425,
+        "mu_per_hour": 0.0012983760606503725
+      },
+      {
+        "cohort": "sched_disch_active",
+        "feature": "lead_bucket",
+        "level": ">72h",
+        "hours": 68504.81055555561,
+        "background_exits": 59,
+        "truck_exits": 59,
+        "off_s3_LOADs": 0,
+        "rotation_opportunities": 301,
+        "rotation_LOADs": 124,
+        "alpha": 0.4119601328903654,
+        "mu_per_hour": 0.000861253385295512
+      },
+      {
+        "cohort": "sched_truck_active",
+        "feature": "etd_vs_s3",
+        "level": "earlier_or_other",
+        "hours": 1045.9308333333352,
+        "background_exits": 0,
+        "truck_exits": 0,
+        "off_s3_LOADs": 0,
+        "rotation_opportunities": 0,
+        "rotation_LOADs": 0,
+        "alpha": 0.0,
+        "mu_per_hour": 0.0
+      },
+      {
+        "cohort": "sched_truck_active",
+        "feature": "etd_vs_s3",
+        "level": "later",
+        "hours": 124.43444444444447,
+        "background_exits": 1,
+        "truck_exits": 1,
+        "off_s3_LOADs": 0,
+        "rotation_opportunities": 6,
+        "rotation_LOADs": 0,
+        "alpha": 0.0,
+        "mu_per_hour": 0.00803636006464805
+      },
+      {
+        "cohort": "sched_truck_active",
+        "feature": "etd_vs_s3",
+        "level": "match",
+        "hours": 80432.01666666642,
+        "background_exits": 72,
+        "truck_exits": 72,
+        "off_s3_LOADs": 0,
+        "rotation_opportunities": 785,
+        "rotation_LOADs": 382,
+        "alpha": 0.48662420382165605,
+        "mu_per_hour": 0.0008951659175523208
+      },
+      {
+        "cohort": "sched_truck_active",
+        "feature": "lead_bucket",
+        "level": "24-72h",
+        "hours": 15767.240277777768,
+        "background_exits": 7,
+        "truck_exits": 7,
+        "off_s3_LOADs": 0,
+        "rotation_opportunities": 355,
+        "rotation_LOADs": 159,
+        "alpha": 0.447887323943662,
+        "mu_per_hour": 0.0004439584782547995
+      },
+      {
+        "cohort": "sched_truck_active",
+        "feature": "lead_bucket",
+        "level": "<24h",
+        "hours": 1437.7308333333326,
+        "background_exits": 1,
+        "truck_exits": 1,
+        "off_s3_LOADs": 0,
+        "rotation_opportunities": 103,
+        "rotation_LOADs": 63,
+        "alpha": 0.6116504854368932,
+        "mu_per_hour": 0.0006955404842236932
+      },
+      {
+        "cohort": "sched_truck_active",
+        "feature": "lead_bucket",
+        "level": ">72h",
+        "hours": 64397.41083333335,
+        "background_exits": 65,
+        "truck_exits": 65,
+        "off_s3_LOADs": 0,
+        "rotation_opportunities": 333,
+        "rotation_LOADs": 160,
+        "alpha": 0.4804804804804805,
+        "mu_per_hour": 0.0010093573508448376
+      }
+    ],
+    "screen": [
+      {
+        "cohort": "sched_disch_active",
+        "feature": "etd_vs_s3",
+        "alpha_span": 0.09979174099549465,
+        "hazard_ratio": 2.2881640892902033,
+        "zero_hazard_level": false,
+        "qualifies": true
+      },
+      {
+        "cohort": "sched_disch_active",
+        "feature": "lead_bucket",
+        "alpha_span": 0.0006156049635184235,
+        "hazard_ratio": 1.5075424756732603,
+        "zero_hazard_level": false,
+        "qualifies": false
+      },
+      {
+        "cohort": "sched_disch_active",
+        "feature": "in_discharge_window",
+        "alpha_span": 0.030997304582210228,
+        "hazard_ratio": 1.26691894598966,
+        "zero_hazard_level": false,
+        "qualifies": false
+      },
+      {
+        "cohort": "sched_truck_active",
+        "feature": "etd_vs_s3",
+        "alpha_span": 0,
+        "hazard_ratio": null,
+        "zero_hazard_level": true,
+        "qualifies": true
+      },
+      {
+        "cohort": "sched_truck_active",
+        "feature": "lead_bucket",
+        "alpha_span": 0.16376316149323117,
+        "hazard_ratio": 2.2735399824159694,
+        "zero_hazard_level": false,
+        "qualifies": true
+      },
+      {
+        "cohort": "sched_truck_active",
+        "feature": "in_discharge_window",
+        "alpha_span": 0,
+        "hazard_ratio": 1,
+        "zero_hazard_level": false,
+        "qualifies": false
+      }
+    ],
+    "expanded_feature": "lead_bucket",
+    "parameters": {
+      "missed_load": [
+        0.0,
+        0.0
+      ],
+      "expired_no_rot": [
+        0.0,
+        0.0012960803460670934
+      ],
+      "unscheduled_active": [
+        0.0,
+        0.0007350460228820691
+      ],
+      "sched_overdue": [
+        0.23579545454545456,
+        0.0007299892550461782
+      ],
+      "sched_init_active": [
+        0.3744955609362389,
+        0.00044370331006166676
+      ],
+      "sched_disch_active": [
+        0.4121510673234811,
+        0.0010308726178224791
+      ],
+      "sched_truck_active": [
+        0.4829329962073325,
+        0.0008945817298531698
+      ]
+    },
+    "expanded_parameters": {
+      "sched_disch_active|24-72h": [
+        0.4117181314330958,
+        0.0009247161178854214
+      ],
+      "sched_disch_active|<24h": [
+        0.41233373639661425,
+        0.0012983760606503725
+      ],
+      "sched_disch_active|>72h": [
+        0.4119601328903654,
+        0.000861253385295512
+      ],
+      "sched_truck_active|24-72h": [
+        0.447887323943662,
+        0.0004439584782547995
+      ],
+      "sched_truck_active|<24h": [
+        0.6116504854368932,
+        0.0006955404842236932
+      ],
+      "sched_truck_active|>72h": [
+        0.4804804804804805,
+        0.0010093573508448376
+      ]
+    },
+    "screening_support": "Alpha comparisons require >=25 opportunities/level; hazard comparisons require >=1000 container-hours/level. All raw counts also reported.",
+    "estimation_note": "Alpha is the requested closed-window LOAD incidence fraction, not a joint latent-jump MLE corrected for competing background exits. Mu is exits/person-hours. Non-S3 means outside the contemporaneous next S3 loading window."
+  },
+  "pairwise": {
+    "rows": [
+      {
+        "bin": "<-72",
+        "n": 15273,
+        "known_n": 6739,
+        "resident_first": 4543,
+        "horizon_rate": 0.29745302167223203,
+        "conditional_rate": 0.674135628431518
+      },
+      {
+        "bin": "[-72,-24)",
+        "n": 8983,
+        "known_n": 4842,
+        "resident_first": 2141,
+        "horizon_rate": 0.23833908493821662,
+        "conditional_rate": 0.44217265592730276
+      },
+      {
+        "bin": "[-24,-6)",
+        "n": 13430,
+        "known_n": 8544,
+        "resident_first": 4151,
+        "horizon_rate": 0.309084139985108,
+        "conditional_rate": 0.4858380149812734
+      },
+      {
+        "bin": "[-6,0)",
+        "n": 12167,
+        "known_n": 7559,
+        "resident_first": 4384,
+        "horizon_rate": 0.36031889537272954,
+        "conditional_rate": 0.5799708956211139
+      },
+      {
+        "bin": "0",
+        "n": 1862,
+        "known_n": 1176,
+        "resident_first": 565,
+        "horizon_rate": 0.30343716433942,
+        "conditional_rate": 0.4804421768707483
+      },
+      {
+        "bin": "(0,6]",
+        "n": 11217,
+        "known_n": 6916,
+        "resident_first": 2578,
+        "horizon_rate": 0.2298297227422662,
+        "conditional_rate": 0.37275882012724115
+      },
+      {
+        "bin": "(6,24]",
+        "n": 12844,
+        "known_n": 8001,
+        "resident_first": 2898,
+        "horizon_rate": 0.22563064465898475,
+        "conditional_rate": 0.36220472440944884
+      },
+      {
+        "bin": "(24,72]",
+        "n": 23423,
+        "known_n": 15475,
+        "resident_first": 6689,
+        "horizon_rate": 0.2855740084532297,
+        "conditional_rate": 0.4322455573505654
+      },
+      {
+        "bin": ">72",
+        "n": 119329,
+        "known_n": 69441,
+        "resident_first": 11794,
+        "horizon_rate": 0.09883599125107895,
+        "conditional_rate": 0.16984202416439856
+      }
+    ],
+    "cohort_shares": {
+      "[-72,-24)/resident": {
+        "sched_init_active": 4330,
+        "sched_truck_active": 555,
+        "sched_disch_active": 1179,
+        "unscheduled_active": 291,
+        "sched_overdue": 1712,
+        "missed_load": 104,
+        "expired_no_rot": 812
+      },
+      "[-72,-24)/incoming": {
+        "sched_truck_active": 5152,
+        "sched_disch_active": 3286,
+        "missed_load": 545
+      },
+      "(24,72]/resident": {
+        "sched_init_active": 17332,
+        "unscheduled_active": 1295,
+        "sched_truck_active": 2102,
+        "sched_disch_active": 1188,
+        "sched_overdue": 1421,
+        "missed_load": 85
+      },
+      "(24,72]/incoming": {
+        "sched_truck_active": 4190,
+        "sched_disch_active": 18443,
+        "missed_load": 790
+      }
+    },
+    "note": "All sampled pairs included; both-censored pairs contribute zero to the finite-Day12-cutoff indicator. This is not an uncensored lifetime-order probability."
+  },
+  "relocation_landings_full_train_context_only": [
+    {
+      "period": "Days1-12",
+      "height_before_landing": 1,
+      "victim_tier": 1,
+      "origin": "initial",
+      "state": "active",
+      "count": 230
+    },
+    {
+      "period": "Days1-12",
+      "height_before_landing": 1,
+      "victim_tier": 1,
+      "origin": "initial",
+      "state": "sched_overdue",
+      "count": 17
+    },
+    {
+      "period": "Days1-12",
+      "height_before_landing": 1,
+      "victim_tier": 1,
+      "origin": "initial",
+      "state": "unscheduled_active",
+      "count": 16
+    },
+    {
+      "period": "Days1-12",
+      "height_before_landing": 1,
+      "victim_tier": 1,
+      "origin": "new",
+      "state": "active",
+      "count": 10
+    },
+    {
+      "period": "Days1-12",
+      "height_before_landing": 1,
+      "victim_tier": 1,
+      "origin": "new",
+      "state": "sched_overdue",
+      "count": 24
+    },
+    {
+      "period": "Days1-12",
+      "height_before_landing": 2,
+      "victim_tier": 1,
+      "origin": "initial",
+      "state": "active",
+      "count": 88
+    },
+    {
+      "period": "Days1-12",
+      "height_before_landing": 2,
+      "victim_tier": 1,
+      "origin": "initial",
+      "state": "sched_overdue",
+      "count": 12
+    },
+    {
+      "period": "Days1-12",
+      "height_before_landing": 2,
+      "victim_tier": 1,
+      "origin": "initial",
+      "state": "unscheduled_active",
+      "count": 7
+    },
+    {
+      "period": "Days1-12",
+      "height_before_landing": 2,
+      "victim_tier": 1,
+      "origin": "new",
+      "state": "active",
+      "count": 4
+    },
+    {
+      "period": "Days1-12",
+      "height_before_landing": 2,
+      "victim_tier": 1,
+      "origin": "new",
+      "state": "sched_overdue",
+      "count": 12
+    },
+    {
+      "period": "Days1-12",
+      "height_before_landing": 2,
+      "victim_tier": 2,
+      "origin": "initial",
+      "state": "active",
+      "count": 45
+    },
+    {
+      "period": "Days1-12",
+      "height_before_landing": 2,
+      "victim_tier": 2,
+      "origin": "initial",
+      "state": "sched_overdue",
+      "count": 8
+    },
+    {
+      "period": "Days1-12",
+      "height_before_landing": 2,
+      "victim_tier": 2,
+      "origin": "initial",
+      "state": "unscheduled_active",
+      "count": 3
+    },
+    {
+      "period": "Days1-12",
+      "height_before_landing": 2,
+      "victim_tier": 2,
+      "origin": "new",
+      "state": "active",
+      "count": 44
+    },
+    {
+      "period": "Days1-12",
+      "height_before_landing": 2,
+      "victim_tier": 2,
+      "origin": "new",
+      "state": "sched_overdue",
+      "count": 25
+    },
+    {
+      "period": "Days13-20",
+      "height_before_landing": 1,
+      "victim_tier": 1,
+      "origin": "initial",
+      "state": "active",
+      "count": 207
+    },
+    {
+      "period": "Days13-20",
+      "height_before_landing": 1,
+      "victim_tier": 1,
+      "origin": "initial",
+      "state": "expired_no_rot",
+      "count": 17
+    },
+    {
+      "period": "Days13-20",
+      "height_before_landing": 1,
+      "victim_tier": 1,
+      "origin": "initial",
+      "state": "sched_overdue",
+      "count": 115
+    },
+    {
+      "period": "Days13-20",
+      "height_before_landing": 1,
+      "victim_tier": 1,
+      "origin": "initial",
+      "state": "unscheduled_active",
+      "count": 34
+    },
+    {
+      "period": "Days13-20",
+      "height_before_landing": 1,
+      "victim_tier": 1,
+      "origin": "new",
+      "state": "active",
+      "count": 29
+    },
+    {
+      "period": "Days13-20",
+      "height_before_landing": 1,
+      "victim_tier": 1,
+      "origin": "new",
+      "state": "expired_no_rot",
+      "count": 4
+    },
+    {
+      "period": "Days13-20",
+      "height_before_landing": 1,
+      "victim_tier": 1,
+      "origin": "new",
+      "state": "sched_overdue",
+      "count": 163
+    },
+    {
+      "period": "Days13-20",
+      "height_before_landing": 2,
+      "victim_tier": 1,
+      "origin": "initial",
+      "state": "active",
+      "count": 100
+    },
+    {
+      "period": "Days13-20",
+      "height_before_landing": 2,
+      "victim_tier": 1,
+      "origin": "initial",
+      "state": "expired_no_rot",
+      "count": 16
+    },
+    {
+      "period": "Days13-20",
+      "height_before_landing": 2,
+      "victim_tier": 1,
+      "origin": "initial",
+      "state": "sched_overdue",
+      "count": 77
+    },
+    {
+      "period": "Days13-20",
+      "height_before_landing": 2,
+      "victim_tier": 1,
+      "origin": "initial",
+      "state": "unscheduled_active",
+      "count": 14
+    },
+    {
+      "period": "Days13-20",
+      "height_before_landing": 2,
+      "victim_tier": 1,
+      "origin": "new",
+      "state": "active",
+      "count": 9
+    },
+    {
+      "period": "Days13-20",
+      "height_before_landing": 2,
+      "victim_tier": 1,
+      "origin": "new",
+      "state": "expired_no_rot",
+      "count": 2
+    },
+    {
+      "period": "Days13-20",
+      "height_before_landing": 2,
+      "victim_tier": 1,
+      "origin": "new",
+      "state": "sched_overdue",
+      "count": 75
+    },
+    {
+      "period": "Days13-20",
+      "height_before_landing": 2,
+      "victim_tier": 2,
+      "origin": "initial",
+      "state": "active",
+      "count": 56
+    },
+    {
+      "period": "Days13-20",
+      "height_before_landing": 2,
+      "victim_tier": 2,
+      "origin": "initial",
+      "state": "expired_no_rot",
+      "count": 1
+    },
+    {
+      "period": "Days13-20",
+      "height_before_landing": 2,
+      "victim_tier": 2,
+      "origin": "initial",
+      "state": "sched_overdue",
+      "count": 34
+    },
+    {
+      "period": "Days13-20",
+      "height_before_landing": 2,
+      "victim_tier": 2,
+      "origin": "initial",
+      "state": "unscheduled_active",
+      "count": 14
+    },
+    {
+      "period": "Days13-20",
+      "height_before_landing": 2,
+      "victim_tier": 2,
+      "origin": "new",
+      "state": "active",
+      "count": 58
+    },
+    {
+      "period": "Days13-20",
+      "height_before_landing": 2,
+      "victim_tier": 2,
+      "origin": "new",
+      "state": "expired_no_rot",
+      "count": 10
+    },
+    {
+      "period": "Days13-20",
+      "height_before_landing": 2,
+      "victim_tier": 2,
+      "origin": "new",
+      "state": "sched_overdue",
+      "count": 170
+    }
+  ]
+}

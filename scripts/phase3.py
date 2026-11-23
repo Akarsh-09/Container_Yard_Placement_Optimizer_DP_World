@@ -63,11 +63,11 @@ class Traced(ObservedBaseline):
         return p
 
 
-def evaluate(name,base,inputs,config=None):
+def evaluate(name,base,inputs,config=None,observer_class=Traced):
     layout,initial,events,records=inputs
     yard=YardState(layout)
     yard.load_initial_state(initial)
-    observer=Traced(base,records)
+    observer=observer_class(base,records)
     observer.initialize(layout,initial)
     started=time.perf_counter()
     stats=DiagnosticSimulator(yard,observer).run(events)

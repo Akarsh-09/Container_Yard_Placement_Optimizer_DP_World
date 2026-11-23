@@ -1,0 +1,306 @@
+{
+  "experiments": [
+    {
+      "name": "S_00",
+      "config": {
+        "mode": "survival_risk",
+        "timing_key": "s3_next_feasible",
+        "survival_horizon_hours": 120,
+        "survival_rotation_sigma_hours": 0
+      },
+      "total": 6626,
+      "early": 3293,
+      "late": 3333,
+      "early_rate": 0.6531138437128123,
+      "late_rate": 0.8697807933194155,
+      "LOAD": 4231,
+      "TRUCK_DLVR": 2395,
+      "initial": 4725,
+      "DISCHARGE": 1432,
+      "TRUCK_RECV": 469,
+      "repeat": 1640,
+      "seconds": 11.314155000029132,
+      "score": 16.464471161247882,
+      "excess": 5301
+    },
+    {
+      "name": "S_01",
+      "config": {
+        "mode": "survival_risk",
+        "timing_key": "s3_next_feasible",
+        "survival_horizon_hours": 120,
+        "survival_rotation_sigma_hours": 2
+      },
+      "total": 6702,
+      "early": 3305,
+      "late": 3397,
+      "early_rate": 0.6554938516461721,
+      "late_rate": 0.886482254697286,
+      "LOAD": 4256,
+      "TRUCK_DLVR": 2446,
+      "initial": 4770,
+      "DISCHARGE": 1428,
+      "TRUCK_RECV": 504,
+      "repeat": 1663,
+      "seconds": 11.536300832987763,
+      "score": 16.145362426346068,
+      "excess": 5377
+    },
+    {
+      "name": "S_02",
+      "config": {
+        "mode": "survival_risk",
+        "timing_key": "s3_next_feasible",
+        "survival_horizon_hours": 240,
+        "survival_rotation_sigma_hours": 0
+      },
+      "total": 6761,
+      "early": 3397,
+      "late": 3364,
+      "early_rate": 0.6737405791352638,
+      "late_rate": 0.8778705636743215,
+      "LOAD": 4355,
+      "TRUCK_DLVR": 2406,
+      "initial": 4813,
+      "DISCHARGE": 1486,
+      "TRUCK_RECV": 462,
+      "repeat": 1658,
+      "seconds": 11.806320416973904,
+      "score": 15.897633276882814,
+      "excess": 5436
+    },
+    {
+      "name": "S_03",
+      "config": {
+        "mode": "survival_risk",
+        "timing_key": "s3_next_feasible",
+        "survival_horizon_hours": 240,
+        "survival_rotation_sigma_hours": 2
+      },
+      "total": 6829,
+      "early": 3408,
+      "late": 3421,
+      "early_rate": 0.6759222530741769,
+      "late_rate": 0.8927453027139874,
+      "LOAD": 4421,
+      "TRUCK_DLVR": 2408,
+      "initial": 4776,
+      "DISCHARGE": 1541,
+      "TRUCK_RECV": 512,
+      "repeat": 1698,
+      "seconds": 12.31493287498597,
+      "score": 15.612114935128556,
+      "excess": 5504
+    },
+    {
+      "name": "S_04",
+      "config": {
+        "mode": "survival_risk",
+        "timing_key": "s3_next_feasible",
+        "survival_horizon_hours": 480,
+        "survival_rotation_sigma_hours": 0
+      },
+      "total": 6968,
+      "early": 3496,
+      "late": 3472,
+      "early_rate": 0.693375644585482,
+      "late_rate": 0.906054279749478,
+      "LOAD": 4591,
+      "TRUCK_DLVR": 2377,
+      "initial": 4888,
+      "DISCHARGE": 1546,
+      "TRUCK_RECV": 534,
+      "repeat": 1682,
+      "seconds": 12.50249362498289,
+      "score": 15.028481854189705,
+      "excess": 5643
+    },
+    {
+      "name": "S_05",
+      "config": {
+        "mode": "survival_risk",
+        "timing_key": "s3_next_feasible",
+        "survival_horizon_hours": 480,
+        "survival_rotation_sigma_hours": 2
+      },
+      "total": 7069,
+      "early": 3519,
+      "late": 3550,
+      "early_rate": 0.6979373264577549,
+      "late_rate": 0.9264091858037579,
+      "LOAD": 4712,
+      "TRUCK_DLVR": 2357,
+      "initial": 4909,
+      "DISCHARGE": 1588,
+      "TRUCK_RECV": 572,
+      "repeat": 1720,
+      "seconds": 12.894461958028842,
+      "score": 14.60440314070176,
+      "excess": 5744
+    },
+    {
+      "name": "S_06",
+      "config": {
+        "mode": "survival_risk",
+        "timing_key": "s3_next_feasible",
+        "survival_horizon_hours": "infinity",
+        "survival_rotation_sigma_hours": 0
+      },
+      "total": 6913,
+      "early": 3537,
+      "late": 3376,
+      "early_rate": 0.7015073383577946,
+      "late_rate": 0.8810020876826722,
+      "LOAD": 4624,
+      "TRUCK_DLVR": 2289,
+      "initial": 4899,
+      "DISCHARGE": 1465,
+      "TRUCK_RECV": 549,
+      "repeat": 1598,
+      "seconds": 12.36665499996161,
+      "score": 15.259415807079176,
+      "excess": 5588
+    },
+    {
+      "name": "S_07",
+      "config": {
+        "mode": "survival_risk",
+        "timing_key": "s3_next_feasible",
+        "survival_horizon_hours": "infinity",
+        "survival_rotation_sigma_hours": 2
+      },
+      "total": 6925,
+      "early": 3554,
+      "late": 3371,
+      "early_rate": 0.7048790162633876,
+      "late_rate": 0.8796972860125261,
+      "LOAD": 4645,
+      "TRUCK_DLVR": 2280,
+      "initial": 4929,
+      "DISCHARGE": 1429,
+      "TRUCK_RECV": 567,
+      "repeat": 1619,
+      "seconds": 12.63785087497672,
+      "score": 15.209030217357839,
+      "excess": 5600
+    },
+    {
+      "name": "E_00",
+      "config": {
+        "mode": "survival_risk",
+        "timing_key": "s3_next_feasible",
+        "survival_horizon_hours": 120,
+        "survival_rotation_sigma_hours": 0,
+        "use_expanded_survival": true
+      },
+      "total": 6595,
+      "early": 3286,
+      "late": 3309,
+      "early_rate": 0.6517255057516859,
+      "late_rate": 0.863517745302714,
+      "LOAD": 4206,
+      "TRUCK_DLVR": 2389,
+      "initial": 4720,
+      "DISCHARGE": 1434,
+      "TRUCK_RECV": 441,
+      "repeat": 1642,
+      "seconds": 12.270961874979548,
+      "score": 16.59463393469468,
+      "excess": 5270
+    },
+    {
+      "name": "E_01",
+      "config": {
+        "mode": "survival_risk",
+        "timing_key": "s3_next_feasible",
+        "survival_horizon_hours": 120,
+        "survival_rotation_sigma_hours": 2,
+        "use_expanded_survival": true
+      },
+      "total": 6698,
+      "early": 3326,
+      "late": 3372,
+      "early_rate": 0.6596588655295518,
+      "late_rate": 0.8799582463465553,
+      "LOAD": 4267,
+      "TRUCK_DLVR": 2431,
+      "initial": 4756,
+      "DISCHARGE": 1472,
+      "TRUCK_RECV": 470,
+      "repeat": 1658,
+      "seconds": 12.498136708047241,
+      "score": 16.162157622919846,
+      "excess": 5373
+    },
+    {
+      "name": "control_14d",
+      "config": {
+        "mode": "expected_blocking",
+        "timing_key": "s3_next_feasible",
+        "epsilon": 0.05,
+        "sigma_hours": 12,
+        "lambda_empty": 0.0,
+        "lambda_gap": 0.0,
+        "expired_overdue_prob": 0.2,
+        "missed_load_offset_hours": 336
+      },
+      "total": 6730,
+      "early": 3463,
+      "late": 3267,
+      "early_rate": 0.6868306227687425,
+      "late_rate": 0.8525574112734864,
+      "LOAD": 4305,
+      "TRUCK_DLVR": 2425,
+      "initial": 4761,
+      "DISCHARGE": 1396,
+      "TRUCK_RECV": 573,
+      "repeat": 1690,
+      "seconds": 9.936990666028578,
+      "score": 16.027796050329606,
+      "excess": 5405
+    },
+    {
+      "name": "control_inf",
+      "config": {
+        "mode": "expected_blocking",
+        "timing_key": "s3_next_feasible",
+        "epsilon": 0.05,
+        "sigma_hours": 12,
+        "lambda_empty": 0.0,
+        "lambda_gap": 0.0,
+        "expired_overdue_prob": 0.2,
+        "missed_load_offset_hours": "infinity"
+      },
+      "total": 6723,
+      "early": 3474,
+      "late": 3249,
+      "early_rate": 0.6890122967076557,
+      "late_rate": 0.8478601252609603,
+      "LOAD": 4300,
+      "TRUCK_DLVR": 2423,
+      "initial": 4769,
+      "DISCHARGE": 1371,
+      "TRUCK_RECV": 583,
+      "repeat": 1713,
+      "seconds": 8.239692707953509,
+      "score": 16.05718764433372,
+      "excess": 5398
+    }
+  ],
+  "landing_marginals": {
+    "height_before_landing": {
+      "1": 866,
+      "2": 884
+    },
+    "origin": {
+      "initial": 1111,
+      "new": 639
+    },
+    "state": {
+      "active": 880,
+      "sched_overdue": 732,
+      "unscheduled_active": 88,
+      "expired_no_rot": 50
+    }
+  }
+}

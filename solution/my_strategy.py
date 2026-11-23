@@ -9,20 +9,58 @@ from bisect import bisect_left
 from collections import OrderedDict, defaultdict
 from dataclasses import dataclass
 from datetime import datetime, timezone
+import heapq
 import json
-from math import exp
+from math import exp, expm1, isfinite
 from pathlib import Path
 from typing import Optional
 
 from src.models import Position
 from src.placement_interface import PlacementStrategy
+from .survival_params import SURVIVAL_PARAMETERS, EXPANSION_FEATURE, EXPANDED_PARAMETERS
 
 
 MODES = ("raw_strict", "raw_nonstrict", "raw_top_only", "s1_stored_order",
-         "s2_rollover", "s3_next_feasible", "expected_blocking")
+         "s2_rollover", "s3_next_feasible", "expected_blocking", "survival_risk")
 WEIGHT_RANK = {"HEAVY": 0, "MEDIUM": 1, "LIGHT": 2}
 UNKNOWN_TIME = 253402300799.0
 INFINITY = float("inf")
+
+
+def survival_block_probability(alpha_x, mu_x, tau_x, alpha_c, mu_c, tau_c,
+                               horizon_hours=INFINITY, rotation_sigma_hours=0.0):
+    """Independent exponential backgrounds with one Bernoulli jump each.
+
+    All times/rates use hours. The background integral is the algebraic expansion
+    of the <=3 piecewise exponential intervals. Coin-flip ordering handles equal
+    jump times. sigma>0 softens only jump ordering and is an approximation to the
+    exact step-survival model (it does not randomize the continuous survival).
+    """
+    rate = mu_x + mu_c
+    jump_x = alpha_x > 0 and isfinite(tau_x) and tau_x <= horizon_hours
+    jump_c = alpha_c > 0 and isfinite(tau_c) and tau_c <= horizon_hours
+    ex = exp(-rate * tau_x) if jump_x and rate else 1.0
+    ec = exp(-rate * tau_c) if jump_c and rate else 1.0
+    background = 0.0
+    if mu_x > 0:
+        end_survival = exp(-rate * horizon_hours) if isfinite(horizon_hours) else 0.0
+        integral = -expm1(-rate * horizon_hours) if isfinite(horizon_hours) else 1.0
+        if jump_x: integral -= alpha_x * (ex - end_survival)
+        if jump_c: integral -= alpha_c * (ec - end_survival)
+        if jump_x and jump_c:
+            integral += alpha_x * alpha_c * (min(ex, ec) - end_survival)
+        background = mu_x / rate * integral
+    atom = 0.0
+    if jump_x:
+        precedes = 0.0
+        if alpha_c > 0 and isfinite(tau_c):
+            delta = tau_x - tau_c
+            if rotation_sigma_hours:
+                precedes = 1.0 / (1.0 + exp(max(-30.0,min(30.0,-delta/rotation_sigma_hours))))
+            else:
+                precedes = 1.0 if delta > 0 else 0.5 if delta == 0 else 0.0
+        atom = alpha_x * ex * (1.0 - alpha_c * precedes)
+    return min(1.0,max(0.0,background + atom))
 
 
 def parse_time(value):
@@ -69,7 +107,12 @@ class MyStrategy(PlacementStrategy):
     """
     def __init__(self, mode="expected_blocking", schedule_path=None,
                  timing_key="s3_next_feasible", epsilon=0.05, sigma_hours=12,
-                 lambda_empty=0.0, lambda_gap=0.0, use_cache=True):
+                 lambda_empty=0.0, lambda_gap=0.0, use_cache=True,
+                 initial_epsilon=None, expired_overdue_prob=None,
+                 all_overdue_prob=None, intra_rotation_sigma_hours=None,
+                 missed_load_offset_hours=None, survival_horizon_hours=240,
+                 survival_rotation_sigma_hours=0.0, use_expanded_survival=False,
+                 survival_parameters=None):
         if mode not in MODES:
             raise ValueError(f"Unknown strategy mode: {mode}")
         if timing_key not in ("raw", "s2_rollover", "s3_next_feasible"):
@@ -78,6 +121,24 @@ class MyStrategy(PlacementStrategy):
             raise ValueError("Require 0 <= epsilon <= 0.5 and sigma_hours > 0")
         if lambda_empty < 0 or lambda_gap < 0:
             raise ValueError("Opportunity costs must be nonnegative")
+        if initial_epsilon is not None and not 0 <= initial_epsilon <= 0.5:
+            raise ValueError("initial_epsilon must lie in [0, 0.5]")
+        for probability in (expired_overdue_prob, all_overdue_prob):
+            if probability is not None and not 0 <= probability <= 1:
+                raise ValueError("Overdue probabilities must lie in [0, 1]")
+        if intra_rotation_sigma_hours is not None and not intra_rotation_sigma_hours > 0:
+            raise ValueError("Intra-rotation scale must be positive")
+        if missed_load_offset_hours is not None and not missed_load_offset_hours >= 0:
+            raise ValueError("Missed-LOAD offset must be nonnegative or infinity")
+        if not survival_horizon_hours > 0 or not survival_rotation_sigma_hours >= 0:
+            raise ValueError("Survival horizon must be positive and smoothing nonnegative")
+        self.survival_horizon_hours = survival_horizon_hours
+        self.survival_rotation_sigma_hours = survival_rotation_sigma_hours
+        self.use_expanded_survival = use_expanded_survival
+        self.survival_parameters = dict(SURVIVAL_PARAMETERS if survival_parameters is None else survival_parameters)
+        for alpha, mu in self.survival_parameters.values():
+            if not 0 <= alpha <= 1 or not mu >= 0 or not isfinite(mu):
+                raise ValueError("Invalid survival parameter")
         self.mode = mode
         self.timing_key = timing_key
         self.epsilon = epsilon
@@ -85,8 +146,17 @@ class MyStrategy(PlacementStrategy):
         self.lambda_empty = lambda_empty
         self.lambda_gap = lambda_gap
         self.use_cache = use_cache
+        self.initial_epsilon = initial_epsilon
+        self.expired_overdue_prob = expired_overdue_prob
+        self.all_overdue_prob = all_overdue_prob
+        self.intra_rotation_sigma_hours = intra_rotation_sigma_hours
+        self.missed_load_offset_hours = missed_load_offset_hours
+        self._advanced_risk = any(value is not None for value in (
+            initial_epsilon, expired_overdue_prob, all_overdue_prob,
+            intra_rotation_sigma_hours))
+        self._watch_overdue = mode == "survival_risk" or expired_overdue_prob is not None or all_overdue_prob is not None
         self._timing = (("raw_strict" if timing_key == "raw" else timing_key)
-                        if mode == "expected_blocking" else mode)
+                        if mode in ("expected_blocking", "survival_risk") else mode)
         self.schedule_path = schedule_path
         self.current_time = 0.0
         self._meta = {}
@@ -95,6 +165,7 @@ class MyStrategy(PlacementStrategy):
         self._ports = {}
         self._global_ports = ()
         self._stacks = []
+        self._discharge_windows = {}
 
     def initialize(self, yard_layout, initial_state):
         self.current_time = 0.0
@@ -103,13 +174,15 @@ class MyStrategy(PlacementStrategy):
         self._ends.clear()
         self._ports.clear()
         self._global_ports = ()
+        self._discharge_windows.clear()
         self._stacks = [
             (block, bay, row, info["tiers"])
             for block, info in sorted(yard_layout["blocks"].items())
             for bay in range(1, info["bays"] + 1)
             for row in range(1, info["rows"] + 1)
         ]
-        if self._timing.startswith("s"):
+        if (self._timing.startswith("s") or self.expired_overdue_prob is not None
+                or self.intra_rotation_sigma_hours is not None):
             self._load_schedule()
         self._reset_caches(yard_layout, initial_state)
         for entry in initial_state.get("containers", []):
@@ -136,6 +209,9 @@ class MyStrategy(PlacementStrategy):
             vid = vessel["vessel_id"]
             ports = tuple(sorted(set(vessel.get("ports", []))))
             self._ports[vid] = ports
+            self._discharge_windows[vid] = tuple(
+                (parse_time(r.get("discharge_start","")),parse_time(r.get("discharge_end","")))
+                for r in vessel.get("rotations", []))
             all_ports.update(ports)
             rotations = tuple(sorted((Rotation(parse_time(r["etd"]),
                                                parse_time(r["load_start"]),
@@ -162,6 +238,14 @@ class MyStrategy(PlacementStrategy):
         return ContainerMeta(departure, vessel, port, weight_rank, fraction, matched, s1_time)
 
     def _reset_caches(self, layout, initial):
+        self._initial_ids = {c["container_id"] for c in initial.get("containers", [])}
+        self.seen_in_yard_or_arrived = set(self._initial_ids)
+        self.observed_missed_loads = set()
+        self._missed_dwell = {}
+        self._overdue_heap = []
+        self._origins = {cid:"initial" for cid in self._initial_ids}
+        self._arrival_times = {}
+        self._cid_index = {}
         self._eff = {}
         self._members = defaultdict(set)
         self._next_by_vessel = self._next_rotations()
@@ -179,6 +263,8 @@ class MyStrategy(PlacementStrategy):
             self._block_counts[c["position"]["block"]] += 1
         self._contents = [[] for _ in self._stacks]
         self._key_lists = [() for _ in self._stacks]
+        self._token_lists = [() for _ in self._stacks]
+        self._survival_lists = [() for _ in self._stacks]
         self._floors = [INFINITY for _ in self._stacks]
         self._key_generation = [-1 for _ in self._stacks]
         self._versions = [0 for _ in self._stacks]
@@ -200,8 +286,12 @@ class MyStrategy(PlacementStrategy):
         self._meta[cid] = meta
         self._members[meta.vessel].add(cid)
         self._eff[cid] = self._resident_priority(cid)
+        if self._watch_overdue and meta.departure >= self.current_time:
+            heapq.heappush(self._overdue_heap, (meta.departure, cid))
 
     def _resident_priority(self, cid):
+        if cid in self._missed_dwell:
+            return self._missed_dwell[cid]
         return self._priority(self._meta[cid], self._next_by_vessel)
 
     def _remember(self, container):
@@ -213,6 +303,7 @@ class MyStrategy(PlacementStrategy):
     def _advance_time(self, timestamp):
         now = parse_time(timestamp)
         changed = set()
+        backwards = now < self.current_time
         if now < self.current_time:
             # Useful for isolated what-if calls; the real event stream is ordered.
             self._transition_index = bisect_left([x[0] for x in self._transitions], now)
@@ -223,22 +314,54 @@ class MyStrategy(PlacementStrategy):
                 changed.add(self._transitions[self._transition_index][1])
                 self._transition_index += 1
         self.current_time = now
-        if changed and self._timing in ("s2_rollover", "s3_next_feasible"):
+        if changed:
             self._next_by_vessel = self._next_rotations()
-            for vessel in changed:
-                for cid in self._members[vessel]:
-                    self._eff[cid] = self._resident_priority(cid)
-                    self.priority_transition_updates += 1
-            self._generation += 1
+            if self._timing in ("s2_rollover", "s3_next_feasible"):
+                for vessel in changed:
+                    for cid in self._members[vessel]:
+                        self._eff[cid] = self._resident_priority(cid)
+                        self.priority_transition_updates += 1
+            if self._timing.startswith("s") or self._advanced_risk:
+                self._generation += 1
+        if self._watch_overdue:
+            if backwards:
+                self._overdue_heap = [(m.departure,cid) for cid,m in self._meta.items()
+                                      if m.departure >= now]
+                heapq.heapify(self._overdue_heap)
+                self._generation += 1
+            else:
+                while self._overdue_heap and self._overdue_heap[0][0] < now:
+                    due,cid = heapq.heappop(self._overdue_heap)
+                    meta = self._meta.get(cid)
+                    if meta is not None and meta.departure == due:
+                        index = self._cid_index.get(cid)
+                        if index is not None:
+                            self._keys_dirty.add(index)
+                            self._versions[index] += 1
+
+    def _observe_arrival(self, event):
+        cid = event.container_id
+        self._origins.setdefault(cid,event.type)
+        self._arrival_times.setdefault(cid,self.current_time)
+        if (self.missed_load_offset_hours is not None and cid in self.observed_missed_loads
+                and cid not in self._missed_dwell):
+            self._missed_dwell[cid] = self.current_time + self.missed_load_offset_hours * 3600
+            if cid in self._meta:
+                self._eff[cid] = self._missed_dwell[cid]
+        self.seen_in_yard_or_arrived.add(cid)
 
     def on_event(self, event):
         self._advance_time(event.timestamp)
+        if event.type == "LOAD" and event.container_id not in self.seen_in_yard_or_arrived:
+            self.observed_missed_loads.add(event.container_id)
         if event.type in ("DISCHARGE", "TRUCK_RECV"):
+            self._observe_arrival(event)
             self._remember(event)
 
     def on_container_retrieved(self, container_id, position, reshuffles):
         meta = self._meta.pop(container_id, None)
         self._eff.pop(container_id, None)
+        self._missed_dwell.pop(container_id, None)
         if meta is not None:
             self._members[meta.vessel].discard(container_id)
         block = position.block
@@ -266,11 +389,15 @@ class MyStrategy(PlacementStrategy):
             cids = [yard.get_container_at(block, bay, row, tier) for tier in range(1, height + 1)]
             self._cached_count += len(cids) - len(self._contents[i])
             if cids != self._contents[i]:
+                for cid in self._contents[i]:
+                    if self._cid_index.get(cid) == i:
+                        self._cid_index.pop(cid, None)
                 self._contents[i] = cids
                 self._key_generation[i] = -1
                 self._keys_dirty.add(i)
                 self._versions[i] += 1
             for cid in cids:
+                self._cid_index[cid] = i
                 if cid not in self._meta:
                     self._remember(yard.get_container_info(cid))
             touched.add(block)
@@ -308,6 +435,10 @@ class MyStrategy(PlacementStrategy):
             self._key_lists[i] = keys
             self._floors[i] = min(keys, default=INFINITY)
             self._key_generation[i] = self._generation
+            if self._advanced_risk:
+                self._token_lists[i] = tuple(self._risk_token(cid) for cid in self._contents[i])
+            if self.mode == "survival_risk":
+                self._survival_lists[i] = tuple(self._survival_key(cid) for cid in self._contents[i])
         self._keys_dirty.clear()
         self._prepared_generation = self._generation
 
@@ -350,35 +481,154 @@ class MyStrategy(PlacementStrategy):
         return rotation.start + meta.fraction * (rotation.end - rotation.start)
 
     def _incoming_priority(self, event, meta):
+        if event.container_id in self._missed_dwell:
+            return self._missed_dwell[event.container_id]
         return self._priority(meta, self._next_by_vessel, resident=False)
 
     def pair_probability(self, resident_key, incoming_key):
+        if resident_key == incoming_key:
+            return 0.5  # includes two +infinity long-dwell priorities
         z = (resident_key - incoming_key) / (3600.0 * self.sigma_hours)
         z = max(-30.0, min(30.0, z))
         return self.epsilon + (1.0 - 2.0 * self.epsilon) / (1.0 + exp(z))
 
+    def _assigned_rotation(self, cid, resident=True):
+        if cid in self._missed_dwell:
+            return None
+        meta = self._meta[cid]
+        if self._timing == "s3_next_feasible":
+            rotation = self._next_by_vessel.get(meta.vessel)
+        elif self._timing in ("s1_stored_order", "s2_rollover"):
+            rotation = meta.matched_rotation
+            if (self._timing == "s2_rollover" and resident and rotation is not None
+                    and self.current_time > rotation.end):
+                rotation = self._next_by_vessel.get(meta.vessel, rotation)
+        else:
+            rotation = None
+        return (meta.vessel,rotation) if rotation is not None else None
+
+    def _risk_token(self, cid):
+        meta = self._meta[cid]
+        floor = (self.initial_epsilon if self.initial_epsilon is not None
+                 and cid in self._initial_ids else self.epsilon)
+        return (self._eff[cid], floor, meta.departure < self.current_time,
+                meta.vessel not in self._next_by_vessel,
+                self._assigned_rotation(cid) if self.intra_rotation_sigma_hours is not None else None)
+
+    def _token_probability(self, token, incoming_context):
+        key,floor,overdue,no_future,rotation = token
+        incoming_key,incoming_rotation,incoming_overdue = incoming_context
+        if self.expired_overdue_prob is not None and overdue and no_future:
+            return self.expired_overdue_prob
+        if self.all_overdue_prob is not None and overdue and not incoming_overdue:
+            return self.all_overdue_prob
+        if key == incoming_key:
+            return 0.5
+        scale = (self.intra_rotation_sigma_hours if rotation is not None
+                 and rotation == incoming_rotation else self.sigma_hours)
+        z = max(-30.0,min(30.0,(key-incoming_key)/(3600.0*scale)))
+        return floor + (1.0-2.0*floor)/(1.0+exp(z))
+
+    def _survival_key(self, cid):
+        meta = self._meta[cid]
+        rotation = self._next_by_vessel.get(meta.vessel)
+        overdue = meta.departure < self.current_time
+        if cid in self.observed_missed_loads:
+            return ("missed_load",INFINITY)
+        if rotation is None:
+            return ("expired_no_rot" if overdue else "unscheduled_active",INFINITY)
+        if overdue:
+            group = "sched_overdue"
+        elif cid in self._initial_ids:
+            group = "sched_init_active"
+        elif self._origins.get(cid) == "TRUCK_RECV":
+            group = "sched_truck_active"
+        else:
+            group = "sched_disch_active"
+        if self.use_expanded_survival and group in ("sched_disch_active","sched_truck_active"):
+            if EXPANSION_FEATURE == "lead_bucket":
+                lead = (meta.departure-self._arrival_times[cid])/3600
+                level = "<24h" if lead < 24 else "24-72h" if lead <= 72 else ">72h"
+            elif EXPANSION_FEATURE == "etd_vs_s3":
+                diff = (meta.departure-rotation.etd)/3600
+                level = "match" if abs(diff)<=24 else "later" if diff>24 else "earlier_or_other"
+            else:
+                level = str(any(a<=self._arrival_times[cid]<=b for a,b in self._discharge_windows.get(meta.vessel,())))
+            if group+"|"+level in EXPANDED_PARAMETERS:
+                group += "|"+level
+        return group,self._eff[cid]
+
+    def _survival_values(self, descriptor):
+        group,when = descriptor
+        if "|" in group:
+            alpha,mu = EXPANDED_PARAMETERS[group]
+        else:
+            alpha,mu = self.survival_parameters[group]
+        return alpha,mu,max(0.0,(when-self.current_time)/3600)
+
+    def _place_survival(self, event):
+        ac,mc,tc = self._survival_values(self._survival_key(event.container_id))
+        probabilities = {}  # Per call only: absolute time matters to this model.
+        best = None
+        best_index = None
+        for i,(_,_,_,maximum) in enumerate(self._stacks):
+            height = len(self._contents[i])
+            if height >= maximum: continue
+            score = 0.0
+            for descriptor in self._survival_lists[i]:
+                probability = probabilities.get(descriptor)
+                if probability is None:
+                    ax,mx,tx = self._survival_values(descriptor)
+                    probability = survival_block_probability(ax,mx,tx,ac,mc,tc,
+                        self.survival_horizon_hours,self.survival_rotation_sigma_hours)
+                    probabilities[descriptor] = probability
+                score += probability
+            rank = score,height
+            if best is None or rank < best:
+                best,best_index = rank,i
+        if best_index is None: raise RuntimeError("No non-full stack is available")
+        return self._finish_placement(best_index)
+
+    def _finish_placement(self, index):
+        block,bay,row,_ = self._stacks[index]
+        position = Position(block,bay,row,len(self._contents[index])+1)
+        self._dirty.add(index)
+        self._block_counts[block] += 1
+        return position
+
     def place_container(self, yard_state, event):
         self._advance_time(event.timestamp)
+        self._observe_arrival(event)
         incoming = self._meta.get(event.container_id)
         if incoming is None:
             incoming = self._remember(event)
         self._refresh(yard_state)
+        if self.mode == "survival_risk":
+            return self._place_survival(event)
         incoming_key = self._incoming_priority(event, incoming)
         expected = self.mode == "expected_blocking"
         top_only = self.mode == "raw_top_only"
         nonstrict = self.mode == "raw_nonstrict"
         risks = scores = None
+        incoming_context = None
+        table_key = incoming_key
+        if self._advanced_risk:
+            incoming_context = (incoming_key,
+                                self._assigned_rotation(event.container_id,resident=False)
+                                if self.intra_rotation_sigma_hours is not None else None,
+                                incoming.departure < self.current_time)
+            table_key = incoming_context
         if expected:
-            table = self._risk_tables.get(incoming_key)
+            table = self._risk_tables.get(table_key)
             if table is None:
                 risks = {}
                 scores = [None] * len(self._stacks)
-                self._risk_tables[incoming_key] = (risks, scores)
+                self._risk_tables[table_key] = (risks, scores)
                 if len(self._risk_tables) > 128:
                     self._risk_tables.popitem(last=False)
             else:
                 risks, scores = table
-                self._risk_tables.move_to_end(incoming_key)
+                self._risk_tables.move_to_end(table_key)
         key_lists = self._key_lists
         floors = self._floors
         versions = self._versions
@@ -392,7 +642,7 @@ class MyStrategy(PlacementStrategy):
             if expected:
                 if height == 0:
                     score = self.lambda_empty
-                elif self.epsilon == 0.5:
+                elif self.epsilon == 0.5 and not self._advanced_risk:
                     score = 0.5 * height
                 else:
                     previous = scores[i] if self.use_cache else None
@@ -400,10 +650,11 @@ class MyStrategy(PlacementStrategy):
                         score = previous[2]
                     else:
                         score = 0.0
-                        for key in key_lists[i]:
+                        for key in (self._token_lists[i] if self._advanced_risk else key_lists[i]):
                             probability = risks.get(key)
                             if probability is None:
-                                probability = self.pair_probability(key, incoming_key)
+                                probability = (self._token_probability(key,incoming_context)
+                                               if self._advanced_risk else self.pair_probability(key, incoming_key))
                                 risks[key] = probability
                             score += probability
                         scores[i] = (versions[i], generation, score)
@@ -432,8 +683,4 @@ class MyStrategy(PlacementStrategy):
                 best_rank, best_index = rank, i
         if best_index is None:
             raise RuntimeError("No non-full stack is available")
-        block, bay, row, _ = self._stacks[best_index]
-        position = Position(block, bay, row, len(self._contents[best_index]) + 1)
-        self._dirty.add(best_index)
-        self._block_counts[block] += 1  # anticipated successful placement
-        return position
+        return self._finish_placement(best_index)

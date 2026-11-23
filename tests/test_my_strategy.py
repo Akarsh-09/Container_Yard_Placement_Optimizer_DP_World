@@ -56,6 +56,7 @@ def test_zero_arg_default():
     assert strategy.mode == "expected_blocking"
     assert (strategy.timing_key,strategy.epsilon,strategy.sigma_hours)==("s3_next_feasible",0.05,12)
     assert strategy.lambda_empty == strategy.lambda_gap == 0
+    assert not strategy._advanced_risk and strategy.missed_load_offset_hours is None
 
 
 def test_invalid_mode():
@@ -336,3 +337,193 @@ def test_contrived_cross_block_relocation_equivalence():
         if cached:
             assert strategy.cache_guard_fallbacks == 1
     assert traces[0] == traces[1]
+
+
+def test_initial_floor_distinguishes_identical_priorities():
+    strategy,yard=setup([[9],[]],"expected_blocking",initial_epsilon=0.25)
+    yard.place_container(Container("new",departure_time=when(9),vessel_id="V1",
+                                   port_of_discharge="PORT_02",weight_class="LIGHT"),Position("A",2,1,1))
+    assert strategy.place_container(yard,incoming()).bay == 2
+    assert strategy._risk_token("c1_1")[1] == 0.25
+    assert strategy._risk_token("new")[1] == 0.05
+
+
+@pytest.mark.parametrize("flag", ["expired_overdue_prob","all_overdue_prob"])
+def test_overdue_change_invalidates_scores_without_schedule_boundary(flag):
+    strategy,yard=setup([[3],[8]*4],"expected_blocking",timing_key="raw",**{flag:0.10})
+    assert strategy.place_container(yard,incoming(now=when(2))).bay == 2
+    assert strategy.place_container(yard,incoming(now=when(4))).bay == 1
+
+
+def test_overdue_rules_have_distinct_scope():
+    expired=MyStrategy(expired_overdue_prob=0.2)
+    overdue=MyStrategy(all_overdue_prob=0.3)
+    a,b=parse_time(when(3)),parse_time(when(5))
+    scheduled=(a,0.05,True,False,None)
+    no_future=(a,0.05,True,True,None)
+    incoming_context=(b,None,False)
+    assert expired._token_probability(no_future,incoming_context) == 0.2
+    assert expired._token_probability(scheduled,incoming_context) > 0.9
+    assert overdue._token_probability(scheduled,incoming_context) == 0.3
+    assert overdue._token_probability(scheduled,(b,None,True)) > 0.9
+
+
+def test_intra_rotation_sharpening_excludes_other_vessels_and_fallbacks(schedule_path):
+    strategy,_=setup([[]],"expected_blocking",schedule_path,intra_rotation_sigma_hours=0.5)
+    meta=strategy._remember(incoming(3,cid="resident",port="PORT_02",weight="LIGHT"))
+    strategy.current_time=parse_time(when(1))
+    rotation=strategy._assigned_rotation("resident")
+    assert rotation is not None
+    token=(parse_time(when(2,8)),0.05,False,False,rotation)
+    key=parse_time(when(2,6))
+    sharp=strategy._token_probability(token,(key,rotation,False))
+    cross=strategy._token_probability(token,(key,("OTHER",rotation[1]),False))
+    fallback=strategy._token_probability(token,(key,None,False))
+    assert sharp < 0.1 and cross > 0.4
+    assert fallback == cross
+
+
+@pytest.mark.parametrize("offset", [336,float("inf")])
+def test_missed_load_uses_only_observed_history_and_fixed_priority(offset,schedule_path):
+    strategy,yard=setup([[],[]],"expected_blocking",schedule_path,missed_load_offset_hours=offset)
+    strategy.on_event(Event(0,when(1),"LOAD","late"))
+    e=incoming(3,cid="late",now=when(1,1))
+    strategy.on_event(e)
+    pos=strategy.place_container(yard,e)
+    assert yard.place_container(e.to_container(),pos)
+    expected=parse_time(e.timestamp)+offset*3600
+    assert strategy._eff["late"] == expected
+    strategy.on_event(Event(2,when(4),"LOAD","other_missing"))
+    assert strategy._eff["late"] == expected
+    assert strategy.pair_probability(float("inf"),float("inf")) == 0.5
+    strategy.initialize({"blocks":{"A":{"bays":2,"rows":1,"tiers":5}}},{"containers":[]})
+    assert not strategy.observed_missed_loads and not strategy._missed_dwell
+
+
+@pytest.mark.parametrize("flag", [
+    {"initial_epsilon":0.20},
+    {"expired_overdue_prob":0.20},
+    {"all_overdue_prob":0.20},
+    {"intra_rotation_sigma_hours":0.5,"sigma_hours":48},
+    {"missed_load_offset_hours":336},
+    {"missed_load_offset_hours":float("inf")},
+])
+def test_isolated_flags_cached_vs_uncached_across_history_and_time(flag,schedule_path):
+    traces=[]
+    states=[]
+    histories=[]
+    for cached in (True,False):
+        strategy,yard=setup([[20,2,10,12],[]],"expected_blocking",schedule_path,
+                            use_cache=cached,**flag)
+        trace=[]
+        events=[Event(0,when(1),"LOAD","late"),incoming(3,cid="late",now=when(1,1)),
+                Event(2,when(2),"LOAD","c1_2"),incoming(3,cid="x",now=when(2,12)),
+                Event(4,when(2,13),"LOAD","x"),incoming(11,cid="y",now=when(4)),
+                Event(6,when(10,13),"LOAD","c1_3"),incoming(12,cid="z",now=when(12))]
+        for e in events:
+            if e.type in ("DISCHARGE","TRUCK_RECV"):
+                strategy.on_event(e)
+                position=strategy.place_container(yard,e)
+                assert yard.is_position_valid(position)
+                trace.append(position)
+                assert yard.place_container(e.to_container(),position)
+            else:
+                Simulator(yard,strategy).run([e])
+        traces.append(trace)
+        states.append(yard.snapshot())
+        histories.append(strategy.observed_missed_loads)
+    assert traces[0] == traces[1]
+    assert states[0] == states[1]
+    assert histories[0] == histories[1]
+
+
+def test_previously_retrieved_container_is_not_a_missed_load():
+    strategy,yard=setup([[3]],"expected_blocking",missed_load_offset_hours=336)
+    Simulator(yard,strategy).run([Event(1,when(2),"LOAD","c1_1"),Event(2,when(2,1),"LOAD","c1_1")])
+    assert "c1_1" not in strategy.observed_missed_loads
+
+
+@pytest.mark.parametrize("tx,tc,expected", [(1,2,1),(2,1,0),(1,1,0.5)])
+def test_survival_deterministic_jump_limit(tx,tc,expected):
+    from solution.my_strategy import survival_block_probability as probability
+    assert probability(1,0,tx,1,0,tc) == expected
+
+
+def test_survival_greedy_and_infinite_survivor_limits():
+    from solution.my_strategy import survival_block_probability as probability
+    assert probability(0,.001,float("inf"),0,.001,float("inf")) == 0.5
+    assert probability(0,0,float("inf"),0,0,float("inf")) == 0
+    assert probability(1,0,5,0,0,float("inf"),4) == 0
+    assert probability(1,0,5,0,0,float("inf"),5) == 1
+    params={g:(0,.001) for g in MyStrategy().survival_parameters}
+    strategy,yard=setup([[9,9],[2],[]],"survival_risk",survival_horizon_hours=float("inf"),survival_parameters=params)
+    from src.baseline_greedy import GreedyStrategy
+    assert strategy.place_container(yard,incoming()) == GreedyStrategy().place_container(yard,incoming())
+
+
+@pytest.mark.parametrize("tx,tc,sigma",[(7.3,12.7,0),(12.7,7.3,0),(9,9,0),(12.7,7.3,2)])
+def test_survival_closed_form_matches_numerical_integral(tx,tc,sigma):
+    from math import exp
+    from solution.my_strategy import survival_block_probability as probability
+    ax,ac,mx,mc,horizon=.6,.4,.03,.02,20
+    n=20000
+    step=horizon/n
+    numerical=0
+    for i in range(n):
+        t=(i+.5)*step
+        sx=exp(-mx*t)*(1-ax if t>=tx else 1)
+        sc=exp(-mc*t)*(1-ac if t>=tc else 1)
+        numerical+=mx*sx*sc*step
+    phi=(1/(1+exp(-(tx-tc)/sigma)) if sigma else 1 if tx>tc else .5 if tx==tc else 0)
+    numerical+=ax*exp(-(mx+mc)*tx)*(1-ac*phi)
+    assert probability(ax,mx,tx,ac,mc,tc,horizon,sigma) == pytest.approx(numerical,abs=1e-7)
+
+
+def test_exact_survival_pair_mass_and_tie_symmetry():
+    from math import exp
+    from solution.my_strategy import survival_block_probability as p
+    ax,ac,mx,mc,tx,tc,h=.6,.4,.01,.02,5,5,20
+    assert p(ax,mx,tx,ac,mc,tc,h)+p(ac,mc,tc,ax,mx,tx,h) == pytest.approx(1-exp(-(mx+mc)*h)*(1-ax)*(1-ac))
+    assert p(.6,0,5,.6,0,5) == pytest.approx(.42)
+
+
+def test_survival_missed_incoming_chooses_expired_base(schedule_path):
+    layout={"blocks":{"A":{"bays":2,"rows":1,"tiers":5}}}
+    yard=YardState(layout)
+    yard.place_container(Container("active",vessel_id="V1",departure_time=when(11),port_of_discharge="PORT_01"),Position("A",1,1,1))
+    yard.place_container(Container("expired",vessel_id="VSL019",departure_time=when(2)),Position("A",2,1,1))
+    params={g:(.9,.001) for g in MyStrategy().survival_parameters}
+    params["missed_load"]=(0,0)
+    params["expired_no_rot"]=(0,.0001)
+    strategy=MyStrategy("survival_risk",schedule_path,survival_parameters=params)
+    strategy.initialize(layout,yard.export_state())
+    strategy.on_event(Event(0,when(3),"LOAD","late"))
+    event=incoming(1,cid="late",now=when(4))
+    strategy.on_event(event)
+    before=yard.snapshot()
+    assert strategy.place_container(yard,event).bay == 2
+    assert yard.snapshot() == before
+
+
+@pytest.mark.parametrize("expanded",[False,True])
+def test_survival_cached_live_history_and_cohort_transitions(expanded,schedule_path):
+    traces=[]
+    states=[]
+    for cached in (True,False):
+        strategy,yard=setup([[20,2,10,12],[]],"survival_risk",schedule_path,
+                            use_cache=cached,use_expanded_survival=expanded)
+        trace=[]
+        for e in [Event(0,when(1),"LOAD","late"),incoming(3,cid="late",now=when(1,1)),
+                  Event(2,when(2),"LOAD","c1_2"),incoming(3,cid="x",now=when(3)),
+                  incoming(11,cid="y",now=when(3,1)),Event(5,when(4),"LOAD","c1_3"),
+                  incoming(12,cid="z",now=when(12))]:
+            if e.type in ("DISCHARGE","TRUCK_RECV"):
+                strategy.on_event(e)
+                pos=strategy.place_container(yard,e)
+                trace.append(pos)
+                assert yard.place_container(e.to_container(),pos)
+            else: Simulator(yard,strategy).run([e])
+        traces.append(trace)
+        states.append(yard.snapshot())
+    assert traces[0] == traces[1]
+    assert states[0] == states[1]

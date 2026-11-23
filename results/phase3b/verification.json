@@ -1,0 +1,35 @@
+{
+  "tests_passed": 93,
+  "isolated_runs": 17,
+  "combined_runs": 0,
+  "M5_skipped_gate_false": true,
+  "all_run_errors_violations_failures": 0,
+  "all_run_cache_guard_fallbacks": 0,
+  "cache_controls": [
+    {
+      "name": "M2a_0.20",
+      "identical_placements": 10385,
+      "trace_sha256": "4f6d35216d3604e3bcb164416876e380299f72f7cb3a3a53b9574129679078b3",
+      "cached_seconds": 7.846671457984485,
+      "live_seconds": 102.01212833297905
+    },
+    {
+      "name": "M4_inf",
+      "identical_placements": 10385,
+      "trace_sha256": "5081c2c803a6f882283e912fb44b3e70103305d1010d1eadaa8f92d1cb0bbe10",
+      "cached_seconds": 7.585943625017535,
+      "live_seconds": 71.35071104200324
+    }
+  ],
+  "default_baseline_trace_preserved": true,
+  "test_data_opened": false,
+  "protected_files_unchanged": true,
+  "python": "3.13.3 (v3.13.3:6280bb54784, Apr  8 2025, 10:47:54) [Clang 15.0.0 (clang-1500.3.9.4)]",
+  "sha256": {
+    "solution/my_strategy.py": "9bf5cad0e5b1eccbab1b7197778e93df18238bf4f3c9694f9d8816cf9f4a2a44",
+    "tests/test_my_strategy.py": "34692e44174351e780b3b9d1b749e242618ffe54efa46d034acc6b88a90d91b4",
+    "scripts/phase3b.py": "02c00b8ae5a5c1c49f7681323a830762feaaa0805b24c9271bea1d89ddf819e8",
+    "scripts/phase3b_diag.py": "6703bc1b820e1e2dede5639ed0a727c5d070d24c94a50b9cae04bd0b8a3b9477",
+    "scripts/phase3b_report.py": "b9605793f8f19124a2889f83991e66c1c5b6f3c9e3102e398cb14a0d5717cedf"
+  }
+}

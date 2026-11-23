@@ -1,0 +1,511 @@
+{
+  "ablations": [
+    {
+      "name": "M1_0.10",
+      "config": {
+        "mode": "expected_blocking",
+        "timing_key": "s3_next_feasible",
+        "epsilon": 0.05,
+        "sigma_hours": 12,
+        "lambda_empty": 0.0,
+        "lambda_gap": 0.0,
+        "initial_epsilon": 0.1
+      },
+      "total": 7030,
+      "early": 3500,
+      "late": 3530,
+      "early_rate": 0.6941689805632686,
+      "late_rate": 0.9211899791231732,
+      "early_lift": -77,
+      "late_lift": 73,
+      "LOAD": 4491,
+      "TRUCK_DLVR": 2539,
+      "initial": 4751,
+      "DISCHARGE": 1501,
+      "TRUCK_RECV": 778,
+      "repeat": 1734,
+      "seconds": 7.987912624957971
+    },
+    {
+      "name": "M1_0.15",
+      "config": {
+        "mode": "expected_blocking",
+        "timing_key": "s3_next_feasible",
+        "epsilon": 0.05,
+        "sigma_hours": 12,
+        "lambda_empty": 0.0,
+        "lambda_gap": 0.0,
+        "initial_epsilon": 0.15
+      },
+      "total": 7002,
+      "early": 3476,
+      "late": 3526,
+      "early_rate": 0.689408964696549,
+      "late_rate": 0.9201461377870563,
+      "early_lift": -53,
+      "late_lift": 77,
+      "LOAD": 4498,
+      "TRUCK_DLVR": 2504,
+      "initial": 4681,
+      "DISCHARGE": 1567,
+      "TRUCK_RECV": 754,
+      "repeat": 1763,
+      "seconds": 8.206397582951467
+    },
+    {
+      "name": "M1_0.20",
+      "config": {
+        "mode": "expected_blocking",
+        "timing_key": "s3_next_feasible",
+        "epsilon": 0.05,
+        "sigma_hours": 12,
+        "lambda_empty": 0.0,
+        "lambda_gap": 0.0,
+        "initial_epsilon": 0.2
+      },
+      "total": 7059,
+      "early": 3518,
+      "late": 3541,
+      "early_rate": 0.6977389924633082,
+      "late_rate": 0.9240605427974948,
+      "early_lift": -95,
+      "late_lift": 62,
+      "LOAD": 4529,
+      "TRUCK_DLVR": 2530,
+      "initial": 4609,
+      "DISCHARGE": 1641,
+      "TRUCK_RECV": 809,
+      "repeat": 1739,
+      "seconds": 8.082496832998004
+    },
+    {
+      "name": "M1_0.25",
+      "config": {
+        "mode": "expected_blocking",
+        "timing_key": "s3_next_feasible",
+        "epsilon": 0.05,
+        "sigma_hours": 12,
+        "lambda_empty": 0.0,
+        "lambda_gap": 0.0,
+        "initial_epsilon": 0.25
+      },
+      "total": 7088,
+      "early": 3555,
+      "late": 3533,
+      "early_rate": 0.7050773502578342,
+      "late_rate": 0.9219728601252609,
+      "early_lift": -132,
+      "late_lift": 70,
+      "LOAD": 4538,
+      "TRUCK_DLVR": 2550,
+      "initial": 4609,
+      "DISCHARGE": 1675,
+      "TRUCK_RECV": 804,
+      "repeat": 1763,
+      "seconds": 8.165243165974971
+    },
+    {
+      "name": "M1_0.30",
+      "config": {
+        "mode": "expected_blocking",
+        "timing_key": "s3_next_feasible",
+        "epsilon": 0.05,
+        "sigma_hours": 12,
+        "lambda_empty": 0.0,
+        "lambda_gap": 0.0,
+        "initial_epsilon": 0.3
+      },
+      "total": 7151,
+      "early": 3578,
+      "late": 3573,
+      "early_rate": 0.7096390321301072,
+      "late_rate": 0.93241127348643,
+      "early_lift": -155,
+      "late_lift": 30,
+      "LOAD": 4628,
+      "TRUCK_DLVR": 2523,
+      "initial": 4564,
+      "DISCHARGE": 1766,
+      "TRUCK_RECV": 821,
+      "repeat": 1773,
+      "seconds": 8.169231250009034
+    },
+    {
+      "name": "M2a_0.10",
+      "config": {
+        "mode": "expected_blocking",
+        "timing_key": "s3_next_feasible",
+        "epsilon": 0.05,
+        "sigma_hours": 12,
+        "lambda_empty": 0.0,
+        "lambda_gap": 0.0,
+        "expired_overdue_prob": 0.1
+      },
+      "total": 6768,
+      "early": 3434,
+      "late": 3334,
+      "early_rate": 0.6810789369297897,
+      "late_rate": 0.8700417536534447,
+      "early_lift": -11,
+      "late_lift": 269,
+      "LOAD": 4265,
+      "TRUCK_DLVR": 2503,
+      "initial": 4741,
+      "DISCHARGE": 1371,
+      "TRUCK_RECV": 656,
+      "repeat": 1716,
+      "seconds": 8.683033084031194
+    },
+    {
+      "name": "M2a_0.20",
+      "config": {
+        "mode": "expected_blocking",
+        "timing_key": "s3_next_feasible",
+        "epsilon": 0.05,
+        "sigma_hours": 12,
+        "lambda_empty": 0.0,
+        "lambda_gap": 0.0,
+        "expired_overdue_prob": 0.2
+      },
+      "total": 6771,
+      "early": 3421,
+      "late": 3350,
+      "early_rate": 0.6785005950019833,
+      "late_rate": 0.8742171189979123,
+      "early_lift": 2,
+      "late_lift": 253,
+      "LOAD": 4263,
+      "TRUCK_DLVR": 2508,
+      "initial": 4744,
+      "DISCHARGE": 1365,
+      "TRUCK_RECV": 662,
+      "repeat": 1713,
+      "seconds": 8.271544499963056
+    },
+    {
+      "name": "M2a_0.30",
+      "config": {
+        "mode": "expected_blocking",
+        "timing_key": "s3_next_feasible",
+        "epsilon": 0.05,
+        "sigma_hours": 12,
+        "lambda_empty": 0.0,
+        "lambda_gap": 0.0,
+        "expired_overdue_prob": 0.3
+      },
+      "total": 6853,
+      "early": 3431,
+      "late": 3422,
+      "early_rate": 0.6804839349464499,
+      "late_rate": 0.8930062630480167,
+      "early_lift": -8,
+      "late_lift": 181,
+      "LOAD": 4314,
+      "TRUCK_DLVR": 2539,
+      "initial": 4740,
+      "DISCHARGE": 1428,
+      "TRUCK_RECV": 685,
+      "repeat": 1753,
+      "seconds": 8.242366082966328
+    },
+    {
+      "name": "M2b_0.10",
+      "config": {
+        "mode": "expected_blocking",
+        "timing_key": "s3_next_feasible",
+        "epsilon": 0.05,
+        "sigma_hours": 12,
+        "lambda_empty": 0.0,
+        "lambda_gap": 0.0,
+        "all_overdue_prob": 0.1
+      },
+      "total": 7132,
+      "early": 3499,
+      "late": 3633,
+      "early_rate": 0.6939706465688219,
+      "late_rate": 0.9480688935281837,
+      "early_lift": -76,
+      "late_lift": -30,
+      "LOAD": 4687,
+      "TRUCK_DLVR": 2445,
+      "initial": 4881,
+      "DISCHARGE": 1562,
+      "TRUCK_RECV": 689,
+      "repeat": 1762,
+      "seconds": 8.557948707952164
+    },
+    {
+      "name": "M2b_0.20",
+      "config": {
+        "mode": "expected_blocking",
+        "timing_key": "s3_next_feasible",
+        "epsilon": 0.05,
+        "sigma_hours": 12,
+        "lambda_empty": 0.0,
+        "lambda_gap": 0.0,
+        "all_overdue_prob": 0.2
+      },
+      "total": 7181,
+      "early": 3522,
+      "late": 3659,
+      "early_rate": 0.6985323284410948,
+      "late_rate": 0.9548538622129437,
+      "early_lift": -99,
+      "late_lift": -56,
+      "LOAD": 4684,
+      "TRUCK_DLVR": 2497,
+      "initial": 4887,
+      "DISCHARGE": 1546,
+      "TRUCK_RECV": 748,
+      "repeat": 1811,
+      "seconds": 8.405922166013625
+    },
+    {
+      "name": "M2b_0.30",
+      "config": {
+        "mode": "expected_blocking",
+        "timing_key": "s3_next_feasible",
+        "epsilon": 0.05,
+        "sigma_hours": 12,
+        "lambda_empty": 0.0,
+        "lambda_gap": 0.0,
+        "all_overdue_prob": 0.3
+      },
+      "total": 7305,
+      "early": 3558,
+      "late": 3747,
+      "early_rate": 0.7056723522411741,
+      "late_rate": 0.9778183716075156,
+      "early_lift": -135,
+      "late_lift": -144,
+      "LOAD": 4784,
+      "TRUCK_DLVR": 2521,
+      "initial": 4929,
+      "DISCHARGE": 1618,
+      "TRUCK_RECV": 758,
+      "repeat": 1842,
+      "seconds": 8.430276083003264
+    },
+    {
+      "name": "M3_0.5_12",
+      "config": {
+        "mode": "expected_blocking",
+        "timing_key": "s3_next_feasible",
+        "epsilon": 0.05,
+        "sigma_hours": 12,
+        "lambda_empty": 0.0,
+        "lambda_gap": 0.0,
+        "intra_rotation_sigma_hours": 0.5
+      },
+      "total": 7004,
+      "early": 3510,
+      "late": 3494,
+      "early_rate": 0.696152320507735,
+      "late_rate": 0.9117954070981211,
+      "early_lift": -87,
+      "late_lift": 109,
+      "LOAD": 4442,
+      "TRUCK_DLVR": 2562,
+      "initial": 4704,
+      "DISCHARGE": 1642,
+      "TRUCK_RECV": 658,
+      "repeat": 1694,
+      "seconds": 9.767740875016898
+    },
+    {
+      "name": "M3_0.5_48",
+      "config": {
+        "mode": "expected_blocking",
+        "timing_key": "s3_next_feasible",
+        "epsilon": 0.05,
+        "sigma_hours": 48,
+        "lambda_empty": 0.0,
+        "lambda_gap": 0.0,
+        "intra_rotation_sigma_hours": 0.5
+      },
+      "total": 7046,
+      "early": 3502,
+      "late": 3544,
+      "early_rate": 0.6945656485521619,
+      "late_rate": 0.9248434237995825,
+      "early_lift": -79,
+      "late_lift": 59,
+      "LOAD": 4380,
+      "TRUCK_DLVR": 2666,
+      "initial": 4543,
+      "DISCHARGE": 1837,
+      "TRUCK_RECV": 666,
+      "repeat": 1738,
+      "seconds": 9.36049145803554
+    },
+    {
+      "name": "M3_2_12",
+      "config": {
+        "mode": "expected_blocking",
+        "timing_key": "s3_next_feasible",
+        "epsilon": 0.05,
+        "sigma_hours": 12,
+        "lambda_empty": 0.0,
+        "lambda_gap": 0.0,
+        "intra_rotation_sigma_hours": 2.0
+      },
+      "total": 6962,
+      "early": 3452,
+      "late": 3510,
+      "early_rate": 0.6846489488298294,
+      "late_rate": 0.9159707724425887,
+      "early_lift": -29,
+      "late_lift": 93,
+      "LOAD": 4418,
+      "TRUCK_DLVR": 2544,
+      "initial": 4749,
+      "DISCHARGE": 1540,
+      "TRUCK_RECV": 673,
+      "repeat": 1693,
+      "seconds": 9.63356250000652
+    },
+    {
+      "name": "M3_2_48",
+      "config": {
+        "mode": "expected_blocking",
+        "timing_key": "s3_next_feasible",
+        "epsilon": 0.05,
+        "sigma_hours": 48,
+        "lambda_empty": 0.0,
+        "lambda_gap": 0.0,
+        "intra_rotation_sigma_hours": 2.0
+      },
+      "total": 6974,
+      "early": 3396,
+      "late": 3578,
+      "early_rate": 0.6735422451408172,
+      "late_rate": 0.9337160751565762,
+      "early_lift": 27,
+      "late_lift": 25,
+      "LOAD": 4389,
+      "TRUCK_DLVR": 2585,
+      "initial": 4695,
+      "DISCHARGE": 1639,
+      "TRUCK_RECV": 640,
+      "repeat": 1645,
+      "seconds": 9.47497466695495
+    },
+    {
+      "name": "M4_14d",
+      "config": {
+        "mode": "expected_blocking",
+        "timing_key": "s3_next_feasible",
+        "epsilon": 0.05,
+        "sigma_hours": 12,
+        "lambda_empty": 0.0,
+        "lambda_gap": 0.0,
+        "missed_load_offset_hours": 336
+      },
+      "total": 6843,
+      "early": 3448,
+      "late": 3395,
+      "early_rate": 0.6838556128520429,
+      "late_rate": 0.8859603340292276,
+      "early_lift": -25,
+      "late_lift": 208,
+      "LOAD": 4427,
+      "TRUCK_DLVR": 2416,
+      "initial": 4795,
+      "DISCHARGE": 1426,
+      "TRUCK_RECV": 622,
+      "repeat": 1695,
+      "seconds": 8.816300999955274
+    },
+    {
+      "name": "M4_inf",
+      "config": {
+        "mode": "expected_blocking",
+        "timing_key": "s3_next_feasible",
+        "epsilon": 0.05,
+        "sigma_hours": 12,
+        "lambda_empty": 0.0,
+        "lambda_gap": 0.0,
+        "missed_load_offset_hours": "infinity"
+      },
+      "total": 6847,
+      "early": 3483,
+      "late": 3364,
+      "early_rate": 0.6907973026576755,
+      "late_rate": 0.8778705636743215,
+      "early_lift": -60,
+      "late_lift": 239,
+      "LOAD": 4458,
+      "TRUCK_DLVR": 2389,
+      "initial": 4826,
+      "DISCHARGE": 1388,
+      "TRUCK_RECV": 633,
+      "repeat": 1690,
+      "seconds": 7.439543332962785
+    }
+  ],
+  "A2_marginals": {
+    "Days1-12": {
+      "belief": {
+        "inversion": 108,
+        "safe": 1515
+      },
+      "blocker_origin": {
+        "DISCHARGE": 1368,
+        "TRUCK_RECV": 255
+      },
+      "missed_load_at_arrival": {
+        "False": 1564,
+        "True": 59
+      },
+      "blocker_unretrieved_at_period_end": {
+        "False": 244,
+        "True": 1379
+      },
+      "target_origin": {
+        "initial": 1192,
+        "new": 431
+      },
+      "target_state_at_placement": {
+        "active": 1374,
+        "scheduled_overdue": 249
+      },
+      "target_exit": {
+        "LOAD": 944,
+        "TRUCK_DLVR": 679
+      }
+    },
+    "Days13-20": {
+      "belief": {
+        "inversion": 266,
+        "safe": 1843,
+        "tie": 11
+      },
+      "blocker_origin": {
+        "DISCHARGE": 1522,
+        "TRUCK_RECV": 598
+      },
+      "missed_load_at_arrival": {
+        "False": 1546,
+        "True": 574
+      },
+      "blocker_unretrieved_at_period_end": {
+        "False": 421,
+        "True": 1699
+      },
+      "target_origin": {
+        "initial": 978,
+        "new": 1142
+      },
+      "target_state_at_placement": {
+        "active": 1169,
+        "no_future_rot_overdue": 13,
+        "scheduled_overdue": 938
+      },
+      "target_exit": {
+        "LOAD": 1278,
+        "TRUCK_DLVR": 842
+      }
+    }
+  },
+  "default_unchanged": true
+}

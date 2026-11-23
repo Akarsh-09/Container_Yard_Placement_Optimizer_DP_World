@@ -1,0 +1,2563 @@
+{
+  "A2": {
+    "sources": {
+      "Days1-12": {
+        "initial_unmoved": 1255,
+        "placed_by_strategy": 1623,
+        "placed_by_relocation": 545
+      },
+      "Days13-20": {
+        "placed_by_strategy": 2120,
+        "placed_by_relocation": 1205,
+        "initial_unmoved": 278
+      }
+    },
+    "source_by_target_exit": {
+      "Days1-12": {
+        "initial_unmoved/TRUCK_DLVR": 364,
+        "placed_by_strategy/TRUCK_DLVR": 679,
+        "initial_unmoved/LOAD": 891,
+        "placed_by_relocation/LOAD": 383,
+        "placed_by_strategy/LOAD": 944,
+        "placed_by_relocation/TRUCK_DLVR": 162
+      },
+      "Days13-20": {
+        "placed_by_strategy/TRUCK_DLVR": 842,
+        "placed_by_relocation/TRUCK_DLVR": 387,
+        "initial_unmoved/TRUCK_DLVR": 95,
+        "placed_by_relocation/LOAD": 818,
+        "placed_by_strategy/LOAD": 1278,
+        "initial_unmoved/LOAD": 183
+      }
+    },
+    "strategy_placement_cells": [
+      {
+        "period": "Days1-12",
+        "belief": "inversion",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": false,
+        "target_origin": "initial",
+        "target_state_at_placement": "active",
+        "target_exit": "LOAD",
+        "count": 11
+      },
+      {
+        "period": "Days1-12",
+        "belief": "inversion",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": false,
+        "target_origin": "new",
+        "target_state_at_placement": "active",
+        "target_exit": "LOAD",
+        "count": 3
+      },
+      {
+        "period": "Days1-12",
+        "belief": "inversion",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "active",
+        "target_exit": "LOAD",
+        "count": 25
+      },
+      {
+        "period": "Days1-12",
+        "belief": "inversion",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "active",
+        "target_exit": "TRUCK_DLVR",
+        "count": 2
+      },
+      {
+        "period": "Days1-12",
+        "belief": "inversion",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "LOAD",
+        "count": 2
+      },
+      {
+        "period": "Days1-12",
+        "belief": "inversion",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "active",
+        "target_exit": "LOAD",
+        "count": 11
+      },
+      {
+        "period": "Days1-12",
+        "belief": "inversion",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "active",
+        "target_exit": "TRUCK_DLVR",
+        "count": 1
+      },
+      {
+        "period": "Days1-12",
+        "belief": "inversion",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "LOAD",
+        "count": 2
+      },
+      {
+        "period": "Days1-12",
+        "belief": "inversion",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "active",
+        "target_exit": "LOAD",
+        "count": 6
+      },
+      {
+        "period": "Days1-12",
+        "belief": "inversion",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "active",
+        "target_exit": "TRUCK_DLVR",
+        "count": 5
+      },
+      {
+        "period": "Days1-12",
+        "belief": "inversion",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "LOAD",
+        "count": 1
+      },
+      {
+        "period": "Days1-12",
+        "belief": "inversion",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "active",
+        "target_exit": "LOAD",
+        "count": 4
+      },
+      {
+        "period": "Days1-12",
+        "belief": "inversion",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "LOAD",
+        "count": 1
+      },
+      {
+        "period": "Days1-12",
+        "belief": "inversion",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": false,
+        "target_origin": "initial",
+        "target_state_at_placement": "active",
+        "target_exit": "LOAD",
+        "count": 8
+      },
+      {
+        "period": "Days1-12",
+        "belief": "inversion",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": false,
+        "target_origin": "new",
+        "target_state_at_placement": "active",
+        "target_exit": "LOAD",
+        "count": 4
+      },
+      {
+        "period": "Days1-12",
+        "belief": "inversion",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": false,
+        "target_origin": "new",
+        "target_state_at_placement": "active",
+        "target_exit": "TRUCK_DLVR",
+        "count": 1
+      },
+      {
+        "period": "Days1-12",
+        "belief": "inversion",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "active",
+        "target_exit": "LOAD",
+        "count": 7
+      },
+      {
+        "period": "Days1-12",
+        "belief": "inversion",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "active",
+        "target_exit": "TRUCK_DLVR",
+        "count": 1
+      },
+      {
+        "period": "Days1-12",
+        "belief": "inversion",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "LOAD",
+        "count": 1
+      },
+      {
+        "period": "Days1-12",
+        "belief": "inversion",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "active",
+        "target_exit": "LOAD",
+        "count": 6
+      },
+      {
+        "period": "Days1-12",
+        "belief": "inversion",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "active",
+        "target_exit": "TRUCK_DLVR",
+        "count": 1
+      },
+      {
+        "period": "Days1-12",
+        "belief": "inversion",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "LOAD",
+        "count": 2
+      },
+      {
+        "period": "Days1-12",
+        "belief": "inversion",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "TRUCK_DLVR",
+        "count": 1
+      },
+      {
+        "period": "Days1-12",
+        "belief": "inversion",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "active",
+        "target_exit": "LOAD",
+        "count": 1
+      },
+      {
+        "period": "Days1-12",
+        "belief": "inversion",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "TRUCK_DLVR",
+        "count": 1
+      },
+      {
+        "period": "Days1-12",
+        "belief": "safe",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": false,
+        "target_origin": "initial",
+        "target_state_at_placement": "active",
+        "target_exit": "LOAD",
+        "count": 72
+      },
+      {
+        "period": "Days1-12",
+        "belief": "safe",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": false,
+        "target_origin": "initial",
+        "target_state_at_placement": "active",
+        "target_exit": "TRUCK_DLVR",
+        "count": 60
+      },
+      {
+        "period": "Days1-12",
+        "belief": "safe",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": false,
+        "target_origin": "initial",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "TRUCK_DLVR",
+        "count": 8
+      },
+      {
+        "period": "Days1-12",
+        "belief": "safe",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": false,
+        "target_origin": "new",
+        "target_state_at_placement": "active",
+        "target_exit": "LOAD",
+        "count": 13
+      },
+      {
+        "period": "Days1-12",
+        "belief": "safe",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": false,
+        "target_origin": "new",
+        "target_state_at_placement": "active",
+        "target_exit": "TRUCK_DLVR",
+        "count": 10
+      },
+      {
+        "period": "Days1-12",
+        "belief": "safe",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": false,
+        "target_origin": "new",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "TRUCK_DLVR",
+        "count": 21
+      },
+      {
+        "period": "Days1-12",
+        "belief": "safe",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "active",
+        "target_exit": "LOAD",
+        "count": 507
+      },
+      {
+        "period": "Days1-12",
+        "belief": "safe",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "active",
+        "target_exit": "TRUCK_DLVR",
+        "count": 244
+      },
+      {
+        "period": "Days1-12",
+        "belief": "safe",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "LOAD",
+        "count": 4
+      },
+      {
+        "period": "Days1-12",
+        "belief": "safe",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "TRUCK_DLVR",
+        "count": 41
+      },
+      {
+        "period": "Days1-12",
+        "belief": "safe",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "active",
+        "target_exit": "LOAD",
+        "count": 142
+      },
+      {
+        "period": "Days1-12",
+        "belief": "safe",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "active",
+        "target_exit": "TRUCK_DLVR",
+        "count": 39
+      },
+      {
+        "period": "Days1-12",
+        "belief": "safe",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "LOAD",
+        "count": 28
+      },
+      {
+        "period": "Days1-12",
+        "belief": "safe",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "TRUCK_DLVR",
+        "count": 81
+      },
+      {
+        "period": "Days1-12",
+        "belief": "safe",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "active",
+        "target_exit": "TRUCK_DLVR",
+        "count": 11
+      },
+      {
+        "period": "Days1-12",
+        "belief": "safe",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "TRUCK_DLVR",
+        "count": 5
+      },
+      {
+        "period": "Days1-12",
+        "belief": "safe",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "active",
+        "target_exit": "TRUCK_DLVR",
+        "count": 1
+      },
+      {
+        "period": "Days1-12",
+        "belief": "safe",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "TRUCK_DLVR",
+        "count": 7
+      },
+      {
+        "period": "Days1-12",
+        "belief": "safe",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": false,
+        "target_origin": "initial",
+        "target_state_at_placement": "active",
+        "target_exit": "LOAD",
+        "count": 3
+      },
+      {
+        "period": "Days1-12",
+        "belief": "safe",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": false,
+        "target_origin": "initial",
+        "target_state_at_placement": "active",
+        "target_exit": "TRUCK_DLVR",
+        "count": 18
+      },
+      {
+        "period": "Days1-12",
+        "belief": "safe",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": false,
+        "target_origin": "initial",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "TRUCK_DLVR",
+        "count": 1
+      },
+      {
+        "period": "Days1-12",
+        "belief": "safe",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": false,
+        "target_origin": "new",
+        "target_state_at_placement": "active",
+        "target_exit": "LOAD",
+        "count": 1
+      },
+      {
+        "period": "Days1-12",
+        "belief": "safe",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": false,
+        "target_origin": "new",
+        "target_state_at_placement": "active",
+        "target_exit": "TRUCK_DLVR",
+        "count": 3
+      },
+      {
+        "period": "Days1-12",
+        "belief": "safe",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": false,
+        "target_origin": "new",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "TRUCK_DLVR",
+        "count": 7
+      },
+      {
+        "period": "Days1-12",
+        "belief": "safe",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "active",
+        "target_exit": "LOAD",
+        "count": 64
+      },
+      {
+        "period": "Days1-12",
+        "belief": "safe",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "active",
+        "target_exit": "TRUCK_DLVR",
+        "count": 61
+      },
+      {
+        "period": "Days1-12",
+        "belief": "safe",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "LOAD",
+        "count": 1
+      },
+      {
+        "period": "Days1-12",
+        "belief": "safe",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "TRUCK_DLVR",
+        "count": 12
+      },
+      {
+        "period": "Days1-12",
+        "belief": "safe",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "active",
+        "target_exit": "LOAD",
+        "count": 11
+      },
+      {
+        "period": "Days1-12",
+        "belief": "safe",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "active",
+        "target_exit": "TRUCK_DLVR",
+        "count": 10
+      },
+      {
+        "period": "Days1-12",
+        "belief": "safe",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "LOAD",
+        "count": 2
+      },
+      {
+        "period": "Days1-12",
+        "belief": "safe",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "TRUCK_DLVR",
+        "count": 11
+      },
+      {
+        "period": "Days1-12",
+        "belief": "safe",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "active",
+        "target_exit": "LOAD",
+        "count": 1
+      },
+      {
+        "period": "Days1-12",
+        "belief": "safe",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "active",
+        "target_exit": "TRUCK_DLVR",
+        "count": 6
+      },
+      {
+        "period": "Days1-12",
+        "belief": "safe",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "TRUCK_DLVR",
+        "count": 2
+      },
+      {
+        "period": "Days1-12",
+        "belief": "safe",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "TRUCK_DLVR",
+        "count": 7
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": false,
+        "target_origin": "initial",
+        "target_state_at_placement": "active",
+        "target_exit": "LOAD",
+        "count": 10
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": false,
+        "target_origin": "initial",
+        "target_state_at_placement": "active",
+        "target_exit": "TRUCK_DLVR",
+        "count": 5
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": false,
+        "target_origin": "initial",
+        "target_state_at_placement": "no_future_rot_overdue",
+        "target_exit": "TRUCK_DLVR",
+        "count": 1
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": false,
+        "target_origin": "initial",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "LOAD",
+        "count": 4
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": false,
+        "target_origin": "new",
+        "target_state_at_placement": "active",
+        "target_exit": "LOAD",
+        "count": 24
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": false,
+        "target_origin": "new",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "LOAD",
+        "count": 10
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "active",
+        "target_exit": "LOAD",
+        "count": 11
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "active",
+        "target_exit": "TRUCK_DLVR",
+        "count": 1
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "no_future_rot_overdue",
+        "target_exit": "TRUCK_DLVR",
+        "count": 1
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "LOAD",
+        "count": 4
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "active",
+        "target_exit": "LOAD",
+        "count": 6
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "active",
+        "target_exit": "TRUCK_DLVR",
+        "count": 2
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "no_future_rot_overdue",
+        "target_exit": "TRUCK_DLVR",
+        "count": 2
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "LOAD",
+        "count": 12
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "TRUCK_DLVR",
+        "count": 1
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "active",
+        "target_exit": "LOAD",
+        "count": 2
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "no_future_rot_overdue",
+        "target_exit": "TRUCK_DLVR",
+        "count": 1
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "LOAD",
+        "count": 5
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "TRUCK_DLVR",
+        "count": 1
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "active",
+        "target_exit": "LOAD",
+        "count": 6
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "active",
+        "target_exit": "TRUCK_DLVR",
+        "count": 3
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "no_future_rot_overdue",
+        "target_exit": "TRUCK_DLVR",
+        "count": 1
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "LOAD",
+        "count": 10
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "TRUCK_DLVR",
+        "count": 1
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": false,
+        "target_origin": "initial",
+        "target_state_at_placement": "active",
+        "target_exit": "LOAD",
+        "count": 5
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": false,
+        "target_origin": "initial",
+        "target_state_at_placement": "active",
+        "target_exit": "TRUCK_DLVR",
+        "count": 2
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": false,
+        "target_origin": "initial",
+        "target_state_at_placement": "no_future_rot_overdue",
+        "target_exit": "TRUCK_DLVR",
+        "count": 2
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": false,
+        "target_origin": "initial",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "LOAD",
+        "count": 3
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": false,
+        "target_origin": "initial",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "TRUCK_DLVR",
+        "count": 1
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": false,
+        "target_origin": "new",
+        "target_state_at_placement": "active",
+        "target_exit": "LOAD",
+        "count": 7
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": false,
+        "target_origin": "new",
+        "target_state_at_placement": "active",
+        "target_exit": "TRUCK_DLVR",
+        "count": 4
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": false,
+        "target_origin": "new",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "LOAD",
+        "count": 12
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "active",
+        "target_exit": "LOAD",
+        "count": 11
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "active",
+        "target_exit": "TRUCK_DLVR",
+        "count": 3
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "no_future_rot_overdue",
+        "target_exit": "TRUCK_DLVR",
+        "count": 3
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "LOAD",
+        "count": 7
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "TRUCK_DLVR",
+        "count": 1
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "active",
+        "target_exit": "LOAD",
+        "count": 9
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "active",
+        "target_exit": "TRUCK_DLVR",
+        "count": 3
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "LOAD",
+        "count": 28
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "TRUCK_DLVR",
+        "count": 2
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "active",
+        "target_exit": "LOAD",
+        "count": 3
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "no_future_rot_overdue",
+        "target_exit": "TRUCK_DLVR",
+        "count": 1
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "LOAD",
+        "count": 4
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "TRUCK_DLVR",
+        "count": 2
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "active",
+        "target_exit": "LOAD",
+        "count": 8
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "active",
+        "target_exit": "TRUCK_DLVR",
+        "count": 3
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "no_future_rot_overdue",
+        "target_exit": "TRUCK_DLVR",
+        "count": 1
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "LOAD",
+        "count": 15
+      },
+      {
+        "period": "Days13-20",
+        "belief": "inversion",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "TRUCK_DLVR",
+        "count": 2
+      },
+      {
+        "period": "Days13-20",
+        "belief": "safe",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": false,
+        "target_origin": "initial",
+        "target_state_at_placement": "active",
+        "target_exit": "LOAD",
+        "count": 50
+      },
+      {
+        "period": "Days13-20",
+        "belief": "safe",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": false,
+        "target_origin": "initial",
+        "target_state_at_placement": "active",
+        "target_exit": "TRUCK_DLVR",
+        "count": 48
+      },
+      {
+        "period": "Days13-20",
+        "belief": "safe",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": false,
+        "target_origin": "initial",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "LOAD",
+        "count": 8
+      },
+      {
+        "period": "Days13-20",
+        "belief": "safe",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": false,
+        "target_origin": "initial",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "TRUCK_DLVR",
+        "count": 14
+      },
+      {
+        "period": "Days13-20",
+        "belief": "safe",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": false,
+        "target_origin": "new",
+        "target_state_at_placement": "active",
+        "target_exit": "LOAD",
+        "count": 19
+      },
+      {
+        "period": "Days13-20",
+        "belief": "safe",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": false,
+        "target_origin": "new",
+        "target_state_at_placement": "active",
+        "target_exit": "TRUCK_DLVR",
+        "count": 30
+      },
+      {
+        "period": "Days13-20",
+        "belief": "safe",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": false,
+        "target_origin": "new",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "LOAD",
+        "count": 34
+      },
+      {
+        "period": "Days13-20",
+        "belief": "safe",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": false,
+        "target_origin": "new",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "TRUCK_DLVR",
+        "count": 36
+      },
+      {
+        "period": "Days13-20",
+        "belief": "safe",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "active",
+        "target_exit": "LOAD",
+        "count": 163
+      },
+      {
+        "period": "Days13-20",
+        "belief": "safe",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "active",
+        "target_exit": "TRUCK_DLVR",
+        "count": 111
+      },
+      {
+        "period": "Days13-20",
+        "belief": "safe",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "LOAD",
+        "count": 79
+      },
+      {
+        "period": "Days13-20",
+        "belief": "safe",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "TRUCK_DLVR",
+        "count": 42
+      },
+      {
+        "period": "Days13-20",
+        "belief": "safe",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "active",
+        "target_exit": "LOAD",
+        "count": 106
+      },
+      {
+        "period": "Days13-20",
+        "belief": "safe",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "active",
+        "target_exit": "TRUCK_DLVR",
+        "count": 38
+      },
+      {
+        "period": "Days13-20",
+        "belief": "safe",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "LOAD",
+        "count": 182
+      },
+      {
+        "period": "Days13-20",
+        "belief": "safe",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "TRUCK_DLVR",
+        "count": 68
+      },
+      {
+        "period": "Days13-20",
+        "belief": "safe",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "active",
+        "target_exit": "LOAD",
+        "count": 47
+      },
+      {
+        "period": "Days13-20",
+        "belief": "safe",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "active",
+        "target_exit": "TRUCK_DLVR",
+        "count": 43
+      },
+      {
+        "period": "Days13-20",
+        "belief": "safe",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "LOAD",
+        "count": 37
+      },
+      {
+        "period": "Days13-20",
+        "belief": "safe",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "TRUCK_DLVR",
+        "count": 18
+      },
+      {
+        "period": "Days13-20",
+        "belief": "safe",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "active",
+        "target_exit": "LOAD",
+        "count": 64
+      },
+      {
+        "period": "Days13-20",
+        "belief": "safe",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "active",
+        "target_exit": "TRUCK_DLVR",
+        "count": 43
+      },
+      {
+        "period": "Days13-20",
+        "belief": "safe",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "LOAD",
+        "count": 67
+      },
+      {
+        "period": "Days13-20",
+        "belief": "safe",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "TRUCK_DLVR",
+        "count": 42
+      },
+      {
+        "period": "Days13-20",
+        "belief": "safe",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": false,
+        "target_origin": "initial",
+        "target_state_at_placement": "active",
+        "target_exit": "LOAD",
+        "count": 11
+      },
+      {
+        "period": "Days13-20",
+        "belief": "safe",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": false,
+        "target_origin": "initial",
+        "target_state_at_placement": "active",
+        "target_exit": "TRUCK_DLVR",
+        "count": 40
+      },
+      {
+        "period": "Days13-20",
+        "belief": "safe",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": false,
+        "target_origin": "initial",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "LOAD",
+        "count": 1
+      },
+      {
+        "period": "Days13-20",
+        "belief": "safe",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": false,
+        "target_origin": "initial",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "TRUCK_DLVR",
+        "count": 5
+      },
+      {
+        "period": "Days13-20",
+        "belief": "safe",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": false,
+        "target_origin": "new",
+        "target_state_at_placement": "active",
+        "target_exit": "TRUCK_DLVR",
+        "count": 10
+      },
+      {
+        "period": "Days13-20",
+        "belief": "safe",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": false,
+        "target_origin": "new",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "LOAD",
+        "count": 1
+      },
+      {
+        "period": "Days13-20",
+        "belief": "safe",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": false,
+        "target_origin": "new",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "TRUCK_DLVR",
+        "count": 22
+      },
+      {
+        "period": "Days13-20",
+        "belief": "safe",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "active",
+        "target_exit": "LOAD",
+        "count": 38
+      },
+      {
+        "period": "Days13-20",
+        "belief": "safe",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "active",
+        "target_exit": "TRUCK_DLVR",
+        "count": 40
+      },
+      {
+        "period": "Days13-20",
+        "belief": "safe",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "LOAD",
+        "count": 11
+      },
+      {
+        "period": "Days13-20",
+        "belief": "safe",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "TRUCK_DLVR",
+        "count": 15
+      },
+      {
+        "period": "Days13-20",
+        "belief": "safe",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "active",
+        "target_exit": "LOAD",
+        "count": 28
+      },
+      {
+        "period": "Days13-20",
+        "belief": "safe",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "active",
+        "target_exit": "TRUCK_DLVR",
+        "count": 17
+      },
+      {
+        "period": "Days13-20",
+        "belief": "safe",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "LOAD",
+        "count": 38
+      },
+      {
+        "period": "Days13-20",
+        "belief": "safe",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "TRUCK_DLVR",
+        "count": 37
+      },
+      {
+        "period": "Days13-20",
+        "belief": "safe",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "active",
+        "target_exit": "LOAD",
+        "count": 17
+      },
+      {
+        "period": "Days13-20",
+        "belief": "safe",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "active",
+        "target_exit": "TRUCK_DLVR",
+        "count": 33
+      },
+      {
+        "period": "Days13-20",
+        "belief": "safe",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "LOAD",
+        "count": 4
+      },
+      {
+        "period": "Days13-20",
+        "belief": "safe",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "TRUCK_DLVR",
+        "count": 7
+      },
+      {
+        "period": "Days13-20",
+        "belief": "safe",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "active",
+        "target_exit": "LOAD",
+        "count": 24
+      },
+      {
+        "period": "Days13-20",
+        "belief": "safe",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "active",
+        "target_exit": "TRUCK_DLVR",
+        "count": 14
+      },
+      {
+        "period": "Days13-20",
+        "belief": "safe",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "LOAD",
+        "count": 24
+      },
+      {
+        "period": "Days13-20",
+        "belief": "safe",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "TRUCK_DLVR",
+        "count": 17
+      },
+      {
+        "period": "Days13-20",
+        "belief": "tie",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": false,
+        "target_origin": "new",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "TRUCK_DLVR",
+        "count": 1
+      },
+      {
+        "period": "Days13-20",
+        "belief": "tie",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "initial",
+        "target_state_at_placement": "active",
+        "target_exit": "LOAD",
+        "count": 2
+      },
+      {
+        "period": "Days13-20",
+        "belief": "tie",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "active",
+        "target_exit": "LOAD",
+        "count": 2
+      },
+      {
+        "period": "Days13-20",
+        "belief": "tie",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "LOAD",
+        "count": 1
+      },
+      {
+        "period": "Days13-20",
+        "belief": "tie",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "active",
+        "target_exit": "LOAD",
+        "count": 2
+      },
+      {
+        "period": "Days13-20",
+        "belief": "tie",
+        "blocker_origin": "DISCHARGE",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "LOAD",
+        "count": 1
+      },
+      {
+        "period": "Days13-20",
+        "belief": "tie",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": false,
+        "blocker_unretrieved_at_period_end": false,
+        "target_origin": "new",
+        "target_state_at_placement": "scheduled_overdue",
+        "target_exit": "LOAD",
+        "count": 1
+      },
+      {
+        "period": "Days13-20",
+        "belief": "tie",
+        "blocker_origin": "TRUCK_RECV",
+        "missed_load_at_arrival": true,
+        "blocker_unretrieved_at_period_end": true,
+        "target_origin": "new",
+        "target_state_at_placement": "active",
+        "target_exit": "TRUCK_DLVR",
+        "count": 1
+      }
+    ],
+    "interpretation": "Most recent landing provenance, not counterfactual causal responsibility. Fit-period censor labels stop at Jan13; late labels stop at Jan21."
+  },
+  "A3_exposure": {
+    "Days1-12": {
+      "scanned_residents": 36901200,
+      "no_future_rotation": 4206608,
+      "truck_only": 3692889,
+      "no_future_rot_overdue": 683006,
+      "truck_only_overdue": 169287,
+      "scheduled_past_final": 513719,
+      "scheduled_past_final_overdue": 513719
+    },
+    "Days13-20": {
+      "scanned_residents": 18849695,
+      "no_future_rotation": 3221658,
+      "truck_only": 1529235,
+      "scheduled_past_final": 1692423,
+      "no_future_rot_overdue": 2405277,
+      "scheduled_past_final_overdue": 1687229,
+      "truck_only_overdue": 718048
+    }
+  },
+  "A1": {
+    "Greedy": {
+      "five_day/1-5": {
+        "retrievals": 2854,
+        "found": 1793,
+        "reshuffles": 1394,
+        "found_rate": 0.7774679308421639,
+        "official_rate": 0.48843728100911005
+      },
+      "five_day/6-10": {
+        "retrievals": 2702,
+        "found": 2524,
+        "reshuffles": 2055,
+        "found_rate": 0.8141838351822503,
+        "official_rate": 0.7605477424130274
+      },
+      "five_day/11-15": {
+        "retrievals": 1135,
+        "found": 1048,
+        "reshuffles": 1060,
+        "found_rate": 1.0114503816793894,
+        "official_rate": 0.933920704845815
+      },
+      "five_day/16-20": {
+        "retrievals": 3516,
+        "found": 3509,
+        "reshuffles": 3527,
+        "found_rate": 1.005129666571673,
+        "official_rate": 1.0031285551763367
+      }
+    },
+    "Selected": {
+      "five_day/1-5": {
+        "retrievals": 2854,
+        "found": 1793,
+        "reshuffles": 1062,
+        "found_rate": 0.5923034021193531,
+        "official_rate": 0.3721093202522775
+      },
+      "five_day/6-10": {
+        "retrievals": 2702,
+        "found": 2524,
+        "reshuffles": 1791,
+        "found_rate": 0.7095879556259905,
+        "official_rate": 0.6628423390081422
+      },
+      "five_day/11-15": {
+        "retrievals": 1135,
+        "found": 1048,
+        "reshuffles": 963,
+        "found_rate": 0.9188931297709924,
+        "official_rate": 0.8484581497797357
+      },
+      "five_day/16-20": {
+        "retrievals": 3516,
+        "found": 3509,
+        "reshuffles": 3210,
+        "found_rate": 0.91479053861499,
+        "official_rate": 0.9129692832764505
+      }
+    },
+    "H1": {
+      "five_day/1-5": {
+        "retrievals": 2854,
+        "found": 1793,
+        "reshuffles": 790,
+        "found_rate": 0.44060234244283325,
+        "official_rate": 0.27680448493342674
+      },
+      "five_day/6-10": {
+        "retrievals": 2702,
+        "found": 2524,
+        "reshuffles": 559,
+        "found_rate": 0.22147385103011094,
+        "official_rate": 0.2068837897853442
+      },
+      "five_day/11-15": {
+        "retrievals": 1135,
+        "found": 1048,
+        "reshuffles": 200,
+        "found_rate": 0.19083969465648856,
+        "official_rate": 0.1762114537444934
+      },
+      "five_day/16-20": {
+        "retrievals": 3516,
+        "found": 3509,
+        "reshuffles": 412,
+        "found_rate": 0.11741236819606725,
+        "official_rate": 0.11717861205915814
+      }
+    }
+  },
+  "A3_schedule": {
+    "earliest_eta": "2025-01-01T19:11:30",
+    "latest_etd": "2025-02-10T00:01:31",
+    "rotation_ETD_counts": {
+      "Days1-12": 13,
+      "Days13-20": 6,
+      "Days21+": 18
+    },
+    "load_end_counts": {
+      "Days1-12": 13,
+      "Days13-20": 6,
+      "Days21+": 18
+    }
+  },
+  "A4": {
+    "missed_LOAD_fit": {
+      "arrived_by_Day12": 364,
+      "retrieved_by_Day12": 0
+    },
+    "pairwise": {
+      "sampled_pairs": 218528,
+      "eligible_pairs": 128693,
+      "same_seed_sample_verified": true,
+      "tables": {
+        "raw/different_or_fallback": [
+          {
+            "bin": "<-72",
+            "n": 21827,
+            "resident_first": 6280,
+            "probability": 0.287717047693224
+          },
+          {
+            "bin": "[-72,-24)",
+            "n": 16158,
+            "resident_first": 2678,
+            "probability": 0.16573833395222182
+          },
+          {
+            "bin": "[-24,-6)",
+            "n": 8087,
+            "resident_first": 3182,
+            "probability": 0.3934710028440707
+          },
+          {
+            "bin": "[-6,0)",
+            "n": 1646,
+            "resident_first": 914,
+            "probability": 0.5552855407047388
+          },
+          {
+            "bin": "0",
+            "n": 0,
+            "resident_first": 0,
+            "probability": null
+          },
+          {
+            "bin": "(0,6]",
+            "n": 1412,
+            "resident_first": 581,
+            "probability": 0.4114730878186969
+          },
+          {
+            "bin": "(6,24]",
+            "n": 5432,
+            "resident_first": 2206,
+            "probability": 0.4061119293078056
+          },
+          {
+            "bin": "(24,72]",
+            "n": 11520,
+            "resident_first": 5136,
+            "probability": 0.44583333333333336
+          },
+          {
+            "bin": ">72",
+            "n": 50694,
+            "resident_first": 13056,
+            "probability": 0.2575452716297787
+          }
+        ],
+        "s2_rollover/different_or_fallback": [
+          {
+            "bin": "<-72",
+            "n": 7461,
+            "resident_first": 4608,
+            "probability": 0.617611580217129
+          },
+          {
+            "bin": "[-72,-24)",
+            "n": 3277,
+            "resident_first": 1405,
+            "probability": 0.4287458040891059
+          },
+          {
+            "bin": "[-24,-6)",
+            "n": 6209,
+            "resident_first": 3003,
+            "probability": 0.4836527621195039
+          },
+          {
+            "bin": "[-6,0)",
+            "n": 1967,
+            "resident_first": 1077,
+            "probability": 0.5475343162175902
+          },
+          {
+            "bin": "0",
+            "n": 0,
+            "resident_first": 0,
+            "probability": null
+          },
+          {
+            "bin": "(0,6]",
+            "n": 1466,
+            "resident_first": 554,
+            "probability": 0.37789904502046384
+          },
+          {
+            "bin": "(6,24]",
+            "n": 5582,
+            "resident_first": 2006,
+            "probability": 0.3593694016481548
+          },
+          {
+            "bin": "(24,72]",
+            "n": 11768,
+            "resident_first": 5178,
+            "probability": 0.440006798096533
+          },
+          {
+            "bin": ">72",
+            "n": 79046,
+            "resident_first": 16202,
+            "probability": 0.2049692584064975
+          }
+        ],
+        "s3_next_feasible/different_or_fallback": [
+          {
+            "bin": "<-72",
+            "n": 6739,
+            "resident_first": 4543,
+            "probability": 0.674135628431518
+          },
+          {
+            "bin": "[-72,-24)",
+            "n": 4842,
+            "resident_first": 2141,
+            "probability": 0.44217265592730276
+          },
+          {
+            "bin": "[-24,-6)",
+            "n": 7861,
+            "resident_first": 3756,
+            "probability": 0.477801806385956
+          },
+          {
+            "bin": "[-6,0)",
+            "n": 2801,
+            "resident_first": 1543,
+            "probability": 0.5508746876115673
+          },
+          {
+            "bin": "0",
+            "n": 0,
+            "resident_first": 0,
+            "probability": null
+          },
+          {
+            "bin": "(0,6]",
+            "n": 2203,
+            "resident_first": 866,
+            "probability": 0.3931003177485247
+          },
+          {
+            "bin": "(6,24]",
+            "n": 7414,
+            "resident_first": 2701,
+            "probability": 0.3643107634205557
+          },
+          {
+            "bin": "(24,72]",
+            "n": 15475,
+            "resident_first": 6689,
+            "probability": 0.4322455573505654
+          },
+          {
+            "bin": ">72",
+            "n": 69441,
+            "resident_first": 11794,
+            "probability": 0.16984202416439856
+          }
+        ],
+        "raw/same_S3_rotation": [
+          {
+            "bin": "<-72",
+            "n": 862,
+            "resident_first": 392,
+            "probability": 0.4547563805104408
+          },
+          {
+            "bin": "[-72,-24)",
+            "n": 0,
+            "resident_first": 0,
+            "probability": null
+          },
+          {
+            "bin": "[-24,-6)",
+            "n": 0,
+            "resident_first": 0,
+            "probability": null
+          },
+          {
+            "bin": "[-6,0)",
+            "n": 0,
+            "resident_first": 0,
+            "probability": null
+          },
+          {
+            "bin": "0",
+            "n": 8382,
+            "resident_first": 4034,
+            "probability": 0.4812693867811978
+          },
+          {
+            "bin": "(0,6]",
+            "n": 0,
+            "resident_first": 0,
+            "probability": null
+          },
+          {
+            "bin": "(6,24]",
+            "n": 0,
+            "resident_first": 0,
+            "probability": null
+          },
+          {
+            "bin": "(24,72]",
+            "n": 0,
+            "resident_first": 0,
+            "probability": null
+          },
+          {
+            "bin": ">72",
+            "n": 2673,
+            "resident_first": 1284,
+            "probability": 0.48035914702581367
+          }
+        ],
+        "s2_rollover/same_S3_rotation": [
+          {
+            "bin": "<-72",
+            "n": 213,
+            "resident_first": 100,
+            "probability": 0.4694835680751174
+          },
+          {
+            "bin": "[-72,-24)",
+            "n": 0,
+            "resident_first": 0,
+            "probability": null
+          },
+          {
+            "bin": "[-24,-6)",
+            "n": 533,
+            "resident_first": 321,
+            "probability": 0.6022514071294559
+          },
+          {
+            "bin": "[-6,0)",
+            "n": 3560,
+            "resident_first": 2186,
+            "probability": 0.6140449438202247
+          },
+          {
+            "bin": "0",
+            "n": 910,
+            "resident_first": 437,
+            "probability": 0.48021978021978023
+          },
+          {
+            "bin": "(0,6]",
+            "n": 3576,
+            "resident_first": 1236,
+            "probability": 0.34563758389261745
+          },
+          {
+            "bin": "(6,24]",
+            "n": 452,
+            "resident_first": 146,
+            "probability": 0.3230088495575221
+          },
+          {
+            "bin": "(24,72]",
+            "n": 0,
+            "resident_first": 0,
+            "probability": null
+          },
+          {
+            "bin": ">72",
+            "n": 2673,
+            "resident_first": 1284,
+            "probability": 0.48035914702581367
+          }
+        ],
+        "s3_next_feasible/same_S3_rotation": [
+          {
+            "bin": "<-72",
+            "n": 0,
+            "resident_first": 0,
+            "probability": null
+          },
+          {
+            "bin": "[-72,-24)",
+            "n": 0,
+            "resident_first": 0,
+            "probability": null
+          },
+          {
+            "bin": "[-24,-6)",
+            "n": 683,
+            "resident_first": 395,
+            "probability": 0.5783308931185944
+          },
+          {
+            "bin": "[-6,0)",
+            "n": 4758,
+            "resident_first": 2841,
+            "probability": 0.5970996216897856
+          },
+          {
+            "bin": "0",
+            "n": 1176,
+            "resident_first": 565,
+            "probability": 0.4804421768707483
+          },
+          {
+            "bin": "(0,6]",
+            "n": 4713,
+            "resident_first": 1712,
+            "probability": 0.36325058349246764
+          },
+          {
+            "bin": "(6,24]",
+            "n": 587,
+            "resident_first": 197,
+            "probability": 0.33560477001703576
+          },
+          {
+            "bin": "(24,72]",
+            "n": 0,
+            "resident_first": 0,
+            "probability": null
+          },
+          {
+            "bin": ">72",
+            "n": 0,
+            "resident_first": 0,
+            "probability": null
+          }
+        ],
+        "raw/no_future_rot_overdue": [
+          {
+            "bin": "<-72",
+            "n": 810,
+            "resident_first": 125,
+            "probability": 0.15432098765432098
+          },
+          {
+            "bin": "[-72,-24)",
+            "n": 270,
+            "resident_first": 3,
+            "probability": 0.011111111111111112
+          },
+          {
+            "bin": "[-24,-6)",
+            "n": 42,
+            "resident_first": 2,
+            "probability": 0.047619047619047616
+          },
+          {
+            "bin": "[-6,0)",
+            "n": 0,
+            "resident_first": 0,
+            "probability": null
+          },
+          {
+            "bin": "0",
+            "n": 0,
+            "resident_first": 0,
+            "probability": null
+          },
+          {
+            "bin": "(0,6]",
+            "n": 0,
+            "resident_first": 0,
+            "probability": null
+          },
+          {
+            "bin": "(6,24]",
+            "n": 0,
+            "resident_first": 0,
+            "probability": null
+          },
+          {
+            "bin": "(24,72]",
+            "n": 0,
+            "resident_first": 0,
+            "probability": null
+          },
+          {
+            "bin": ">72",
+            "n": 0,
+            "resident_first": 0,
+            "probability": null
+          }
+        ],
+        "s2_rollover/no_future_rot_overdue": [
+          {
+            "bin": "<-72",
+            "n": 780,
+            "resident_first": 122,
+            "probability": 0.1564102564102564
+          },
+          {
+            "bin": "[-72,-24)",
+            "n": 262,
+            "resident_first": 5,
+            "probability": 0.019083969465648856
+          },
+          {
+            "bin": "[-24,-6)",
+            "n": 79,
+            "resident_first": 3,
+            "probability": 0.0379746835443038
+          },
+          {
+            "bin": "[-6,0)",
+            "n": 1,
+            "resident_first": 0,
+            "probability": 0.0
+          },
+          {
+            "bin": "0",
+            "n": 0,
+            "resident_first": 0,
+            "probability": null
+          },
+          {
+            "bin": "(0,6]",
+            "n": 0,
+            "resident_first": 0,
+            "probability": null
+          },
+          {
+            "bin": "(6,24]",
+            "n": 0,
+            "resident_first": 0,
+            "probability": null
+          },
+          {
+            "bin": "(24,72]",
+            "n": 0,
+            "resident_first": 0,
+            "probability": null
+          },
+          {
+            "bin": ">72",
+            "n": 0,
+            "resident_first": 0,
+            "probability": null
+          }
+        ],
+        "s3_next_feasible/no_future_rot_overdue": [
+          {
+            "bin": "<-72",
+            "n": 505,
+            "resident_first": 105,
+            "probability": 0.2079207920792079
+          },
+          {
+            "bin": "[-72,-24)",
+            "n": 532,
+            "resident_first": 19,
+            "probability": 0.03571428571428571
+          },
+          {
+            "bin": "[-24,-6)",
+            "n": 72,
+            "resident_first": 4,
+            "probability": 0.05555555555555555
+          },
+          {
+            "bin": "[-6,0)",
+            "n": 13,
+            "resident_first": 2,
+            "probability": 0.15384615384615385
+          },
+          {
+            "bin": "0",
+            "n": 0,
+            "resident_first": 0,
+            "probability": null
+          },
+          {
+            "bin": "(0,6]",
+            "n": 0,
+            "resident_first": 0,
+            "probability": null
+          },
+          {
+            "bin": "(6,24]",
+            "n": 0,
+            "resident_first": 0,
+            "probability": null
+          },
+          {
+            "bin": "(24,72]",
+            "n": 0,
+            "resident_first": 0,
+            "probability": null
+          },
+          {
+            "bin": ">72",
+            "n": 0,
+            "resident_first": 0,
+            "probability": null
+          }
+        ]
+      },
+      "warning": "Known-order conditional sample; excludes pairs with both containers censored at Day12."
+    },
+    "entry_time_rotation_accuracy": {
+      "DISCHARGE": {
+        "s2_rollover_correct": 1968,
+        "s3_next_feasible_correct": 2009,
+        "n": 2071
+      },
+      "initial": {
+        "s2_rollover_correct": 913,
+        "s3_next_feasible_correct": 1349,
+        "n": 1413
+      },
+      "TRUCK_RECV": {
+        "s2_rollover_correct": 382,
+        "s3_next_feasible_correct": 385,
+        "n": 387
+      }
+    },
+    "M5_gate": false,
+    "M5_gate_rule": "S3 strictly better for initial; S2 strictly better for combined DISCHARGE+TRUCK_RECV at entry, fit-period found LOADs only.",
+    "attribute_contingencies": {
+      "weight/MEDIUM": {
+        "unretrieved_at_Day12": 3000,
+        "LOAD": 1761,
+        "TRUCK_DLVR": 505
+      },
+      "port_in_vessel/True": {
+        "unretrieved_at_Day12": 6587,
+        "LOAD": 3871,
+        "TRUCK_DLVR": 1171
+      },
+      "joint/MEDIUM/True": {
+        "unretrieved_at_Day12": 3000,
+        "LOAD": 1761,
+        "TRUCK_DLVR": 505
+      },
+      "weight/LIGHT": {
+        "unretrieved_at_Day12": 1929,
+        "LOAD": 1173,
+        "TRUCK_DLVR": 354
+      },
+      "joint/LIGHT/True": {
+        "unretrieved_at_Day12": 1929,
+        "LOAD": 1173,
+        "TRUCK_DLVR": 354
+      },
+      "weight/HEAVY": {
+        "unretrieved_at_Day12": 1658,
+        "LOAD": 937,
+        "TRUCK_DLVR": 312
+      },
+      "joint/HEAVY/True": {
+        "unretrieved_at_Day12": 1658,
+        "LOAD": 937,
+        "TRUCK_DLVR": 312
+      }
+    }
+  }
+}

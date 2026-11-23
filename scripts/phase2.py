@@ -20,7 +20,8 @@ from src.yard_state import YardState
 
 OUT = ROOT / "results/phase2"
 ARRIVALS = {"DISCHARGE","TRUCK_RECV"}
-PHASE2_MODES = tuple(mode for mode in MODES if mode != "expected_blocking")
+PHASE2_MODES = ("raw_strict", "raw_nonstrict", "raw_top_only", "s1_stored_order",
+               "s2_rollover", "s3_next_feasible")
 
 
 def save(name,value):

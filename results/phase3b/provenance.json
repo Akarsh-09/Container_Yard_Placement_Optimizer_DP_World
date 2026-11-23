@@ -1,0 +1,7 @@
+{
+  "python": "3.13.3 (v3.13.3:6280bb54784, Apr  8 2025, 10:47:54) [Clang 15.0.0 (clang-1500.3.9.4)]",
+  "test_data_opened": false,
+  "command": ".venv/bin/python scripts/phase3b.py",
+  "strategy_sha256": "9bf5cad0e5b1eccbab1b7197778e93df18238bf4f3c9694f9d8816cf9f4a2a44",
+  "script_sha256": "fe13ae5fc8308614bc6067bcbefe6bedc685069c1ee83c3e445827be40903d27"
+}

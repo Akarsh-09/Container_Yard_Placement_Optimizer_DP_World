@@ -1,0 +1,203 @@
+{
+  "name": "M3_2_12",
+  "config": {
+    "mode": "expected_blocking",
+    "timing_key": "s3_next_feasible",
+    "epsilon": 0.05,
+    "sigma_hours": 12,
+    "lambda_empty": 0.0,
+    "lambda_gap": 0.0,
+    "intra_rotation_sigma_hours": 2.0
+  },
+  "summary": {
+    "total_events": 20592,
+    "placement_events": 10385,
+    "retrieval_events": 10207,
+    "total_reshuffles": 6962,
+    "reshuffles_per_retrieval": 0.6821,
+    "reshuffle_percentage": 40.82,
+    "max_reshuffles_single": 4,
+    "retrievals_with_reshuffles": 4166,
+    "hard_constraint_violations": 0,
+    "placement_failures": 0,
+    "errors": 0,
+    "final_yard_count": 6311,
+    "elapsed_sec": 9.63,
+    "score_reshuffles": 5.1,
+    "score_violations": 10.0,
+    "quantitative_score": 15.1
+  },
+  "wall_sec": 9.63356250000652,
+  "official_rate_exact": 0.6820809248554913,
+  "score_exact": 15.053674649050373,
+  "excess_above_LB": 5637,
+  "excess_per_found": 0.6352265043948614,
+  "slices": {
+    "all": {
+      "retrievals": 10207,
+      "found": 8874,
+      "reshuffles": 6962,
+      "found_rate": 0.7845391029975208,
+      "official_rate": 0.6820809248554913
+    },
+    "exit/TRUCK_DLVR": {
+      "retrievals": 2488,
+      "found": 2488,
+      "reshuffles": 2544,
+      "found_rate": 1.022508038585209,
+      "official_rate": 1.022508038585209
+    },
+    "period/1-12": {
+      "retrievals": 6368,
+      "found": 5042,
+      "reshuffles": 3452,
+      "found_rate": 0.6846489488298294,
+      "official_rate": 0.5420854271356784
+    },
+    "five_day/1-5": {
+      "retrievals": 2854,
+      "found": 1793,
+      "reshuffles": 1099,
+      "found_rate": 0.6129392080312326,
+      "official_rate": 0.38507358093903293
+    },
+    "origin/initial": {
+      "retrievals": 2945,
+      "found": 2945,
+      "reshuffles": 4749,
+      "found_rate": 1.6125636672325976,
+      "official_rate": 1.6125636672325976
+    },
+    "exit_origin/TRUCK_DLVR/initial": {
+      "retrievals": 912,
+      "found": 912,
+      "reshuffles": 1712,
+      "found_rate": 1.8771929824561404,
+      "official_rate": 1.8771929824561404
+    },
+    "period_exit/early/TRUCK_DLVR": {
+      "retrievals": 1171,
+      "found": 1171,
+      "reshuffles": 1246,
+      "found_rate": 1.0640478223740393,
+      "official_rate": 1.0640478223740393
+    },
+    "origin/DISCHARGE": {
+      "retrievals": 5635,
+      "found": 4716,
+      "reshuffles": 1540,
+      "found_rate": 0.3265479219677693,
+      "official_rate": 0.2732919254658385
+    },
+    "exit_origin/TRUCK_DLVR/DISCHARGE": {
+      "retrievals": 1194,
+      "found": 1194,
+      "reshuffles": 601,
+      "found_rate": 0.5033500837520938,
+      "official_rate": 0.5033500837520938
+    },
+    "exit/LOAD": {
+      "retrievals": 7719,
+      "found": 6386,
+      "reshuffles": 4418,
+      "found_rate": 0.6918258690886314,
+      "official_rate": 0.5723539318564581
+    },
+    "exit_origin/LOAD/DISCHARGE": {
+      "retrievals": 4441,
+      "found": 3522,
+      "reshuffles": 939,
+      "found_rate": 0.2666098807495741,
+      "official_rate": 0.21143886512046836
+    },
+    "period_exit/early/LOAD": {
+      "retrievals": 5197,
+      "found": 3871,
+      "reshuffles": 2206,
+      "found_rate": 0.5698785843451305,
+      "official_rate": 0.4244756590340581
+    },
+    "exit_origin/LOAD/initial": {
+      "retrievals": 2033,
+      "found": 2033,
+      "reshuffles": 3037,
+      "found_rate": 1.4938514510575505,
+      "official_rate": 1.4938514510575505
+    },
+    "origin/TRUCK_RECV": {
+      "retrievals": 1627,
+      "found": 1213,
+      "reshuffles": 673,
+      "found_rate": 0.5548227535037098,
+      "official_rate": 0.41364474492931774
+    },
+    "exit_origin/LOAD/TRUCK_RECV": {
+      "retrievals": 1245,
+      "found": 831,
+      "reshuffles": 442,
+      "found_rate": 0.5318892900120337,
+      "official_rate": 0.3550200803212851
+    },
+    "exit_origin/TRUCK_DLVR/TRUCK_RECV": {
+      "retrievals": 382,
+      "found": 382,
+      "reshuffles": 231,
+      "found_rate": 0.6047120418848168,
+      "official_rate": 0.6047120418848168
+    },
+    "five_day/6-10": {
+      "retrievals": 2702,
+      "found": 2524,
+      "reshuffles": 1763,
+      "found_rate": 0.6984944532488114,
+      "official_rate": 0.652479644707624
+    },
+    "five_day/11-15": {
+      "retrievals": 1135,
+      "found": 1048,
+      "reshuffles": 971,
+      "found_rate": 0.9265267175572519,
+      "official_rate": 0.8555066079295154
+    },
+    "period/13-20": {
+      "retrievals": 3839,
+      "found": 3832,
+      "reshuffles": 3510,
+      "found_rate": 0.9159707724425887,
+      "official_rate": 0.9143005991143527
+    },
+    "period_exit/late/TRUCK_DLVR": {
+      "retrievals": 1317,
+      "found": 1317,
+      "reshuffles": 1298,
+      "found_rate": 0.9855732725892179,
+      "official_rate": 0.9855732725892179
+    },
+    "five_day/16-20": {
+      "retrievals": 3516,
+      "found": 3509,
+      "reshuffles": 3129,
+      "found_rate": 0.8917070390424623,
+      "official_rate": 0.8899317406143344
+    },
+    "period_exit/late/LOAD": {
+      "retrievals": 2522,
+      "found": 2515,
+      "reshuffles": 2212,
+      "found_rate": 0.8795228628230616,
+      "official_rate": 0.8770816812053925
+    }
+  },
+  "rehandled_blocker_moves": 1693,
+  "trace_sha256": "e23e6fff480e3b80218925abb5cf0d30aea0bd88cd7f1711dcd491dcf4c747d8",
+  "placements": 10385,
+  "cache_guard_fallbacks": 0,
+  "global_invalidations": 0,
+  "priority_updates": 9223,
+  "strategy_sha256": "9bf5cad0e5b1eccbab1b7197778e93df18238bf4f3c9694f9d8816cf9f4a2a44",
+  "early_lift": -29,
+  "late_lift": 93,
+  "fit_improves": false,
+  "continuation_nonregression": true,
+  "M3_strict_cohort_gate": false
+}

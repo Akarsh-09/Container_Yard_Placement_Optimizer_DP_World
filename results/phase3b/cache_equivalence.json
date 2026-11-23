@@ -1,0 +1,16 @@
+[
+  {
+    "name": "M2a_0.20",
+    "identical_placements": 10385,
+    "trace_sha256": "4f6d35216d3604e3bcb164416876e380299f72f7cb3a3a53b9574129679078b3",
+    "cached_seconds": 7.846671457984485,
+    "live_seconds": 102.01212833297905
+  },
+  {
+    "name": "M4_inf",
+    "identical_placements": 10385,
+    "trace_sha256": "5081c2c803a6f882283e912fb44b3e70103305d1010d1eadaa8f92d1cb0bbe10",
+    "cached_seconds": 7.585943625017535,
+    "live_seconds": 71.35071104200324
+  }
+]
