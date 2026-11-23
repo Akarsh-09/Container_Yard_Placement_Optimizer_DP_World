@@ -1,7 +1,7 @@
-"""Numeric survival estimates fit exclusively through 2025-01-12.
+"""Eleven frozen cohorts fit only through 2025-01-12 (rates per hour).
 
-Generated from results/phase3c/audit.json; no runtime event-file dependency.
-Rates are per hour; alpha is closed-window LOAD incidence.
+Alpha is closed-window LOAD incidence; mu excludes the assigned-rotation LOAD.
+Numeric values are copied exactly from the Phase 3C fit-only audit.
 """
 
 SURVIVAL_PARAMETERS = {'missed_load': [0.0, 0.0],
@@ -9,12 +9,7 @@ SURVIVAL_PARAMETERS = {'missed_load': [0.0, 0.0],
  'unscheduled_active': [0.0, 0.0007350460228820691],
  'sched_overdue': [0.23579545454545456, 0.0007299892550461782],
  'sched_init_active': [0.3744955609362389, 0.00044370331006166676],
- 'sched_disch_active': [0.4121510673234811, 0.0010308726178224791],
- 'sched_truck_active': [0.4829329962073325, 0.0008945817298531698]}
-
-EXPANSION_FEATURE = 'lead_bucket'
-
-EXPANDED_PARAMETERS = {'sched_disch_active|24-72h': [0.4117181314330958, 0.0009247161178854214],
+ 'sched_disch_active|24-72h': [0.4117181314330958, 0.0009247161178854214],
  'sched_disch_active|<24h': [0.41233373639661425, 0.0012983760606503725],
  'sched_disch_active|>72h': [0.4119601328903654, 0.000861253385295512],
  'sched_truck_active|24-72h': [0.447887323943662, 0.0004439584782547995],

@@ -1,0 +1,12 @@
+{
+  "files": {
+    "solution/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "solution/my_strategy.py": "b069bbcc823b6206a1c3aa9bb861719efec15fedea22e96d1444e246cf462329",
+    "solution/survival_params.py": "fde79d9871c26f14146cfeaaecaed5899d25858eb05fdc66579b8a3ea74cdd3d",
+    "data/vessel_schedule.json": "e1a1a1d3d3d9bb63f47a7a1c0f72b40ac438eea70a29b40e4628f6be64cf1602"
+  },
+  "policy": "Expanded single-rotation SurvivalRisk; gamma=1/240 per hour; exact ties; S3 alignment",
+  "trace_sha256": "74a6945f533e5cbe55d16fecf93d09fdb0b886da151bd06bfa4fad464fb2f414",
+  "train_reshuffles": 6408,
+  "test_contents_opened": false
+}

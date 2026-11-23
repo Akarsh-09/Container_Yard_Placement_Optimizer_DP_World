@@ -1,0 +1,59 @@
+{
+  "tests_passed": 78,
+  "scaffold_tests": 27,
+  "strategy_tests": 51,
+  "placement_trace": {
+    "identical_placements": 10385,
+    "phase3d_hash_match": true,
+    "trace_sha256": "74a6945f533e5cbe55d16fecf93d09fdb0b886da151bd06bfa4fad464fb2f414",
+    "cached_seconds": 11.419717749988195,
+    "live_seconds": 69.40947829204379
+  },
+  "cli_seconds": [
+    11.55,
+    11.54
+  ],
+  "cli_fields_identical_except_elapsed_sec": true,
+  "normalized_cli_sha256": "dcf9f4525f031b70dc197f47248e57c4be97fcf54e944b0f1347fc570c87b623",
+  "all_errors_violations_failures": 0,
+  "count_guard_fallbacks": 0,
+  "subclasses": [
+    [
+      "my_strategy.py",
+      "MyStrategy"
+    ]
+  ],
+  "numeric_parameters_unchanged": true,
+  "protected_files_unchanged": true,
+  "test_contents_opened": false,
+  "validator_native": "Aborted: BSD grep lacks -P",
+  "validator_portable": "Unchanged validator + Perl grep -oP adapter: passed; one pending-results warning",
+  "design": {
+    "words": 1682,
+    "sections": 7,
+    "reference_pages": 3,
+    "page_size": "A4",
+    "font": "Helvetica 11pt, 13.2pt leading",
+    "margins_mm": "16 horizontal, 15 top, 18 bottom",
+    "visual_review": true,
+    "pending_cells": "Only Phase 5 test metrics"
+  },
+  "state_lifecycle": {
+    "metadata_entries": 6311,
+    "history_seen": 15185,
+    "history_missed": 1333,
+    "origin_entries": 15185,
+    "arrival_time_entries": 10385,
+    "overdue_heap_entries": 2273
+  },
+  "python": "3.13.3 (v3.13.3:6280bb54784, Apr  8 2025, 10:47:54) [Clang 15.0.0 (clang-1500.3.9.4)]",
+  "base_git_revision": "26ea5d0bb5ab87ba14eb787a579655b5fbba4cc4",
+  "hashes": {
+    "solution/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "solution/my_strategy.py": "b069bbcc823b6206a1c3aa9bb861719efec15fedea22e96d1444e246cf462329",
+    "solution/survival_params.py": "fde79d9871c26f14146cfeaaecaed5899d25858eb05fdc66579b8a3ea74cdd3d",
+    "data/vessel_schedule.json": "e1a1a1d3d3d9bb63f47a7a1c0f72b40ac438eea70a29b40e4628f6be64cf1602",
+    "docs/design.md": "c476c319b721e6a7d024dfca3e9ba936b337855cc914f4cd7aa71164a73e3383",
+    "tests/test_my_strategy.py": "0638c298116c0d5cb6b03d1c5d2ceaf2fb61547ecf269561bc8414ae0f4d7c3d"
+  }
+}

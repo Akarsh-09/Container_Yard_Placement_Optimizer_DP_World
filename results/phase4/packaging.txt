@@ -1,0 +1,24 @@
+Keep the provided scaffold and datasets unchanged wherever the assignment requires
+the full repository. Candidate additions for the final submission:
+  solution/__init__.py
+  solution/my_strategy.py
+  solution/survival_params.py
+  docs/design.md
+  tests/test_my_strategy.py
+  results/results.json                      (generated only in Phase 5)
+  results/test_greedy.json and test_random_*.json (final comparison evidence)
+
+Keep scripts/phase4.py, the Phase 4 verification artifacts and frozen manifest
+locally for reproducibility; include them as optional review evidence only if
+extra files are accepted. No scripts/ file is imported by the solution.
+
+Historical scripts/phase2.py and scripts/phase3*.py target the removed experimental
+API and are no longer executable against production solution/. Their JSON records
+remain intact under results/phase*/; use the historical git revision to rerun them.
+Do not restore experimental flags/classes to the submission merely to run them.
+
+Exclude local environments, bytecode, .pytest_cache, tmp/pdfs rendering previews,
+logs, .git, and historical HTML/PNG/report scratch from submission packaging.
+ReportLab, PyMuPDF and pypdf are development-only pagination tools, not production
+or strategy-test dependencies. The production solution uses only Python stdlib.
+Do not package a stale results/results.json or fabricate one before Phase 5.
