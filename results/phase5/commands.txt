@@ -1,0 +1,34 @@
+Executed from assignment/ with .venv Python 3.13.3.
+
+1. Verify every hash in results/phase4/frozen_manifest.json and confirm official
+   output does not exist. Saved results/phase5/manifest_before.json.
+
+2. EXACTLY ONCE:
+PATH="$PWD/.venv/bin:$PATH" PYTHONDONTWRITEBYTECODE=1 python -m src.run --strategy solution.my_strategy.MyStrategy --data-dir data/test -o results/results.json -v > results/phase5/my_strategy_cli.log 2>&1
+
+3. EXACTLY ONCE:
+PATH="$PWD/.venv/bin:$PATH" PYTHONDONTWRITEBYTECODE=1 python -m src.run --strategy src.baseline_greedy.GreedyStrategy --data-dir data/test -o results/phase5/greedy.json -v > results/phase5/greedy_cli.log 2>&1
+
+4. One unchanged RandomStrategy replay for each predeclared seed 0,1,2,3,4:
+bash scripts/phase5_baselines.sh
+
+5. Read-only final diagnostics; NO MyStrategy instance or simulator replay:
+.venv/bin/python scripts/phase5_diagnostics.py
+
+6. Aggregate saved outputs and fill measured design values:
+.venv/bin/python scripts/phase5_report.py
+
+7. Reference pagination (development-only PDF tools):
+.venv/bin/python scripts/phase4_render_design.py
+# Preserved final preview under results/phase5/design_review/; restored this
+# turn's generated modifications to the tracked Phase 4 previews in tmp/.
+
+8. Final tests and unchanged validator via portability adapter:
+PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q
+PATH="$PWD/.venv/bin:$PATH" PYTHONDONTWRITEBYTECODE=1 bash scripts/phase4_validate_portable.sh
+
+9. Post-test manifest and raw-output hash verification, page/placeholder checks,
+   protected-file checks and failed-error-gate reporting:
+.venv/bin/python scripts/phase5_verify.py
+
+No strategy or parameter edits after test access. No second MyStrategy test pass.

@@ -1,0 +1,40 @@
+CANDIDATE FILE SET (integrity-clean; official error gate FAILED):
+  solution/__init__.py
+  solution/my_strategy.py
+  solution/survival_params.py
+  docs/design.md
+  tests/test_my_strategy.py
+  results/results.json
+
+BASELINE COMPARISON EVIDENCE:
+  results/phase5/greedy.json
+  results/phase5/random_0.json
+  results/phase5/random_1.json
+  results/phase5/random_2.json
+  results/phase5/random_3.json
+  results/phase5/random_4.json
+  results/phase5/summary.json
+
+OPTIONAL AUDIT EVIDENCE:
+  results/phase4/frozen_manifest.json
+  results/phase5/manifest_before.json
+  results/phase5/manifest_after.json
+  results/phase5/official_output_hash.json
+  results/phase5/verification.json
+  results/phase5/diagnostics.json
+  results/phase5/commands.txt
+  results/phase5/pytest.log
+  results/phase5/validator.log
+  results/phase5/my_strategy_cli.log
+  results/phase5/greedy_cli.log
+  results/phase5/random_0_cli.log through random_4_cli.log
+
+LOCAL DEVELOPMENT / EXCLUDE FROM MINIMAL SUBMISSION:
+  scripts/ (historical experiments, reporting/diagnostic and pagination utilities)
+  results/phase1/ through results/phase4/ (except optional provenance above)
+  results/phase5/design_review/ and comparison.html
+  tmp/, virtual environments, caches, bytecode, editor files, .git/
+
+Preserve provided scaffold and datasets unchanged if submitting the whole repo.
+Do not describe this candidate as passing test evaluation: errors=9861. Keep
+results/results.json unchanged; no repaired/test-selected output replaces it.

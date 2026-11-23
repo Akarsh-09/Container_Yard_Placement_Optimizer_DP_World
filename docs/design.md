@@ -47,7 +47,7 @@ Metadata is deleted on successful retrieval. Cached contents and CID-to-stack en
 
 ## 6. Results and reproducibility
 
-Official r divides reshuffles by all 10,207 retrieval events. Early/late rates divide by 5,042/3,832 found retrievals. Random uses unchanged code with seeds 0-4; +/- denotes population standard deviation. All runs have zero errors, hard violations, and placement failures.
+Official r divides reshuffles by all 10,207 retrieval events. Early/late rates divide by 5,042/3,832 found retrievals. Random uses unchanged code with seeds 0-4; +/- denotes population standard deviation. All training runs have zero errors, hard violations, and placement failures.
 
 | Train policy | Reshuffles | Official r | Score /40 | Early found rate | Late found rate |
 |---|---:|---:|---:|---:|---:|
@@ -65,12 +65,12 @@ The frozen policy saves 20.26% versus Greedy, with excess 5,083 above the proven
 
 | Test policy | Reshuffles | Official r | Score /40 | Runtime | Errors / violations / failures |
 |---|---|---|---|---|---|
-| Random, seeds 0-4 mean +/- SD | [PENDING PHASE 5] | [PENDING PHASE 5] | [PENDING PHASE 5] | [PENDING PHASE 5] | [PENDING PHASE 5] |
-| Greedy | [PENDING PHASE 5] | [PENDING PHASE 5] | [PENDING PHASE 5] | [PENDING PHASE 5] | [PENDING PHASE 5] |
-| Frozen MyStrategy | [PENDING PHASE 5] | [PENDING PHASE 5] | [PENDING PHASE 5] | [PENDING PHASE 5] | [PENDING PHASE 5] |
+| Random, seeds 0-4 mean +/- SD | 8,101.8 +/- 32.0 | 0.839826 +/- 0.003317 | 10.00 +/- 0 | 0.832s +/- 0.007s | 0 / 0 / 0 |
+| Greedy | 7,416 | 0.768736 | 11.34 | 3.88s | 0 / 0 / 0 |
+| Frozen MyStrategy | 10,055 | 1.042293 | 10.00 | 1.56s | 9,861 / 0 / 0 |
 
-After Phase 5 approval, run the frozen strategy once via `python -m src.run --strategy solution.my_strategy.MyStrategy --data-dir data/test -o results/results.json -v`, then unchanged Greedy and seeded Random baselines. Exact commands and the pre-test source manifest are in `results/phase4/phase5_plan.txt`. No strategy or parameter changes follow test opening; only result reporting is completed.
+**The official test run failed the error gate.** Its 9,861 exceptions cover every arrival; reported reshuffles and score reflect simulator fallback placements, not successful SurvivalRisk decisions. The test snapshot has 313 sparse stacks with 352 empty tier slots. The frozen cache assumed every tier through stack height held a container; the public API returns an empty ID for padded gaps and `get_container_info("")` returns None, causing the logged exception. Thus training gains did not produce a valid test submission, and this run cannot establish survival-model generalization. Strategy and parameter hashes matched before and after; there was exactly one official test replay, with no repair, retuning, or second instrumented pass. Raw output remains unchanged in `results/results.json`; fixed-seed baselines and read-only diagnostics are in `results/phase5/`.
 
 ## 7. Limitations and next steps
 
-Initial-origin truck deliveries still cost 1,693 reshuffles versus Greedy's 1,627. Supported vessel-level alpha ranges roughly 18.6%-86.6%; the available features do not establish an irreducible Bayes ceiling. Future generalizable capacity-versus-queue features could explain this variation without per-vessel memorization. The zero-exit missed-LOAD estimate needs longer observation or smoothing on independent data. Alpha is observed competing-exit incidence, used as a Bernoulli jump approximation; exponential backgrounds, independent container exits, and one future rotation simplify the true process. The objective discounts direct pairwise risk, omitting secondary relocation damage and future space opportunity costs. Relocation-aware block geometry and better survival calibration are future work, not post-test tuning.
+The sparse-input failure exposes a missing production robustness test. Future work must distinguish physical stack height from occupied container entries and validate cache counts accordingly. No such fix was made after test opening. Initial-origin truck deliveries in training still cost 1,693 reshuffles versus Greedy's 1,627. Supported vessel-level alpha ranges roughly 18.6%-86.6%; the available features do not establish an irreducible Bayes ceiling. Future generalizable capacity-versus-queue features could explain this variation without per-vessel memorization. The zero-exit missed-LOAD estimate needs longer observation or smoothing on independent data. Alpha is observed competing-exit incidence, used as a Bernoulli jump approximation; exponential backgrounds, independent container exits, and one future rotation simplify the true process. The objective discounts direct pairwise risk, omitting secondary relocation damage and future space opportunity costs. Relocation-aware block geometry and better survival calibration are future work, not post-test tuning.
