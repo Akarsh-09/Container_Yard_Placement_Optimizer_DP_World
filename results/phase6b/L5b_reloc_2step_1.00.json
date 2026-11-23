@@ -1,0 +1,73 @@
+{
+  "name": "L5b_reloc_2step_1.00",
+  "config": {
+    "mode": "L5b_reloc_2step",
+    "value": 1.0
+  },
+  "total": 6628,
+  "excess": 5303,
+  "official_rate": 0.6493582835309102,
+  "score": 16.456073562960995,
+  "early": 3290,
+  "late": 3338,
+  "early_rate": 0.6525188417294724,
+  "late_rate": 0.8710855949895616,
+  "LOAD": 4266,
+  "TRUCK_DLVR": 2362,
+  "I": 4717,
+  "D": 1429,
+  "R": 482,
+  "repeated": 1628,
+  "seconds": 26.40488941699732,
+  "summary": {
+    "total_events": 20592,
+    "placement_events": 10385,
+    "retrieval_events": 10207,
+    "total_reshuffles": 6628,
+    "reshuffles_per_retrieval": 0.6494,
+    "reshuffle_percentage": 37.29,
+    "max_reshuffles_single": 4,
+    "retrievals_with_reshuffles": 3806,
+    "hard_constraint_violations": 0,
+    "placement_failures": 0,
+    "errors": 0,
+    "final_yard_count": 6311,
+    "elapsed_sec": 26.4,
+    "score_reshuffles": 6.5,
+    "score_violations": 10.0,
+    "quantitative_score": 16.5
+  },
+  "slices": {
+    "early": {
+      "found": 5042,
+      "reshuffles": 3290
+    },
+    "exit/TRUCK_DLVR": {
+      "found": 2488,
+      "reshuffles": 2362
+    },
+    "origin/initial": {
+      "found": 2945,
+      "reshuffles": 4717
+    },
+    "origin/DISCHARGE": {
+      "found": 4716,
+      "reshuffles": 1429
+    },
+    "exit/LOAD": {
+      "found": 6386,
+      "reshuffles": 4266
+    },
+    "origin/TRUCK_RECV": {
+      "found": 1213,
+      "reshuffles": 482
+    },
+    "late": {
+      "found": 3832,
+      "reshuffles": 3338
+    }
+  },
+  "placements": 10385,
+  "trace_sha256": "cecd7b45308979a9070e7e37960d2dc87ee3f66a62f9cb81c95f7d15126b94af",
+  "cache_guard_fallbacks": 0
+}

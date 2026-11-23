@@ -1,0 +1,69 @@
+{
+  "protected_hashes_before": {
+    "solution/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "solution/my_strategy.py": "7374aa7db169ac48497c0da8d80af5797dd129b1e81c1f77fc6bfbda4cbb5162",
+    "solution/survival_params.py": "fde79d9871c26f14146cfeaaecaed5899d25858eb05fdc66579b8a3ea74cdd3d",
+    "results/results.json": "4759b8c43aae4ba8db4f38227e47e26dd6adfd03c48a6b93bbd8614001befd11"
+  },
+  "protected_hashes_after": {
+    "solution/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "solution/my_strategy.py": "7374aa7db169ac48497c0da8d80af5797dd129b1e81c1f77fc6bfbda4cbb5162",
+    "solution/survival_params.py": "fde79d9871c26f14146cfeaaecaed5899d25858eb05fdc66579b8a3ea74cdd3d",
+    "results/results.json": "4759b8c43aae4ba8db4f38227e47e26dd6adfd03c48a6b93bbd8614001befd11"
+  },
+  "unchanged": true,
+  "test_access_guard_enabled": true,
+  "test_data_accessed": false,
+  "engine_copy_sha256": "7374aa7db169ac48497c0da8d80af5797dd129b1e81c1f77fc6bfbda4cbb5162",
+  "source_and_copy_identical": true,
+  "exact_copy_control_6408": true,
+  "neutral_lab_trace_match": true,
+  "placements": 10385,
+  "trace_sha256": "74a6945f533e5cbe55d16fecf93d09fdb0b886da151bd06bfa4fad464fb2f414",
+  "isolated_runs": 21,
+  "oracle_runs": 1,
+  "control_runs": 2,
+  "fit_cutoff_exclusive": "2025-01-13T00:00:00",
+  "all_errors_violations_failures": 0,
+  "fit_configuration": {
+    "C_rate": 29.866666666666667,
+    "active_alpha": 0.40319829424307035,
+    "overdue_ratio": 0.5848126292005192,
+    "age_rates": {
+      "DISCHARGE": [
+        0.0013354188336929407,
+        0.0005657660243865106
+      ],
+      "TRUCK_RECV": [
+        0.0009330235248301112,
+        0.00044400123072207813
+      ]
+    },
+    "queue_gate": "discharge_end"
+  },
+  "interpretation_notes": [
+    "Oracle alpha is a non-deployable yardstick, not a mathematical upper bound on reshuffle improvement.",
+    "L1 order uses lexicographic port + weight rank; exact on this schedule and avoids port-ID heuristics.",
+    "L2 live counters exclude missed and passed categories; L2 does not otherwise apply L1 rollover.",
+    "L3 replaces mu for all new-origin cohorts including missed_load, as specified; initial mu is unchanged.",
+    "L5 reverse order keeps block ascending and reverses bay,row via (block,-bay,-row).",
+    "L5 two-step uses second-lowest non-full stack if the candidate is lowest; no alternative means zero extra multiplier.",
+    "No combinations, default changes, or test evaluations were performed.",
+    "L1 forced rollover is evaluated against currently active loading progress; after that call ends, normal S3/raw-ETD state classification resumes."
+  ],
+  "all_cache_guard_fallbacks": 0,
+  "L1_unclamping_additional_placement_changes": 0,
+  "script_hashes": {
+    "scripts/phase6b_lab.py": "df64bb55eebd60061c72582e98aa1265f127d73f8efcf197317775d699de8c92",
+    "scripts/phase6b_engine_snapshot.py": "7374aa7db169ac48497c0da8d80af5797dd129b1e81c1f77fc6bfbda4cbb5162",
+    "scripts/phase6b_report.py": "26ec7775c756a9e17b5bb86efb252917c0e3f878b4dda4d4d350d570771bf841"
+  },
+  "train_input_hashes": {
+    "data/yard_layout.json": "ee776c27fdb8a1a56b4fb7fc95fe3e44d23b96877536db59ab9ed5f6623c0af9",
+    "data/train/initial_state.json": "8295c9830ab1481724f575a1695d87e521ed355be601cbc21d4de6b4d740147b",
+    "data/train/events.jsonl": "b3e9f7089ce722ab5984bb27148dfc9870e26cebe15dc70135e57511fa1d1328",
+    "data/vessel_schedule.json": "e1a1a1d3d3d9bb63f47a7a1c0f72b40ac438eea70a29b40e4628f6be64cf1602"
+  },
+  "isolated_variants_beating_full_train_control": 0,
+  "isolated_variants_improving_both_periods": 0
+}

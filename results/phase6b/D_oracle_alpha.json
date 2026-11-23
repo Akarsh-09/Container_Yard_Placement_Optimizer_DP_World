@@ -1,0 +1,73 @@
+{
+  "name": "D_oracle_alpha",
+  "config": {
+    "NONDEPLOYABLE": true,
+    "completed_full_train_rotations": 19
+  },
+  "total": 6395,
+  "excess": 5070,
+  "official_rate": 0.6265308121877143,
+  "score": 17.434393763383675,
+  "early": 3266,
+  "late": 3129,
+  "early_rate": 0.6477588258627529,
+  "late_rate": 0.816544885177453,
+  "LOAD": 3937,
+  "TRUCK_DLVR": 2458,
+  "I": 4563,
+  "D": 1326,
+  "R": 506,
+  "repeated": 1590,
+  "seconds": 19.138747000019066,
+  "summary": {
+    "total_events": 20592,
+    "placement_events": 10385,
+    "retrieval_events": 10207,
+    "total_reshuffles": 6395,
+    "reshuffles_per_retrieval": 0.6265,
+    "reshuffle_percentage": 36.92,
+    "max_reshuffles_single": 4,
+    "retrievals_with_reshuffles": 3768,
+    "hard_constraint_violations": 0,
+    "placement_failures": 0,
+    "errors": 0,
+    "final_yard_count": 6311,
+    "elapsed_sec": 19.14,
+    "score_reshuffles": 7.4,
+    "score_violations": 10.0,
+    "quantitative_score": 17.4
+  },
+  "slices": {
+    "early": {
+      "found": 5042,
+      "reshuffles": 3266
+    },
+    "exit/TRUCK_DLVR": {
+      "found": 2488,
+      "reshuffles": 2458
+    },
+    "origin/initial": {
+      "found": 2945,
+      "reshuffles": 4563
+    },
+    "origin/DISCHARGE": {
+      "found": 4716,
+      "reshuffles": 1326
+    },
+    "exit/LOAD": {
+      "found": 6386,
+      "reshuffles": 3937
+    },
+    "origin/TRUCK_RECV": {
+      "found": 1213,
+      "reshuffles": 506
+    },
+    "late": {
+      "found": 3832,
+      "reshuffles": 3129
+    }
+  },
+  "placements": 10385,
+  "trace_sha256": "2af55bfbc76a10e87ea57944502eac5d44963be469f9ddd8c12c79e436a74340",
+  "cache_guard_fallbacks": 0
+}

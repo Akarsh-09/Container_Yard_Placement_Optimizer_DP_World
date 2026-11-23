@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "numerical_piecewise_cases": 4,
+  "raw_phi_cases": 2,
+  "synthetic_cached_live_modes": 8,
+  "count_and_rollover_checks": true,
+  "notes": "Age hazards apply literally to all new-origin cohorts, including missed_load; initial residents retain frozen mu."
+}

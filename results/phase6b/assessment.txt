@@ -1,0 +1,45 @@
+PHASE 6B ASSESSMENT — TRAIN ONLY
+
+No isolated deployable variant improves both chronological periods. Every one
+also exceeds the frozen full-train total of 6408. Keep the saved Phase 5B
+checkpoint; this sweep demonstrates no major structural improvement.
+
+The non-deployable oracle replaces scheduled active/overdue alpha with a single
+realized all-resident queue LOAD fraction for each completed rotation. It yields
+6395 total, early +30 / late -43 versus control. LOAD reshuffles improve by 144,
+but TRUCK_DLVR worsens by 131 and repeated blocker moves rise by 75. This is a
+particular marginal-alpha yardstick, not a mathematical upper bound on what a
+better conditional model or placement policy can achieve.
+
+Queue drift supports the conservative discharge_end gate: before discharge ends,
+the queue is only 87.49% built at 6h pre-load and 62.22% at 12h. The after-end
+6h subset is 98.58% built. The direct queue variant saves 41 early reshuffles,
+but adds 165 late. Blending and post-discharge gating do not fix the regression.
+
+All-LOAD cutoff saves 16 early and adds 82 late. Found-only progress is worse.
+Unclamped ordering produces exactly the same placement trace as all-LOAD cutoff
+on this data. L1's forced rollover/cohort is based on the currently active call;
+subsequent calls use the frozen S3/raw-ETD classification. No separate permanent
+missed-rotation cohort flag was introduced.
+
+Age-step saves 19 late but adds 71 early. Exact future age hazards reduce that
+trade-off to +26 early / -15 late, total 6419, but cost 123.35s in the scratch lab.
+As the literal origin-wide specification requests, these runs replace mu for all
+new-origin cohorts including missed_load; they do not establish that every
+cohort-conditional age model is ineffective. Initial-container mu stays frozen.
+
+Gap 0.10 and 0.20 improve late by 58 and 66, while worsening early by 87 and 141.
+All floor-degradation penalties, reversed within-block tie order, two-step
+relocation multipliers, and catcher reservations worsen both periods. Catcher
+reservations also increase repeated blocker moves, so they do not provide the
+hoped-for cheap relocation improvement in this form.
+
+No lever currently has isolated evidence of a generalizable gain worth combining.
+The complementary early/late trade-offs could interact, but combining them now
+would be speculative tuning on repeatedly consulted validation. If research
+continues, diagnose those counterfactual trade-offs before choosing combinations;
+do not replace the checkpoint or use test outcomes to steer the next pass.
+
+Engineering: copied-engine control is 11.36s; the neutral lab scorer is 19.32s
+with the exact same trace. Most experiment runtimes include that shared scratch
+scorer overhead and are not optimized production-runtime estimates.

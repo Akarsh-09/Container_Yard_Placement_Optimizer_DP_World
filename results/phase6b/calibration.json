@@ -1,0 +1,272 @@
+{
+  "fit_cutoff_exclusive": "2025-01-13T00:00:00",
+  "fit_rotations": [
+    {
+      "vessel": "VSL003",
+      "rotation_number": 1,
+      "end": 1735849632.0,
+      "queue": 914,
+      "eligible_queue": 914,
+      "loads": 228,
+      "hours": 9.764722222222222,
+      "alpha": 0.24945295404814005
+    },
+    {
+      "vessel": "VSL005",
+      "rotation_number": 1,
+      "end": 1735867380.0,
+      "queue": 677,
+      "eligible_queue": 677,
+      "loads": 163,
+      "hours": 8.953611111111112,
+      "alpha": 0.24076809453471196
+    },
+    {
+      "vessel": "VSL012",
+      "rotation_number": 1,
+      "end": 1735973795.0,
+      "queue": 635,
+      "eligible_queue": 635,
+      "loads": 301,
+      "hours": 9.687222222222223,
+      "alpha": 0.47401574803149604
+    },
+    {
+      "vessel": "VSL001",
+      "rotation_number": 1,
+      "end": 1736067216.0,
+      "queue": 772,
+      "eligible_queue": 772,
+      "loads": 225,
+      "hours": 8.3575,
+      "alpha": 0.2914507772020725
+    },
+    {
+      "vessel": "VSL002",
+      "rotation_number": 1,
+      "end": 1736092202.0,
+      "queue": 792,
+      "eligible_queue": 792,
+      "loads": 260,
+      "hours": 9.510555555555555,
+      "alpha": 0.3282828282828283
+    },
+    {
+      "vessel": "VSL004",
+      "rotation_number": 1,
+      "end": 1736116688.0,
+      "queue": 843,
+      "eligible_queue": 843,
+      "loads": 292,
+      "hours": 9.507222222222222,
+      "alpha": 0.34638196915776986
+    },
+    {
+      "vessel": "VSL006",
+      "rotation_number": 1,
+      "end": 1736177685.0,
+      "queue": 909,
+      "eligible_queue": 909,
+      "loads": 193,
+      "hours": 9.50388888888889,
+      "alpha": 0.21232123212321233
+    },
+    {
+      "vessel": "VSL007",
+      "rotation_number": 1,
+      "end": 1736179551.0,
+      "queue": 759,
+      "eligible_queue": 759,
+      "loads": 280,
+      "hours": 9.375,
+      "alpha": 0.3689064558629776
+    },
+    {
+      "vessel": "VSL008",
+      "rotation_number": 1,
+      "end": 1736227892.0,
+      "queue": 533,
+      "eligible_queue": 533,
+      "loads": 433,
+      "hours": 9.807777777777778,
+      "alpha": 0.8123827392120075
+    },
+    {
+      "vessel": "VSL013",
+      "rotation_number": 1,
+      "end": 1736296898.0,
+      "queue": 712,
+      "eligible_queue": 712,
+      "loads": 433,
+      "hours": 9.373888888888889,
+      "alpha": 0.6081460674157303
+    },
+    {
+      "vessel": "VSL018",
+      "rotation_number": 1,
+      "end": 1736331364.0,
+      "queue": 576,
+      "eligible_queue": 576,
+      "loads": 471,
+      "hours": 9.536944444444444,
+      "alpha": 0.8177083333333334
+    },
+    {
+      "vessel": "VSL011",
+      "rotation_number": 1,
+      "end": 1736574061.0,
+      "queue": 552,
+      "eligible_queue": 552,
+      "loads": 373,
+      "hours": 9.590833333333334,
+      "alpha": 0.6757246376811594
+    },
+    {
+      "vessel": "VSL003",
+      "rotation_number": 2,
+      "end": 1736617814.0,
+      "queue": 1190,
+      "eligible_queue": 1058,
+      "loads": 213,
+      "hours": 8.862222222222222,
+      "alpha": 0.17899159663865546
+    }
+  ],
+  "active_opportunities": {
+    "sched_init_active": 3717,
+    "sched_disch_active|<24h": 3308,
+    "sched_disch_active|24-72h": 1263,
+    "sched_truck_active|<24h": 103,
+    "sched_disch_active|>72h": 301,
+    "sched_truck_active|24-72h": 355,
+    "sched_truck_active|>72h": 333
+  },
+  "config": {
+    "C_rate": 29.866666666666667,
+    "active_alpha": 0.40319829424307035,
+    "overdue_ratio": 0.5848126292005192,
+    "age_rates": {
+      "DISCHARGE": [
+        0.0013354188336929407,
+        0.0005657660243865106
+      ],
+      "TRUCK_RECV": [
+        0.0009330235248301112,
+        0.00044400123072207813
+      ]
+    },
+    "queue_gate": "discharge_end"
+  },
+  "age_hazards": [
+    {
+      "origin": "DISCHARGE",
+      "age": "<=72h",
+      "container_hours": 252355.28472222222,
+      "truck_exits": 337,
+      "mu": 0.0013354188336929407
+    },
+    {
+      "origin": "DISCHARGE",
+      "age": ">72h",
+      "container_hours": 305780.115,
+      "truck_exits": 173,
+      "mu": 0.0005657660243865106
+    },
+    {
+      "origin": "TRUCK_RECV",
+      "age": "<=72h",
+      "container_hours": 80383.82527777777,
+      "truck_exits": 75,
+      "mu": 0.0009330235248301112
+    },
+    {
+      "origin": "TRUCK_RECV",
+      "age": ">72h",
+      "container_hours": 67567.38027777777,
+      "truck_exits": 30,
+      "mu": 0.00044400123072207813
+    }
+  ],
+  "queue_drift": [
+    {
+      "hours_before_load": 0,
+      "phase": "before_discharge_end",
+      "n": 0,
+      "median_ratio": null
+    },
+    {
+      "hours_before_load": 0,
+      "phase": "at_or_after_discharge_end",
+      "n": 13,
+      "median_ratio": 1.0
+    },
+    {
+      "hours_before_load": 6,
+      "phase": "before_discharge_end",
+      "n": 8,
+      "median_ratio": 0.8749222748361793
+    },
+    {
+      "hours_before_load": 6,
+      "phase": "at_or_after_discharge_end",
+      "n": 5,
+      "median_ratio": 0.9857768052516411
+    },
+    {
+      "hours_before_load": 12,
+      "phase": "before_discharge_end",
+      "n": 13,
+      "median_ratio": 0.6221910112359551
+    },
+    {
+      "hours_before_load": 12,
+      "phase": "at_or_after_discharge_end",
+      "n": 0,
+      "median_ratio": null
+    },
+    {
+      "hours_before_load": 24,
+      "phase": "before_discharge_end",
+      "n": 13,
+      "median_ratio": 0.5202020202020202
+    },
+    {
+      "hours_before_load": 24,
+      "phase": "at_or_after_discharge_end",
+      "n": 0,
+      "median_ratio": null
+    },
+    {
+      "hours_before_load": 48,
+      "phase": "before_discharge_end",
+      "n": 11,
+      "median_ratio": 0.4805699481865285
+    },
+    {
+      "hours_before_load": 48,
+      "phase": "at_or_after_discharge_end",
+      "n": 0,
+      "median_ratio": null
+    },
+    {
+      "hours_before_load": 96,
+      "phase": "before_discharge_end",
+      "n": 10,
+      "median_ratio": 0.4100585383464851
+    },
+    {
+      "hours_before_load": 96,
+      "phase": "at_or_after_discharge_end",
+      "n": 0,
+      "median_ratio": null
+    }
+  ],
+  "gate_rule": "Use discharge_start only if before-discharge-end median queue ratios at both 6h and 12h are >=.90; otherwise discharge_end.",
+  "notes": [
+    "C_rate is median(actual LOADs from start queue / window hours), fit only on 13 complete early windows.",
+    "Active alpha is opportunity-weighted over the frozen active cohorts; overdue scaling is frozen overdue alpha / this mean.",
+    "Age hazards use all origin arrivals at risk, including missed_load, with competing LOAD exits and Day12 censoring.",
+    "Q_elig excludes historically observed missed_load IDs. Probes before the initial snapshot are excluded.",
+    "Oracle uses all-resident start queues for 19 complete full-train windows; out-of-horizon calls retain frozen alpha. It is NON-DEPLOYABLE."
+  ]
+}
