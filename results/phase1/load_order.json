@@ -1,0 +1,1645 @@
+{
+  "stored_group_restarts": [
+    {
+      "group": [
+        "VSL003",
+        "2025-01-02T20:27:12"
+      ],
+      "before": {
+        "event_id": 1733,
+        "timestamp": "2025-01-02T20:24:03",
+        "container_id": "EVT0000182",
+        "origin": "DISCHARGE",
+        "port": "PORT_11",
+        "weight": "LIGHT",
+        "stored_etd": "2025-01-02T20:27:12",
+        "vessel": "VSL003",
+        "metadata_rotation": 1,
+        "actual_window_rotations": [
+          1
+        ]
+      },
+      "after": {
+        "event_id": 12410,
+        "timestamp": "2025-01-11T09:04:02",
+        "container_id": "EVT0000265",
+        "origin": "DISCHARGE",
+        "port": "PORT_01",
+        "weight": "HEAVY",
+        "stored_etd": "2025-01-02T20:27:12",
+        "vessel": "VSL003",
+        "metadata_rotation": 1,
+        "actual_window_rotations": [
+          2
+        ]
+      },
+      "context": [
+        {
+          "event_id": 1727,
+          "timestamp": "2025-01-02T20:19:24",
+          "container_id": "EVT0000106",
+          "origin": "DISCHARGE",
+          "port": "PORT_11",
+          "weight": "LIGHT",
+          "stored_etd": "2025-01-02T20:27:12",
+          "vessel": "VSL003",
+          "metadata_rotation": 1,
+          "actual_window_rotations": [
+            1
+          ]
+        },
+        {
+          "event_id": 1733,
+          "timestamp": "2025-01-02T20:24:03",
+          "container_id": "EVT0000182",
+          "origin": "DISCHARGE",
+          "port": "PORT_11",
+          "weight": "LIGHT",
+          "stored_etd": "2025-01-02T20:27:12",
+          "vessel": "VSL003",
+          "metadata_rotation": 1,
+          "actual_window_rotations": [
+            1
+          ]
+        },
+        {
+          "event_id": 12410,
+          "timestamp": "2025-01-11T09:04:02",
+          "container_id": "EVT0000265",
+          "origin": "DISCHARGE",
+          "port": "PORT_01",
+          "weight": "HEAVY",
+          "stored_etd": "2025-01-02T20:27:12",
+          "vessel": "VSL003",
+          "metadata_rotation": 1,
+          "actual_window_rotations": [
+            2
+          ]
+        },
+        {
+          "event_id": 12411,
+          "timestamp": "2025-01-11T09:05:45",
+          "container_id": "EVT0000222",
+          "origin": "DISCHARGE",
+          "port": "PORT_01",
+          "weight": "HEAVY",
+          "stored_etd": "2025-01-02T20:27:12",
+          "vessel": "VSL003",
+          "metadata_rotation": 1,
+          "actual_window_rotations": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "group": [
+        "VSL003",
+        "2025-01-11T21:42:53"
+      ],
+      "before": {
+        "event_id": 1723,
+        "timestamp": "2025-01-02T20:17:03",
+        "container_id": "CONT0001254",
+        "origin": "initial",
+        "port": "PORT_11",
+        "weight": "LIGHT",
+        "stored_etd": "2025-01-11T21:42:53",
+        "vessel": "VSL003",
+        "metadata_rotation": 2,
+        "actual_window_rotations": [
+          1
+        ]
+      },
+      "after": {
+        "event_id": 12407,
+        "timestamp": "2025-01-11T08:58:41",
+        "container_id": "CONT0003879",
+        "origin": "initial",
+        "port": "PORT_01",
+        "weight": "HEAVY",
+        "stored_etd": "2025-01-11T21:42:53",
+        "vessel": "VSL003",
+        "metadata_rotation": 2,
+        "actual_window_rotations": [
+          2
+        ]
+      },
+      "context": [
+        {
+          "event_id": 1702,
+          "timestamp": "2025-01-02T20:04:41",
+          "container_id": "CONT0003185",
+          "origin": "initial",
+          "port": "PORT_11",
+          "weight": "MEDIUM",
+          "stored_etd": "2025-01-11T21:42:53",
+          "vessel": "VSL003",
+          "metadata_rotation": 2,
+          "actual_window_rotations": [
+            1
+          ]
+        },
+        {
+          "event_id": 1723,
+          "timestamp": "2025-01-02T20:17:03",
+          "container_id": "CONT0001254",
+          "origin": "initial",
+          "port": "PORT_11",
+          "weight": "LIGHT",
+          "stored_etd": "2025-01-11T21:42:53",
+          "vessel": "VSL003",
+          "metadata_rotation": 2,
+          "actual_window_rotations": [
+            1
+          ]
+        },
+        {
+          "event_id": 12407,
+          "timestamp": "2025-01-11T08:58:41",
+          "container_id": "CONT0003879",
+          "origin": "initial",
+          "port": "PORT_01",
+          "weight": "HEAVY",
+          "stored_etd": "2025-01-11T21:42:53",
+          "vessel": "VSL003",
+          "metadata_rotation": 2,
+          "actual_window_rotations": [
+            2
+          ]
+        },
+        {
+          "event_id": 12408,
+          "timestamp": "2025-01-11T09:00:22",
+          "container_id": "EVT0005353",
+          "origin": "DISCHARGE",
+          "port": "PORT_01",
+          "weight": "HEAVY",
+          "stored_etd": "2025-01-11T21:42:53",
+          "vessel": "VSL003",
+          "metadata_rotation": 2,
+          "actual_window_rotations": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "group": [
+        "VSL003",
+        "2025-01-21T12:01:12"
+      ],
+      "before": {
+        "event_id": 1736,
+        "timestamp": "2025-01-02T20:25:09",
+        "container_id": "CONT0003242",
+        "origin": "initial",
+        "port": "PORT_11",
+        "weight": "LIGHT",
+        "stored_etd": "2025-01-21T12:01:12",
+        "vessel": "VSL003",
+        "metadata_rotation": 3,
+        "actual_window_rotations": [
+          1
+        ]
+      },
+      "after": {
+        "event_id": 12409,
+        "timestamp": "2025-01-11T09:02:18",
+        "container_id": "EVT0000528",
+        "origin": "DISCHARGE",
+        "port": "PORT_01",
+        "weight": "HEAVY",
+        "stored_etd": "2025-01-21T12:01:12",
+        "vessel": "VSL003",
+        "metadata_rotation": 3,
+        "actual_window_rotations": [
+          2
+        ]
+      },
+      "context": [
+        {
+          "event_id": 1711,
+          "timestamp": "2025-01-02T20:10:14",
+          "container_id": "CONT0002705",
+          "origin": "initial",
+          "port": "PORT_11",
+          "weight": "MEDIUM",
+          "stored_etd": "2025-01-21T12:01:12",
+          "vessel": "VSL003",
+          "metadata_rotation": 3,
+          "actual_window_rotations": [
+            1
+          ]
+        },
+        {
+          "event_id": 1736,
+          "timestamp": "2025-01-02T20:25:09",
+          "container_id": "CONT0003242",
+          "origin": "initial",
+          "port": "PORT_11",
+          "weight": "LIGHT",
+          "stored_etd": "2025-01-21T12:01:12",
+          "vessel": "VSL003",
+          "metadata_rotation": 3,
+          "actual_window_rotations": [
+            1
+          ]
+        },
+        {
+          "event_id": 12409,
+          "timestamp": "2025-01-11T09:02:18",
+          "container_id": "EVT0000528",
+          "origin": "DISCHARGE",
+          "port": "PORT_01",
+          "weight": "HEAVY",
+          "stored_etd": "2025-01-21T12:01:12",
+          "vessel": "VSL003",
+          "metadata_rotation": 3,
+          "actual_window_rotations": [
+            2
+          ]
+        },
+        {
+          "event_id": 12438,
+          "timestamp": "2025-01-11T09:39:31",
+          "container_id": "EVT0003736",
+          "origin": "DISCHARGE",
+          "port": "PORT_01",
+          "weight": "MEDIUM",
+          "stored_etd": "2025-01-21T12:01:12",
+          "vessel": "VSL003",
+          "metadata_rotation": 3,
+          "actual_window_rotations": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "group": [
+        "VSL005",
+        "2025-01-17T23:49:33"
+      ],
+      "before": {
+        "event_id": 1925,
+        "timestamp": "2025-01-03T01:19:37",
+        "container_id": "CONT0002942",
+        "origin": "initial",
+        "port": "PORT_10",
+        "weight": "LIGHT",
+        "stored_etd": "2025-01-17T23:49:33",
+        "vessel": "VSL005",
+        "metadata_rotation": 2,
+        "actual_window_rotations": [
+          1
+        ]
+      },
+      "after": {
+        "event_id": 16152,
+        "timestamp": "2025-01-17T08:09:32",
+        "container_id": "CONT0001739",
+        "origin": "initial",
+        "port": "PORT_01",
+        "weight": "HEAVY",
+        "stored_etd": "2025-01-17T23:49:33",
+        "vessel": "VSL005",
+        "metadata_rotation": 2,
+        "actual_window_rotations": [
+          2
+        ]
+      },
+      "context": [
+        {
+          "event_id": 1908,
+          "timestamp": "2025-01-03T00:49:44",
+          "container_id": "CONT0002099",
+          "origin": "initial",
+          "port": "PORT_10",
+          "weight": "MEDIUM",
+          "stored_etd": "2025-01-17T23:49:33",
+          "vessel": "VSL005",
+          "metadata_rotation": 2,
+          "actual_window_rotations": [
+            1
+          ]
+        },
+        {
+          "event_id": 1925,
+          "timestamp": "2025-01-03T01:19:37",
+          "container_id": "CONT0002942",
+          "origin": "initial",
+          "port": "PORT_10",
+          "weight": "LIGHT",
+          "stored_etd": "2025-01-17T23:49:33",
+          "vessel": "VSL005",
+          "metadata_rotation": 2,
+          "actual_window_rotations": [
+            1
+          ]
+        },
+        {
+          "event_id": 16152,
+          "timestamp": "2025-01-17T08:09:32",
+          "container_id": "CONT0001739",
+          "origin": "initial",
+          "port": "PORT_01",
+          "weight": "HEAVY",
+          "stored_etd": "2025-01-17T23:49:33",
+          "vessel": "VSL005",
+          "metadata_rotation": 2,
+          "actual_window_rotations": [
+            2
+          ]
+        },
+        {
+          "event_id": 16153,
+          "timestamp": "2025-01-17T08:10:40",
+          "container_id": "CONT0000549",
+          "origin": "initial",
+          "port": "PORT_01",
+          "weight": "HEAVY",
+          "stored_etd": "2025-01-17T23:49:33",
+          "vessel": "VSL005",
+          "metadata_rotation": 2,
+          "actual_window_rotations": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "group": [
+        "VSL005",
+        "2025-01-03T10:54:26"
+      ],
+      "before": {
+        "event_id": 1919,
+        "timestamp": "2025-01-03T01:09:14",
+        "container_id": "CONT0004177",
+        "origin": "initial",
+        "port": "PORT_10",
+        "weight": "LIGHT",
+        "stored_etd": "2025-01-03T10:54:26",
+        "vessel": "VSL005",
+        "metadata_rotation": 1,
+        "actual_window_rotations": [
+          1
+        ]
+      },
+      "after": {
+        "event_id": 16154,
+        "timestamp": "2025-01-17T08:11:54",
+        "container_id": "EVT0000533",
+        "origin": "DISCHARGE",
+        "port": "PORT_01",
+        "weight": "HEAVY",
+        "stored_etd": "2025-01-03T10:54:26",
+        "vessel": "VSL005",
+        "metadata_rotation": 1,
+        "actual_window_rotations": [
+          2
+        ]
+      },
+      "context": [
+        {
+          "event_id": 1916,
+          "timestamp": "2025-01-03T01:03:36",
+          "container_id": "EVT0000640",
+          "origin": "DISCHARGE",
+          "port": "PORT_10",
+          "weight": "MEDIUM",
+          "stored_etd": "2025-01-03T10:54:26",
+          "vessel": "VSL005",
+          "metadata_rotation": 1,
+          "actual_window_rotations": [
+            1
+          ]
+        },
+        {
+          "event_id": 1919,
+          "timestamp": "2025-01-03T01:09:14",
+          "container_id": "CONT0004177",
+          "origin": "initial",
+          "port": "PORT_10",
+          "weight": "LIGHT",
+          "stored_etd": "2025-01-03T10:54:26",
+          "vessel": "VSL005",
+          "metadata_rotation": 1,
+          "actual_window_rotations": [
+            1
+          ]
+        },
+        {
+          "event_id": 16154,
+          "timestamp": "2025-01-17T08:11:54",
+          "container_id": "EVT0000533",
+          "origin": "DISCHARGE",
+          "port": "PORT_01",
+          "weight": "HEAVY",
+          "stored_etd": "2025-01-03T10:54:26",
+          "vessel": "VSL005",
+          "metadata_rotation": 1,
+          "actual_window_rotations": [
+            2
+          ]
+        },
+        {
+          "event_id": 16160,
+          "timestamp": "2025-01-17T08:15:17",
+          "container_id": "CONT0003864",
+          "origin": "initial",
+          "port": "PORT_01",
+          "weight": "HEAVY",
+          "stored_etd": "2025-01-03T10:54:26",
+          "vessel": "VSL005",
+          "metadata_rotation": 1,
+          "actual_window_rotations": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "group": [
+        "VSL001",
+        "2025-01-05T16:25:49"
+      ],
+      "before": {
+        "event_id": 4717,
+        "timestamp": "2025-01-05T08:52:32",
+        "container_id": "CONT0003766",
+        "origin": "initial",
+        "port": "PORT_04",
+        "weight": "LIGHT",
+        "stored_etd": "2025-01-05T16:25:49",
+        "vessel": "VSL001",
+        "metadata_rotation": 1,
+        "actual_window_rotations": [
+          1
+        ]
+      },
+      "after": {
+        "event_id": 14344,
+        "timestamp": "2025-01-16T03:47:04",
+        "container_id": "EVT0001178",
+        "origin": "DISCHARGE",
+        "port": "PORT_01",
+        "weight": "HEAVY",
+        "stored_etd": "2025-01-05T16:25:49",
+        "vessel": "VSL001",
+        "metadata_rotation": 1,
+        "actual_window_rotations": [
+          2
+        ]
+      },
+      "context": [
+        {
+          "event_id": 4710,
+          "timestamp": "2025-01-05T08:49:58",
+          "container_id": "CONT0002606",
+          "origin": "initial",
+          "port": "PORT_04",
+          "weight": "LIGHT",
+          "stored_etd": "2025-01-05T16:25:49",
+          "vessel": "VSL001",
+          "metadata_rotation": 1,
+          "actual_window_rotations": [
+            1
+          ]
+        },
+        {
+          "event_id": 4717,
+          "timestamp": "2025-01-05T08:52:32",
+          "container_id": "CONT0003766",
+          "origin": "initial",
+          "port": "PORT_04",
+          "weight": "LIGHT",
+          "stored_etd": "2025-01-05T16:25:49",
+          "vessel": "VSL001",
+          "metadata_rotation": 1,
+          "actual_window_rotations": [
+            1
+          ]
+        },
+        {
+          "event_id": 14344,
+          "timestamp": "2025-01-16T03:47:04",
+          "container_id": "EVT0001178",
+          "origin": "DISCHARGE",
+          "port": "PORT_01",
+          "weight": "HEAVY",
+          "stored_etd": "2025-01-05T16:25:49",
+          "vessel": "VSL001",
+          "metadata_rotation": 1,
+          "actual_window_rotations": [
+            2
+          ]
+        },
+        {
+          "event_id": 14350,
+          "timestamp": "2025-01-16T03:51:00",
+          "container_id": "EVT0001298",
+          "origin": "DISCHARGE",
+          "port": "PORT_01",
+          "weight": "HEAVY",
+          "stored_etd": "2025-01-05T16:25:49",
+          "vessel": "VSL001",
+          "metadata_rotation": 1,
+          "actual_window_rotations": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "group": [
+        "VSL001",
+        "2025-01-16T13:20:20"
+      ],
+      "before": {
+        "event_id": 4672,
+        "timestamp": "2025-01-05T08:37:50",
+        "container_id": "CONT0001006",
+        "origin": "initial",
+        "port": "PORT_04",
+        "weight": "LIGHT",
+        "stored_etd": "2025-01-16T13:20:20",
+        "vessel": "VSL001",
+        "metadata_rotation": 2,
+        "actual_window_rotations": [
+          1
+        ]
+      },
+      "after": {
+        "event_id": 14345,
+        "timestamp": "2025-01-16T03:48:12",
+        "container_id": "TRK0001791",
+        "origin": "TRUCK_RECV",
+        "port": "PORT_01",
+        "weight": "HEAVY",
+        "stored_etd": "2025-01-16T13:20:20",
+        "vessel": "VSL001",
+        "metadata_rotation": 2,
+        "actual_window_rotations": [
+          2
+        ]
+      },
+      "context": [
+        {
+          "event_id": 4659,
+          "timestamp": "2025-01-05T08:33:41",
+          "container_id": "CONT0002808",
+          "origin": "initial",
+          "port": "PORT_04",
+          "weight": "LIGHT",
+          "stored_etd": "2025-01-16T13:20:20",
+          "vessel": "VSL001",
+          "metadata_rotation": 2,
+          "actual_window_rotations": [
+            1
+          ]
+        },
+        {
+          "event_id": 4672,
+          "timestamp": "2025-01-05T08:37:50",
+          "container_id": "CONT0001006",
+          "origin": "initial",
+          "port": "PORT_04",
+          "weight": "LIGHT",
+          "stored_etd": "2025-01-16T13:20:20",
+          "vessel": "VSL001",
+          "metadata_rotation": 2,
+          "actual_window_rotations": [
+            1
+          ]
+        },
+        {
+          "event_id": 14345,
+          "timestamp": "2025-01-16T03:48:12",
+          "container_id": "TRK0001791",
+          "origin": "TRUCK_RECV",
+          "port": "PORT_01",
+          "weight": "HEAVY",
+          "stored_etd": "2025-01-16T13:20:20",
+          "vessel": "VSL001",
+          "metadata_rotation": 2,
+          "actual_window_rotations": [
+            2
+          ]
+        },
+        {
+          "event_id": 14352,
+          "timestamp": "2025-01-16T03:52:14",
+          "container_id": "EVT0004862",
+          "origin": "DISCHARGE",
+          "port": "PORT_01",
+          "weight": "HEAVY",
+          "stored_etd": "2025-01-16T13:20:20",
+          "vessel": "VSL001",
+          "metadata_rotation": 2,
+          "actual_window_rotations": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "group": [
+        "VSL002",
+        "2025-01-05T15:50:02"
+      ],
+      "before": {
+        "event_id": 5409,
+        "timestamp": "2025-01-05T15:45:20",
+        "container_id": "CONT0004530",
+        "origin": "initial",
+        "port": "PORT_13",
+        "weight": "LIGHT",
+        "stored_etd": "2025-01-05T15:50:02",
+        "vessel": "VSL002",
+        "metadata_rotation": 1,
+        "actual_window_rotations": [
+          1
+        ]
+      },
+      "after": {
+        "event_id": 19496,
+        "timestamp": "2025-01-20T01:56:02",
+        "container_id": "TRK0000958",
+        "origin": "TRUCK_RECV",
+        "port": "PORT_01",
+        "weight": "HEAVY",
+        "stored_etd": "2025-01-05T15:50:02",
+        "vessel": "VSL002",
+        "metadata_rotation": 1,
+        "actual_window_rotations": [
+          2
+        ]
+      },
+      "context": [
+        {
+          "event_id": 5407,
+          "timestamp": "2025-01-05T15:44:26",
+          "container_id": "CONT0003543",
+          "origin": "initial",
+          "port": "PORT_13",
+          "weight": "LIGHT",
+          "stored_etd": "2025-01-05T15:50:02",
+          "vessel": "VSL002",
+          "metadata_rotation": 1,
+          "actual_window_rotations": [
+            1
+          ]
+        },
+        {
+          "event_id": 5409,
+          "timestamp": "2025-01-05T15:45:20",
+          "container_id": "CONT0004530",
+          "origin": "initial",
+          "port": "PORT_13",
+          "weight": "LIGHT",
+          "stored_etd": "2025-01-05T15:50:02",
+          "vessel": "VSL002",
+          "metadata_rotation": 1,
+          "actual_window_rotations": [
+            1
+          ]
+        },
+        {
+          "event_id": 19496,
+          "timestamp": "2025-01-20T01:56:02",
+          "container_id": "TRK0000958",
+          "origin": "TRUCK_RECV",
+          "port": "PORT_01",
+          "weight": "HEAVY",
+          "stored_etd": "2025-01-05T15:50:02",
+          "vessel": "VSL002",
+          "metadata_rotation": 1,
+          "actual_window_rotations": [
+            2
+          ]
+        },
+        {
+          "event_id": 19498,
+          "timestamp": "2025-01-20T01:57:42",
+          "container_id": "CONT0001648",
+          "origin": "initial",
+          "port": "PORT_01",
+          "weight": "HEAVY",
+          "stored_etd": "2025-01-05T15:50:02",
+          "vessel": "VSL002",
+          "metadata_rotation": 1,
+          "actual_window_rotations": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "group": [
+        "VSL002",
+        "2025-01-20T10:56:09"
+      ],
+      "before": {
+        "event_id": 5386,
+        "timestamp": "2025-01-05T15:35:49",
+        "container_id": "CONT0002401",
+        "origin": "initial",
+        "port": "PORT_13",
+        "weight": "MEDIUM",
+        "stored_etd": "2025-01-20T10:56:09",
+        "vessel": "VSL002",
+        "metadata_rotation": 2,
+        "actual_window_rotations": [
+          1
+        ]
+      },
+      "after": {
+        "event_id": 19495,
+        "timestamp": "2025-01-20T01:54:03",
+        "container_id": "TRK0001002",
+        "origin": "TRUCK_RECV",
+        "port": "PORT_01",
+        "weight": "HEAVY",
+        "stored_etd": "2025-01-20T10:56:09",
+        "vessel": "VSL002",
+        "metadata_rotation": 2,
+        "actual_window_rotations": [
+          2
+        ]
+      },
+      "context": [
+        {
+          "event_id": 5382,
+          "timestamp": "2025-01-05T15:33:32",
+          "container_id": "CONT0002385",
+          "origin": "initial",
+          "port": "PORT_13",
+          "weight": "MEDIUM",
+          "stored_etd": "2025-01-20T10:56:09",
+          "vessel": "VSL002",
+          "metadata_rotation": 2,
+          "actual_window_rotations": [
+            1
+          ]
+        },
+        {
+          "event_id": 5386,
+          "timestamp": "2025-01-05T15:35:49",
+          "container_id": "CONT0002401",
+          "origin": "initial",
+          "port": "PORT_13",
+          "weight": "MEDIUM",
+          "stored_etd": "2025-01-20T10:56:09",
+          "vessel": "VSL002",
+          "metadata_rotation": 2,
+          "actual_window_rotations": [
+            1
+          ]
+        },
+        {
+          "event_id": 19495,
+          "timestamp": "2025-01-20T01:54:03",
+          "container_id": "TRK0001002",
+          "origin": "TRUCK_RECV",
+          "port": "PORT_01",
+          "weight": "HEAVY",
+          "stored_etd": "2025-01-20T10:56:09",
+          "vessel": "VSL002",
+          "metadata_rotation": 2,
+          "actual_window_rotations": [
+            2
+          ]
+        },
+        {
+          "event_id": 19500,
+          "timestamp": "2025-01-20T02:01:22",
+          "container_id": "TRK0001843",
+          "origin": "TRUCK_RECV",
+          "port": "PORT_01",
+          "weight": "HEAVY",
+          "stored_etd": "2025-01-20T10:56:09",
+          "vessel": "VSL002",
+          "metadata_rotation": 2,
+          "actual_window_rotations": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "group": [
+        "VSL004",
+        "2025-01-06T00:20:47"
+      ],
+      "before": {
+        "event_id": 6363,
+        "timestamp": "2025-01-05T22:37:07",
+        "container_id": "CONT0001406",
+        "origin": "initial",
+        "port": "PORT_12",
+        "weight": "LIGHT",
+        "stored_etd": "2025-01-06T00:20:47",
+        "vessel": "VSL004",
+        "metadata_rotation": 1,
+        "actual_window_rotations": [
+          1
+        ]
+      },
+      "after": {
+        "event_id": 18613,
+        "timestamp": "2025-01-19T14:09:37",
+        "container_id": "EVT0002157",
+        "origin": "DISCHARGE",
+        "port": "PORT_01",
+        "weight": "HEAVY",
+        "stored_etd": "2025-01-06T00:20:47",
+        "vessel": "VSL004",
+        "metadata_rotation": 1,
+        "actual_window_rotations": [
+          2
+        ]
+      },
+      "context": [
+        {
+          "event_id": 6344,
+          "timestamp": "2025-01-05T22:30:34",
+          "container_id": "EVT0002265",
+          "origin": "DISCHARGE",
+          "port": "PORT_12",
+          "weight": "LIGHT",
+          "stored_etd": "2025-01-06T00:20:47",
+          "vessel": "VSL004",
+          "metadata_rotation": 1,
+          "actual_window_rotations": [
+            1
+          ]
+        },
+        {
+          "event_id": 6363,
+          "timestamp": "2025-01-05T22:37:07",
+          "container_id": "CONT0001406",
+          "origin": "initial",
+          "port": "PORT_12",
+          "weight": "LIGHT",
+          "stored_etd": "2025-01-06T00:20:47",
+          "vessel": "VSL004",
+          "metadata_rotation": 1,
+          "actual_window_rotations": [
+            1
+          ]
+        },
+        {
+          "event_id": 18613,
+          "timestamp": "2025-01-19T14:09:37",
+          "container_id": "EVT0002157",
+          "origin": "DISCHARGE",
+          "port": "PORT_01",
+          "weight": "HEAVY",
+          "stored_etd": "2025-01-06T00:20:47",
+          "vessel": "VSL004",
+          "metadata_rotation": 1,
+          "actual_window_rotations": [
+            2
+          ]
+        },
+        {
+          "event_id": 18615,
+          "timestamp": "2025-01-19T14:10:36",
+          "container_id": "EVT0001995",
+          "origin": "DISCHARGE",
+          "port": "PORT_01",
+          "weight": "HEAVY",
+          "stored_etd": "2025-01-06T00:20:47",
+          "vessel": "VSL004",
+          "metadata_rotation": 1,
+          "actual_window_rotations": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "group": [
+        "VSL004",
+        "2025-01-19T22:26:36"
+      ],
+      "before": {
+        "event_id": 6353,
+        "timestamp": "2025-01-05T22:33:48",
+        "container_id": "CONT0003703",
+        "origin": "initial",
+        "port": "PORT_12",
+        "weight": "LIGHT",
+        "stored_etd": "2025-01-19T22:26:36",
+        "vessel": "VSL004",
+        "metadata_rotation": 2,
+        "actual_window_rotations": [
+          1
+        ]
+      },
+      "after": {
+        "event_id": 18608,
+        "timestamp": "2025-01-19T14:07:08",
+        "container_id": "EVT0006951",
+        "origin": "DISCHARGE",
+        "port": "PORT_01",
+        "weight": "HEAVY",
+        "stored_etd": "2025-01-19T22:26:36",
+        "vessel": "VSL004",
+        "metadata_rotation": 2,
+        "actual_window_rotations": [
+          2
+        ]
+      },
+      "context": [
+        {
+          "event_id": 6335,
+          "timestamp": "2025-01-05T22:27:21",
+          "container_id": "CONT0000656",
+          "origin": "initial",
+          "port": "PORT_12",
+          "weight": "LIGHT",
+          "stored_etd": "2025-01-19T22:26:36",
+          "vessel": "VSL004",
+          "metadata_rotation": 2,
+          "actual_window_rotations": [
+            1
+          ]
+        },
+        {
+          "event_id": 6353,
+          "timestamp": "2025-01-05T22:33:48",
+          "container_id": "CONT0003703",
+          "origin": "initial",
+          "port": "PORT_12",
+          "weight": "LIGHT",
+          "stored_etd": "2025-01-19T22:26:36",
+          "vessel": "VSL004",
+          "metadata_rotation": 2,
+          "actual_window_rotations": [
+            1
+          ]
+        },
+        {
+          "event_id": 18608,
+          "timestamp": "2025-01-19T14:07:08",
+          "container_id": "EVT0006951",
+          "origin": "DISCHARGE",
+          "port": "PORT_01",
+          "weight": "HEAVY",
+          "stored_etd": "2025-01-19T22:26:36",
+          "vessel": "VSL004",
+          "metadata_rotation": 2,
+          "actual_window_rotations": [
+            2
+          ]
+        },
+        {
+          "event_id": 18610,
+          "timestamp": "2025-01-19T14:08:08",
+          "container_id": "CONT0001390",
+          "origin": "initial",
+          "port": "PORT_01",
+          "weight": "HEAVY",
+          "stored_etd": "2025-01-19T22:26:36",
+          "vessel": "VSL004",
+          "metadata_rotation": 2,
+          "actual_window_rotations": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "group": [
+        "VSL006",
+        "2025-01-06T15:34:45"
+      ],
+      "before": {
+        "event_id": 7847,
+        "timestamp": "2025-01-06T15:33:01",
+        "container_id": "EVT0002783",
+        "origin": "DISCHARGE",
+        "port": "PORT_11",
+        "weight": "LIGHT",
+        "stored_etd": "2025-01-06T15:34:45",
+        "vessel": "VSL006",
+        "metadata_rotation": 1,
+        "actual_window_rotations": [
+          1
+        ]
+      },
+      "after": {
+        "event_id": 15009,
+        "timestamp": "2025-01-16T11:40:44",
+        "container_id": "EVT0002482",
+        "origin": "DISCHARGE",
+        "port": "PORT_04",
+        "weight": "HEAVY",
+        "stored_etd": "2025-01-06T15:34:45",
+        "vessel": "VSL006",
+        "metadata_rotation": 1,
+        "actual_window_rotations": [
+          2
+        ]
+      },
+      "context": [
+        {
+          "event_id": 7845,
+          "timestamp": "2025-01-06T15:31:41",
+          "container_id": "TRK0000054",
+          "origin": "TRUCK_RECV",
+          "port": "PORT_11",
+          "weight": "LIGHT",
+          "stored_etd": "2025-01-06T15:34:45",
+          "vessel": "VSL006",
+          "metadata_rotation": 1,
+          "actual_window_rotations": [
+            1
+          ]
+        },
+        {
+          "event_id": 7847,
+          "timestamp": "2025-01-06T15:33:01",
+          "container_id": "EVT0002783",
+          "origin": "DISCHARGE",
+          "port": "PORT_11",
+          "weight": "LIGHT",
+          "stored_etd": "2025-01-06T15:34:45",
+          "vessel": "VSL006",
+          "metadata_rotation": 1,
+          "actual_window_rotations": [
+            1
+          ]
+        },
+        {
+          "event_id": 15009,
+          "timestamp": "2025-01-16T11:40:44",
+          "container_id": "EVT0002482",
+          "origin": "DISCHARGE",
+          "port": "PORT_04",
+          "weight": "HEAVY",
+          "stored_etd": "2025-01-06T15:34:45",
+          "vessel": "VSL006",
+          "metadata_rotation": 1,
+          "actual_window_rotations": [
+            2
+          ]
+        },
+        {
+          "event_id": 15020,
+          "timestamp": "2025-01-16T11:47:26",
+          "container_id": "TRK0002010",
+          "origin": "TRUCK_RECV",
+          "port": "PORT_04",
+          "weight": "HEAVY",
+          "stored_etd": "2025-01-06T15:34:45",
+          "vessel": "VSL006",
+          "metadata_rotation": 1,
+          "actual_window_rotations": [
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "group": [
+        "VSL006",
+        "2025-01-17T04:45:45"
+      ],
+      "before": {
+        "event_id": 7828,
+        "timestamp": "2025-01-06T15:19:25",
+        "container_id": "CONT0001044",
+        "origin": "initial",
+        "port": "PORT_11",
+        "weight": "LIGHT",
+        "stored_etd": "2025-01-17T04:45:45",
+        "vessel": "VSL006",
+        "metadata_rotation": 2,
+        "actual_window_rotations": [
+          1
+        ]
+      },
+      "after": {
+        "event_id": 15004,
+        "timestamp": "2025-01-16T11:38:18",
+        "container_id": "EVT0006009",
+        "origin": "DISCHARGE",
+        "port": "PORT_04",
+        "weight": "HEAVY",
+        "stored_etd": "2025-01-17T04:45:45",
+        "vessel": "VSL006",
+        "metadata_rotation": 2,
+        "actual_window_rotations": [
+          2
+        ]
+      },
+      "context": [
+        {
+          "event_id": 7824,
+          "timestamp": "2025-01-06T15:15:56",
+          "container_id": "CONT0001359",
+          "origin": "initial",
+          "port": "PORT_11",
+          "weight": "MEDIUM",
+          "stored_etd": "2025-01-17T04:45:45",
+          "vessel": "VSL006",
+          "metadata_rotation": 2,
+          "actual_window_rotations": [
+            1
+          ]
+        },
+        {
+          "event_id": 7828,
+          "timestamp": "2025-01-06T15:19:25",
+          "container_id": "CONT0001044",
+          "origin": "initial",
+          "port": "PORT_11",
+          "weight": "LIGHT",
+          "stored_etd": "2025-01-17T04:45:45",
+          "vessel": "VSL006",
+          "metadata_rotation": 2,
+          "actual_window_rotations": [
+            1
+          ]
+        },
+        {
+          "event_id": 15004,
+          "timestamp": "2025-01-16T11:38:18",
+          "container_id": "EVT0006009",
+          "origin": "DISCHARGE",
+          "port": "PORT_04",
+          "weight": "HEAVY",
+          "stored_etd": "2025-01-17T04:45:45",
+          "vessel": "VSL006",
+          "metadata_rotation": 2,
+          "actual_window_rotations": [
+            2
+          ]
+        },
+        {
+          "event_id": 15006,
+          "timestamp": "2025-01-16T11:39:40",
+          "container_id": "CONT0003890",
+          "origin": "initial",
+          "port": "PORT_04",
+          "weight": "HEAVY",
+          "stored_etd": "2025-01-17T04:45:45",
+          "vessel": "VSL006",
+          "metadata_rotation": 2,
+          "actual_window_rotations": [
+            2
+          ]
+        }
+      ]
+    }
+  ],
+  "actual_window_order_stats": [
+    {
+      "vessel": "VSL003",
+      "actual_windows": [
+        1
+      ],
+      "n": 229,
+      "lex_port_decreases": 0,
+      "schedule_forward_decreases": 1,
+      "schedule_reverse_decreases": 4,
+      "same_port_weight_reversals": 0
+    },
+    {
+      "vessel": "VSL005",
+      "actual_windows": [
+        1
+      ],
+      "n": 163,
+      "lex_port_decreases": 0,
+      "schedule_forward_decreases": 3,
+      "schedule_reverse_decreases": 1,
+      "same_port_weight_reversals": 0
+    },
+    {
+      "vessel": "VSL012",
+      "actual_windows": [
+        1
+      ],
+      "n": 301,
+      "lex_port_decreases": 0,
+      "schedule_forward_decreases": 2,
+      "schedule_reverse_decreases": 1,
+      "same_port_weight_reversals": 0
+    },
+    {
+      "vessel": "VSL001",
+      "actual_windows": [
+        1
+      ],
+      "n": 225,
+      "lex_port_decreases": 0,
+      "schedule_forward_decreases": 0,
+      "schedule_reverse_decreases": 2,
+      "same_port_weight_reversals": 0
+    },
+    {
+      "vessel": "VSL002",
+      "actual_windows": [
+        1
+      ],
+      "n": 262,
+      "lex_port_decreases": 0,
+      "schedule_forward_decreases": 1,
+      "schedule_reverse_decreases": 1,
+      "same_port_weight_reversals": 0
+    },
+    {
+      "vessel": "VSL004",
+      "actual_windows": [
+        1
+      ],
+      "n": 292,
+      "lex_port_decreases": 0,
+      "schedule_forward_decreases": 2,
+      "schedule_reverse_decreases": 3,
+      "same_port_weight_reversals": 0
+    },
+    {
+      "vessel": "VSL006",
+      "actual_windows": [
+        1
+      ],
+      "n": 194,
+      "lex_port_decreases": 0,
+      "schedule_forward_decreases": 3,
+      "schedule_reverse_decreases": 1,
+      "same_port_weight_reversals": 0
+    },
+    {
+      "vessel": "VSL007",
+      "actual_windows": [
+        1
+      ],
+      "n": 280,
+      "lex_port_decreases": 0,
+      "schedule_forward_decreases": 2,
+      "schedule_reverse_decreases": 3,
+      "same_port_weight_reversals": 0
+    },
+    {
+      "vessel": "VSL008",
+      "actual_windows": [
+        1
+      ],
+      "n": 433,
+      "lex_port_decreases": 0,
+      "schedule_forward_decreases": 0,
+      "schedule_reverse_decreases": 2,
+      "same_port_weight_reversals": 0
+    },
+    {
+      "vessel": "VSL013",
+      "actual_windows": [
+        1
+      ],
+      "n": 433,
+      "lex_port_decreases": 0,
+      "schedule_forward_decreases": 2,
+      "schedule_reverse_decreases": 1,
+      "same_port_weight_reversals": 0
+    },
+    {
+      "vessel": "VSL018",
+      "actual_windows": [
+        1
+      ],
+      "n": 471,
+      "lex_port_decreases": 0,
+      "schedule_forward_decreases": 2,
+      "schedule_reverse_decreases": 1,
+      "same_port_weight_reversals": 0
+    },
+    {
+      "vessel": "VSL011",
+      "actual_windows": [
+        1
+      ],
+      "n": 373,
+      "lex_port_decreases": 0,
+      "schedule_forward_decreases": 1,
+      "schedule_reverse_decreases": 1,
+      "same_port_weight_reversals": 0
+    },
+    {
+      "vessel": "VSL003",
+      "actual_windows": [
+        2
+      ],
+      "n": 215,
+      "lex_port_decreases": 0,
+      "schedule_forward_decreases": 1,
+      "schedule_reverse_decreases": 4,
+      "same_port_weight_reversals": 0
+    },
+    {
+      "vessel": "VSL001",
+      "actual_windows": [
+        2
+      ],
+      "n": 433,
+      "lex_port_decreases": 0,
+      "schedule_forward_decreases": 0,
+      "schedule_reverse_decreases": 2,
+      "same_port_weight_reversals": 0
+    },
+    {
+      "vessel": "VSL006",
+      "actual_windows": [
+        2
+      ],
+      "n": 464,
+      "lex_port_decreases": 0,
+      "schedule_forward_decreases": 3,
+      "schedule_reverse_decreases": 1,
+      "same_port_weight_reversals": 0
+    },
+    {
+      "vessel": "VSL005",
+      "actual_windows": [
+        2
+      ],
+      "n": 481,
+      "lex_port_decreases": 0,
+      "schedule_forward_decreases": 3,
+      "schedule_reverse_decreases": 1,
+      "same_port_weight_reversals": 0
+    },
+    {
+      "vessel": "VSL016",
+      "actual_windows": [
+        1
+      ],
+      "n": 420,
+      "lex_port_decreases": 0,
+      "schedule_forward_decreases": 1,
+      "schedule_reverse_decreases": 2,
+      "same_port_weight_reversals": 0
+    },
+    {
+      "vessel": "VSL004",
+      "actual_windows": [
+        2
+      ],
+      "n": 410,
+      "lex_port_decreases": 0,
+      "schedule_forward_decreases": 2,
+      "schedule_reverse_decreases": 3,
+      "same_port_weight_reversals": 0
+    },
+    {
+      "vessel": "VSL002",
+      "actual_windows": [
+        2
+      ],
+      "n": 307,
+      "lex_port_decreases": 0,
+      "schedule_forward_decreases": 1,
+      "schedule_reverse_decreases": 1,
+      "same_port_weight_reversals": 0
+    }
+  ],
+  "all_LOAD_including_absent_order": [
+    {
+      "vessel": "VSL003",
+      "windows": [
+        1
+      ],
+      "n": 517,
+      "lex_port_decreases": 0,
+      "same_port_weight_reversals": 0
+    },
+    {
+      "vessel": "VSL005",
+      "windows": [
+        1
+      ],
+      "n": 304,
+      "lex_port_decreases": 0,
+      "same_port_weight_reversals": 0
+    },
+    {
+      "vessel": "VSL012",
+      "windows": [
+        1
+      ],
+      "n": 334,
+      "lex_port_decreases": 0,
+      "same_port_weight_reversals": 0
+    },
+    {
+      "vessel": "VSL001",
+      "windows": [
+        1
+      ],
+      "n": 376,
+      "lex_port_decreases": 0,
+      "same_port_weight_reversals": 0
+    },
+    {
+      "vessel": "VSL002",
+      "windows": [
+        1
+      ],
+      "n": 479,
+      "lex_port_decreases": 0,
+      "same_port_weight_reversals": 0
+    },
+    {
+      "vessel": "VSL004",
+      "windows": [
+        1
+      ],
+      "n": 523,
+      "lex_port_decreases": 0,
+      "same_port_weight_reversals": 0
+    },
+    {
+      "vessel": "VSL006",
+      "windows": [
+        1
+      ],
+      "n": 326,
+      "lex_port_decreases": 0,
+      "same_port_weight_reversals": 0
+    },
+    {
+      "vessel": "VSL007",
+      "windows": [
+        1
+      ],
+      "n": 301,
+      "lex_port_decreases": 0,
+      "same_port_weight_reversals": 0
+    },
+    {
+      "vessel": "VSL008",
+      "windows": [
+        1
+      ],
+      "n": 458,
+      "lex_port_decreases": 0,
+      "same_port_weight_reversals": 0
+    },
+    {
+      "vessel": "VSL013",
+      "windows": [
+        1
+      ],
+      "n": 433,
+      "lex_port_decreases": 0,
+      "same_port_weight_reversals": 0
+    },
+    {
+      "vessel": "VSL018",
+      "windows": [
+        1
+      ],
+      "n": 471,
+      "lex_port_decreases": 0,
+      "same_port_weight_reversals": 0
+    },
+    {
+      "vessel": "VSL011",
+      "windows": [
+        1
+      ],
+      "n": 373,
+      "lex_port_decreases": 0,
+      "same_port_weight_reversals": 0
+    },
+    {
+      "vessel": "VSL003",
+      "windows": [
+        2
+      ],
+      "n": 302,
+      "lex_port_decreases": 0,
+      "same_port_weight_reversals": 0
+    },
+    {
+      "vessel": "VSL001",
+      "windows": [
+        2
+      ],
+      "n": 440,
+      "lex_port_decreases": 0,
+      "same_port_weight_reversals": 0
+    },
+    {
+      "vessel": "VSL006",
+      "windows": [
+        2
+      ],
+      "n": 464,
+      "lex_port_decreases": 0,
+      "same_port_weight_reversals": 0
+    },
+    {
+      "vessel": "VSL005",
+      "windows": [
+        2
+      ],
+      "n": 481,
+      "lex_port_decreases": 0,
+      "same_port_weight_reversals": 0
+    },
+    {
+      "vessel": "VSL016",
+      "windows": [
+        1
+      ],
+      "n": 420,
+      "lex_port_decreases": 0,
+      "same_port_weight_reversals": 0
+    },
+    {
+      "vessel": "VSL004",
+      "windows": [
+        2
+      ],
+      "n": 410,
+      "lex_port_decreases": 0,
+      "same_port_weight_reversals": 0
+    },
+    {
+      "vessel": "VSL002",
+      "windows": [
+        2
+      ],
+      "n": 307,
+      "lex_port_decreases": 0,
+      "same_port_weight_reversals": 0
+    }
+  ],
+  "event_vs_container_vessel_mismatches": 0,
+  "errors_by_rotation_match": {
+    "matched/raw": {
+      "n": 4818,
+      "min": -18.411944444444444,
+      "max": -0.014722222222222222,
+      "p1": -16.418219444444446,
+      "p5": -14.377402777777778,
+      "p10": -12.513361111111111,
+      "p25": -9.357569444444444,
+      "p50": -6.804027777777778,
+      "p75": -3.838125,
+      "p90": -1.6974444444444436,
+      "p95": -0.8920972222222225,
+      "p99": -0.19811388888888914
+    },
+    "matched/midpoint": {
+      "n": 4818,
+      "min": -4.9534722222222225,
+      "max": 4.9406944444444445,
+      "p1": -4.696776388888889,
+      "p5": -4.253374999999999,
+      "p10": -3.7778055555555556,
+      "p25": -2.3573958333333334,
+      "p50": -0.04326388888888889,
+      "p75": 2.3007291666666667,
+      "p90": 3.754027777777778,
+      "p95": 4.229756944444444,
+      "p99": 4.671643055555555
+    },
+    "mismatched/raw": {
+      "n": 1568,
+      "min": -457.25388888888887,
+      "max": 355.0808333333333,
+      "p1": -455.69894166666666,
+      "p5": -450.494625,
+      "p10": -443.8105555555556,
+      "p25": -264.078125,
+      "p50": 243.61013888888888,
+      "p75": 331.178125,
+      "p90": 341.2970555555556,
+      "p95": 349.5245972222222,
+      "p99": 354.17415277777775
+    },
+    "mismatched/midpoint": {
+      "n": 1568,
+      "min": -452.85125,
+      "max": 359.8361111111111,
+      "p1": -450.9467472222222,
+      "p5": -445.61856944444446,
+      "p10": -432.9151388888889,
+      "p25": -253.73847222222224,
+      "p50": 248.36208333333335,
+      "p75": 337.64256944444446,
+      "p90": 353.33004166666666,
+      "p95": 355.55269444444446,
+      "p99": 358.92943055555554
+    }
+  },
+  "found_LOAD_metadata_rotation_mismatch": 1568,
+  "note": "Actual windows use event vessel and event time only for offline diagnosis; metadata mapping uses stored ETD."
+}

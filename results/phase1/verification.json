@@ -1,0 +1,12 @@
+{
+  "greedy_cli_metrics_match": true,
+  "baseline_inventory_and_absent_counts_match": true,
+  "all_LOAD_order_records": 7719,
+  "lower_bound": 1325,
+  "bound_checked_per_run": 1645,
+  "baseline_counts_reproduced_on_repeated_runs": true,
+  "existing_tests_passed": 27,
+  "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+  "validator_grep_P_supported": false,
+  "validator_full_run_deferred": "No custom strategy, design.md, or final test output in Phase 1."
+}

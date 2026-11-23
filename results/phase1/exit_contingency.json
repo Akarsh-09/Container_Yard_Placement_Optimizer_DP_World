@@ -1,0 +1,65 @@
+{
+  "initial/scheduled/port_present/72-168h": {
+    "unretrieved_censored": 359,
+    "LOAD": 638,
+    "TRUCK_DLVR": 170
+  },
+  "initial/unscheduled/port_present/>=168h": {
+    "unretrieved_censored": 461,
+    "TRUCK_DLVR": 223
+  },
+  "initial/scheduled/port_present/>=168h": {
+    "LOAD": 1209,
+    "TRUCK_DLVR": 450,
+    "unretrieved_censored": 895
+  },
+  "initial/scheduled/port_present/24-72h": {
+    "TRUCK_DLVR": 58,
+    "LOAD": 186,
+    "unretrieved_censored": 111
+  },
+  "initial/unscheduled/port_present/72-168h": {
+    "unretrieved_censored": 29,
+    "TRUCK_DLVR": 11
+  },
+  "TRUCK_RECV/scheduled/port_present/72-168h": {
+    "LOAD": 344,
+    "unretrieved_censored": 508,
+    "TRUCK_DLVR": 150
+  },
+  "TRUCK_RECV/scheduled/port_present/24-72h": {
+    "LOAD": 261,
+    "unretrieved_censored": 262,
+    "TRUCK_DLVR": 86
+  },
+  "DISCHARGE/scheduled/port_present/24-72h": {
+    "TRUCK_DLVR": 296,
+    "LOAD": 926,
+    "unretrieved_censored": 786
+  },
+  "DISCHARGE/scheduled/port_present/72-168h": {
+    "unretrieved_censored": 146,
+    "LOAD": 144,
+    "TRUCK_DLVR": 49
+  },
+  "DISCHARGE/scheduled/port_present/>=168h": {
+    "LOAD": 175,
+    "unretrieved_censored": 199,
+    "TRUCK_DLVR": 68
+  },
+  "DISCHARGE/scheduled/port_present/0-24h": {
+    "LOAD": 2277,
+    "unretrieved_censored": 2138,
+    "TRUCK_DLVR": 781
+  },
+  "TRUCK_RECV/scheduled/port_present/0-24h": {
+    "TRUCK_DLVR": 26,
+    "unretrieved_censored": 49,
+    "LOAD": 82
+  },
+  "TRUCK_RECV/scheduled/port_present/>=168h": {
+    "LOAD": 144,
+    "unretrieved_censored": 368,
+    "TRUCK_DLVR": 120
+  }
+}

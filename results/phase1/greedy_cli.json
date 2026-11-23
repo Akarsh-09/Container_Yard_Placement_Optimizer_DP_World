@@ -1,0 +1,20 @@
+{
+  "total_events": 20592,
+  "placement_events": 10385,
+  "retrieval_events": 10207,
+  "total_reshuffles": 8036,
+  "reshuffles_per_retrieval": 0.7873,
+  "reshuffle_percentage": 46.04,
+  "max_reshuffles_single": 4,
+  "retrievals_with_reshuffles": 4699,
+  "hard_constraint_violations": 0,
+  "placement_failures": 0,
+  "errors": 0,
+  "final_yard_count": 6311,
+  "elapsed_sec": 4.17,
+  "score_reshuffles": 0.5,
+  "score_violations": 10.0,
+  "quantitative_score": 10.5,
+  "strategy": "src.baseline_greedy.GreedyStrategy",
+  "data_dir": "data/train"
+}

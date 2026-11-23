@@ -1,0 +1,325 @@
+{
+  "raw_error_hours": {
+    "initial/TRUCK_DLVR": {
+      "n": 912,
+      "min": -795.1277777777777,
+      "max": 430.03805555555556,
+      "p1": -675.2685722222221,
+      "p5": -525.0444166666666,
+      "p10": -442.82525,
+      "p25": -302.2509027777778,
+      "p50": -123.99055555555556,
+      "p75": 60.42173611111111,
+      "p90": 220.59980555555552,
+      "p95": 293.2818611111112,
+      "p99": 387.0440638888888
+    },
+    "DISCHARGE/TRUCK_DLVR": {
+      "n": 1194,
+      "min": -382.7375,
+      "max": 432.95194444444445,
+      "p1": -292.1247638888889,
+      "p5": -98.240375,
+      "p10": -21.001583333333336,
+      "p25": -8.925972222222223,
+      "p50": 15.834305555555556,
+      "p75": 132.65576388888888,
+      "p90": 248.89825000000002,
+      "p95": 302.7594722222222,
+      "p99": 359.63553611111087
+    },
+    "DISCHARGE/LOAD": {
+      "n": 3522,
+      "min": -453.94666666666666,
+      "max": 355.0808333333333,
+      "p1": -240.56780277777776,
+      "p5": -14.489416666666665,
+      "p10": -12.365083333333333,
+      "p25": -8.885833333333334,
+      "p50": -5.520694444444445,
+      "p75": -1.2580555555555555,
+      "p90": 258.9290277777778,
+      "p95": 335.1637638888889,
+      "p99": 350.82278055555554
+    },
+    "initial/LOAD": {
+      "n": 2033,
+      "min": -457.25388888888887,
+      "max": 355.01416666666665,
+      "p1": -455.31194444444446,
+      "p5": -448.9905,
+      "p10": -363.95327777777777,
+      "p25": -15.490555555555556,
+      "p50": -7.659722222222222,
+      "p75": -2.7908333333333335,
+      "p90": 251.89566666666667,
+      "p95": 334.03027777777777,
+      "p99": 348.9479666666667
+    },
+    "TRUCK_RECV/LOAD": {
+      "n": 831,
+      "min": -256.8222222222222,
+      "max": 354.6922222222222,
+      "p1": -16.589166666666667,
+      "p5": -14.117083333333333,
+      "p10": -12.221944444444444,
+      "p25": -8.914444444444445,
+      "p50": -6.061944444444444,
+      "p75": -2.631666666666667,
+      "p90": 240.50222222222223,
+      "p95": 326.76694444444445,
+      "p99": 349.7902777777778
+    },
+    "TRUCK_RECV/TRUCK_DLVR": {
+      "n": 382,
+      "min": -264.6188888888889,
+      "max": 370.5416666666667,
+      "p1": -256.74400555555553,
+      "p5": -203.08530555555555,
+      "p10": -184.97105555555555,
+      "p25": -127.7188888888889,
+      "p50": -54.358888888888885,
+      "p75": 3.932986111111111,
+      "p90": 118.39749999999967,
+      "p95": 218.31381944444425,
+      "p99": 310.5329277777778
+    }
+  },
+  "schedule_midpoint_error_hours_by_origin_LOAD": {
+    "DISCHARGE": {
+      "n": 3522,
+      "min": -449.5440277777778,
+      "max": 359.8361111111111,
+      "p1": -236.16516388888888,
+      "p5": -4.253597222222222,
+      "p10": -3.692333333333333,
+      "p25": -1.9235416666666667,
+      "p50": 1.0235416666666666,
+      "p75": 3.9961458333333333,
+      "p90": 270.64472222222224,
+      "p95": 349.16445833333336,
+      "p99": 356.1155416666666
+    },
+    "initial": {
+      "n": 2033,
+      "min": -452.85125,
+      "max": 359.76944444444445,
+      "p1": -450.5782888888889,
+      "p5": -444.011,
+      "p10": -355.95338888888887,
+      "p25": -4.594722222222222,
+      "p50": -0.6394444444444445,
+      "p75": 3.009027777777778,
+      "p90": 263.61136111111114,
+      "p95": 348.03097222222226,
+      "p99": 355.9920833333333
+    },
+    "TRUCK_RECV": {
+      "n": 831,
+      "min": -244.6288888888889,
+      "max": 359.4475,
+      "p1": -4.752194444444445,
+      "p5": -4.28875,
+      "p10": -3.7506944444444446,
+      "p25": -2.2143055555555557,
+      "p50": 0.41333333333333333,
+      "p75": 3.000208333333333,
+      "p90": 245.25416666666666,
+      "p95": 333.2313888888889,
+      "p99": 355.7460694444445
+    }
+  },
+  "integrity": {
+    "initial": {
+      "total": 4800,
+      "missing_departure": 0,
+      "past_at_arrival_or_start": 0
+    },
+    "TRUCK_RECV": {
+      "total": 2400,
+      "missing_departure": 0,
+      "past_at_arrival_or_start": 0
+    },
+    "DISCHARGE": {
+      "total": 7985,
+      "missing_departure": 0,
+      "past_at_arrival_or_start": 0
+    }
+  },
+  "tails_abs_over_24h": {
+    "n": 3366,
+    "by_origin": {
+      "initial": 1611,
+      "DISCHARGE": 1341,
+      "TRUCK_RECV": 414
+    },
+    "by_exit": {
+      "TRUCK_DLVR": 1798,
+      "LOAD": 1568
+    },
+    "multi_rotation": 2773,
+    "truck_only_vessel": 221,
+    "worst_20": [
+      {
+        "container_id": "CONT0003938",
+        "origin": "initial",
+        "exit": "TRUCK_DLVR",
+        "vessel_id": "VSL019",
+        "error_hours": -795.1277777777777,
+        "multi_rotation": false
+      },
+      {
+        "container_id": "CONT0004527",
+        "origin": "initial",
+        "exit": "TRUCK_DLVR",
+        "vessel_id": "VSL019",
+        "error_hours": -768.7752777777778,
+        "multi_rotation": false
+      },
+      {
+        "container_id": "CONT0003824",
+        "origin": "initial",
+        "exit": "TRUCK_DLVR",
+        "vessel_id": "VSL019",
+        "error_hours": -729.4191666666667,
+        "multi_rotation": false
+      },
+      {
+        "container_id": "CONT0003358",
+        "origin": "initial",
+        "exit": "TRUCK_DLVR",
+        "vessel_id": "VSL019",
+        "error_hours": -710.7825,
+        "multi_rotation": false
+      },
+      {
+        "container_id": "CONT0000118",
+        "origin": "initial",
+        "exit": "TRUCK_DLVR",
+        "vessel_id": "VSL020",
+        "error_hours": -710.2336111111111,
+        "multi_rotation": false
+      },
+      {
+        "container_id": "CONT0003579",
+        "origin": "initial",
+        "exit": "TRUCK_DLVR",
+        "vessel_id": "VSL019",
+        "error_hours": -698.7733333333333,
+        "multi_rotation": false
+      },
+      {
+        "container_id": "CONT0003894",
+        "origin": "initial",
+        "exit": "TRUCK_DLVR",
+        "vessel_id": "VSL020",
+        "error_hours": -683.8138888888889,
+        "multi_rotation": false
+      },
+      {
+        "container_id": "CONT0000079",
+        "origin": "initial",
+        "exit": "TRUCK_DLVR",
+        "vessel_id": "VSL019",
+        "error_hours": -682.6458333333334,
+        "multi_rotation": false
+      },
+      {
+        "container_id": "CONT0001911",
+        "origin": "initial",
+        "exit": "TRUCK_DLVR",
+        "vessel_id": "VSL019",
+        "error_hours": -675.4483333333334,
+        "multi_rotation": false
+      },
+      {
+        "container_id": "CONT0004151",
+        "origin": "initial",
+        "exit": "TRUCK_DLVR",
+        "vessel_id": "VSL019",
+        "error_hours": -675.4266666666666,
+        "multi_rotation": false
+      },
+      {
+        "container_id": "CONT0001455",
+        "origin": "initial",
+        "exit": "TRUCK_DLVR",
+        "vessel_id": "VSL019",
+        "error_hours": -673.9894444444444,
+        "multi_rotation": false
+      },
+      {
+        "container_id": "CONT0004349",
+        "origin": "initial",
+        "exit": "TRUCK_DLVR",
+        "vessel_id": "VSL019",
+        "error_hours": -672.4086111111111,
+        "multi_rotation": false
+      },
+      {
+        "container_id": "CONT0000594",
+        "origin": "initial",
+        "exit": "TRUCK_DLVR",
+        "vessel_id": "VSL020",
+        "error_hours": -662.4111111111112,
+        "multi_rotation": false
+      },
+      {
+        "container_id": "CONT0002285",
+        "origin": "initial",
+        "exit": "TRUCK_DLVR",
+        "vessel_id": "VSL019",
+        "error_hours": -659.8316666666667,
+        "multi_rotation": false
+      },
+      {
+        "container_id": "CONT0004147",
+        "origin": "initial",
+        "exit": "TRUCK_DLVR",
+        "vessel_id": "VSL019",
+        "error_hours": -659.4652777777778,
+        "multi_rotation": false
+      },
+      {
+        "container_id": "CONT0000762",
+        "origin": "initial",
+        "exit": "TRUCK_DLVR",
+        "vessel_id": "VSL020",
+        "error_hours": -657.7833333333333,
+        "multi_rotation": false
+      },
+      {
+        "container_id": "CONT0004631",
+        "origin": "initial",
+        "exit": "TRUCK_DLVR",
+        "vessel_id": "VSL019",
+        "error_hours": -657.6647222222222,
+        "multi_rotation": false
+      },
+      {
+        "container_id": "CONT0003438",
+        "origin": "initial",
+        "exit": "TRUCK_DLVR",
+        "vessel_id": "VSL019",
+        "error_hours": -651.0136111111111,
+        "multi_rotation": false
+      },
+      {
+        "container_id": "CONT0003300",
+        "origin": "initial",
+        "exit": "TRUCK_DLVR",
+        "vessel_id": "VSL019",
+        "error_hours": -649.525,
+        "multi_rotation": false
+      },
+      {
+        "container_id": "CONT0002378",
+        "origin": "initial",
+        "exit": "TRUCK_DLVR",
+        "vessel_id": "VSL019",
+        "error_hours": -648.5655555555555,
+        "multi_rotation": false
+      }
+    ]
+  }
+}

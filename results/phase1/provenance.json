@@ -1,0 +1,19 @@
+{
+  "python": "3.13.3 (v3.13.3:6280bb54784, Apr  8 2025, 10:47:54) [Clang 15.0.0 (clang-1500.3.9.4)]",
+  "input_sha256": {
+    "data/yard_layout.json": "ee776c27fdb8a1a56b4fb7fc95fe3e44d23b96877536db59ab9ed5f6623c0af9",
+    "data/train/initial_state.json": "8295c9830ab1481724f575a1695d87e521ed355be601cbc21d4de6b4d740147b",
+    "data/train/events.jsonl": "b3e9f7089ce722ab5984bb27148dfc9870e26cebe15dc70135e57511fa1d1328",
+    "data/vessel_schedule.json": "e1a1a1d3d3d9bb63f47a7a1c0f72b40ac438eea70a29b40e4628f6be64cf1602"
+  },
+  "command": ".venv/bin/python scripts/phase1.py",
+  "random_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "test_data_opened": false,
+  "split": "Fit through Jan 12; holdout Jan 13-20. This phase fits no models."
+}
