@@ -527,3 +527,87 @@ def test_survival_cached_live_history_and_cohort_transitions(expanded,schedule_p
         states.append(yard.snapshot())
     assert traces[0] == traces[1]
     assert states[0] == states[1]
+
+
+def numeric_multi(mx,xs,mc,cs,h,gamma=0):
+    """Independent midpoint quadrature, with exact point-mass contributions."""
+    from math import exp, prod
+    boundaries=sorted({0,h}|{t for t,a in xs+cs if 0<t<h})
+    total=0
+    for a,b in zip(boundaries,boundaries[1:]):
+        n=max(1000,int((b-a)*100))
+        dt=(b-a)/n
+        for i in range(n):
+            t=a+(i+.5)*dt
+            sx=exp(-mx*t)*prod(1-p for z,p in xs if z<t)
+            sc=exp(-mc*t)*prod(1-p for z,p in cs if z<t)
+            total+=exp(-gamma*t)*mx*sx*sc*dt
+    for t,p in xs:
+        if t>h: continue
+        prior_x=prod(1-a for z,a in xs if z<t)
+        prior_c=prod(1-a for z,a in cs if z<t)
+        tied_c=prod(1-a for z,a in cs if z==t)
+        total+=p*prior_x*prior_c*(.5+.5*tied_c)*exp(-(mx+mc+gamma)*t)
+    return total
+
+
+@pytest.mark.parametrize('gamma',[0,.01,.1])
+def test_discount_closed_form_numerical(gamma):
+    from solution.my_strategy import survival_block_probability as p
+    actual=p(.6,.03,7,.4,.02,13,20,0,gamma)
+    assert actual==pytest.approx(numeric_multi(.03,((7,.6),),.02,((13,.4),),20,gamma),abs=1e-8)
+    assert p(.6,.03,7,.4,.02,13,discount_rate=0)==p(.6,.03,7,.4,.02,13)
+    assert p(0,.01,float('inf'),0,.01,float('inf'),discount_rate=gamma)==pytest.approx(.01/(.02+gamma))
+
+
+@pytest.mark.parametrize('h,gamma',[(8,0),(30,0),(30,.05)])
+def test_multi_rotation_numerical_and_single_equivalence(h,gamma):
+    from solution.my_strategy import multi_survival_block_probability as p, survival_block_probability as single
+    xs=((5,.6),(15,.24)); cs=((5,.4),(20,.24))
+    assert p(.03,xs,.02,cs,h,gamma)==pytest.approx(numeric_multi(.03,xs,.02,cs,h,gamma),abs=1e-8)
+    assert p(.03,xs[:1],.02,cs[:1],h,gamma)==single(.6,.03,5,.4,.02,5,h,0,gamma)
+
+
+@pytest.mark.parametrize('multi',[False,True])
+def test_discount_multi_cached_live_transitions(multi,schedule_path):
+    traces=[]
+    for cached in (True,False):
+        strategy,yard=setup([[20,2,10,12],[]],'survival_risk',schedule_path,
+                            use_cache=cached,use_multi_rotation=multi,
+                            survival_discount_hours=48,survival_horizon_hours=float('inf'))
+        trace=[]
+        for e in [incoming(3,cid='a',now=when(1)),Event(2,when(2),'LOAD','c1_2'),
+                  incoming(11,cid='b',now=when(3)),incoming(12,cid='c',now=when(12))]:
+            if e.type=='DISCHARGE':
+                strategy.on_event(e); pos=strategy.place_container(yard,e)
+                trace.append(pos); assert yard.place_container(e.to_container(),pos)
+            else: Simulator(yard,strategy).run([e])
+        traces.append((trace,yard.snapshot()))
+    assert traces[0]==traces[1]
+
+
+def test_discounted_equal_hazard_strategy_is_greedy():
+    from src.baseline_greedy import GreedyStrategy
+    params={g:(0,.001) for g in MyStrategy().survival_parameters}
+    strategy,yard=setup([[9,9],[2],[]],'survival_risk',survival_parameters=params,
+                        survival_horizon_hours=float('inf'),survival_discount_hours=24)
+    assert strategy.place_container(yard,incoming())==GreedyStrategy().place_container(yard,incoming())
+
+
+def test_discount_infinite_horizon_and_gamma_limit():
+    from solution.my_strategy import survival_block_probability as p
+    exact=p(.6,.03,7,.4,.02,13,discount_rate=.02)
+    assert exact==pytest.approx(numeric_multi(.03,((7,.6),),.02,((13,.4),),500,.02),abs=2e-6)
+    assert p(.6,.03,7,.4,.02,13,discount_rate=1e-12)==pytest.approx(p(.6,.03,7,.4,.02,13),abs=1e-10)
+
+
+def test_multi_infinite_discounted_tail():
+    from solution.my_strategy import multi_survival_block_probability as p
+    xs=((5,.6),(15,.24)); cs=((8,.4),(20,.24))
+    assert p(.03,xs,.02,cs,discount_rate=.02)==pytest.approx(numeric_multi(.03,xs,.02,cs,500,.02),abs=2e-6)
+
+
+@pytest.mark.parametrize('kwargs',[{'survival_discount_hours':0},{'survival_discount_hours':-1},
+                                   {'use_multi_rotation':True,'survival_rotation_sigma_hours':2}])
+def test_invalid_discount_multi_options(kwargs):
+    with pytest.raises(ValueError): MyStrategy(mode='survival_risk',**kwargs)

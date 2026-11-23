@@ -1,0 +1,31 @@
+{
+  "tests_passed": 120,
+  "experiment_runs": 14,
+  "all_errors_violations_failures": 0,
+  "cache_guard_fallbacks": 0,
+  "cache_equivalence": {
+    "identical_placements": 10385,
+    "cached_seconds": 13.056647416029591,
+    "live_seconds": 104.87212924996857,
+    "trace_sha256": "74a6945f533e5cbe55d16fecf93d09fdb0b886da151bd06bfa4fad464fb2f414",
+    "winner": "D_expanded_1"
+  },
+  "cli_seconds": 12.87,
+  "cli_under_15s": true,
+  "candidate_cli_exact_match": true,
+  "default_unchanged_7026": true,
+  "fit_cutoff_exclusive": "2025-01-13T00:00:00",
+  "test_data_opened": false,
+  "protected_files_unchanged": true,
+  "python": "3.13.3 (v3.13.3:6280bb54784, Apr  8 2025, 10:47:54) [Clang 15.0.0 (clang-1500.3.9.4)]",
+  "sha256": {
+    "solution/my_strategy.py": "4fd1565c12cfd8fca17f78029bec0af84b620bef42857dba9742564d485e24f0",
+    "solution/survival_params.py": "a333b2009c09ea2c8cf2712cc3f930ea1dbe435fc6f03f4fba2f29f2f136cae4",
+    "solution/phase3d_candidate.py": "ed5e82f8f51b32b0e05822823c3665614973f96cf5319cca3f95ba3d15918ee8",
+    "scripts/phase3d.py": "a4bb920672af05275274e6bc1193c9773504d15dcb8c77d5b7f5364ecaf6c8f0",
+    "scripts/phase3d_audit.py": "bffedced897b8e7d1f0dfcc6e682167bcd189e02d70a949e0201b5b685476221",
+    "scripts/phase3d_report.py": "918f26f9f083ff51a21cf55e6a7a311f6391f33383af2e53c6d98a378d77a3ba",
+    "scripts/phase3d_verify.py": "864959be11958916a160f7c9db1d59706a6ffcb9cc994d6b5374934e050b1c4f",
+    "tests/test_my_strategy.py": "5c31a021ff8f02da84078f56e1f21007e5fccd486ed84bbcacfffe447466826e"
+  }
+}

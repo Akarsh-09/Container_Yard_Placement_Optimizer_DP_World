@@ -28,7 +28,8 @@ INFINITY = float("inf")
 
 
 def survival_block_probability(alpha_x, mu_x, tau_x, alpha_c, mu_c, tau_c,
-                               horizon_hours=INFINITY, rotation_sigma_hours=0.0):
+                               horizon_hours=INFINITY, rotation_sigma_hours=0.0,
+                               discount_rate=0.0):
     """Independent exponential backgrounds with one Bernoulli jump each.
 
     All times/rates use hours. The background integral is the algebraic expansion
@@ -36,7 +37,7 @@ def survival_block_probability(alpha_x, mu_x, tau_x, alpha_c, mu_c, tau_c,
     jump times. sigma>0 softens only jump ordering and is an approximation to the
     exact step-survival model (it does not randomize the continuous survival).
     """
-    rate = mu_x + mu_c
+    rate = mu_x + mu_c + discount_rate
     jump_x = alpha_x > 0 and isfinite(tau_x) and tau_x <= horizon_hours
     jump_c = alpha_c > 0 and isfinite(tau_c) and tau_c <= horizon_hours
     ex = exp(-rate * tau_x) if jump_x and rate else 1.0
@@ -61,6 +62,42 @@ def survival_block_probability(alpha_x, mu_x, tau_x, alpha_c, mu_c, tau_c,
                 precedes = 1.0 if delta > 0 else 0.5 if delta == 0 else 0.0
         atom = alpha_x * ex * (1.0 - alpha_c * precedes)
     return min(1.0,max(0.0,background + atom))
+
+
+def multi_survival_block_probability(mu_x, jumps_x, mu_c, jumps_c,
+                                     horizon_hours=INFINITY, discount_rate=0.0):
+    """Exact piecewise integration for conditional Bernoulli rotation jumps.
+
+    jumps are sorted (hours-from-now, conditional jump probability) tuples.
+    At most four public calls per container give at most eight breakpoints.
+    """
+    xs=tuple((t,a) for t,a in jumps_x if a>0 and isfinite(t) and t<=horizon_hours)
+    cs=tuple((t,a) for t,a in jumps_c if a>0 and isfinite(t) and t<=horizon_hours)
+    if len(xs)<=1 and len(cs)<=1:
+        tx,ax=xs[0] if xs else (INFINITY,0.0)
+        tc,ac=cs[0] if cs else (INFINITY,0.0)
+        return survival_block_probability(ax,mu_x,tx,ac,mu_c,tc,horizon_hours,0,discount_rate)
+    events={}
+    for side,jumps in enumerate((xs,cs)):
+        for t,alpha in jumps:
+            pair=events.setdefault(t,[0.0,0.0])
+            pair[side]=1-(1-pair[side])*(1-alpha)
+    rate=mu_x+mu_c+discount_rate
+    fx=fc=1.0
+    previous_exp=1.0
+    probability=0.0
+    for t,(ax,ac) in sorted(events.items()):
+        at=exp(-rate*t) if rate else 1.0
+        if mu_x:
+            probability+=mu_x/rate*fx*fc*(previous_exp-at)
+        probability+=fx*ax*at*fc*(1-.5*ac)
+        fx*=1-ax
+        fc*=1-ac
+        previous_exp=at
+    if mu_x:
+        end=exp(-rate*horizon_hours) if isfinite(horizon_hours) else 0.0
+        probability+=mu_x/rate*fx*fc*(previous_exp-end)
+    return min(1.0,max(0.0,probability))
 
 
 def parse_time(value):
@@ -112,7 +149,8 @@ class MyStrategy(PlacementStrategy):
                  all_overdue_prob=None, intra_rotation_sigma_hours=None,
                  missed_load_offset_hours=None, survival_horizon_hours=240,
                  survival_rotation_sigma_hours=0.0, use_expanded_survival=False,
-                 survival_parameters=None):
+                 survival_parameters=None, survival_discount_hours=None,
+                 use_multi_rotation=False):
         if mode not in MODES:
             raise ValueError(f"Unknown strategy mode: {mode}")
         if timing_key not in ("raw", "s2_rollover", "s3_next_feasible"):
@@ -132,9 +170,16 @@ class MyStrategy(PlacementStrategy):
             raise ValueError("Missed-LOAD offset must be nonnegative or infinity")
         if not survival_horizon_hours > 0 or not survival_rotation_sigma_hours >= 0:
             raise ValueError("Survival horizon must be positive and smoothing nonnegative")
+        if survival_discount_hours is not None and not survival_discount_hours > 0:
+            raise ValueError("Discount scale must be positive")
+        if use_multi_rotation and survival_rotation_sigma_hours:
+            raise ValueError("Multi-rotation integration uses exact jump boundaries")
         self.survival_horizon_hours = survival_horizon_hours
         self.survival_rotation_sigma_hours = survival_rotation_sigma_hours
         self.use_expanded_survival = use_expanded_survival
+        self.survival_discount_hours = survival_discount_hours
+        self._discount_rate = 1.0/survival_discount_hours if survival_discount_hours is not None else 0.0
+        self.use_multi_rotation = use_multi_rotation
         self.survival_parameters = dict(SURVIVAL_PARAMETERS if survival_parameters is None else survival_parameters)
         for alpha, mu in self.survival_parameters.values():
             if not 0 <= alpha <= 1 or not mu >= 0 or not isfinite(mu):
@@ -534,9 +579,9 @@ class MyStrategy(PlacementStrategy):
         rotation = self._next_by_vessel.get(meta.vessel)
         overdue = meta.departure < self.current_time
         if cid in self.observed_missed_loads:
-            return ("missed_load",INFINITY)
+            return ("missed_load",() if self.use_multi_rotation else INFINITY)
         if rotation is None:
-            return ("expired_no_rot" if overdue else "unscheduled_active",INFINITY)
+            return ("expired_no_rot" if overdue else "unscheduled_active",() if self.use_multi_rotation else INFINITY)
         if overdue:
             group = "sched_overdue"
         elif cid in self._initial_ids:
@@ -556,6 +601,10 @@ class MyStrategy(PlacementStrategy):
                 level = str(any(a<=self._arrival_times[cid]<=b for a,b in self._discharge_windows.get(meta.vessel,())))
             if group+"|"+level in EXPANDED_PARAMETERS:
                 group += "|"+level
+        if self.use_multi_rotation:
+            index=bisect_left(self._ends[meta.vessel],self.current_time)
+            times=tuple(r.start+meta.fraction*(r.end-r.start) for r in self._rotations[meta.vessel][index:])
+            return group,times
         return group,self._eff[cid]
 
     def _survival_values(self, descriptor):
@@ -564,6 +613,11 @@ class MyStrategy(PlacementStrategy):
             alpha,mu = EXPANDED_PARAMETERS[group]
         else:
             alpha,mu = self.survival_parameters[group]
+        if self.use_multi_rotation:
+            overdue_alpha=self.survival_parameters["sched_overdue"][0]
+            jumps=tuple((max(0.0,(t-self.current_time)/3600),alpha if i==0 else overdue_alpha)
+                        for i,t in enumerate(when))
+            return alpha,mu,jumps
         return alpha,mu,max(0.0,(when-self.current_time)/3600)
 
     def _place_survival(self, event):
@@ -579,8 +633,12 @@ class MyStrategy(PlacementStrategy):
                 probability = probabilities.get(descriptor)
                 if probability is None:
                     ax,mx,tx = self._survival_values(descriptor)
-                    probability = survival_block_probability(ax,mx,tx,ac,mc,tc,
-                        self.survival_horizon_hours,self.survival_rotation_sigma_hours)
+                    if self.use_multi_rotation:
+                        probability=multi_survival_block_probability(mx,tx,mc,tc,
+                            self.survival_horizon_hours,self._discount_rate)
+                    else:
+                        probability = survival_block_probability(ax,mx,tx,ac,mc,tc,
+                            self.survival_horizon_hours,self.survival_rotation_sigma_hours,self._discount_rate)
                     probabilities[descriptor] = probability
                 score += probability
             rank = score,height
