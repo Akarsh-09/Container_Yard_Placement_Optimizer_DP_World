@@ -1,0 +1,27 @@
+Phase 5B execution record (from assignment/, .venv Python 3.13.3).
+
+1. Applied only the user-specified defensive sparse-tier/physical-height fix;
+   no edits to solution/survival_params.py or survival scoring/cohort parameters.
+
+2. Before the new test run:
+PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q
+PYTHONDONTWRITEBYTECODE=1 .venv/bin/python scripts/phase5b_train.py
+PYTHONDONTWRITEBYTECODE=1 .venv/bin/python scripts/phase5b_preflight.py
+# Train harness runs cached and uncached controls only on data/train.
+# Preflight verifies the old trace, unchanged math AST and parameter hash,
+# archives failed_initial_run.json byte-identically, and records the new manifest.
+
+3. Exactly one new official test replay:
+PATH="$PWD/.venv/bin:$PATH" PYTHONDONTWRITEBYTECODE=1 python -m src.run --strategy solution.my_strategy.MyStrategy --data-dir data/test -o results/results.json -v > results/phase5b/my_strategy_cli.log 2>&1
+
+4. Report-only aggregation and documentation/pagination:
+PYTHONDONTWRITEBYTECODE=1 .venv/bin/python scripts/phase5b_report.py
+# Pagination-only edits shortened prose to retain three A4 pages; no model edits.
+
+5. Final checks:
+PYTHONDONTWRITEBYTECODE=1 .venv/bin/python -m pytest -q
+PATH="$PWD/.venv/bin:$PATH" PYTHONDONTWRITEBYTECODE=1 bash scripts/phase4_validate_portable.sh
+PYTHONDONTWRITEBYTECODE=1 .venv/bin/python scripts/phase5b_verify.py
+
+No baseline reruns. No second instrumented or official MyStrategy test replay
+in Phase 5B. Existing results/phase5/ baseline JSON bytes remain unchanged.

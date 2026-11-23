@@ -1,0 +1,279 @@
+{
+  "official": {
+    "total_events": 19508,
+    "placement_events": 9861,
+    "retrieval_events": 9647,
+    "total_reshuffles": 6179,
+    "reshuffles_per_retrieval": 0.6405,
+    "reshuffle_percentage": 37.01,
+    "max_reshuffles_single": 4,
+    "retrievals_with_reshuffles": 3570,
+    "hard_constraint_violations": 0,
+    "placement_failures": 0,
+    "errors": 0,
+    "final_yard_count": 5985,
+    "elapsed_sec": 9.4,
+    "score_reshuffles": 6.8,
+    "score_violations": 10.0,
+    "quantitative_score": 16.8,
+    "strategy": "solution.my_strategy.MyStrategy",
+    "data_dir": "data/test"
+  },
+  "official_rate_exact": 0.640510003109775,
+  "score_exact": 16.835285581009643,
+  "greedy": {
+    "total_events": 19508,
+    "placement_events": 9861,
+    "retrieval_events": 9647,
+    "total_reshuffles": 7416,
+    "reshuffles_per_retrieval": 0.7687,
+    "reshuffle_percentage": 44.83,
+    "max_reshuffles_single": 3,
+    "retrievals_with_reshuffles": 4325,
+    "hard_constraint_violations": 0,
+    "placement_failures": 0,
+    "errors": 0,
+    "final_yard_count": 5985,
+    "elapsed_sec": 3.88,
+    "score_reshuffles": 1.3,
+    "score_violations": 10.0,
+    "quantitative_score": 11.3,
+    "strategy": "src.baseline_greedy.GreedyStrategy",
+    "data_dir": "data/test",
+    "official_rate_exact": 0.7687363947341143,
+    "score_exact": 11.339868797109391
+  },
+  "random_aggregate": {
+    "total_events": {
+      "mean": 19508,
+      "std_population": 0.0,
+      "min": 19508,
+      "max": 19508
+    },
+    "placement_events": {
+      "mean": 9861,
+      "std_population": 0.0,
+      "min": 9861,
+      "max": 9861
+    },
+    "retrieval_events": {
+      "mean": 9647,
+      "std_population": 0.0,
+      "min": 9647,
+      "max": 9647
+    },
+    "total_reshuffles": {
+      "mean": 8101.8,
+      "std_population": 32.00249990235138,
+      "min": 8048,
+      "max": 8140
+    },
+    "reshuffles_per_retrieval": {
+      "mean": 0.83982,
+      "std_population": 0.0033331066589594636,
+      "min": 0.8342,
+      "max": 0.8438
+    },
+    "reshuffle_percentage": {
+      "mean": 45.924,
+      "std_population": 0.19085072700935585,
+      "min": 45.6,
+      "max": 46.16
+    },
+    "max_reshuffles_single": {
+      "mean": 4,
+      "std_population": 0.0,
+      "min": 4,
+      "max": 4
+    },
+    "retrievals_with_reshuffles": {
+      "mean": 4430.2,
+      "std_population": 18.356470248934027,
+      "min": 4399,
+      "max": 4453
+    },
+    "hard_constraint_violations": {
+      "mean": 0,
+      "std_population": 0.0,
+      "min": 0,
+      "max": 0
+    },
+    "placement_failures": {
+      "mean": 0,
+      "std_population": 0.0,
+      "min": 0,
+      "max": 0
+    },
+    "errors": {
+      "mean": 0,
+      "std_population": 0.0,
+      "min": 0,
+      "max": 0
+    },
+    "final_yard_count": {
+      "mean": 5985,
+      "std_population": 0.0,
+      "min": 5985,
+      "max": 5985
+    },
+    "elapsed_sec": {
+      "mean": 0.832,
+      "std_population": 0.007483314773547889,
+      "min": 0.82,
+      "max": 0.84
+    },
+    "score_reshuffles": {
+      "mean": 0.0,
+      "std_population": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    },
+    "score_violations": {
+      "mean": 10.0,
+      "std_population": 0.0,
+      "min": 10.0,
+      "max": 10.0
+    },
+    "quantitative_score": {
+      "mean": 10.0,
+      "std_population": 0.0,
+      "min": 10.0,
+      "max": 10.0
+    },
+    "official_rate_exact": {
+      "mean": 0.8398258525966622,
+      "std_population": 0.0033173525347103927,
+      "min": 0.8342489893231056,
+      "max": 0.8437856328392246
+    },
+    "score_exact": {
+      "mean": 10.0,
+      "std_population": 0.0,
+      "min": 10.0,
+      "max": 10.0
+    }
+  },
+  "random_seeds": [
+    {
+      "total_events": 19508,
+      "placement_events": 9861,
+      "retrieval_events": 9647,
+      "total_reshuffles": 8140,
+      "reshuffles_per_retrieval": 0.8438,
+      "reshuffle_percentage": 46.06,
+      "max_reshuffles_single": 4,
+      "retrievals_with_reshuffles": 4443,
+      "hard_constraint_violations": 0,
+      "placement_failures": 0,
+      "errors": 0,
+      "final_yard_count": 5985,
+      "elapsed_sec": 0.84,
+      "score_reshuffles": 0.0,
+      "score_violations": 10.0,
+      "quantitative_score": 10.0,
+      "strategy": "src.baseline_random.RandomStrategy",
+      "data_dir": "data/test",
+      "official_rate_exact": 0.8437856328392246,
+      "score_exact": 10.0,
+      "seed": 0
+    },
+    {
+      "total_events": 19508,
+      "placement_events": 9861,
+      "retrieval_events": 9647,
+      "total_reshuffles": 8089,
+      "reshuffles_per_retrieval": 0.8385,
+      "reshuffle_percentage": 45.93,
+      "max_reshuffles_single": 4,
+      "retrievals_with_reshuffles": 4431,
+      "hard_constraint_violations": 0,
+      "placement_failures": 0,
+      "errors": 0,
+      "final_yard_count": 5985,
+      "elapsed_sec": 0.84,
+      "score_reshuffles": 0.0,
+      "score_violations": 10.0,
+      "quantitative_score": 10.0,
+      "strategy": "src.baseline_random.RandomStrategy",
+      "data_dir": "data/test",
+      "official_rate_exact": 0.8384990152378978,
+      "score_exact": 10.0,
+      "seed": 1
+    },
+    {
+      "total_events": 19508,
+      "placement_events": 9861,
+      "retrieval_events": 9647,
+      "total_reshuffles": 8106,
+      "reshuffles_per_retrieval": 0.8403,
+      "reshuffle_percentage": 45.87,
+      "max_reshuffles_single": 4,
+      "retrievals_with_reshuffles": 4425,
+      "hard_constraint_violations": 0,
+      "placement_failures": 0,
+      "errors": 0,
+      "final_yard_count": 5985,
+      "elapsed_sec": 0.83,
+      "score_reshuffles": 0.0,
+      "score_violations": 10.0,
+      "quantitative_score": 10.0,
+      "strategy": "src.baseline_random.RandomStrategy",
+      "data_dir": "data/test",
+      "official_rate_exact": 0.8402612211050068,
+      "score_exact": 10.0,
+      "seed": 2
+    },
+    {
+      "total_events": 19508,
+      "placement_events": 9861,
+      "retrieval_events": 9647,
+      "total_reshuffles": 8048,
+      "reshuffles_per_retrieval": 0.8342,
+      "reshuffle_percentage": 45.6,
+      "max_reshuffles_single": 4,
+      "retrievals_with_reshuffles": 4399,
+      "hard_constraint_violations": 0,
+      "placement_failures": 0,
+      "errors": 0,
+      "final_yard_count": 5985,
+      "elapsed_sec": 0.82,
+      "score_reshuffles": 0.0,
+      "score_violations": 10.0,
+      "quantitative_score": 10.0,
+      "strategy": "src.baseline_random.RandomStrategy",
+      "data_dir": "data/test",
+      "official_rate_exact": 0.8342489893231056,
+      "score_exact": 10.0,
+      "seed": 3
+    },
+    {
+      "total_events": 19508,
+      "placement_events": 9861,
+      "retrieval_events": 9647,
+      "total_reshuffles": 8126,
+      "reshuffles_per_retrieval": 0.8423,
+      "reshuffle_percentage": 46.16,
+      "max_reshuffles_single": 4,
+      "retrievals_with_reshuffles": 4453,
+      "hard_constraint_violations": 0,
+      "placement_failures": 0,
+      "errors": 0,
+      "final_yard_count": 5985,
+      "elapsed_sec": 0.83,
+      "score_reshuffles": 0.0,
+      "score_violations": 10.0,
+      "quantitative_score": 10.0,
+      "strategy": "src.baseline_random.RandomStrategy",
+      "data_dir": "data/test",
+      "official_rate_exact": 0.8423344044780761,
+      "score_exact": 10.0,
+      "seed": 4
+    }
+  ],
+  "test_reshuffles_saved_vs_greedy": 1237,
+  "test_percent_saved_vs_greedy": 16.680151024811217,
+  "baseline_replays_in_phase5b": 0,
+  "phase5b_strategy_test_runs": 1,
+  "failed_run_archive": "results/phase5/failed_initial_run.json",
+  "official_output_sha256": "4759b8c43aae4ba8db4f38227e47e26dd6adfd03c48a6b93bbd8614001befd11"
+}

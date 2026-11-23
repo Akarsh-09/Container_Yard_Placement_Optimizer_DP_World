@@ -1,0 +1,38 @@
+CURRENT CANDIDATE FILES (valid test execution after the disclosed defensive fix):
+  solution/__init__.py
+  solution/my_strategy.py
+  solution/survival_params.py
+  docs/design.md
+  tests/test_my_strategy.py
+  results/results.json
+
+UNCHANGED BASELINE COMPARISON OUTPUTS:
+  results/phase5/greedy.json
+  results/phase5/random_0.json
+  results/phase5/random_1.json
+  results/phase5/random_2.json
+  results/phase5/random_3.json
+  results/phase5/random_4.json
+
+TRANSPARENT AUDIT EVIDENCE:
+  results/phase5/failed_initial_run.json
+  results/phase5b/phase5b_manifest.json
+  results/phase5b/manifest_after.json
+  results/phase5b/verification.json
+  results/phase5b/summary.json
+  results/phase5b/equivalence.json
+  results/phase5b/cached.json
+  results/phase5b/live.json
+  results/phase5b/my_strategy_cli.log
+  results/phase5b/pytest_pre.log and pytest_post.log
+  results/phase5b/validator.log
+  results/phase5b/commands.txt
+
+LOCAL DEVELOPMENT / EXCLUDE FROM MINIMAL PACKAGING:
+  scripts/, historical phase outputs other than comparison/provenance above,
+  results/phase5b/design_review/, comparison.html, tmp/, environments, caches,
+  bytecode, .git/, editor files, and redundant logs.
+
+Preserve the supplied scaffold and datasets unchanged if the full repo is needed.
+Do not conceal the initial failed run or describe the repair as pre-test work.
+No parameters or algorithm were retuned after test exposure.

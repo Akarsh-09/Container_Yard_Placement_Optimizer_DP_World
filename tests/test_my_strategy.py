@@ -299,3 +299,101 @@ def test_arbitrary_live_yards_and_invalid_timestamps(tmp_path):
         assert yard.is_position_valid(strategy.place_container(yard,incoming(rng.randint(2,20))))
         assert yard.snapshot()==before
     assert parse_time('')==parse_time('invalid')
+
+
+def sparse_setup(stacks, schedule_path=None, use_cache=True):
+    """Use the public loader, which pads omitted tiers with empty-string IDs."""
+    layout={'blocks':{'A':{'bays':len(stacks),'rows':1,'tiers':5}}}
+    entries=[]
+    for bay,tiers in enumerate(stacks,1):
+        for tier,(cid,day) in tiers.items():
+            entries.append(dict(container_id=cid,departure_time=when(day),vessel_id='V1',
+                                port_of_discharge='PORT_01',weight_class='MEDIUM',
+                                position=dict(block='A',bay=bay,row=1,tier=tier)))
+    initial={'containers':entries}
+    yard=YardState(layout);yard.load_initial_state(initial)
+    strategy=MyStrategy(schedule_path=schedule_path,use_cache=use_cache)
+    strategy.initialize(layout,initial)
+    return strategy,yard
+
+
+@pytest.mark.parametrize('cached',[True,False])
+def test_sparse_initial_height_and_real_container_count(cached):
+    strategy,yard=sparse_setup([{2:('C2',8)}],use_cache=cached)
+    assert strategy._block_slots['A']==2
+    before=yard.snapshot()
+    pos=strategy.place_container(yard,incoming())
+    assert pos==Position('A',1,1,3) and yard.is_position_valid(pos)
+    assert strategy._heights==[2] and strategy._contents==[['C2']]
+    assert strategy._cached_count==yard.total_containers()==1
+    assert '' not in strategy._meta and strategy.cache_guard_fallbacks==0
+    assert before==yard.snapshot()
+
+
+@pytest.mark.parametrize('cached',[True,False])
+def test_full_sparse_stack_is_skipped(cached):
+    strategy,yard=sparse_setup([{t:(f'C{t}',8) for t in range(2,6)},{}],use_cache=cached)
+    stats=Simulator(yard,strategy).run([incoming()])
+    assert yard.get_container_position('incoming')==Position('A',2,1,1)
+    assert strategy._heights[0]==5 and len(strategy._contents[0])==4
+    assert stats.errors==stats.hard_constraint_violations==stats.placement_failures==0
+    assert strategy.cache_guard_fallbacks==0
+
+
+@pytest.mark.parametrize('empty_alternative',[True,False])
+def test_sparse_top_retrieval_leaves_ghost_stack(empty_alternative):
+    stacks=[{2:('C2',8)}]+([{}] if empty_alternative else [])
+    strategy,yard=sparse_setup(stacks)
+    Simulator(yard,strategy).run([Event(1,when(2),'LOAD','C2')])
+    assert yard.get_stack_height('A',1,1)==1 and yard.total_containers()==0
+    assert strategy._block_slots['A']==1
+    pos=strategy.place_container(yard,incoming(now=when(3)))
+    assert pos==(Position('A',2,1,1) if empty_alternative else Position('A',1,1,2))
+    assert yard.is_position_valid(pos) and strategy.cache_guard_fallbacks==0
+
+
+@pytest.mark.parametrize('cached',[True,False])
+def test_gap_above_target_failed_removal_rehydrates_metadata(cached,schedule_path):
+    strategy,yard=sparse_setup([{1:('target',3),3:('blocker',11)}],schedule_path,cached)
+    strategy._refresh(yard)
+    before=list(strategy._contents[0])
+    stats=Simulator(yard,strategy).run([Event(1,when(2),'LOAD','target')])
+    assert stats.total_reshuffles==2  # Includes the loader's padded empty tier.
+    assert yard.get_container_position('target') is not None
+    assert 'target' not in strategy._meta  # Callback fires despite failed removal.
+    assert strategy._block_slots['A']==3  # Do not undercount presumed freed slots.
+    pos=strategy.place_container(yard,incoming(11,now=when(3)))
+    assert strategy._contents[0]==before and 'target' in strategy._meta
+    assert strategy._cached_count==yard.total_containers()==2
+    assert pos==Position('A',1,1,4) and yard.is_position_valid(pos)
+    assert strategy.cache_guard_fallbacks==0
+
+
+def test_unannounced_live_container_has_defensive_arrival_time(schedule_path):
+    strategy,yard=sparse_setup([{}],schedule_path)
+    c=Container('unannounced',departure_time=when(11),vessel_id='V1',port_of_discharge='PORT_01')
+    assert yard.place_container(c,Position('A',1,1,1))
+    strategy.place_container(yard,incoming(11,now=when(2)))
+    assert 'unannounced' not in strategy._arrival_times
+    assert strategy._survival_key('unannounced')[0]=='sched_disch_active|>72h'
+
+
+def test_sparse_cached_live_multistep_equivalence(schedule_path):
+    outcomes=[]
+    for cached in (True,False):
+        strategy,yard=sparse_setup([{1:('target',3),3:('blocker',11)},{2:('C2',8)},{}],schedule_path,cached)
+        trace=[]
+        for e in [incoming(3,cid='a'),Event(2,when(2),'LOAD','C2'),
+                  Event(3,when(2,1),'LOAD','target'),incoming(11,cid='b',now=when(3)),
+                  Event(5,when(4),'LOAD','blocker'),incoming(12,cid='c',now=when(12))]:
+            if e.type=='DISCHARGE':
+                strategy.on_event(e);before=yard.snapshot();pos=strategy.place_container(yard,e)
+                assert before==yard.snapshot() and yard.is_position_valid(pos)
+                trace.append(pos);assert yard.place_container(e.to_container(),pos)
+            else:
+                stats=Simulator(yard,strategy).run([e]);assert stats.errors==0
+        strategy._refresh(yard)
+        assert strategy._cached_count==yard.total_containers()
+        assert strategy.cache_guard_fallbacks==0
+        outcomes.append((trace,yard.snapshot(),list(strategy._heights)))
+    assert outcomes[0]==outcomes[1]

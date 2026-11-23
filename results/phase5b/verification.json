@@ -1,0 +1,60 @@
+{
+  "approved_fix_only": true,
+  "survival_parameters_unchanged": true,
+  "survival_math_AST_unchanged": true,
+  "train_equivalence": {
+    "identical_placements": 10385,
+    "phase3d_hash_match": true,
+    "trace_sha256": "74a6945f533e5cbe55d16fecf93d09fdb0b886da151bd06bfa4fad464fb2f414",
+    "cached_seconds": 11.216206207987852,
+    "live_seconds": 63.58471687498968
+  },
+  "train_reshuffles": 6408,
+  "train_count_guard_fallbacks": 0,
+  "pre_and_post_test_hashes_match": true,
+  "phase5b_strategy_test_replays": 1,
+  "prior_failed_strategy_test_replays": 1,
+  "baseline_replays_this_phase": 0,
+  "failed_initial_run_archived_byte_identically": true,
+  "official": {
+    "summary": {
+      "total_events": 19508,
+      "placement_events": 9861,
+      "retrieval_events": 9647,
+      "total_reshuffles": 6179,
+      "reshuffles_per_retrieval": 0.6405,
+      "reshuffle_percentage": 37.01,
+      "max_reshuffles_single": 4,
+      "retrievals_with_reshuffles": 3570,
+      "hard_constraint_violations": 0,
+      "placement_failures": 0,
+      "errors": 0,
+      "final_yard_count": 5985,
+      "elapsed_sec": 9.4,
+      "score_reshuffles": 6.8,
+      "score_violations": 10.0,
+      "quantitative_score": 16.8,
+      "strategy": "solution.my_strategy.MyStrategy",
+      "data_dir": "data/test"
+    },
+    "official_rate_exact": 0.640510003109775,
+    "score_exact": 16.835285581009643,
+    "output_sha256": "4759b8c43aae4ba8db4f38227e47e26dd6adfd03c48a6b93bbd8614001befd11",
+    "error_gate_passed": true
+  },
+  "tests_passed": 88,
+  "scaffold_tests": 27,
+  "strategy_tests": 61,
+  "validator": "PASSED (0 warnings), original validator via documented portable grep adapter",
+  "design": {
+    "words": 1736,
+    "sections": 7,
+    "pages": 3,
+    "font": "11pt A4 reference rendering",
+    "visual_review": true,
+    "pending_markers": 0,
+    "initial_failure_and_fix_disclosed": true
+  },
+  "protected_files_unchanged": true,
+  "baseline_files_unchanged": true
+}

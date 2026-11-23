@@ -173,9 +173,15 @@ class MyStrategy(PlacementStrategy):
             self._block_indices[block].append(i)
         self._capacity = {b: v["bays"] * v["rows"] * v["tiers"] for b, v in layout["blocks"].items()}
         self._max_tiers = {b: v["tiers"] for b, v in layout["blocks"].items()}
-        self._block_counts = defaultdict(int)
+        self._block_slots = defaultdict(int)
+        initial_heights = defaultdict(int)
         for c in initial.get("containers", []):
-            self._block_counts[c["position"]["block"]] += 1
+            p = c["position"]
+            key = p["block"], p["bay"], p["row"]
+            initial_heights[key] = max(initial_heights[key], p["tier"])
+        for (block, _, _), height in initial_heights.items():
+            self._block_slots[block] += height
+        self._heights = [0 for _ in self._stacks]
         self._contents = [[] for _ in self._stacks]
         self._survival_lists = [() for _ in self._stacks]
         self._keys_dirty = set()
@@ -245,11 +251,10 @@ class MyStrategy(PlacementStrategy):
         self._meta.pop(container_id, None)
         block = position.block
         if reshuffles:
-            # In the provided simulator, removing k blockers + target creates
-            # k+1 local slots, so normal retrieval cannot overflow this block.
-            # Still implement the requested conservative other-stack-free guard.
+            # Physical slots include padded gaps. A gap can prevent removal of
+            # the target, so retain conservative slot counts until live refresh.
             pre_height = position.tier + reshuffles
-            other_free = (self._capacity[block] - self._block_counts[block]
+            other_free = (self._capacity[block] - self._block_slots[block]
                           - (self._max_tiers[block] - pre_height))
             if other_free < reshuffles:
                 self._dirty_blocks.update(self._block_indices)
@@ -258,14 +263,16 @@ class MyStrategy(PlacementStrategy):
                 self._dirty_blocks.add(block)
         else:
             self._dirty.add(self._indices[(block, position.bay, position.row)])
-        self._block_counts[block] -= 1
+            self._block_slots[block] = max(0, self._block_slots[block] - 1)
 
     def _refresh_indices(self, yard, indices):
         touched = set()
         for i in indices:
             block, bay, row, _ = self._stacks[i]
             height = yard.get_stack_height(block, bay, row)
-            cids = [yard.get_container_at(block, bay, row, tier) for tier in range(1, height + 1)]
+            self._heights[i] = height
+            cids = [cid for tier in range(1, height + 1)
+                    if (cid := yard.get_container_at(block, bay, row, tier))]
             self._cached_count += len(cids) - len(self._contents[i])
             if cids != self._contents[i]:
                 for cid in self._contents[i]:
@@ -276,10 +283,13 @@ class MyStrategy(PlacementStrategy):
             for cid in cids:
                 self._cid_index[cid] = i
                 if cid not in self._meta:
-                    self._remember(yard.get_container_info(cid))
+                    info = yard.get_container_info(cid)
+                    if info is not None:
+                        self._remember(info)
+                        self._keys_dirty.add(i)
             touched.add(block)
         for block in touched:
-            self._block_counts[block] = sum(len(self._contents[i]) for i in self._block_indices[block])
+            self._block_slots[block] = sum(self._heights[i] for i in self._block_indices[block])
 
     def _refresh(self, yard):
         if not self.use_cache or not self._ready:
@@ -332,7 +342,7 @@ class MyStrategy(PlacementStrategy):
         else:
             group = "sched_disch_active"
         if group in ("sched_disch_active", "sched_truck_active"):
-            lead = (meta.departure - self._arrival_times[cid]) / 3600
+            lead = (meta.departure - self._arrival_times.get(cid, self.current_time)) / 3600
             level = "<24h" if lead < 24 else "24-72h" if lead <= 72 else ">72h"
             group += "|" + level
         when = rotation.start + meta.fraction * (rotation.end - rotation.start)
@@ -349,7 +359,7 @@ class MyStrategy(PlacementStrategy):
         best = None
         best_index = None
         for i,(_,_,_,maximum) in enumerate(self._stacks):
-            height = len(self._contents[i])
+            height = self._heights[i]
             if height >= maximum: continue
             score = 0.0
             for descriptor in self._survival_lists[i]:
@@ -367,9 +377,9 @@ class MyStrategy(PlacementStrategy):
 
     def _finish_placement(self, index):
         block,bay,row,_ = self._stacks[index]
-        position = Position(block,bay,row,len(self._contents[index])+1)
+        position = Position(block,bay,row,self._heights[index]+1)
         self._dirty.add(index)
-        self._block_counts[block] += 1
+        self._block_slots[block] += 1
         return position
 
     def place_container(self, yard_state, event):

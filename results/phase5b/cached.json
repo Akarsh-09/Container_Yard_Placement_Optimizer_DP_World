@@ -1,0 +1,104 @@
+{
+  "use_cache": true,
+  "seconds": 11.216206207987852,
+  "trace_sha256": "74a6945f533e5cbe55d16fecf93d09fdb0b886da151bd06bfa4fad464fb2f414",
+  "placements": 10385,
+  "summary": {
+    "total_events": 20592,
+    "placement_events": 10385,
+    "retrieval_events": 10207,
+    "total_reshuffles": 6408,
+    "reshuffles_per_retrieval": 0.6278,
+    "reshuffle_percentage": 36.83,
+    "max_reshuffles_single": 4,
+    "retrievals_with_reshuffles": 3759,
+    "hard_constraint_violations": 0,
+    "placement_failures": 0,
+    "errors": 0,
+    "final_yard_count": 6311,
+    "elapsed_sec": 11.22,
+    "score_reshuffles": 7.4,
+    "score_violations": 10.0,
+    "quantitative_score": 17.4
+  },
+  "retrieval_not_found": 1333,
+  "official_rate": 0.6278044479278926,
+  "score": 17.379809374518892,
+  "slices": {
+    "early": {
+      "found": 5042,
+      "reshuffles": 3236
+    },
+    "origin/initial": {
+      "found": 2945,
+      "reshuffles": 4607
+    },
+    "exit/TRUCK_DLVR": {
+      "found": 2488,
+      "reshuffles": 2327
+    },
+    "early/TRUCK_DLVR": {
+      "found": 1171,
+      "reshuffles": 1225
+    },
+    "origin_exit/initial/TRUCK_DLVR": {
+      "found": 912,
+      "reshuffles": 1693
+    },
+    "origin/DISCHARGE": {
+      "found": 4716,
+      "reshuffles": 1299
+    },
+    "origin_exit/DISCHARGE/TRUCK_DLVR": {
+      "found": 1194,
+      "reshuffles": 478
+    },
+    "exit/LOAD": {
+      "found": 6386,
+      "reshuffles": 4081
+    },
+    "early/LOAD": {
+      "found": 3871,
+      "reshuffles": 2011
+    },
+    "origin_exit/DISCHARGE/LOAD": {
+      "found": 3522,
+      "reshuffles": 821
+    },
+    "origin_exit/initial/LOAD": {
+      "found": 2033,
+      "reshuffles": 2914
+    },
+    "origin/TRUCK_RECV": {
+      "found": 1213,
+      "reshuffles": 502
+    },
+    "origin_exit/TRUCK_RECV/LOAD": {
+      "found": 831,
+      "reshuffles": 346
+    },
+    "origin_exit/TRUCK_RECV/TRUCK_DLVR": {
+      "found": 382,
+      "reshuffles": 156
+    },
+    "late": {
+      "found": 3832,
+      "reshuffles": 3172
+    },
+    "late/TRUCK_DLVR": {
+      "found": 1317,
+      "reshuffles": 1102
+    },
+    "late/LOAD": {
+      "found": 2515,
+      "reshuffles": 2070
+    }
+  },
+  "cache_guard_fallbacks": 0,
+  "metadata_entries": 6311,
+  "history_seen": 15185,
+  "history_missed": 1333,
+  "origin_entries": 15185,
+  "arrival_time_entries": 10385,
+  "overdue_heap_entries": 2273
+}

@@ -1,0 +1,35 @@
+{
+  "created_utc": "2026-11-23T21:21:58.609763+00:00",
+  "files": {
+    "solution/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "solution/my_strategy.py": "7374aa7db169ac48497c0da8d80af5797dd129b1e81c1f77fc6bfbda4cbb5162",
+    "solution/survival_params.py": "fde79d9871c26f14146cfeaaecaed5899d25858eb05fdc66579b8a3ea74cdd3d",
+    "data/vessel_schedule.json": "e1a1a1d3d3d9bb63f47a7a1c0f72b40ac438eea70a29b40e4628f6be64cf1602"
+  },
+  "baseline_files": {
+    "results/phase5/greedy.json": "fd3380e43bdfa4bf4fe4f662f1b74c8390559d44b2a148dafa5ef9c198df2328",
+    "results/phase5/random_0.json": "9a3386faad91a07415eaf937e3661a12aa985f2794353dad100a774332b99c39",
+    "results/phase5/random_1.json": "c39563874c25706361d0bd5b0f022079d33daa8f21ec1504537f0dfc90251318",
+    "results/phase5/random_2.json": "bc1152c1a77cf035988c900b544e2610ee5f9e73b05436565c3abeb493cad998",
+    "results/phase5/random_3.json": "f92b62b7d3e436452a9060c5694820ca30cc110b29a44d78174b571070b978b5",
+    "results/phase5/random_4.json": "cc3b086fd5d5e774ebdb4ec99526aa166b95321e02620ac513d17e746d9cc989"
+  },
+  "failed_initial_run_sha256": "c3f9604133ecfd4f80b5814807402119f8fb610380f8f260428581bd2e675a61",
+  "survival_parameters_unchanged": true,
+  "survival_math_AST_unchanged": true,
+  "cohorts_unchanged_except_defensive_arrival_time_fallback": true,
+  "changed_methods": [
+    "_finish_placement",
+    "_place_survival",
+    "_refresh_indices",
+    "_reset_caches",
+    "_survival_key",
+    "on_container_retrieved"
+  ],
+  "train_placement_sha256": "74a6945f533e5cbe55d16fecf93d09fdb0b886da151bd06bfa4fad464fb2f414",
+  "train_placements": 10385,
+  "train_reshuffles": 6408,
+  "unit_tests_passed": 88,
+  "authorised_change": "Physical stack heights separated from real IDs; empty-slot filtering and defensive cache/metadata handling only.",
+  "phase5b_test_runs_before_manifest": 0
+}
