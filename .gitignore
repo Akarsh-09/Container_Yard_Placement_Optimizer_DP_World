@@ -1,0 +1,41 @@
+# macOS metadata
+.DS_Store
+._*
+
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+
+# Local Python environments
+.venv/
+venv/
+env/
+.python-version
+
+# Coverage and packaging artifacts
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+build/
+dist/
+*.egg-info/
+
+# Local secrets (keep example configuration trackable)
+.env
+.env.*
+!.env.example
+
+# Editor files and temporary output
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+*.log
+
+# Assignment datasets, docs, and results are intentionally trackable.
