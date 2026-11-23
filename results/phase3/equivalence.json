@@ -1,0 +1,11 @@
+{
+  "cached_live_identical": true,
+  "placement_count": 10385,
+  "cached_trace_sha256": "c891e26db1d6d85d5c2b37d864b9715cd31066b0cd115a6fbb8e2b4678208934",
+  "live_trace_sha256": "c891e26db1d6d85d5c2b37d864b9715cd31066b0cd115a6fbb8e2b4678208934",
+  "cached_sec": 7.672316249983851,
+  "live_sec": 70.44253741600551,
+  "greedy_limit_identical_sequence": true,
+  "greedy_total": 8036,
+  "greedy_trace_sha256": "7254b2112e347bdad96b22e4a05e0ba95b93b316fbdf0828b1b641a28dace544"
+}

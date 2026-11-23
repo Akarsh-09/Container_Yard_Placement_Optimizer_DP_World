@@ -1,0 +1,29 @@
+{
+  "tests_passed": 79,
+  "original_tests": 27,
+  "grid_evaluations": 45,
+  "grid_unique_configs": 44,
+  "all_grid_zero_errors_violations_failures": true,
+  "all_grid_cache_guard_fallbacks": 0,
+  "cache_control_identical_placements": 10385,
+  "greedy_limit_identical_placements": 10385,
+  "greedy_limit_reshuffles": 8036,
+  "selected_config": {
+    "mode": "expected_blocking",
+    "timing_key": "s3_next_feasible",
+    "epsilon": 0.05,
+    "sigma_hours": 12,
+    "lambda_empty": 0,
+    "lambda_gap": 0,
+    "use_cache": true
+  },
+  "selection_uses_only_Days1_12": true,
+  "leading_cli_exact_metric_match": true,
+  "leading_cli_seconds": 7.11,
+  "strategy_sha256": "149cb8232492a643df07833754ccfac5b107b3edf9c5997b4d02027431e0f65c",
+  "script_sha256": "effd93ad7a42abeb8f9ee11d271f95208e4bda6091a054e81983e33cbdd0db16",
+  "tests_sha256": "978e4918867045bf03e2773a2cc58b309fb6ba5c12d0b7177a83df79915a3da9",
+  "test_data_opened": false,
+  "protected_files_unchanged": true,
+  "python": "3.13.3 (v3.13.3:6280bb54784, Apr  8 2025, 10:47:54) [Clang 15.0.0 (clang-1500.3.9.4)]"
+}

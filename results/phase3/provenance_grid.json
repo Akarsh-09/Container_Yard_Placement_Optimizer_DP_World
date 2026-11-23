@@ -1,0 +1,7 @@
+{
+  "command": ".venv/bin/python scripts/phase3.py --stage grid",
+  "python": "3.13.3 (v3.13.3:6280bb54784, Apr  8 2025, 10:47:54) [Clang 15.0.0 (clang-1500.3.9.4)]",
+  "test_data_opened": false,
+  "strategy_sha256": "a4f6fe6389330a042200e94b53849c1fff1be5727bc7e2862db8d8703c81bb01",
+  "script_sha256": "c906c6b11e32a80b5e6b12e2cb3364385b26adacf5f023abd8bbc3ded969ecae"
+}

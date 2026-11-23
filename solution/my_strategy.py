@@ -1,4 +1,4 @@
-"""Online departure-aware placement with explicit Phase 2 ablation modes.
+"""Online expected-blocking placement with retained LDT reference ablations.
 
 Inspired by Borgman, van Asperen & Dekker (2010), Online rules for container
 stacking, https://doi.org/10.1007/s00291-010-0205-4. Full-stack compatibility,
@@ -6,9 +6,11 @@ strict tie handling and schedule variants are adaptations for this simulator.
 Only the supplied schedule, current event, initial state and live yard are read.
 """
 from bisect import bisect_left
+from collections import OrderedDict, defaultdict
 from dataclasses import dataclass
 from datetime import datetime, timezone
 import json
+from math import exp
 from pathlib import Path
 from typing import Optional
 
@@ -17,7 +19,7 @@ from src.placement_interface import PlacementStrategy
 
 
 MODES = ("raw_strict", "raw_nonstrict", "raw_top_only", "s1_stored_order",
-         "s2_rollover", "s3_next_feasible")
+         "s2_rollover", "s3_next_feasible", "expected_blocking")
 WEIGHT_RANK = {"HEAVY": 0, "MEDIUM": 1, "LIGHT": 2}
 UNKNOWN_TIME = 253402300799.0
 INFINITY = float("inf")
@@ -55,17 +57,36 @@ class ContainerMeta:
 
 
 class MyStrategy(PlacementStrategy):
-    """Four-tier LDT policy. Temporary default is the Phase 2 overall leader S3.
+    """Expected-blocking policy selected on Days 1-12; LDT modes remain usable.
 
-    A placement scans live non-full stacks; only immutable metadata is cached.
-    For S stacks, maximum height H, and R rotations per vessel, decisions take
-    O(S*H + V*log R) time and O(V) temporary space after metadata warm-up.
-    Persistent metadata uses O(N + S + schedule size) space for N containers.
+    Public-API stack contents refresh only when dirtied by arrivals/retrievals.
+    Effective priority changes are processed at public schedule end transitions.
+    Scoring costs O(S*H) per placement, plus dirty refresh and transition work.
+    Storage is O(N + S + schedule size + 128*(K+S)), where K counts distinct
+    resident priority values in retained tables. At most 128 incoming-priority
+    risk/stack-score tables are retained. use_cache=False fully refreshes
+    public stack contents each placement as an independent synchronization check.
     """
-    def __init__(self, mode="s3_next_feasible", schedule_path=None):
+    def __init__(self, mode="expected_blocking", schedule_path=None,
+                 timing_key="s3_next_feasible", epsilon=0.05, sigma_hours=12,
+                 lambda_empty=0.0, lambda_gap=0.0, use_cache=True):
         if mode not in MODES:
             raise ValueError(f"Unknown strategy mode: {mode}")
+        if timing_key not in ("raw", "s2_rollover", "s3_next_feasible"):
+            raise ValueError("Unknown timing key")
+        if not 0 <= epsilon <= 0.5 or not sigma_hours > 0:
+            raise ValueError("Require 0 <= epsilon <= 0.5 and sigma_hours > 0")
+        if lambda_empty < 0 or lambda_gap < 0:
+            raise ValueError("Opportunity costs must be nonnegative")
         self.mode = mode
+        self.timing_key = timing_key
+        self.epsilon = epsilon
+        self.sigma_hours = sigma_hours
+        self.lambda_empty = lambda_empty
+        self.lambda_gap = lambda_gap
+        self.use_cache = use_cache
+        self._timing = (("raw_strict" if timing_key == "raw" else timing_key)
+                        if mode == "expected_blocking" else mode)
         self.schedule_path = schedule_path
         self.current_time = 0.0
         self._meta = {}
@@ -88,12 +109,13 @@ class MyStrategy(PlacementStrategy):
             for bay in range(1, info["bays"] + 1)
             for row in range(1, info["rows"] + 1)
         ]
-        if self.mode.startswith("s"):
+        if self._timing.startswith("s"):
             self._load_schedule()
+        self._reset_caches(yard_layout, initial_state)
         for entry in initial_state.get("containers", []):
-            self._meta[entry["container_id"]] = self._make_meta(
+            self._register(entry["container_id"], self._make_meta(
                 entry.get("departure_time", ""), entry.get("vessel_id", ""),
-                entry.get("port_of_discharge", ""), entry.get("weight_class", "MEDIUM"))
+                entry.get("port_of_discharge", ""), entry.get("weight_class", "MEDIUM")))
 
     def _load_schedule(self):
         candidates = [Path(self.schedule_path)] if self.schedule_path is not None else [
@@ -139,19 +161,163 @@ class MyStrategy(PlacementStrategy):
                    if matched is not None else departure)
         return ContainerMeta(departure, vessel, port, weight_rank, fraction, matched, s1_time)
 
+    def _reset_caches(self, layout, initial):
+        self._eff = {}
+        self._members = defaultdict(set)
+        self._next_by_vessel = self._next_rotations()
+        self._transitions = sorted((r.end, vessel) for vessel, rs in self._rotations.items() for r in rs)
+        self._transition_index = 0
+        self._generation = 0
+        self._indices = {(b, bay, row): i for i, (b, bay, row, _) in enumerate(self._stacks)}
+        self._block_indices = defaultdict(list)
+        for i, (block, _, _, _) in enumerate(self._stacks):
+            self._block_indices[block].append(i)
+        self._capacity = {b: v["bays"] * v["rows"] * v["tiers"] for b, v in layout["blocks"].items()}
+        self._max_tiers = {b: v["tiers"] for b, v in layout["blocks"].items()}
+        self._block_counts = defaultdict(int)
+        for c in initial.get("containers", []):
+            self._block_counts[c["position"]["block"]] += 1
+        self._contents = [[] for _ in self._stacks]
+        self._key_lists = [() for _ in self._stacks]
+        self._floors = [INFINITY for _ in self._stacks]
+        self._key_generation = [-1 for _ in self._stacks]
+        self._versions = [0 for _ in self._stacks]
+        self._keys_dirty = set()
+        self._prepared_generation = -1
+        self._cached_count = 0
+        self._ready = False
+        self._dirty = set()
+        self._dirty_blocks = set()
+        self._risk_tables = OrderedDict()
+        self.cache_guard_fallbacks = 0
+        self.conservative_global_invalidations = 0
+        self.priority_transition_updates = 0
+
+    def _register(self, cid, meta):
+        previous = self._meta.get(cid)
+        if previous is not None:
+            self._members[previous.vessel].discard(cid)
+        self._meta[cid] = meta
+        self._members[meta.vessel].add(cid)
+        self._eff[cid] = self._resident_priority(cid)
+
+    def _resident_priority(self, cid):
+        return self._priority(self._meta[cid], self._next_by_vessel)
+
     def _remember(self, container):
         meta = self._make_meta(container.departure_time, container.vessel_id,
                                container.port_of_discharge, container.weight_class)
-        self._meta[container.container_id] = meta
+        self._register(container.container_id, meta)
         return meta
 
+    def _advance_time(self, timestamp):
+        now = parse_time(timestamp)
+        changed = set()
+        if now < self.current_time:
+            # Useful for isolated what-if calls; the real event stream is ordered.
+            self._transition_index = bisect_left([x[0] for x in self._transitions], now)
+            changed.update(self._rotations)
+        else:
+            while (self._transition_index < len(self._transitions)
+                   and self._transitions[self._transition_index][0] < now):
+                changed.add(self._transitions[self._transition_index][1])
+                self._transition_index += 1
+        self.current_time = now
+        if changed and self._timing in ("s2_rollover", "s3_next_feasible"):
+            self._next_by_vessel = self._next_rotations()
+            for vessel in changed:
+                for cid in self._members[vessel]:
+                    self._eff[cid] = self._resident_priority(cid)
+                    self.priority_transition_updates += 1
+            self._generation += 1
+
     def on_event(self, event):
-        self.current_time = parse_time(event.timestamp)
+        self._advance_time(event.timestamp)
         if event.type in ("DISCHARGE", "TRUCK_RECV"):
             self._remember(event)
 
     def on_container_retrieved(self, container_id, position, reshuffles):
-        self._meta.pop(container_id, None)
+        meta = self._meta.pop(container_id, None)
+        self._eff.pop(container_id, None)
+        if meta is not None:
+            self._members[meta.vessel].discard(container_id)
+        block = position.block
+        if reshuffles:
+            # In the provided simulator, removing k blockers + target creates
+            # k+1 local slots, so normal retrieval cannot overflow this block.
+            # Still implement the requested conservative other-stack-free guard.
+            pre_height = position.tier + reshuffles
+            other_free = (self._capacity[block] - self._block_counts[block]
+                          - (self._max_tiers[block] - pre_height))
+            if other_free < reshuffles:
+                self._dirty_blocks.update(self._block_indices)
+                self.conservative_global_invalidations += 1
+            else:
+                self._dirty_blocks.add(block)
+        else:
+            self._dirty.add(self._indices[(block, position.bay, position.row)])
+        self._block_counts[block] -= 1
+
+    def _refresh_indices(self, yard, indices):
+        touched = set()
+        for i in indices:
+            block, bay, row, _ = self._stacks[i]
+            height = yard.get_stack_height(block, bay, row)
+            cids = [yard.get_container_at(block, bay, row, tier) for tier in range(1, height + 1)]
+            self._cached_count += len(cids) - len(self._contents[i])
+            if cids != self._contents[i]:
+                self._contents[i] = cids
+                self._key_generation[i] = -1
+                self._keys_dirty.add(i)
+                self._versions[i] += 1
+            for cid in cids:
+                if cid not in self._meta:
+                    self._remember(yard.get_container_info(cid))
+            touched.add(block)
+        for block in touched:
+            self._block_counts[block] = sum(len(self._contents[i]) for i in self._block_indices[block])
+
+    def _refresh(self, yard):
+        if not self.use_cache or not self._ready:
+            self._refresh_indices(yard, range(len(self._stacks)))
+            self._ready = True
+        else:
+            indices = set(self._dirty)
+            for block in self._dirty_blocks:
+                indices.update(self._block_indices[block])
+            self._refresh_indices(yard, sorted(indices))
+        self._dirty.clear()
+        self._dirty_blocks.clear()
+        if self._cached_count != yard.total_containers():
+            self.cache_guard_fallbacks += 1
+            self._refresh_indices(yard, range(len(self._stacks)))
+            if self._cached_count != yard.total_containers():
+                raise RuntimeError("Live yard count disagrees with public stack contents")
+        if not self.use_cache:
+            # Independent control: bypass transition caching as well as dirty
+            # stack caching, recomputing priorities from the physical clock.
+            self._next_by_vessel = self._next_rotations()
+            for cids in self._contents:
+                for cid in cids:
+                    self._eff[cid] = self._resident_priority(cid)
+            self._generation += 1
+        indices = (range(len(self._stacks)) if self._prepared_generation != self._generation
+                   else self._keys_dirty)
+        for i in indices:
+            keys = tuple(self._eff[cid] for cid in self._contents[i])
+            self._key_lists[i] = keys
+            self._floors[i] = min(keys, default=INFINITY)
+            self._key_generation[i] = self._generation
+        self._keys_dirty.clear()
+        self._prepared_generation = self._generation
+
+    def _stack_keys(self, index):
+        if self._key_generation[index] != self._generation:
+            keys = tuple(self._eff[cid] for cid in self._contents[index])
+            self._key_lists[index] = keys
+            self._floors[index] = min(keys, default=INFINITY)
+            self._key_generation[index] = self._generation
+        return self._key_lists[index]
 
     def _next_rotations(self):
         next_rotations = {}
@@ -162,11 +328,11 @@ class MyStrategy(PlacementStrategy):
         return next_rotations
 
     def _priority(self, meta, next_rotations, resident=True):
-        if self.mode.startswith("raw"):
+        if self._timing.startswith("raw"):
             return meta.departure
-        if self.mode == "s1_stored_order":
+        if self._timing == "s1_stored_order":
             return meta.s1_time
-        if self.mode == "s2_rollover":
+        if self._timing == "s2_rollover":
             # S2 rolls over containers already resident in the yard. An incoming
             # container retains its S1 estimate for this placement decision.
             if not resident:
@@ -183,53 +349,91 @@ class MyStrategy(PlacementStrategy):
                 return meta.departure
         return rotation.start + meta.fraction * (rotation.end - rotation.start)
 
+    def _incoming_priority(self, event, meta):
+        return self._priority(meta, self._next_by_vessel, resident=False)
+
+    def pair_probability(self, resident_key, incoming_key):
+        z = (resident_key - incoming_key) / (3600.0 * self.sigma_hours)
+        z = max(-30.0, min(30.0, z))
+        return self.epsilon + (1.0 - 2.0 * self.epsilon) / (1.0 + exp(z))
+
     def place_container(self, yard_state, event):
-        self.current_time = parse_time(event.timestamp)
+        self._advance_time(event.timestamp)
         incoming = self._meta.get(event.container_id)
         if incoming is None:
             incoming = self._remember(event)
-        dynamic = self.mode in ("s2_rollover", "s3_next_feasible")
-        next_rotations = self._next_rotations() if dynamic else {}
-        incoming_key = self._priority(incoming, next_rotations, resident=False)
+        self._refresh(yard_state)
+        incoming_key = self._incoming_priority(event, incoming)
+        expected = self.mode == "expected_blocking"
         top_only = self.mode == "raw_top_only"
         nonstrict = self.mode == "raw_nonstrict"
-        get_height = yard_state.get_stack_height
-        get_at = yard_state.get_container_at
-        get_info = yard_state.get_container_info
-        metadata = self._meta
-        priority = self._priority
+        risks = scores = None
+        if expected:
+            table = self._risk_tables.get(incoming_key)
+            if table is None:
+                risks = {}
+                scores = [None] * len(self._stacks)
+                self._risk_tables[incoming_key] = (risks, scores)
+                if len(self._risk_tables) > 128:
+                    self._risk_tables.popitem(last=False)
+            else:
+                risks, scores = table
+                self._risk_tables.move_to_end(incoming_key)
+        key_lists = self._key_lists
+        floors = self._floors
+        versions = self._versions
+        generation = self._generation
         best_rank = None
-        best_position = None
-        for block, bay, row, max_tiers in self._stacks:
-            height = get_height(block, bay, row)
+        best_index = None
+        for i, (block, bay, row, max_tiers) in enumerate(self._stacks):
+            height = len(self._contents[i])
             if height >= max_tiers:
                 continue
-            if height == 0:
+            if expected:
+                if height == 0:
+                    score = self.lambda_empty
+                elif self.epsilon == 0.5:
+                    score = 0.5 * height
+                else:
+                    previous = scores[i] if self.use_cache else None
+                    if previous is not None and previous[0] == versions[i] and previous[1] == generation:
+                        score = previous[2]
+                    else:
+                        score = 0.0
+                        for key in key_lists[i]:
+                            probability = risks.get(key)
+                            if probability is None:
+                                probability = self.pair_probability(key, incoming_key)
+                                risks[key] = probability
+                            score += probability
+                        scores[i] = (versions[i], generation, score)
+                if self.lambda_gap and height:
+                    gap = floors[i] - incoming_key
+                    if gap > 0:
+                        score += self.lambda_gap * min(gap / (240.0 * 3600), 1.0)
+                rank = (score, height)
+            elif height == 0:
                 rank = (1,)
             else:
-                floor = INFINITY
-                inversions = ties = 0
-                for tier in range(height if top_only else 1, height + 1):
-                    cid = get_at(block, bay, row, tier)
-                    meta = metadata.get(cid)
-                    if meta is None:
-                        meta = self._remember(get_info(cid))
-                    key = priority(meta, next_rotations)
-                    if key < floor:
-                        floor = key
-                    inversions += key < incoming_key
-                    ties += key == incoming_key
+                keys = key_lists[i]
+                if top_only:
+                    keys = keys[-1:]
+                floor = keys[-1] if top_only else floors[i]
+                inversions = sum(key < incoming_key for key in keys)
+                ties = sum(key == incoming_key for key in keys)
                 if incoming_key < floor or (nonstrict and incoming_key == floor):
                     rank = (0, floor - incoming_key, height)
                 elif incoming_key == floor:
                     rank = (2, ties, height)
                 else:
                     rank = (3, inversions, ties, -floor, height)
-            # Stacks are sorted lexically; retaining the first equal rank supplies
-            # the specified coordinate tie-break without allocating extra tuples.
+            # Sorted coordinates supply deterministic final tie-breaking.
             if best_rank is None or rank < best_rank:
-                best_rank = rank
-                best_position = (block, bay, row, height + 1)
-        if best_position is None:
+                best_rank, best_index = rank, i
+        if best_index is None:
             raise RuntimeError("No non-full stack is available")
-        return Position(*best_position)
+        block, bay, row, _ = self._stacks[best_index]
+        position = Position(block, bay, row, len(self._contents[best_index]) + 1)
+        self._dirty.add(best_index)
+        self._block_counts[block] += 1  # anticipated successful placement
+        return position

@@ -1,0 +1,1523 @@
+{
+  "seed": 303,
+  "residents_sampled_per_arrival": 32,
+  "sampled_pairs": 218528,
+  "eligible_pairs": 128693,
+  "excluded_both_censored": 89835,
+  "tables": {
+    "raw/all": [
+      {
+        "bin": "<-72",
+        "n": 22689,
+        "resident_first": 6672,
+        "probability": 0.294063202432897
+      },
+      {
+        "bin": "[-72,-24)",
+        "n": 16158,
+        "resident_first": 2678,
+        "probability": 0.16573833395222182
+      },
+      {
+        "bin": "[-24,-6)",
+        "n": 8087,
+        "resident_first": 3182,
+        "probability": 0.3934710028440707
+      },
+      {
+        "bin": "[-6,0)",
+        "n": 1646,
+        "resident_first": 914,
+        "probability": 0.5552855407047388
+      },
+      {
+        "bin": "0",
+        "n": 8382,
+        "resident_first": 4034,
+        "probability": 0.4812693867811978
+      },
+      {
+        "bin": "(0,6]",
+        "n": 1412,
+        "resident_first": 581,
+        "probability": 0.4114730878186969
+      },
+      {
+        "bin": "(6,24]",
+        "n": 5432,
+        "resident_first": 2206,
+        "probability": 0.4061119293078056
+      },
+      {
+        "bin": "(24,72]",
+        "n": 11520,
+        "resident_first": 5136,
+        "probability": 0.44583333333333336
+      },
+      {
+        "bin": ">72",
+        "n": 53367,
+        "resident_first": 14340,
+        "probability": 0.268705379729046
+      }
+    ],
+    "raw/initial": [
+      {
+        "bin": "<-72",
+        "n": 8297,
+        "resident_first": 2853,
+        "probability": 0.34385922622634685
+      },
+      {
+        "bin": "[-72,-24)",
+        "n": 5555,
+        "resident_first": 1196,
+        "probability": 0.2153015301530153
+      },
+      {
+        "bin": "[-24,-6)",
+        "n": 2847,
+        "resident_first": 1169,
+        "probability": 0.41060765718299963
+      },
+      {
+        "bin": "[-6,0)",
+        "n": 612,
+        "resident_first": 315,
+        "probability": 0.5147058823529411
+      },
+      {
+        "bin": "0",
+        "n": 3641,
+        "resident_first": 1768,
+        "probability": 0.48558088437242514
+      },
+      {
+        "bin": "(0,6]",
+        "n": 793,
+        "resident_first": 314,
+        "probability": 0.39596469104665827
+      },
+      {
+        "bin": "(6,24]",
+        "n": 3765,
+        "resident_first": 1512,
+        "probability": 0.401593625498008
+      },
+      {
+        "bin": "(24,72]",
+        "n": 9374,
+        "resident_first": 4220,
+        "probability": 0.45018135267761894
+      },
+      {
+        "bin": ">72",
+        "n": 48751,
+        "resident_first": 13481,
+        "probability": 0.276527660971057
+      }
+    ],
+    "raw/not_overdue": [
+      {
+        "bin": "<-72",
+        "n": 6113,
+        "resident_first": 4126,
+        "probability": 0.6749550139047931
+      },
+      {
+        "bin": "[-72,-24)",
+        "n": 2814,
+        "resident_first": 1332,
+        "probability": 0.47334754797441364
+      },
+      {
+        "bin": "[-24,-6)",
+        "n": 6869,
+        "resident_first": 3035,
+        "probability": 0.44184015140486244
+      },
+      {
+        "bin": "[-6,0)",
+        "n": 1646,
+        "resident_first": 914,
+        "probability": 0.5552855407047388
+      },
+      {
+        "bin": "0",
+        "n": 8382,
+        "resident_first": 4034,
+        "probability": 0.4812693867811978
+      },
+      {
+        "bin": "(0,6]",
+        "n": 1412,
+        "resident_first": 581,
+        "probability": 0.4114730878186969
+      },
+      {
+        "bin": "(6,24]",
+        "n": 5432,
+        "resident_first": 2206,
+        "probability": 0.4061119293078056
+      },
+      {
+        "bin": "(24,72]",
+        "n": 11520,
+        "resident_first": 5136,
+        "probability": 0.44583333333333336
+      },
+      {
+        "bin": ">72",
+        "n": 53367,
+        "resident_first": 14340,
+        "probability": 0.268705379729046
+      }
+    ],
+    "raw/initial/not_overdue": [
+      {
+        "bin": "<-72",
+        "n": 3322,
+        "resident_first": 2183,
+        "probability": 0.6571342564720049
+      },
+      {
+        "bin": "[-72,-24)",
+        "n": 1658,
+        "resident_first": 810,
+        "probability": 0.48854041013269
+      },
+      {
+        "bin": "[-24,-6)",
+        "n": 2502,
+        "resident_first": 1137,
+        "probability": 0.45443645083932854
+      },
+      {
+        "bin": "[-6,0)",
+        "n": 612,
+        "resident_first": 315,
+        "probability": 0.5147058823529411
+      },
+      {
+        "bin": "0",
+        "n": 3641,
+        "resident_first": 1768,
+        "probability": 0.48558088437242514
+      },
+      {
+        "bin": "(0,6]",
+        "n": 793,
+        "resident_first": 314,
+        "probability": 0.39596469104665827
+      },
+      {
+        "bin": "(6,24]",
+        "n": 3765,
+        "resident_first": 1512,
+        "probability": 0.401593625498008
+      },
+      {
+        "bin": "(24,72]",
+        "n": 9374,
+        "resident_first": 4220,
+        "probability": 0.45018135267761894
+      },
+      {
+        "bin": ">72",
+        "n": 48751,
+        "resident_first": 13481,
+        "probability": 0.276527660971057
+      }
+    ],
+    "s2_rollover/all": [
+      {
+        "bin": "<-72",
+        "n": 7674,
+        "resident_first": 4708,
+        "probability": 0.6135001303101382
+      },
+      {
+        "bin": "[-72,-24)",
+        "n": 3277,
+        "resident_first": 1405,
+        "probability": 0.4287458040891059
+      },
+      {
+        "bin": "[-24,-6)",
+        "n": 6742,
+        "resident_first": 3324,
+        "probability": 0.4930287748442599
+      },
+      {
+        "bin": "[-6,0)",
+        "n": 5527,
+        "resident_first": 3263,
+        "probability": 0.5903745250588023
+      },
+      {
+        "bin": "0",
+        "n": 910,
+        "resident_first": 437,
+        "probability": 0.48021978021978023
+      },
+      {
+        "bin": "(0,6]",
+        "n": 5042,
+        "resident_first": 1790,
+        "probability": 0.3550178500595002
+      },
+      {
+        "bin": "(6,24]",
+        "n": 6034,
+        "resident_first": 2152,
+        "probability": 0.35664567451110374
+      },
+      {
+        "bin": "(24,72]",
+        "n": 11768,
+        "resident_first": 5178,
+        "probability": 0.440006798096533
+      },
+      {
+        "bin": ">72",
+        "n": 81719,
+        "resident_first": 17486,
+        "probability": 0.21397716565303052
+      }
+    ],
+    "s2_rollover/initial": [
+      {
+        "bin": "<-72",
+        "n": 3831,
+        "resident_first": 2347,
+        "probability": 0.6126337770817019
+      },
+      {
+        "bin": "[-72,-24)",
+        "n": 1887,
+        "resident_first": 834,
+        "probability": 0.4419713831478537
+      },
+      {
+        "bin": "[-24,-6)",
+        "n": 2410,
+        "resident_first": 1192,
+        "probability": 0.4946058091286307
+      },
+      {
+        "bin": "[-6,0)",
+        "n": 2306,
+        "resident_first": 1363,
+        "probability": 0.5910667823070251
+      },
+      {
+        "bin": "0",
+        "n": 403,
+        "resident_first": 190,
+        "probability": 0.47146401985111663
+      },
+      {
+        "bin": "(0,6]",
+        "n": 2304,
+        "resident_first": 798,
+        "probability": 0.3463541666666667
+      },
+      {
+        "bin": "(6,24]",
+        "n": 3768,
+        "resident_first": 1398,
+        "probability": 0.37101910828025475
+      },
+      {
+        "bin": "(24,72]",
+        "n": 9423,
+        "resident_first": 4213,
+        "probability": 0.4470975273267537
+      },
+      {
+        "bin": ">72",
+        "n": 57303,
+        "resident_first": 14493,
+        "probability": 0.25291869535626404
+      }
+    ],
+    "s2_rollover/not_overdue": [
+      {
+        "bin": "<-72",
+        "n": 6097,
+        "resident_first": 4147,
+        "probability": 0.6801705756929638
+      },
+      {
+        "bin": "[-72,-24)",
+        "n": 2727,
+        "resident_first": 1328,
+        "probability": 0.486982031536487
+      },
+      {
+        "bin": "[-24,-6)",
+        "n": 6537,
+        "resident_first": 3280,
+        "probability": 0.5017592167661007
+      },
+      {
+        "bin": "[-6,0)",
+        "n": 5247,
+        "resident_first": 3133,
+        "probability": 0.5971031065370688
+      },
+      {
+        "bin": "0",
+        "n": 865,
+        "resident_first": 415,
+        "probability": 0.4797687861271676
+      },
+      {
+        "bin": "(0,6]",
+        "n": 4715,
+        "resident_first": 1666,
+        "probability": 0.35334040296924707
+      },
+      {
+        "bin": "(6,24]",
+        "n": 5287,
+        "resident_first": 1995,
+        "probability": 0.37734064686968033
+      },
+      {
+        "bin": "(24,72]",
+        "n": 11551,
+        "resident_first": 5109,
+        "probability": 0.44229936802008485
+      },
+      {
+        "bin": ">72",
+        "n": 54529,
+        "resident_first": 14631,
+        "probability": 0.26831594197582936
+      }
+    ],
+    "s2_rollover/initial/not_overdue": [
+      {
+        "bin": "<-72",
+        "n": 3342,
+        "resident_first": 2203,
+        "probability": 0.6591861160981448
+      },
+      {
+        "bin": "[-72,-24)",
+        "n": 1636,
+        "resident_first": 820,
+        "probability": 0.5012224938875306
+      },
+      {
+        "bin": "[-24,-6)",
+        "n": 2315,
+        "resident_first": 1180,
+        "probability": 0.509719222462203
+      },
+      {
+        "bin": "[-6,0)",
+        "n": 2241,
+        "resident_first": 1339,
+        "probability": 0.5975011155734047
+      },
+      {
+        "bin": "0",
+        "n": 386,
+        "resident_first": 183,
+        "probability": 0.4740932642487047
+      },
+      {
+        "bin": "(0,6]",
+        "n": 2203,
+        "resident_first": 764,
+        "probability": 0.34679981842941443
+      },
+      {
+        "bin": "(6,24]",
+        "n": 3539,
+        "resident_first": 1356,
+        "probability": 0.38315908448714325
+      },
+      {
+        "bin": "(24,72]",
+        "n": 9351,
+        "resident_first": 4195,
+        "probability": 0.4486151213773928
+      },
+      {
+        "bin": ">72",
+        "n": 49405,
+        "resident_first": 13700,
+        "probability": 0.277299868434369
+      }
+    ],
+    "s3_next_feasible/all": [
+      {
+        "bin": "<-72",
+        "n": 6739,
+        "resident_first": 4543,
+        "probability": 0.674135628431518
+      },
+      {
+        "bin": "[-72,-24)",
+        "n": 4842,
+        "resident_first": 2141,
+        "probability": 0.44217265592730276
+      },
+      {
+        "bin": "[-24,-6)",
+        "n": 8544,
+        "resident_first": 4151,
+        "probability": 0.4858380149812734
+      },
+      {
+        "bin": "[-6,0)",
+        "n": 7559,
+        "resident_first": 4384,
+        "probability": 0.5799708956211139
+      },
+      {
+        "bin": "0",
+        "n": 1176,
+        "resident_first": 565,
+        "probability": 0.4804421768707483
+      },
+      {
+        "bin": "(0,6]",
+        "n": 6916,
+        "resident_first": 2578,
+        "probability": 0.37275882012724115
+      },
+      {
+        "bin": "(6,24]",
+        "n": 8001,
+        "resident_first": 2898,
+        "probability": 0.36220472440944884
+      },
+      {
+        "bin": "(24,72]",
+        "n": 15475,
+        "resident_first": 6689,
+        "probability": 0.4322455573505654
+      },
+      {
+        "bin": ">72",
+        "n": 69441,
+        "resident_first": 11794,
+        "probability": 0.16984202416439856
+      }
+    ],
+    "s3_next_feasible/initial": [
+      {
+        "bin": "<-72",
+        "n": 3637,
+        "resident_first": 2426,
+        "probability": 0.6670332691778939
+      },
+      {
+        "bin": "[-72,-24)",
+        "n": 3240,
+        "resident_first": 1525,
+        "probability": 0.470679012345679
+      },
+      {
+        "bin": "[-24,-6)",
+        "n": 4073,
+        "resident_first": 1941,
+        "probability": 0.4765529094033882
+      },
+      {
+        "bin": "[-6,0)",
+        "n": 4147,
+        "resident_first": 2370,
+        "probability": 0.5714974680491922
+      },
+      {
+        "bin": "0",
+        "n": 642,
+        "resident_first": 307,
+        "probability": 0.4781931464174455
+      },
+      {
+        "bin": "(0,6]",
+        "n": 3998,
+        "resident_first": 1520,
+        "probability": 0.38019009504752377
+      },
+      {
+        "bin": "(6,24]",
+        "n": 5526,
+        "resident_first": 2052,
+        "probability": 0.3713355048859935
+      },
+      {
+        "bin": "(24,72]",
+        "n": 13064,
+        "resident_first": 5691,
+        "probability": 0.4356246172688304
+      },
+      {
+        "bin": ">72",
+        "n": 45308,
+        "resident_first": 8996,
+        "probability": 0.19855213207380595
+      }
+    ],
+    "s3_next_feasible/not_overdue": [
+      {
+        "bin": "<-72",
+        "n": 5707,
+        "resident_first": 4064,
+        "probability": 0.7121079376204661
+      },
+      {
+        "bin": "[-72,-24)",
+        "n": 4114,
+        "resident_first": 2061,
+        "probability": 0.5009722897423432
+      },
+      {
+        "bin": "[-24,-6)",
+        "n": 8359,
+        "resident_first": 4106,
+        "probability": 0.49120708218686443
+      },
+      {
+        "bin": "[-6,0)",
+        "n": 7254,
+        "resident_first": 4244,
+        "probability": 0.5850565205403915
+      },
+      {
+        "bin": "0",
+        "n": 1126,
+        "resident_first": 542,
+        "probability": 0.48134991119005327
+      },
+      {
+        "bin": "(0,6]",
+        "n": 6561,
+        "resident_first": 2446,
+        "probability": 0.37280902301478436
+      },
+      {
+        "bin": "(6,24]",
+        "n": 7267,
+        "resident_first": 2745,
+        "probability": 0.3777349662859502
+      },
+      {
+        "bin": "(24,72]",
+        "n": 15311,
+        "resident_first": 6631,
+        "probability": 0.4330873228397884
+      },
+      {
+        "bin": ">72",
+        "n": 41856,
+        "resident_first": 8865,
+        "probability": 0.21179759174311927
+      }
+    ],
+    "s3_next_feasible/initial/not_overdue": [
+      {
+        "bin": "<-72",
+        "n": 3287,
+        "resident_first": 2299,
+        "probability": 0.6994219653179191
+      },
+      {
+        "bin": "[-72,-24)",
+        "n": 2950,
+        "resident_first": 1511,
+        "probability": 0.5122033898305085
+      },
+      {
+        "bin": "[-24,-6)",
+        "n": 3980,
+        "resident_first": 1928,
+        "probability": 0.4844221105527638
+      },
+      {
+        "bin": "[-6,0)",
+        "n": 4076,
+        "resident_first": 2344,
+        "probability": 0.5750736015701668
+      },
+      {
+        "bin": "0",
+        "n": 622,
+        "resident_first": 299,
+        "probability": 0.4807073954983923
+      },
+      {
+        "bin": "(0,6]",
+        "n": 3891,
+        "resident_first": 1484,
+        "probability": 0.3813929581084554
+      },
+      {
+        "bin": "(6,24]",
+        "n": 5298,
+        "resident_first": 2010,
+        "probability": 0.3793884484711212
+      },
+      {
+        "bin": "(24,72]",
+        "n": 13012,
+        "resident_first": 5676,
+        "probability": 0.4362127267138026
+      },
+      {
+        "bin": ">72",
+        "n": 37302,
+        "resident_first": 8189,
+        "probability": 0.21953246474719854
+      }
+    ],
+    "raw/new_arrival": [
+      {
+        "bin": "<-72",
+        "n": 14392,
+        "resident_first": 3819,
+        "probability": 0.2653557531962201
+      },
+      {
+        "bin": "[-72,-24)",
+        "n": 10603,
+        "resident_first": 1482,
+        "probability": 0.13977176270866737
+      },
+      {
+        "bin": "[-24,-6)",
+        "n": 5240,
+        "resident_first": 2013,
+        "probability": 0.3841603053435115
+      },
+      {
+        "bin": "[-6,0)",
+        "n": 1034,
+        "resident_first": 599,
+        "probability": 0.5793036750483559
+      },
+      {
+        "bin": "0",
+        "n": 4741,
+        "resident_first": 2266,
+        "probability": 0.4779582366589327
+      },
+      {
+        "bin": "(0,6]",
+        "n": 619,
+        "resident_first": 267,
+        "probability": 0.43134087237479807
+      },
+      {
+        "bin": "(6,24]",
+        "n": 1667,
+        "resident_first": 694,
+        "probability": 0.41631673665266944
+      },
+      {
+        "bin": "(24,72]",
+        "n": 2146,
+        "resident_first": 916,
+        "probability": 0.42684063373718545
+      },
+      {
+        "bin": ">72",
+        "n": 4616,
+        "resident_first": 859,
+        "probability": 0.18609185441941076
+      }
+    ],
+    "raw/new_arrival/not_overdue": [
+      {
+        "bin": "<-72",
+        "n": 2791,
+        "resident_first": 1943,
+        "probability": 0.6961662486563955
+      },
+      {
+        "bin": "[-72,-24)",
+        "n": 1156,
+        "resident_first": 522,
+        "probability": 0.4515570934256055
+      },
+      {
+        "bin": "[-24,-6)",
+        "n": 4367,
+        "resident_first": 1898,
+        "probability": 0.4346233111976185
+      },
+      {
+        "bin": "[-6,0)",
+        "n": 1034,
+        "resident_first": 599,
+        "probability": 0.5793036750483559
+      },
+      {
+        "bin": "0",
+        "n": 4741,
+        "resident_first": 2266,
+        "probability": 0.4779582366589327
+      },
+      {
+        "bin": "(0,6]",
+        "n": 619,
+        "resident_first": 267,
+        "probability": 0.43134087237479807
+      },
+      {
+        "bin": "(6,24]",
+        "n": 1667,
+        "resident_first": 694,
+        "probability": 0.41631673665266944
+      },
+      {
+        "bin": "(24,72]",
+        "n": 2146,
+        "resident_first": 916,
+        "probability": 0.42684063373718545
+      },
+      {
+        "bin": ">72",
+        "n": 4616,
+        "resident_first": 859,
+        "probability": 0.18609185441941076
+      }
+    ],
+    "s2_rollover/new_arrival": [
+      {
+        "bin": "<-72",
+        "n": 3843,
+        "resident_first": 2361,
+        "probability": 0.6143637782982045
+      },
+      {
+        "bin": "[-72,-24)",
+        "n": 1390,
+        "resident_first": 571,
+        "probability": 0.41079136690647483
+      },
+      {
+        "bin": "[-24,-6)",
+        "n": 4332,
+        "resident_first": 2132,
+        "probability": 0.492151431209603
+      },
+      {
+        "bin": "[-6,0)",
+        "n": 3221,
+        "resident_first": 1900,
+        "probability": 0.5898789195901893
+      },
+      {
+        "bin": "0",
+        "n": 507,
+        "resident_first": 247,
+        "probability": 0.48717948717948717
+      },
+      {
+        "bin": "(0,6]",
+        "n": 2738,
+        "resident_first": 992,
+        "probability": 0.3623082542001461
+      },
+      {
+        "bin": "(6,24]",
+        "n": 2266,
+        "resident_first": 754,
+        "probability": 0.3327449249779347
+      },
+      {
+        "bin": "(24,72]",
+        "n": 2345,
+        "resident_first": 965,
+        "probability": 0.4115138592750533
+      },
+      {
+        "bin": ">72",
+        "n": 24416,
+        "resident_first": 2993,
+        "probability": 0.12258355176933158
+      }
+    ],
+    "s2_rollover/new_arrival/not_overdue": [
+      {
+        "bin": "<-72",
+        "n": 2755,
+        "resident_first": 1944,
+        "probability": 0.7056261343012704
+      },
+      {
+        "bin": "[-72,-24)",
+        "n": 1091,
+        "resident_first": 508,
+        "probability": 0.46562786434463793
+      },
+      {
+        "bin": "[-24,-6)",
+        "n": 4222,
+        "resident_first": 2100,
+        "probability": 0.4973945997157745
+      },
+      {
+        "bin": "[-6,0)",
+        "n": 3006,
+        "resident_first": 1794,
+        "probability": 0.5968063872255489
+      },
+      {
+        "bin": "0",
+        "n": 479,
+        "resident_first": 232,
+        "probability": 0.48434237995824636
+      },
+      {
+        "bin": "(0,6]",
+        "n": 2512,
+        "resident_first": 902,
+        "probability": 0.3590764331210191
+      },
+      {
+        "bin": "(6,24]",
+        "n": 1748,
+        "resident_first": 639,
+        "probability": 0.36556064073226546
+      },
+      {
+        "bin": "(24,72]",
+        "n": 2200,
+        "resident_first": 914,
+        "probability": 0.41545454545454547
+      },
+      {
+        "bin": ">72",
+        "n": 5124,
+        "resident_first": 931,
+        "probability": 0.18169398907103826
+      }
+    ],
+    "s3_next_feasible/new_arrival": [
+      {
+        "bin": "<-72",
+        "n": 3102,
+        "resident_first": 2117,
+        "probability": 0.6824629271437782
+      },
+      {
+        "bin": "[-72,-24)",
+        "n": 1602,
+        "resident_first": 616,
+        "probability": 0.38451935081148564
+      },
+      {
+        "bin": "[-24,-6)",
+        "n": 4471,
+        "resident_first": 2210,
+        "probability": 0.49429657794676807
+      },
+      {
+        "bin": "[-6,0)",
+        "n": 3412,
+        "resident_first": 2014,
+        "probability": 0.5902696365767878
+      },
+      {
+        "bin": "0",
+        "n": 534,
+        "resident_first": 258,
+        "probability": 0.48314606741573035
+      },
+      {
+        "bin": "(0,6]",
+        "n": 2918,
+        "resident_first": 1058,
+        "probability": 0.36257710760795064
+      },
+      {
+        "bin": "(6,24]",
+        "n": 2475,
+        "resident_first": 846,
+        "probability": 0.3418181818181818
+      },
+      {
+        "bin": "(24,72]",
+        "n": 2411,
+        "resident_first": 998,
+        "probability": 0.41393612608875985
+      },
+      {
+        "bin": ">72",
+        "n": 24133,
+        "resident_first": 2798,
+        "probability": 0.11594082791198773
+      }
+    ],
+    "s3_next_feasible/new_arrival/not_overdue": [
+      {
+        "bin": "<-72",
+        "n": 2420,
+        "resident_first": 1765,
+        "probability": 0.7293388429752066
+      },
+      {
+        "bin": "[-72,-24)",
+        "n": 1164,
+        "resident_first": 550,
+        "probability": 0.4725085910652921
+      },
+      {
+        "bin": "[-24,-6)",
+        "n": 4379,
+        "resident_first": 2178,
+        "probability": 0.49737382964147064
+      },
+      {
+        "bin": "[-6,0)",
+        "n": 3178,
+        "resident_first": 1900,
+        "probability": 0.5978602894902454
+      },
+      {
+        "bin": "0",
+        "n": 504,
+        "resident_first": 243,
+        "probability": 0.48214285714285715
+      },
+      {
+        "bin": "(0,6]",
+        "n": 2670,
+        "resident_first": 962,
+        "probability": 0.3602996254681648
+      },
+      {
+        "bin": "(6,24]",
+        "n": 1969,
+        "resident_first": 735,
+        "probability": 0.3732859319451498
+      },
+      {
+        "bin": "(24,72]",
+        "n": 2299,
+        "resident_first": 955,
+        "probability": 0.41539799913005654
+      },
+      {
+        "bin": ">72",
+        "n": 4554,
+        "resident_first": 676,
+        "probability": 0.1484409310496267
+      }
+    ],
+    "raw/overdue": [
+      {
+        "bin": "<-72",
+        "n": 16576,
+        "resident_first": 2546,
+        "probability": 0.15359555984555984
+      },
+      {
+        "bin": "[-72,-24)",
+        "n": 13344,
+        "resident_first": 1346,
+        "probability": 0.10086930455635491
+      },
+      {
+        "bin": "[-24,-6)",
+        "n": 1218,
+        "resident_first": 147,
+        "probability": 0.1206896551724138
+      },
+      {
+        "bin": "[-6,0)",
+        "n": 0,
+        "resident_first": 0,
+        "probability": null
+      },
+      {
+        "bin": "0",
+        "n": 0,
+        "resident_first": 0,
+        "probability": null
+      },
+      {
+        "bin": "(0,6]",
+        "n": 0,
+        "resident_first": 0,
+        "probability": null
+      },
+      {
+        "bin": "(6,24]",
+        "n": 0,
+        "resident_first": 0,
+        "probability": null
+      },
+      {
+        "bin": "(24,72]",
+        "n": 0,
+        "resident_first": 0,
+        "probability": null
+      },
+      {
+        "bin": ">72",
+        "n": 0,
+        "resident_first": 0,
+        "probability": null
+      }
+    ],
+    "raw/new_arrival/overdue": [
+      {
+        "bin": "<-72",
+        "n": 11601,
+        "resident_first": 1876,
+        "probability": 0.16171019739677614
+      },
+      {
+        "bin": "[-72,-24)",
+        "n": 9447,
+        "resident_first": 960,
+        "probability": 0.10161956176563988
+      },
+      {
+        "bin": "[-24,-6)",
+        "n": 873,
+        "resident_first": 115,
+        "probability": 0.13172966781214204
+      },
+      {
+        "bin": "[-6,0)",
+        "n": 0,
+        "resident_first": 0,
+        "probability": null
+      },
+      {
+        "bin": "0",
+        "n": 0,
+        "resident_first": 0,
+        "probability": null
+      },
+      {
+        "bin": "(0,6]",
+        "n": 0,
+        "resident_first": 0,
+        "probability": null
+      },
+      {
+        "bin": "(6,24]",
+        "n": 0,
+        "resident_first": 0,
+        "probability": null
+      },
+      {
+        "bin": "(24,72]",
+        "n": 0,
+        "resident_first": 0,
+        "probability": null
+      },
+      {
+        "bin": ">72",
+        "n": 0,
+        "resident_first": 0,
+        "probability": null
+      }
+    ],
+    "s2_rollover/overdue": [
+      {
+        "bin": "<-72",
+        "n": 1577,
+        "resident_first": 561,
+        "probability": 0.3557387444514902
+      },
+      {
+        "bin": "[-72,-24)",
+        "n": 550,
+        "resident_first": 77,
+        "probability": 0.14
+      },
+      {
+        "bin": "[-24,-6)",
+        "n": 205,
+        "resident_first": 44,
+        "probability": 0.2146341463414634
+      },
+      {
+        "bin": "[-6,0)",
+        "n": 280,
+        "resident_first": 130,
+        "probability": 0.4642857142857143
+      },
+      {
+        "bin": "0",
+        "n": 45,
+        "resident_first": 22,
+        "probability": 0.4888888888888889
+      },
+      {
+        "bin": "(0,6]",
+        "n": 327,
+        "resident_first": 124,
+        "probability": 0.37920489296636084
+      },
+      {
+        "bin": "(6,24]",
+        "n": 747,
+        "resident_first": 157,
+        "probability": 0.2101740294511379
+      },
+      {
+        "bin": "(24,72]",
+        "n": 217,
+        "resident_first": 69,
+        "probability": 0.31797235023041476
+      },
+      {
+        "bin": ">72",
+        "n": 27190,
+        "resident_first": 2855,
+        "probability": 0.10500183891136447
+      }
+    ],
+    "s2_rollover/new_arrival/overdue": [
+      {
+        "bin": "<-72",
+        "n": 1088,
+        "resident_first": 417,
+        "probability": 0.38327205882352944
+      },
+      {
+        "bin": "[-72,-24)",
+        "n": 299,
+        "resident_first": 63,
+        "probability": 0.21070234113712374
+      },
+      {
+        "bin": "[-24,-6)",
+        "n": 110,
+        "resident_first": 32,
+        "probability": 0.2909090909090909
+      },
+      {
+        "bin": "[-6,0)",
+        "n": 215,
+        "resident_first": 106,
+        "probability": 0.4930232558139535
+      },
+      {
+        "bin": "0",
+        "n": 28,
+        "resident_first": 15,
+        "probability": 0.5357142857142857
+      },
+      {
+        "bin": "(0,6]",
+        "n": 226,
+        "resident_first": 90,
+        "probability": 0.39823008849557523
+      },
+      {
+        "bin": "(6,24]",
+        "n": 518,
+        "resident_first": 115,
+        "probability": 0.222007722007722
+      },
+      {
+        "bin": "(24,72]",
+        "n": 145,
+        "resident_first": 51,
+        "probability": 0.35172413793103446
+      },
+      {
+        "bin": ">72",
+        "n": 19292,
+        "resident_first": 2062,
+        "probability": 0.10688368235538047
+      }
+    ],
+    "s3_next_feasible/overdue": [
+      {
+        "bin": "<-72",
+        "n": 1032,
+        "resident_first": 479,
+        "probability": 0.4641472868217054
+      },
+      {
+        "bin": "[-72,-24)",
+        "n": 728,
+        "resident_first": 80,
+        "probability": 0.10989010989010989
+      },
+      {
+        "bin": "[-24,-6)",
+        "n": 185,
+        "resident_first": 45,
+        "probability": 0.24324324324324326
+      },
+      {
+        "bin": "[-6,0)",
+        "n": 305,
+        "resident_first": 140,
+        "probability": 0.45901639344262296
+      },
+      {
+        "bin": "0",
+        "n": 50,
+        "resident_first": 23,
+        "probability": 0.46
+      },
+      {
+        "bin": "(0,6]",
+        "n": 355,
+        "resident_first": 132,
+        "probability": 0.37183098591549296
+      },
+      {
+        "bin": "(6,24]",
+        "n": 734,
+        "resident_first": 153,
+        "probability": 0.20844686648501362
+      },
+      {
+        "bin": "(24,72]",
+        "n": 164,
+        "resident_first": 58,
+        "probability": 0.35365853658536583
+      },
+      {
+        "bin": ">72",
+        "n": 27585,
+        "resident_first": 2929,
+        "probability": 0.10618089541417437
+      }
+    ],
+    "s3_next_feasible/new_arrival/overdue": [
+      {
+        "bin": "<-72",
+        "n": 682,
+        "resident_first": 352,
+        "probability": 0.5161290322580645
+      },
+      {
+        "bin": "[-72,-24)",
+        "n": 438,
+        "resident_first": 66,
+        "probability": 0.1506849315068493
+      },
+      {
+        "bin": "[-24,-6)",
+        "n": 92,
+        "resident_first": 32,
+        "probability": 0.34782608695652173
+      },
+      {
+        "bin": "[-6,0)",
+        "n": 234,
+        "resident_first": 114,
+        "probability": 0.48717948717948717
+      },
+      {
+        "bin": "0",
+        "n": 30,
+        "resident_first": 15,
+        "probability": 0.5
+      },
+      {
+        "bin": "(0,6]",
+        "n": 248,
+        "resident_first": 96,
+        "probability": 0.3870967741935484
+      },
+      {
+        "bin": "(6,24]",
+        "n": 506,
+        "resident_first": 111,
+        "probability": 0.21936758893280633
+      },
+      {
+        "bin": "(24,72]",
+        "n": 112,
+        "resident_first": 43,
+        "probability": 0.38392857142857145
+      },
+      {
+        "bin": ">72",
+        "n": 19579,
+        "resident_first": 2122,
+        "probability": 0.10838142908217989
+      }
+    ],
+    "raw/initial/overdue": [
+      {
+        "bin": "<-72",
+        "n": 4975,
+        "resident_first": 670,
+        "probability": 0.13467336683417086
+      },
+      {
+        "bin": "[-72,-24)",
+        "n": 3897,
+        "resident_first": 386,
+        "probability": 0.09905055170644085
+      },
+      {
+        "bin": "[-24,-6)",
+        "n": 345,
+        "resident_first": 32,
+        "probability": 0.0927536231884058
+      },
+      {
+        "bin": "[-6,0)",
+        "n": 0,
+        "resident_first": 0,
+        "probability": null
+      },
+      {
+        "bin": "0",
+        "n": 0,
+        "resident_first": 0,
+        "probability": null
+      },
+      {
+        "bin": "(0,6]",
+        "n": 0,
+        "resident_first": 0,
+        "probability": null
+      },
+      {
+        "bin": "(6,24]",
+        "n": 0,
+        "resident_first": 0,
+        "probability": null
+      },
+      {
+        "bin": "(24,72]",
+        "n": 0,
+        "resident_first": 0,
+        "probability": null
+      },
+      {
+        "bin": ">72",
+        "n": 0,
+        "resident_first": 0,
+        "probability": null
+      }
+    ],
+    "s2_rollover/initial/overdue": [
+      {
+        "bin": "<-72",
+        "n": 489,
+        "resident_first": 144,
+        "probability": 0.294478527607362
+      },
+      {
+        "bin": "[-72,-24)",
+        "n": 251,
+        "resident_first": 14,
+        "probability": 0.055776892430278883
+      },
+      {
+        "bin": "[-24,-6)",
+        "n": 95,
+        "resident_first": 12,
+        "probability": 0.12631578947368421
+      },
+      {
+        "bin": "[-6,0)",
+        "n": 65,
+        "resident_first": 24,
+        "probability": 0.36923076923076925
+      },
+      {
+        "bin": "0",
+        "n": 17,
+        "resident_first": 7,
+        "probability": 0.4117647058823529
+      },
+      {
+        "bin": "(0,6]",
+        "n": 101,
+        "resident_first": 34,
+        "probability": 0.33663366336633666
+      },
+      {
+        "bin": "(6,24]",
+        "n": 229,
+        "resident_first": 42,
+        "probability": 0.18340611353711792
+      },
+      {
+        "bin": "(24,72]",
+        "n": 72,
+        "resident_first": 18,
+        "probability": 0.25
+      },
+      {
+        "bin": ">72",
+        "n": 7898,
+        "resident_first": 793,
+        "probability": 0.1004051658647759
+      }
+    ],
+    "s3_next_feasible/initial/overdue": [
+      {
+        "bin": "<-72",
+        "n": 350,
+        "resident_first": 127,
+        "probability": 0.3628571428571429
+      },
+      {
+        "bin": "[-72,-24)",
+        "n": 290,
+        "resident_first": 14,
+        "probability": 0.04827586206896552
+      },
+      {
+        "bin": "[-24,-6)",
+        "n": 93,
+        "resident_first": 13,
+        "probability": 0.13978494623655913
+      },
+      {
+        "bin": "[-6,0)",
+        "n": 71,
+        "resident_first": 26,
+        "probability": 0.36619718309859156
+      },
+      {
+        "bin": "0",
+        "n": 20,
+        "resident_first": 8,
+        "probability": 0.4
+      },
+      {
+        "bin": "(0,6]",
+        "n": 107,
+        "resident_first": 36,
+        "probability": 0.3364485981308411
+      },
+      {
+        "bin": "(6,24]",
+        "n": 228,
+        "resident_first": 42,
+        "probability": 0.18421052631578946
+      },
+      {
+        "bin": "(24,72]",
+        "n": 52,
+        "resident_first": 15,
+        "probability": 0.28846153846153844
+      },
+      {
+        "bin": ">72",
+        "n": 8006,
+        "resident_first": 807,
+        "probability": 0.10079940044966275
+      }
+    ]
+  },
+  "overdue_definition": "Resident declared ETD < current event time.",
+  "warning": "Order is known for eligible pairs, but eligibility conditions on at least one observed departure by Day12. These are conditional curves, not unbiased full-population probabilities."
+}

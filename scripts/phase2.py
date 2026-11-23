@@ -20,6 +20,7 @@ from src.yard_state import YardState
 
 OUT = ROOT / "results/phase2"
 ARRIVALS = {"DISCHARGE","TRUCK_RECV"}
+PHASE2_MODES = tuple(mode for mode in MODES if mode != "expected_blocking")
 
 
 def save(name,value):
@@ -86,7 +87,7 @@ def records_and_diagnostics(initial,events,schedule):
     return records
 
 
-def run(modes=MODES):
+def run(modes=PHASE2_MODES):
     OUT.mkdir(parents=True,exist_ok=True)
     layout=json.loads((ROOT/"data/yard_layout.json").read_text())
     initial=json.loads((ROOT/"data/train/initial_state.json").read_text())
@@ -124,7 +125,7 @@ def run(modes=MODES):
         print(mode,"reshuffles",stats.total_reshuffles,"rate",round(stats.reshuffles_per_retrieval,6),
               "early",round(slices["period/1-12"]["found_rate"],6),
               "late",round(slices["period/13-20"]["found_rate"],6),"seconds",round(elapsed,2),flush=True)
-    runs=[json.loads((OUT/f"{mode}.json").read_text()) for mode in MODES if (OUT/f"{mode}.json").exists()]
+    runs=[json.loads((OUT/f"{mode}.json").read_text()) for mode in PHASE2_MODES if (OUT/f"{mode}.json").exists()]
     save("experiments.json",{"runs":runs,"fit":"No fitted parameters; rules specified before evaluation. S2 uses resident-only rollover as requested.",
                              "holdout":"Jan 13-20 warm-up continuation; exploratory comparison, not an untouched final holdout.",
                              "lower_bound":1325,"found_retrievals":8874})
@@ -139,5 +140,5 @@ def run(modes=MODES):
 
 if __name__=="__main__":
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--modes",nargs="+",choices=MODES,default=list(MODES))
+    parser.add_argument("--modes",nargs="+",choices=PHASE2_MODES,default=list(PHASE2_MODES))
     run(parser.parse_args().modes)

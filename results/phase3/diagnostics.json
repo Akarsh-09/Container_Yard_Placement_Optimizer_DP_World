@@ -1,0 +1,46 @@
+{
+  "rotation_mismatched_LOAD": {
+    "all": {
+      "earlier_rotation": 525,
+      "later_rotation": 1043
+    },
+    "initial": {
+      "earlier_rotation": 479,
+      "later_rotation": 276
+    },
+    "DISCHARGE": {
+      "earlier_rotation": 43,
+      "later_rotation": 671
+    },
+    "TRUCK_RECV": {
+      "earlier_rotation": 3,
+      "later_rotation": 96
+    }
+  },
+  "scheduled_vessel_TRUCK_DLVR_ETD_matches": {
+    "all": {
+      "n": 2254,
+      "within_1h": 2254,
+      "within_24h": 2254,
+      "exact": 2254
+    },
+    "initial": {
+      "n": 678,
+      "within_1h": 678,
+      "within_24h": 678,
+      "exact": 678
+    },
+    "DISCHARGE": {
+      "n": 1194,
+      "within_1h": 1194,
+      "within_24h": 1194,
+      "exact": 1194
+    },
+    "TRUCK_RECV": {
+      "n": 382,
+      "within_1h": 382,
+      "within_24h": 382,
+      "exact": 382
+    }
+  }
+}

@@ -20,7 +20,7 @@ def incoming(day=5, cid="incoming", vessel="V1", port="PORT_01", weight="MEDIUM"
                  weight_class=weight, departure_time=when(day))
 
 
-def setup(stacks, mode="raw_strict", schedule_path=None):
+def setup(stacks, mode="raw_strict", schedule_path=None, **kwargs):
     layout = {"blocks": {"A": {"bays": len(stacks), "rows": 1, "tiers": 5}}}
     yard = YardState(layout)
     for bay, days in enumerate(stacks, 1):
@@ -28,7 +28,7 @@ def setup(stacks, mode="raw_strict", schedule_path=None):
             yard.place_container(Container(f"c{bay}_{tier}", departure_time=when(day),
                                            vessel_id="V1", port_of_discharge="PORT_02",
                                            weight_class="LIGHT"), Position("A",bay,1,tier))
-    strategy = MyStrategy(mode, schedule_path)
+    strategy = MyStrategy(mode, schedule_path, **kwargs)
     strategy.initialize(layout,yard.export_state())
     return strategy,yard
 
@@ -52,7 +52,10 @@ def priority(strategy, event):
 
 
 def test_zero_arg_default():
-    assert MyStrategy().mode == "s3_next_feasible"
+    strategy=MyStrategy()
+    assert strategy.mode == "expected_blocking"
+    assert (strategy.timing_key,strategy.epsilon,strategy.sigma_hours)==("s3_next_feasible",0.05,12)
+    assert strategy.lambda_empty == strategy.lambda_gap == 0
 
 
 def test_invalid_mode():
@@ -208,3 +211,128 @@ def test_arbitrary_small_live_yards(tmp_path):
         before=yard.snapshot()
         assert yard.is_position_valid(strategy.place_container(yard,incoming(rng.randint(2,20))))
         assert yard.snapshot() == before
+
+
+def test_probability_symmetry_and_greedy_endpoint():
+    strategy=MyStrategy("expected_blocking",epsilon=0.15,sigma_hours=12)
+    a,b=parse_time(when(3)),parse_time(when(8))
+    assert strategy.pair_probability(a,a) == 0.5
+    assert strategy.pair_probability(a,b)+strategy.pair_probability(b,a) == pytest.approx(1)
+    strategy,yard=setup([[8,8],[2],[]],"expected_blocking",epsilon=0.5)
+    from src.baseline_greedy import GreedyStrategy
+    assert strategy.place_container(yard,incoming()) == GreedyStrategy().place_container(yard,incoming())
+
+
+@pytest.mark.parametrize("stacks,epsilon,expected", [
+    ([[9]*4,[9]],0.15,2),
+    ([[2],[8,8]],0.15,2),
+    ([[2],[8]*4],0.30,1),
+])
+def test_continuous_risk_height_tradeoff(stacks,epsilon,expected):
+    strategy,yard=setup(stacks,"expected_blocking",epsilon=epsilon,sigma_hours=12)
+    assert strategy.place_container(yard,incoming()).bay == expected
+
+
+def test_empty_stack_opportunity_cost():
+    ordinary,yard=setup([[9],[]],"expected_blocking",epsilon=0.15,sigma_hours=12)
+    preserve,_=setup([[9],[]],"expected_blocking",epsilon=0.15,sigma_hours=12,lambda_empty=0.20)
+    assert ordinary.place_container(yard,incoming()).bay == 2
+    assert preserve.place_container(yard,incoming()).bay == 1
+
+
+def test_gap_waste_preserves_far_future_base():
+    ordinary,yard=setup([[20],[8]],"expected_blocking",epsilon=0.15,sigma_hours=12)
+    waste,_=setup([[20],[8]],"expected_blocking",epsilon=0.15,sigma_hours=12,lambda_gap=0.15)
+    assert ordinary.place_container(yard,incoming(2)).bay == 1
+    assert waste.place_container(yard,incoming(2)).bay == 2
+
+
+@pytest.mark.parametrize("timing", ["raw","s2_rollover","s3_next_feasible"])
+def test_cached_vs_live_multistep(timing,schedule_path):
+    from dataclasses import asdict
+    trace=[]
+    states=[]
+    for use_cache in (True,False):
+        strategy,yard=setup([[20,2,10,12],[]],"expected_blocking",schedule_path,
+                            timing_key=timing,use_cache=use_cache)
+        positions=[]
+        for event in [Event(1,when(2),"LOAD","c1_2"),incoming(3,cid="x",now=when(2,12)),
+                      Event(3,when(2,13),"LOAD","c1_3"),incoming(11,cid="y",now=when(3)),
+                      Event(5,when(10,13),"LOAD","x"),incoming(12,cid="z",now=when(12))]:
+            if event.type in ("DISCHARGE","TRUCK_RECV"):
+                strategy.on_event(event)
+                pos=strategy.place_container(yard,event)
+                positions.append(asdict(pos))
+                assert yard.place_container(event.to_container(),pos)
+            else:
+                Simulator(yard,strategy).run([event])
+        trace.append(positions)
+        states.append(yard.snapshot())
+    assert trace[0] == trace[1]
+    assert states[0] == states[1]
+
+
+def test_full_block_retrieval_does_not_overflow():
+    # Removing blockers and target always creates enough room in this block.
+    layout={"blocks":{"A":{"bays":1,"rows":1,"tiers":5},"B":{"bays":1,"rows":1,"tiers":5}}}
+    traces=[]
+    for cached in (True,False):
+        yard=YardState(layout)
+        for tier in range(1,6):
+            yard.place_container(Container(f"a{tier}",departure_time=when(tier+1)),Position("A",1,1,tier))
+        strategy=MyStrategy("expected_blocking",use_cache=cached)
+        strategy.initialize(layout,yard.export_state())
+        # Populate cache without applying this proposed placement.
+        strategy.place_container(yard,incoming(cid="unused"))
+        Simulator(yard,strategy).run([Event(1,when(2),"LOAD","a1")])
+        assert all(yard.get_container_position(f"a{i}").block=="A" for i in range(2,6))
+        assert strategy.conservative_global_invalidations == 1
+        traces.append(strategy.place_container(yard,incoming(cid="next")))
+    assert traces[0] == traces[1]
+
+
+def test_count_guard_recovers_unreported_cross_block_move():
+    # Contrived external move exercises the global guard; actual valid simulator
+    # retrievals cannot overflow. The low-level fallback helper is tested below.
+    strategy,yard=setup([[8],[]],"expected_blocking")
+    strategy.place_container(yard,incoming())
+    c=yard.get_container_info("c1_1")
+    yard.remove_container("c1_1")
+    yard.place_container(c,Position("A",2,1,1))
+    strategy._dirty.clear()
+    # Same-block count-preserving arbitrary external edits cannot be detected
+    # by a count guard; flag its source, as a retrieval callback would.
+    strategy._dirty.add(strategy._indices[("A",1,1)])
+    strategy.place_container(yard,incoming())
+    assert strategy.cache_guard_fallbacks == 1
+    assert strategy._contents[strategy._indices[("A",2,1)]] == ["c1_1"]
+
+
+def test_low_level_full_block_fallback():
+    layout={"blocks":{"A":{"bays":1,"rows":1,"tiers":1},"B":{"bays":1,"rows":1,"tiers":1}}}
+    yard=YardState(layout)
+    c=Container("a")
+    yard.place_container(c,Position("A",1,1,1))
+    sim=Simulator(yard,MyStrategy())
+    assert sim._find_reshuffle_position("A",c) == Position("B",1,1,1)
+
+
+def test_contrived_cross_block_relocation_equivalence():
+    layout={"blocks":{"A":{"bays":2,"rows":1,"tiers":3},"B":{"bays":1,"rows":1,"tiers":3}}}
+    traces=[]
+    for cached in (True,False):
+        yard=YardState(layout)
+        for cid,day,tier in [("target",2,1),("blocker",8,2)]:
+            yard.place_container(Container(cid,departure_time=when(day)),Position("A",1,1,tier))
+        strategy=MyStrategy("expected_blocking",use_cache=cached)
+        strategy.initialize(layout,yard.export_state())
+        strategy.place_container(yard,incoming(cid="unused"))
+        blocker=yard.get_container_info("blocker")
+        yard.remove_container("blocker")
+        yard.remove_container("target")
+        yard.place_container(blocker,Position("B",1,1,1))
+        strategy.on_container_retrieved("target",Position("A",1,1,1),1)
+        traces.append(strategy.place_container(yard,incoming(cid="next")))
+        if cached:
+            assert strategy.cache_guard_fallbacks == 1
+    assert traces[0] == traces[1]
