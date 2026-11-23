@@ -1,0 +1,49 @@
+PHASE 6C ASSESSMENT — TRAIN ONLY
+
+Keep the saved checkpoint. None of the 16 admissible placement controls saves
+more than 200 reshuffles; none improves both chronological periods. Expanded
+96h is best overall at 6375 (33 saved), but adds 43 early and saves 76 late.
+
+The four future-label oracles save 1280 (unretrieved), 1932 (exit mode), 1984
+(exact LOAD), and 1329 (exact truck) reshuffles. These are non-additive, overlapping
+revelations and policy-induced yard states, not an exact causal partition of the
+4447 gap to H1. H1 is a diagnostic heuristic, not a proven optimum. O3 cuts LOAD
+reshuffles by 2019 while adding 35 truck reshuffles. O4 cuts truck reshuffles by
+1317 with only 12 fewer LOAD reshuffles. Both timing and non-departure/selection
+information have substantial value if predictable.
+
+The admissible feature screen does NOT establish a Bayes floor. All-feature
+logistic improves 72h-exit Brier from .17426 to .16240 with AUC .8130 -> .8195.
+For S3 LOAD, baseline plus vessel-port queue gives AUC .7167 vs .6834, with Brier
+.18669 vs .18600 (almost unchanged, slightly worse). Vessel queue and rotation
+index give larger AUC lifts but worse calibration. Truck port/weight add-one
+AUC gains exceed .03 but Brier worsens and validation has only 77 positive cases.
+Multiple comparisons and reused chronological validation make these exploratory
+leads; none has demonstrated a reshuffle reduction.
+
+No single feature alone beats the survival forecast. When adding one feature to
+the baseline, five checks exceed +.03 AUC: S3 vessel queue, vessel-port queue,
+rotation index; truck port, weight. Full-feature logistic also increases S3 AUC
+by .0326 but worsens Brier (.20661). The shallow tree does not improve the raw
+baseline on any target. No held-out calibration or hyperparameter adjustment
+was performed. Initial-specific predictors have NO late validation support:
+initial rows exist only at Day1.
+
+Arrival batch size is a past-observed hourly/vessel prefix, not the completed
+hour's future arrival count. Only complete target horizons are scored within
+each split. This leaves 1663/2584/637 validation rows for 72h/S3/120h targets.
+No ID strings/numbers or future events are predictors. No packages were installed.
+
+C4 is analytically rank-preserving: D+lambda*D^2 strictly increases in D for
+D>=0 and positive lambda. All three full placement hashes equal control.
+C2 uses the user-confirmed 2x2 upward shielding plus low-urgency height cost;
+no separate purity penalty is included.
+
+No submitted code or parameters, official output, datasets, scaffold, or design
+document were changed. No test files were accessed. A genuine >200 operational
+breakthrough has not been demonstrated. The checkpoint is the best established
+early-selection policy among these controls, but cannot be declared near every
+admissible strategy's frontier. Any further sprint should first test whether
+fit-only, coherent survival calibration can turn the predictive leads into
+placement gains rather than claim an irreducible ceiling or combine failed
+geometry objectives blindly.

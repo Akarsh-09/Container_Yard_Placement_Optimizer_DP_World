@@ -1,0 +1,1562 @@
+{
+  "fit_cutoff_exclusive": "2025-01-13T00:00:00",
+  "observation_end_exclusive": "2025-01-21T00:00:00",
+  "supports": [
+    {
+      "target": "exit72",
+      "fit_rows": 10459,
+      "fit_positives": 2610,
+      "validation_rows": 1663,
+      "validation_positives": 593,
+      "fit_initial_rows": 4800,
+      "validation_initial_rows": 0
+    },
+    {
+      "target": "load_s3",
+      "fit_rows": 10223,
+      "fit_positives": 3743,
+      "validation_rows": 2584,
+      "validation_positives": 850,
+      "fit_initial_rows": 4310,
+      "validation_initial_rows": 0
+    },
+    {
+      "target": "truck120",
+      "fit_rows": 10219,
+      "fit_positives": 582,
+      "validation_rows": 637,
+      "validation_positives": 77,
+      "fit_initial_rows": 4800,
+      "validation_initial_rows": 0
+    }
+  ],
+  "model_comparison": [
+    {
+      "target": "exit72",
+      "model": "frozen_11_cohort_survival",
+      "AUC": 0.8130242234164946,
+      "Brier": 0.17426211017308307,
+      "n": 1663,
+      "positives": 593
+    },
+    {
+      "target": "exit72",
+      "model": "calibrated_baseline_logistic",
+      "AUC": 0.8130242234164946,
+      "Brier": 0.17762025139687512,
+      "n": 1663,
+      "positives": 593,
+      "configuration": {
+        "iterations": 7,
+        "coefficients": 2,
+        "ridge_sum_loss_penalty": 1.0
+      }
+    },
+    {
+      "target": "exit72",
+      "model": "all_features_plus_baseline_logistic",
+      "AUC": 0.8195111188160943,
+      "Brier": 0.16240407165363258,
+      "n": 1663,
+      "positives": 593,
+      "configuration": {
+        "iterations": 8,
+        "coefficients": 69,
+        "ridge_sum_loss_penalty": 1.0
+      }
+    },
+    {
+      "target": "exit72",
+      "model": "all_features_plus_baseline_depth3_tree",
+      "AUC": 0.8046981135049093,
+      "Brier": 0.19572231620936947,
+      "n": 1663,
+      "positives": 593,
+      "configuration": {
+        "maxdepth": 3,
+        "minleaf": 100,
+        "nodes": 15
+      }
+    },
+    {
+      "target": "load_s3",
+      "model": "frozen_11_cohort_survival",
+      "AUC": 0.6834320510211005,
+      "Brier": 0.18600407481664732,
+      "n": 2584,
+      "positives": 850
+    },
+    {
+      "target": "load_s3",
+      "model": "calibrated_baseline_logistic",
+      "AUC": 0.6834320510211005,
+      "Brier": 0.18544451049505364,
+      "n": 2584,
+      "positives": 850,
+      "configuration": {
+        "iterations": 10,
+        "coefficients": 2,
+        "ridge_sum_loss_penalty": 1.0
+      }
+    },
+    {
+      "target": "load_s3",
+      "model": "all_features_plus_baseline_logistic",
+      "AUC": 0.7160675758192551,
+      "Brier": 0.20660944203452752,
+      "n": 2584,
+      "positives": 850,
+      "configuration": {
+        "iterations": 12,
+        "coefficients": 68,
+        "ridge_sum_loss_penalty": 1.0
+      }
+    },
+    {
+      "target": "load_s3",
+      "model": "all_features_plus_baseline_depth3_tree",
+      "AUC": 0.6760309383268879,
+      "Brier": 0.20305439343319667,
+      "n": 2584,
+      "positives": 850,
+      "configuration": {
+        "maxdepth": 3,
+        "minleaf": 100,
+        "nodes": 15
+      }
+    },
+    {
+      "target": "truck120",
+      "model": "frozen_11_cohort_survival",
+      "AUC": 0.7127666975881262,
+      "Brier": 0.10354126504672673,
+      "n": 637,
+      "positives": 77
+    },
+    {
+      "target": "truck120",
+      "model": "calibrated_baseline_logistic",
+      "AUC": 0.7127666975881262,
+      "Brier": 0.1068364957622409,
+      "n": 637,
+      "positives": 77,
+      "configuration": {
+        "iterations": 6,
+        "coefficients": 2,
+        "ridge_sum_loss_penalty": 1.0
+      }
+    },
+    {
+      "target": "truck120",
+      "model": "all_features_plus_baseline_logistic",
+      "AUC": 0.6679035250463822,
+      "Brier": 0.1074551588773984,
+      "n": 637,
+      "positives": 77,
+      "configuration": {
+        "iterations": 7,
+        "coefficients": 69,
+        "ridge_sum_loss_penalty": 1.0
+      }
+    },
+    {
+      "target": "truck120",
+      "model": "all_features_plus_baseline_depth3_tree",
+      "AUC": 0.5890306122448979,
+      "Brier": 0.10579682135167144,
+      "n": 637,
+      "positives": 77,
+      "configuration": {
+        "maxdepth": 3,
+        "minleaf": 100,
+        "nodes": 15
+      }
+    }
+  ],
+  "univariate": [
+    {
+      "target": "exit72",
+      "feature": "origin",
+      "fit_mutual_information_bits": 0.10562624962681232,
+      "fit_AUC": 0.7239979322353093,
+      "AUC": 0.5800767521394462,
+      "Brier": 0.22354151946330678,
+      "n": 1663,
+      "positives": 593,
+      "AUC_lift_vs_frozen": -0.2329474712770484
+    },
+    {
+      "target": "exit72",
+      "feature": "weight_class",
+      "fit_mutual_information_bits": 0.00012000249528734252,
+      "fit_AUC": 0.5071074285764494,
+      "AUC": 0.4950260831192574,
+      "Brier": 0.241014706766499,
+      "n": 1663,
+      "positives": 593,
+      "AUC_lift_vs_frozen": -0.3179981402972372
+    },
+    {
+      "target": "exit72",
+      "feature": "port_of_discharge",
+      "fit_mutual_information_bits": 0.007526517145786563,
+      "fit_AUC": 0.5540684344199837,
+      "AUC": 0.5080786748829805,
+      "Brier": 0.24293957525924112,
+      "n": 1663,
+      "positives": 593,
+      "AUC_lift_vs_frozen": -0.3049455485335141
+    },
+    {
+      "target": "exit72",
+      "feature": "raw_etd_minus_t",
+      "fit_mutual_information_bits": 0.1511207244436616,
+      "fit_AUC": 0.7758645584839126,
+      "AUC": 0.63075128839577,
+      "Brier": 0.2195792900647355,
+      "n": 1663,
+      "positives": 593,
+      "AUC_lift_vs_frozen": -0.1822729350207246
+    },
+    {
+      "target": "exit72",
+      "feature": "s3_load_start_minus_t",
+      "fit_mutual_information_bits": 0.16436162314507902,
+      "fit_AUC": 0.7879953958553912,
+      "AUC": 0.6319616712108557,
+      "Brier": 0.22248204779786124,
+      "n": 1663,
+      "positives": 593,
+      "AUC_lift_vs_frozen": -0.18106255220563894
+    },
+    {
+      "target": "exit72",
+      "feature": "raw_etd_vs_s3_etd",
+      "fit_mutual_information_bits": 0.0050601223906330105,
+      "fit_AUC": 0.5277023600146247,
+      "AUC": 0.5,
+      "Brier": 0.23855646078245943,
+      "n": 1663,
+      "positives": 593,
+      "AUC_lift_vs_frozen": -0.3130242234164946
+    },
+    {
+      "target": "exit72",
+      "feature": "s3_exists",
+      "fit_mutual_information_bits": 0.017442966798945393,
+      "fit_AUC": 0.5389728735241671,
+      "AUC": 0.5,
+      "Brier": 0.23778377189113353,
+      "n": 1663,
+      "positives": 593,
+      "AUC_lift_vs_frozen": -0.3130242234164946
+    },
+    {
+      "target": "exit72",
+      "feature": "raw_etd_missing",
+      "fit_mutual_information_bits": -1.2020123639183138e-16,
+      "fit_AUC": 0.5,
+      "AUC": 0.5,
+      "Brier": 0.2408892607993339,
+      "n": 1663,
+      "positives": 593,
+      "AUC_lift_vs_frozen": -0.3130242234164946
+    },
+    {
+      "target": "exit72",
+      "feature": "in_discharge_window",
+      "fit_mutual_information_bits": 0.10607199137434778,
+      "fit_AUC": 0.7163547202489128,
+      "AUC": 0.6091598241162471,
+      "Brier": 0.2263935474581532,
+      "n": 1663,
+      "positives": 593,
+      "AUC_lift_vs_frozen": -0.20386439930024747
+    },
+    {
+      "target": "exit72",
+      "feature": "time_of_day",
+      "fit_mutual_information_bits": 0.07924451100189107,
+      "fit_AUC": 0.6994401756526077,
+      "AUC": 0.47980882886006526,
+      "Brier": 0.24221486084200364,
+      "n": 1663,
+      "positives": 593,
+      "AUC_lift_vs_frozen": -0.33321539455642935
+    },
+    {
+      "target": "exit72",
+      "feature": "day_of_week",
+      "fit_mutual_information_bits": 0.12394149542769509,
+      "fit_AUC": 0.7548924161947564,
+      "AUC": 0.4395864525381791,
+      "Brier": 0.27645015927062816,
+      "n": 1663,
+      "positives": 593,
+      "AUC_lift_vs_frozen": -0.37343777087831553
+    },
+    {
+      "target": "exit72",
+      "feature": "arrival_batch_size",
+      "fit_mutual_information_bits": 0.11437916731374109,
+      "fit_AUC": 0.7467047074840293,
+      "AUC": 0.598331783581031,
+      "Brier": 0.2229573079475387,
+      "n": 1663,
+      "positives": 593,
+      "AUC_lift_vs_frozen": -0.2146924398354636
+    },
+    {
+      "target": "exit72",
+      "feature": "vessel_queue_size",
+      "fit_mutual_information_bits": 0.08830147611823475,
+      "fit_AUC": 0.7030452179524541,
+      "AUC": 0.40870041449307337,
+      "Brier": 0.2386211162043877,
+      "n": 1663,
+      "positives": 593,
+      "AUC_lift_vs_frozen": -0.40432380892342124
+    },
+    {
+      "target": "exit72",
+      "feature": "vessel_port_queue_size",
+      "fit_mutual_information_bits": 0.031472838776947384,
+      "fit_AUC": 0.6335925605380094,
+      "AUC": 0.5669760917873635,
+      "Brier": 0.22846039231233004,
+      "n": 1663,
+      "positives": 593,
+      "AUC_lift_vs_frozen": -0.24604813162913108
+    },
+    {
+      "target": "exit72",
+      "feature": "vessel_port_weight_queue_size",
+      "fit_mutual_information_bits": 0.024105017869986513,
+      "fit_AUC": 0.6196307312008411,
+      "AUC": 0.5540543096247498,
+      "Brier": 0.23134234163492706,
+      "n": 1663,
+      "positives": 593,
+      "AUC_lift_vs_frozen": -0.25896991379174483
+    },
+    {
+      "target": "exit72",
+      "feature": "vessel_rotation_index",
+      "fit_mutual_information_bits": 0.017442966798945393,
+      "fit_AUC": 0.5389728735241671,
+      "AUC": 0.5,
+      "Brier": 0.23778377189113353,
+      "n": 1663,
+      "positives": 593,
+      "AUC_lift_vs_frozen": -0.3130242234164946
+    },
+    {
+      "target": "exit72",
+      "feature": "vessel_total_rotations",
+      "fit_mutual_information_bits": 0.029043416086567922,
+      "fit_AUC": 0.6108579124460788,
+      "AUC": 0.4554813950922759,
+      "Brier": 0.24829361115570062,
+      "n": 1663,
+      "positives": 593,
+      "AUC_lift_vs_frozen": -0.3575428283242187
+    },
+    {
+      "target": "exit72",
+      "feature": "yard_occupancy",
+      "fit_mutual_information_bits": 0.11786578805576059,
+      "fit_AUC": 0.7474725774667345,
+      "AUC": 0.5193030842697515,
+      "Brier": 0.25260729084536065,
+      "n": 1663,
+      "positives": 593,
+      "AUC_lift_vs_frozen": -0.29372113914674314
+    },
+    {
+      "target": "exit72",
+      "feature": "initial_tier",
+      "fit_mutual_information_bits": 0.09765420379079862,
+      "fit_AUC": 0.7035316259142268,
+      "AUC": 0.5,
+      "Brier": 0.23051565806303448,
+      "n": 1663,
+      "positives": 593,
+      "AUC_lift_vs_frozen": -0.3130242234164946
+    },
+    {
+      "target": "exit72",
+      "feature": "initial_stack_height",
+      "fit_mutual_information_bits": 0.08562706667093867,
+      "fit_AUC": 0.6895894930608336,
+      "AUC": 0.5,
+      "Brier": 0.2296485010225016,
+      "n": 1663,
+      "positives": 593,
+      "AUC_lift_vs_frozen": -0.3130242234164946
+    },
+    {
+      "target": "exit72",
+      "feature": "initial_block",
+      "fit_mutual_information_bits": 0.09813432986153531,
+      "fit_AUC": 0.7061917983548677,
+      "AUC": 0.5,
+      "Brier": 0.23051565806303448,
+      "n": 1663,
+      "positives": 593,
+      "AUC_lift_vs_frozen": -0.3130242234164946
+    },
+    {
+      "target": "exit72",
+      "feature": "cohort",
+      "fit_mutual_information_bits": 0.14896793691941984,
+      "fit_AUC": 0.7626418720397308,
+      "AUC": 0.805643725079195,
+      "Brier": 0.17712745903771243,
+      "n": 1663,
+      "positives": 593,
+      "AUC_lift_vs_frozen": -0.00738049833729959
+    },
+    {
+      "target": "load_s3",
+      "feature": "origin",
+      "fit_mutual_information_bits": 0.0071555449253039825,
+      "fit_AUC": 0.5533978240864429,
+      "AUC": 0.5049365628604383,
+      "Brier": 0.2269096284643412,
+      "n": 2584,
+      "positives": 850,
+      "AUC_lift_vs_frozen": -0.17849548816066219
+    },
+    {
+      "target": "load_s3",
+      "feature": "weight_class",
+      "fit_mutual_information_bits": 0.0001440088306849897,
+      "fit_AUC": 0.5071599289867835,
+      "AUC": 0.507569034534229,
+      "Brier": 0.22208150642364194,
+      "n": 2584,
+      "positives": 850,
+      "AUC_lift_vs_frozen": -0.17586301648687153
+    },
+    {
+      "target": "load_s3",
+      "feature": "port_of_discharge",
+      "fit_mutual_information_bits": 0.008395486113499313,
+      "fit_AUC": 0.5506580184245159,
+      "AUC": 0.5067433340118054,
+      "Brier": 0.2241339331339404,
+      "n": 2584,
+      "positives": 850,
+      "AUC_lift_vs_frozen": -0.17668871700929512
+    },
+    {
+      "target": "load_s3",
+      "feature": "raw_etd_minus_t",
+      "fit_mutual_information_bits": 0.02282136057467794,
+      "fit_AUC": 0.5958537624141195,
+      "AUC": 0.49245980052920824,
+      "Brier": 0.226627447621897,
+      "n": 2584,
+      "positives": 850,
+      "AUC_lift_vs_frozen": -0.19097225049189226
+    },
+    {
+      "target": "load_s3",
+      "feature": "s3_load_start_minus_t",
+      "fit_mutual_information_bits": 0.05014372494922863,
+      "fit_AUC": 0.6369211416867041,
+      "AUC": 0.49910441685324647,
+      "Brier": 0.22963674819041716,
+      "n": 2584,
+      "positives": 850,
+      "AUC_lift_vs_frozen": -0.18432763416785403
+    },
+    {
+      "target": "load_s3",
+      "feature": "raw_etd_vs_s3_etd",
+      "fit_mutual_information_bits": 0.000592612758640732,
+      "fit_AUC": 0.5089858270417537,
+      "AUC": 0.5,
+      "Brier": 0.22249066435609643,
+      "n": 2584,
+      "positives": 850,
+      "AUC_lift_vs_frozen": -0.1834320510211005
+    },
+    {
+      "target": "load_s3",
+      "feature": "s3_exists",
+      "fit_mutual_information_bits": 0.04880908635553862,
+      "fit_AUC": 0.5558641975308642,
+      "AUC": 0.5,
+      "Brier": 0.22497061047317787,
+      "n": 2584,
+      "positives": 850,
+      "AUC_lift_vs_frozen": -0.1834320510211005
+    },
+    {
+      "target": "load_s3",
+      "feature": "raw_etd_missing",
+      "fit_mutual_information_bits": 0.0,
+      "fit_AUC": 0.5,
+      "AUC": 0.5,
+      "Brier": 0.22212393095907243,
+      "n": 2584,
+      "positives": 850,
+      "AUC_lift_vs_frozen": -0.1834320510211005
+    },
+    {
+      "target": "load_s3",
+      "feature": "in_discharge_window",
+      "fit_mutual_information_bits": 0.0030344519114142918,
+      "fit_AUC": 0.5335361398891099,
+      "AUC": 0.5027566320645905,
+      "Brier": 0.224415022418877,
+      "n": 2584,
+      "positives": 850,
+      "AUC_lift_vs_frozen": -0.18067541895650996
+    },
+    {
+      "target": "load_s3",
+      "feature": "time_of_day",
+      "fit_mutual_information_bits": 0.01356133289416249,
+      "fit_AUC": 0.5748200138200361,
+      "AUC": 0.5129048782142615,
+      "Brier": 0.22773400443761058,
+      "n": 2584,
+      "positives": 850,
+      "AUC_lift_vs_frozen": -0.17052717280683904
+    },
+    {
+      "target": "load_s3",
+      "feature": "day_of_week",
+      "fit_mutual_information_bits": 0.043305061155860275,
+      "fit_AUC": 0.6187793758225231,
+      "AUC": 0.4363464278444942,
+      "Brier": 0.23292953378097553,
+      "n": 2584,
+      "positives": 850,
+      "AUC_lift_vs_frozen": -0.24708562317660632
+    },
+    {
+      "target": "load_s3",
+      "feature": "arrival_batch_size",
+      "fit_mutual_information_bits": 0.009770326517840534,
+      "fit_AUC": 0.563933272149164,
+      "AUC": 0.48646516045864713,
+      "Brier": 0.2292286458070666,
+      "n": 2584,
+      "positives": 850,
+      "AUC_lift_vs_frozen": -0.19696689056245337
+    },
+    {
+      "target": "load_s3",
+      "feature": "vessel_queue_size",
+      "fit_mutual_information_bits": 0.06848210654408608,
+      "fit_AUC": 0.6686461229686361,
+      "AUC": 0.5742265418278037,
+      "Brier": 0.2194808798292257,
+      "n": 2584,
+      "positives": 850,
+      "AUC_lift_vs_frozen": -0.10920550919329675
+    },
+    {
+      "target": "load_s3",
+      "feature": "vessel_port_queue_size",
+      "fit_mutual_information_bits": 0.01122793578226041,
+      "fit_AUC": 0.5675352427411827,
+      "AUC": 0.48121751814912817,
+      "Brier": 0.22274101463826024,
+      "n": 2584,
+      "positives": 850,
+      "AUC_lift_vs_frozen": -0.20221453287197233
+    },
+    {
+      "target": "load_s3",
+      "feature": "vessel_port_weight_queue_size",
+      "fit_mutual_information_bits": 0.004420869540308457,
+      "fit_AUC": 0.5440312657701784,
+      "AUC": 0.5155563471063166,
+      "Brier": 0.22111563970208645,
+      "n": 2584,
+      "positives": 850,
+      "AUC_lift_vs_frozen": -0.1678757039147839
+    },
+    {
+      "target": "load_s3",
+      "feature": "vessel_rotation_index",
+      "fit_mutual_information_bits": 0.04880908635553862,
+      "fit_AUC": 0.5558641975308642,
+      "AUC": 0.5,
+      "Brier": 0.22497061047317787,
+      "n": 2584,
+      "positives": 850,
+      "AUC_lift_vs_frozen": -0.1834320510211005
+    },
+    {
+      "target": "load_s3",
+      "feature": "vessel_total_rotations",
+      "fit_mutual_information_bits": 0.13424570341186798,
+      "fit_AUC": 0.729124468555295,
+      "AUC": 0.5603127756292828,
+      "Brier": 0.21702472251248542,
+      "n": 2584,
+      "positives": 850,
+      "AUC_lift_vs_frozen": -0.12311927539181766
+    },
+    {
+      "target": "load_s3",
+      "feature": "yard_occupancy",
+      "fit_mutual_information_bits": 0.02934916789230836,
+      "fit_AUC": 0.5914547690668672,
+      "AUC": 0.5325944772372617,
+      "Brier": 0.24155229671951292,
+      "n": 2584,
+      "positives": 850,
+      "AUC_lift_vs_frozen": -0.15083757378383877
+    },
+    {
+      "target": "load_s3",
+      "feature": "initial_tier",
+      "fit_mutual_information_bits": 0.006620533907308342,
+      "fit_AUC": 0.5504508415709324,
+      "AUC": 0.5,
+      "Brier": 0.2264855274801654,
+      "n": 2584,
+      "positives": 850,
+      "AUC_lift_vs_frozen": -0.1834320510211005
+    },
+    {
+      "target": "load_s3",
+      "feature": "initial_stack_height",
+      "fit_mutual_information_bits": 0.0068936002136314265,
+      "fit_AUC": 0.5518629837424922,
+      "AUC": 0.5,
+      "Brier": 0.2264855274801654,
+      "n": 2584,
+      "positives": 850,
+      "AUC_lift_vs_frozen": -0.1834320510211005
+    },
+    {
+      "target": "load_s3",
+      "feature": "initial_block",
+      "fit_mutual_information_bits": 0.007292717544235203,
+      "fit_AUC": 0.5534719542322624,
+      "AUC": 0.5,
+      "Brier": 0.2264855274801654,
+      "n": 2584,
+      "positives": 850,
+      "AUC_lift_vs_frozen": -0.1834320510211005
+    },
+    {
+      "target": "load_s3",
+      "feature": "cohort",
+      "fit_mutual_information_bits": 0.061434331728634856,
+      "fit_AUC": 0.5903803767031792,
+      "AUC": 0.6808531786416989,
+      "Brier": 0.18631287845205907,
+      "n": 2584,
+      "positives": 850,
+      "AUC_lift_vs_frozen": -0.0025788723794015755
+    },
+    {
+      "target": "truck120",
+      "feature": "origin",
+      "fit_mutual_information_bits": 0.0013959407741313884,
+      "fit_AUC": 0.5483777622543697,
+      "AUC": 0.45681818181818185,
+      "Brier": 0.10953165718901017,
+      "n": 637,
+      "positives": 77,
+      "AUC_lift_vs_frozen": -0.2559485157699443
+    },
+    {
+      "target": "truck120",
+      "feature": "weight_class",
+      "fit_mutual_information_bits": 0.00038342751373170213,
+      "fit_AUC": 0.52381196897553,
+      "AUC": 0.5667903525046383,
+      "Brier": 0.11001193209697184,
+      "n": 637,
+      "positives": 77,
+      "AUC_lift_vs_frozen": -0.1459763450834879
+    },
+    {
+      "target": "truck120",
+      "feature": "port_of_discharge",
+      "fit_mutual_information_bits": 0.0011895318864724625,
+      "fit_AUC": 0.5439312151369632,
+      "AUC": 0.5626855287569573,
+      "Brier": 0.11022360968666303,
+      "n": 637,
+      "positives": 77,
+      "AUC_lift_vs_frozen": -0.15008116883116884
+    },
+    {
+      "target": "truck120",
+      "feature": "raw_etd_minus_t",
+      "fit_mutual_information_bits": 0.0021137087541322815,
+      "fit_AUC": 0.5636358401022405,
+      "AUC": 0.43449675324675324,
+      "Brier": 0.11172222992296146,
+      "n": 637,
+      "positives": 77,
+      "AUC_lift_vs_frozen": -0.2782699443413729
+    },
+    {
+      "target": "truck120",
+      "feature": "s3_load_start_minus_t",
+      "fit_mutual_information_bits": 0.0024769301038455468,
+      "fit_AUC": 0.5718756674857464,
+      "AUC": 0.4692486085343228,
+      "Brier": 0.11139332976514496,
+      "n": 637,
+      "positives": 77,
+      "AUC_lift_vs_frozen": -0.24351808905380334
+    },
+    {
+      "target": "truck120",
+      "feature": "raw_etd_vs_s3_etd",
+      "fit_mutual_information_bits": 0.0005624965740101736,
+      "fit_AUC": 0.5174382489880961,
+      "AUC": 0.5,
+      "Brier": 0.11009177617071303,
+      "n": 637,
+      "positives": 77,
+      "AUC_lift_vs_frozen": -0.21276669758812616
+    },
+    {
+      "target": "truck120",
+      "feature": "s3_exists",
+      "fit_mutual_information_bits": 0.0004403942239398252,
+      "fit_AUC": 0.5143628669143518,
+      "AUC": 0.5,
+      "Brier": 0.11056853764074562,
+      "n": 637,
+      "positives": 77,
+      "AUC_lift_vs_frozen": -0.21276669758812616
+    },
+    {
+      "target": "truck120",
+      "feature": "raw_etd_missing",
+      "fit_mutual_information_bits": 0.0,
+      "fit_AUC": 0.5,
+      "AUC": 0.5,
+      "Brier": 0.11035394181322883,
+      "n": 637,
+      "positives": 77,
+      "AUC_lift_vs_frozen": -0.21276669758812616
+    },
+    {
+      "target": "truck120",
+      "feature": "in_discharge_window",
+      "fit_mutual_information_bits": 0.0006295468980683991,
+      "fit_AUC": 0.5312665032786364,
+      "AUC": 0.4612012987012987,
+      "Brier": 0.11064541352072767,
+      "n": 637,
+      "positives": 77,
+      "AUC_lift_vs_frozen": -0.25156539888682744
+    },
+    {
+      "target": "truck120",
+      "feature": "time_of_day",
+      "fit_mutual_information_bits": 0.0017953891110380035,
+      "fit_AUC": 0.5531774193605901,
+      "AUC": 0.4514262523191095,
+      "Brier": 0.10987345083748078,
+      "n": 637,
+      "positives": 77,
+      "AUC_lift_vs_frozen": -0.2613404452690167
+    },
+    {
+      "target": "truck120",
+      "feature": "day_of_week",
+      "fit_mutual_information_bits": 0.0017646254074786911,
+      "fit_AUC": 0.5567108370623388,
+      "AUC": 0.5108418367346939,
+      "Brier": 0.11057101480515044,
+      "n": 637,
+      "positives": 77,
+      "AUC_lift_vs_frozen": -0.2019248608534323
+    },
+    {
+      "target": "truck120",
+      "feature": "arrival_batch_size",
+      "fit_mutual_information_bits": 0.0015327945701558493,
+      "fit_AUC": 0.5539477357992018,
+      "AUC": 0.494097866419295,
+      "Brier": 0.10956343272679114,
+      "n": 637,
+      "positives": 77,
+      "AUC_lift_vs_frozen": -0.21866883116883118
+    },
+    {
+      "target": "truck120",
+      "feature": "vessel_queue_size",
+      "fit_mutual_information_bits": 0.0033121884168527895,
+      "fit_AUC": 0.5789629174783472,
+      "AUC": 0.43174860853432284,
+      "Brier": 0.10924859390198392,
+      "n": 637,
+      "positives": 77,
+      "AUC_lift_vs_frozen": -0.2810180890538033
+    },
+    {
+      "target": "truck120",
+      "feature": "vessel_port_queue_size",
+      "fit_mutual_information_bits": 0.0013745551632373199,
+      "fit_AUC": 0.553238039101159,
+      "AUC": 0.4505333951762523,
+      "Brier": 0.11044583734329311,
+      "n": 637,
+      "positives": 77,
+      "AUC_lift_vs_frozen": -0.26223330241187387
+    },
+    {
+      "target": "truck120",
+      "feature": "vessel_port_weight_queue_size",
+      "fit_mutual_information_bits": 0.0005848748749874161,
+      "fit_AUC": 0.5336631225513636,
+      "AUC": 0.45830241187384047,
+      "Brier": 0.11042275742199771,
+      "n": 637,
+      "positives": 77,
+      "AUC_lift_vs_frozen": -0.2544642857142857
+    },
+    {
+      "target": "truck120",
+      "feature": "vessel_rotation_index",
+      "fit_mutual_information_bits": 0.0004403942239398252,
+      "fit_AUC": 0.5143628669143518,
+      "AUC": 0.5,
+      "Brier": 0.11056853764074562,
+      "n": 637,
+      "positives": 77,
+      "AUC_lift_vs_frozen": -0.21276669758812616
+    },
+    {
+      "target": "truck120",
+      "feature": "vessel_total_rotations",
+      "fit_mutual_information_bits": 0.000990672404303896,
+      "fit_AUC": 0.543448040145958,
+      "AUC": 0.5126275510204081,
+      "Brier": 0.11015202800990499,
+      "n": 637,
+      "positives": 77,
+      "AUC_lift_vs_frozen": -0.20013914656771803
+    },
+    {
+      "target": "truck120",
+      "feature": "yard_occupancy",
+      "fit_mutual_information_bits": 0.002004816419009667,
+      "fit_AUC": 0.5596270031704125,
+      "AUC": 0.5487824675324675,
+      "Brier": 0.10786416336655048,
+      "n": 637,
+      "positives": 77,
+      "AUC_lift_vs_frozen": -0.16398423005565865
+    },
+    {
+      "target": "truck120",
+      "feature": "initial_tier",
+      "fit_mutual_information_bits": 0.0014047303234930478,
+      "fit_AUC": 0.5488378482559523,
+      "AUC": 0.5,
+      "Brier": 0.1092355448816727,
+      "n": 637,
+      "positives": 77,
+      "AUC_lift_vs_frozen": -0.21276669758812616
+    },
+    {
+      "target": "truck120",
+      "feature": "initial_stack_height",
+      "fit_mutual_information_bits": 0.00090207488483031,
+      "fit_AUC": 0.5388219516204548,
+      "AUC": 0.5,
+      "Brier": 0.10951041867295613,
+      "n": 637,
+      "positives": 77,
+      "AUC_lift_vs_frozen": -0.21276669758812616
+    },
+    {
+      "target": "truck120",
+      "feature": "initial_block",
+      "fit_mutual_information_bits": 0.0021315903243064845,
+      "fit_AUC": 0.5572933214518642,
+      "AUC": 0.5,
+      "Brier": 0.1092355448816727,
+      "n": 637,
+      "positives": 77,
+      "AUC_lift_vs_frozen": -0.21276669758812616
+    },
+    {
+      "target": "truck120",
+      "feature": "cohort",
+      "fit_mutual_information_bits": 0.0042745445687539475,
+      "fit_AUC": 0.5838638452099886,
+      "AUC": 0.699652133580705,
+      "Brier": 0.10754066767915765,
+      "n": 637,
+      "positives": 77,
+      "AUC_lift_vs_frozen": -0.01311456400742117
+    }
+  ],
+  "baseline_plus_one_feature": [
+    {
+      "target": "exit72",
+      "feature": "origin",
+      "AUC": 0.8123386550251375,
+      "Brier": 0.1739698482854711,
+      "n": 1663,
+      "positives": 593,
+      "AUC_lift_vs_frozen": -0.0006855683913571387
+    },
+    {
+      "target": "exit72",
+      "feature": "weight_class",
+      "AUC": 0.8152645348379064,
+      "Brier": 0.1776741387347338,
+      "n": 1663,
+      "positives": 593,
+      "AUC_lift_vs_frozen": 0.002240311421411789
+    },
+    {
+      "target": "exit72",
+      "feature": "port_of_discharge",
+      "AUC": 0.817782225654442,
+      "Brier": 0.17984336593026765,
+      "n": 1663,
+      "positives": 593,
+      "AUC_lift_vs_frozen": 0.004758002237947423
+    },
+    {
+      "target": "exit72",
+      "feature": "raw_etd_minus_t",
+      "AUC": 0.8168641944177397,
+      "Brier": 0.17620481794516682,
+      "n": 1663,
+      "positives": 593,
+      "AUC_lift_vs_frozen": 0.0038399710012451127
+    },
+    {
+      "target": "exit72",
+      "feature": "s3_load_start_minus_t",
+      "AUC": 0.815567918551323,
+      "Brier": 0.17767438221603885,
+      "n": 1663,
+      "positives": 593,
+      "AUC_lift_vs_frozen": 0.0025436951348284387
+    },
+    {
+      "target": "exit72",
+      "feature": "raw_etd_vs_s3_etd",
+      "AUC": 0.8130242234164946,
+      "Brier": 0.17597659973986277,
+      "n": 1663,
+      "positives": 593,
+      "AUC_lift_vs_frozen": 0.0
+    },
+    {
+      "target": "exit72",
+      "feature": "s3_exists",
+      "AUC": 0.8130242234164946,
+      "Brier": 0.17757242588678596,
+      "n": 1663,
+      "positives": 593,
+      "AUC_lift_vs_frozen": 0.0
+    },
+    {
+      "target": "exit72",
+      "feature": "raw_etd_missing",
+      "AUC": 0.8130242234164946,
+      "Brier": 0.17762025137576734,
+      "n": 1663,
+      "positives": 593,
+      "AUC_lift_vs_frozen": 0.0
+    },
+    {
+      "target": "exit72",
+      "feature": "in_discharge_window",
+      "AUC": 0.8112882381680352,
+      "Brier": 0.177047596283862,
+      "n": 1663,
+      "positives": 593,
+      "AUC_lift_vs_frozen": -0.0017359852484594152
+    },
+    {
+      "target": "exit72",
+      "feature": "time_of_day",
+      "AUC": 0.8098721848355424,
+      "Brier": 0.1788309247620665,
+      "n": 1663,
+      "positives": 593,
+      "AUC_lift_vs_frozen": -0.0031520385809522544
+    },
+    {
+      "target": "exit72",
+      "feature": "day_of_week",
+      "AUC": 0.8083489621912973,
+      "Brier": 0.1984170008055604,
+      "n": 1663,
+      "positives": 593,
+      "AUC_lift_vs_frozen": -0.004675261225197347
+    },
+    {
+      "target": "exit72",
+      "feature": "arrival_batch_size",
+      "AUC": 0.8182274511040015,
+      "Brier": 0.17737690700817177,
+      "n": 1663,
+      "positives": 593,
+      "AUC_lift_vs_frozen": 0.005203227687506917
+    },
+    {
+      "target": "exit72",
+      "feature": "vessel_queue_size",
+      "AUC": 0.8087004144930734,
+      "Brier": 0.20503984092473895,
+      "n": 1663,
+      "positives": 593,
+      "AUC_lift_vs_frozen": -0.004323808923421213
+    },
+    {
+      "target": "exit72",
+      "feature": "vessel_port_queue_size",
+      "AUC": 0.8081692959921829,
+      "Brier": 0.1789789092437981,
+      "n": 1663,
+      "positives": 593,
+      "AUC_lift_vs_frozen": -0.004854927424311706
+    },
+    {
+      "target": "exit72",
+      "feature": "vessel_port_weight_queue_size",
+      "AUC": 0.8101148918062757,
+      "Brier": 0.178810889151663,
+      "n": 1663,
+      "positives": 593,
+      "AUC_lift_vs_frozen": -0.0029093316102188904
+    },
+    {
+      "target": "exit72",
+      "feature": "vessel_rotation_index",
+      "AUC": 0.8089612456856472,
+      "Brier": 0.16487154004650384,
+      "n": 1663,
+      "positives": 593,
+      "AUC_lift_vs_frozen": -0.004062977730847406
+    },
+    {
+      "target": "exit72",
+      "feature": "vessel_total_rotations",
+      "AUC": 0.8084482514065973,
+      "Brier": 0.193590468151715,
+      "n": 1663,
+      "positives": 593,
+      "AUC_lift_vs_frozen": -0.004575972009897344
+    },
+    {
+      "target": "exit72",
+      "feature": "yard_occupancy",
+      "AUC": 0.7996674599297096,
+      "Brier": 0.16285500487556454,
+      "n": 1663,
+      "positives": 593,
+      "AUC_lift_vs_frozen": -0.01335676348678505
+    },
+    {
+      "target": "exit72",
+      "feature": "initial_tier",
+      "AUC": 0.8130242234164946,
+      "Brier": 0.17464387075522153,
+      "n": 1663,
+      "positives": 593,
+      "AUC_lift_vs_frozen": 0.0
+    },
+    {
+      "target": "exit72",
+      "feature": "initial_stack_height",
+      "AUC": 0.8130242234164946,
+      "Brier": 0.17409798640798857,
+      "n": 1663,
+      "positives": 593,
+      "AUC_lift_vs_frozen": 0.0
+    },
+    {
+      "target": "exit72",
+      "feature": "initial_block",
+      "AUC": 0.8130242234164946,
+      "Brier": 0.17377003563141202,
+      "n": 1663,
+      "positives": 593,
+      "AUC_lift_vs_frozen": 0.0
+    },
+    {
+      "target": "exit72",
+      "feature": "cohort",
+      "AUC": 0.8106365541914233,
+      "Brier": 0.17495053683926026,
+      "n": 1663,
+      "positives": 593,
+      "AUC_lift_vs_frozen": -0.002387669225071276
+    },
+    {
+      "target": "load_s3",
+      "feature": "origin",
+      "AUC": 0.6828736684985413,
+      "Brier": 0.18546973055184196,
+      "n": 2584,
+      "positives": 850,
+      "AUC_lift_vs_frozen": -0.000558382522559242
+    },
+    {
+      "target": "load_s3",
+      "feature": "weight_class",
+      "AUC": 0.6855658457154488,
+      "Brier": 0.1854259651991885,
+      "n": 2584,
+      "positives": 850,
+      "AUC_lift_vs_frozen": 0.0021337946943482677
+    },
+    {
+      "target": "load_s3",
+      "feature": "port_of_discharge",
+      "AUC": 0.6924180744962345,
+      "Brier": 0.18772037047174817,
+      "n": 2584,
+      "positives": 850,
+      "AUC_lift_vs_frozen": 0.008986023475133997
+    },
+    {
+      "target": "load_s3",
+      "feature": "raw_etd_minus_t",
+      "AUC": 0.6741807449623448,
+      "Brier": 0.18514203188614373,
+      "n": 2584,
+      "positives": 850,
+      "AUC_lift_vs_frozen": -0.009251306058755682
+    },
+    {
+      "target": "load_s3",
+      "feature": "s3_load_start_minus_t",
+      "AUC": 0.6890542099192618,
+      "Brier": 0.18717400565323264,
+      "n": 2584,
+      "positives": 850,
+      "AUC_lift_vs_frozen": 0.005622158898161311
+    },
+    {
+      "target": "load_s3",
+      "feature": "raw_etd_vs_s3_etd",
+      "AUC": 0.6834320510211005,
+      "Brier": 0.18489412543460257,
+      "n": 2584,
+      "positives": 850,
+      "AUC_lift_vs_frozen": 0.0
+    },
+    {
+      "target": "load_s3",
+      "feature": "s3_exists",
+      "AUC": 0.6834320510211005,
+      "Brier": 0.1854436394345721,
+      "n": 2584,
+      "positives": 850,
+      "AUC_lift_vs_frozen": 0.0
+    },
+    {
+      "target": "load_s3",
+      "feature": "raw_etd_missing",
+      "AUC": 0.6834320510211005,
+      "Brier": 0.18544451049505364,
+      "n": 2584,
+      "positives": 850,
+      "AUC_lift_vs_frozen": 0.0
+    },
+    {
+      "target": "load_s3",
+      "feature": "in_discharge_window",
+      "AUC": 0.6845250695433883,
+      "Brier": 0.18543311769914103,
+      "n": 2584,
+      "positives": 850,
+      "AUC_lift_vs_frozen": 0.0010930185222878253
+    },
+    {
+      "target": "load_s3",
+      "feature": "time_of_day",
+      "AUC": 0.6854671280276816,
+      "Brier": 0.18847611733920538,
+      "n": 2584,
+      "positives": 850,
+      "AUC_lift_vs_frozen": 0.002035077006581121
+    },
+    {
+      "target": "load_s3",
+      "feature": "day_of_week",
+      "AUC": 0.6843289911120157,
+      "Brier": 0.19633393330867835,
+      "n": 2584,
+      "positives": 850,
+      "AUC_lift_vs_frozen": 0.0008969400909152325
+    },
+    {
+      "target": "load_s3",
+      "feature": "arrival_batch_size",
+      "AUC": 0.6853918176267046,
+      "Brier": 0.1857281586242721,
+      "n": 2584,
+      "positives": 850,
+      "AUC_lift_vs_frozen": 0.001959766605604152
+    },
+    {
+      "target": "load_s3",
+      "feature": "vessel_queue_size",
+      "AUC": 0.7247289504036909,
+      "Brier": 0.2063137942329269,
+      "n": 2584,
+      "positives": 850,
+      "AUC_lift_vs_frozen": 0.0412968993825904
+    },
+    {
+      "target": "load_s3",
+      "feature": "vessel_port_queue_size",
+      "AUC": 0.7167229798493792,
+      "Brier": 0.18669063984923942,
+      "n": 2584,
+      "positives": 850,
+      "AUC_lift_vs_frozen": 0.033290928828278665
+    },
+    {
+      "target": "load_s3",
+      "feature": "vessel_port_weight_queue_size",
+      "AUC": 0.7083234954881606,
+      "Brier": 0.18622346152176178,
+      "n": 2584,
+      "positives": 850,
+      "AUC_lift_vs_frozen": 0.024891444467060153
+    },
+    {
+      "target": "load_s3",
+      "feature": "vessel_rotation_index",
+      "AUC": 0.7203843544338151,
+      "Brier": 0.21620714048085976,
+      "n": 2584,
+      "positives": 850,
+      "AUC_lift_vs_frozen": 0.036952303412714604
+    },
+    {
+      "target": "load_s3",
+      "feature": "vessel_total_rotations",
+      "AUC": 0.7070500033923603,
+      "Brier": 0.19231334334257022,
+      "n": 2584,
+      "positives": 850,
+      "AUC_lift_vs_frozen": 0.023617952371259854
+    },
+    {
+      "target": "load_s3",
+      "feature": "yard_occupancy",
+      "AUC": 0.6764346292150079,
+      "Brier": 0.1861106386048996,
+      "n": 2584,
+      "positives": 850,
+      "AUC_lift_vs_frozen": -0.006997421806092641
+    },
+    {
+      "target": "load_s3",
+      "feature": "initial_tier",
+      "AUC": 0.6834320510211005,
+      "Brier": 0.18527801851272754,
+      "n": 2584,
+      "positives": 850,
+      "AUC_lift_vs_frozen": 0.0
+    },
+    {
+      "target": "load_s3",
+      "feature": "initial_stack_height",
+      "AUC": 0.6834320510211005,
+      "Brier": 0.18516382258622582,
+      "n": 2584,
+      "positives": 850,
+      "AUC_lift_vs_frozen": 0.0
+    },
+    {
+      "target": "load_s3",
+      "feature": "initial_block",
+      "AUC": 0.6834320510211005,
+      "Brier": 0.18525242822500995,
+      "n": 2584,
+      "positives": 850,
+      "AUC_lift_vs_frozen": 0.0
+    },
+    {
+      "target": "load_s3",
+      "feature": "cohort",
+      "AUC": 0.6804494877535789,
+      "Brier": 0.18596298956172908,
+      "n": 2584,
+      "positives": 850,
+      "AUC_lift_vs_frozen": -0.002982563267521554
+    },
+    {
+      "target": "truck120",
+      "feature": "origin",
+      "AUC": 0.7198399814471244,
+      "Brier": 0.10645773304236048,
+      "n": 637,
+      "positives": 77,
+      "AUC_lift_vs_frozen": 0.007073283858998192
+    },
+    {
+      "target": "truck120",
+      "feature": "weight_class",
+      "AUC": 0.7456284786641929,
+      "Brier": 0.10634090618930205,
+      "n": 637,
+      "positives": 77,
+      "AUC_lift_vs_frozen": 0.03286178107606674
+    },
+    {
+      "target": "truck120",
+      "feature": "port_of_discharge",
+      "AUC": 0.7509276437847866,
+      "Brier": 0.10669882798371798,
+      "n": 637,
+      "positives": 77,
+      "AUC_lift_vs_frozen": 0.03816094619666044
+    },
+    {
+      "target": "truck120",
+      "feature": "raw_etd_minus_t",
+      "AUC": 0.7247448979591836,
+      "Brier": 0.10680035214405066,
+      "n": 637,
+      "positives": 77,
+      "AUC_lift_vs_frozen": 0.011978200371057457
+    },
+    {
+      "target": "truck120",
+      "feature": "s3_load_start_minus_t",
+      "AUC": 0.7219851576994434,
+      "Brier": 0.10680070900003683,
+      "n": 637,
+      "positives": 77,
+      "AUC_lift_vs_frozen": 0.009218460111317217
+    },
+    {
+      "target": "truck120",
+      "feature": "raw_etd_vs_s3_etd",
+      "AUC": 0.7127666975881262,
+      "Brier": 0.1068581302763484,
+      "n": 637,
+      "positives": 77,
+      "AUC_lift_vs_frozen": 0.0
+    },
+    {
+      "target": "truck120",
+      "feature": "s3_exists",
+      "AUC": 0.7127666975881262,
+      "Brier": 0.10714262060178872,
+      "n": 637,
+      "positives": 77,
+      "AUC_lift_vs_frozen": 0.0
+    },
+    {
+      "target": "truck120",
+      "feature": "raw_etd_missing",
+      "AUC": 0.7127666975881262,
+      "Brier": 0.10683649576224091,
+      "n": 637,
+      "positives": 77,
+      "AUC_lift_vs_frozen": 0.0
+    },
+    {
+      "target": "truck120",
+      "feature": "in_discharge_window",
+      "AUC": 0.7124884044526901,
+      "Brier": 0.10684697887071085,
+      "n": 637,
+      "positives": 77,
+      "AUC_lift_vs_frozen": -0.0002782931354360363
+    },
+    {
+      "target": "truck120",
+      "feature": "time_of_day",
+      "AUC": 0.6398191094619666,
+      "Brier": 0.10744064196832355,
+      "n": 637,
+      "positives": 77,
+      "AUC_lift_vs_frozen": -0.07294758812615953
+    },
+    {
+      "target": "truck120",
+      "feature": "day_of_week",
+      "AUC": 0.7099489795918368,
+      "Brier": 0.10779768575180894,
+      "n": 637,
+      "positives": 77,
+      "AUC_lift_vs_frozen": -0.0028177179962893817
+    },
+    {
+      "target": "truck120",
+      "feature": "arrival_batch_size",
+      "AUC": 0.7102852504638218,
+      "Brier": 0.10721882222566043,
+      "n": 637,
+      "positives": 77,
+      "AUC_lift_vs_frozen": -0.0024814471243043146
+    },
+    {
+      "target": "truck120",
+      "feature": "vessel_queue_size",
+      "AUC": 0.6822008348794063,
+      "Brier": 0.10596670816417751,
+      "n": 637,
+      "positives": 77,
+      "AUC_lift_vs_frozen": -0.03056586270871986
+    },
+    {
+      "target": "truck120",
+      "feature": "vessel_port_queue_size",
+      "AUC": 0.712430426716141,
+      "Brier": 0.10692387231052305,
+      "n": 637,
+      "positives": 77,
+      "AUC_lift_vs_frozen": -0.00033627087198517813
+    },
+    {
+      "target": "truck120",
+      "feature": "vessel_port_weight_queue_size",
+      "AUC": 0.7129058441558441,
+      "Brier": 0.10693952927199675,
+      "n": 637,
+      "positives": 77,
+      "AUC_lift_vs_frozen": 0.00013914656771796263
+    },
+    {
+      "target": "truck120",
+      "feature": "vessel_rotation_index",
+      "AUC": 0.7155148423005566,
+      "Brier": 0.10546204823543107,
+      "n": 637,
+      "positives": 77,
+      "AUC_lift_vs_frozen": 0.002748144712430456
+    },
+    {
+      "target": "truck120",
+      "feature": "vessel_total_rotations",
+      "AUC": 0.7155844155844155,
+      "Brier": 0.10671186998958715,
+      "n": 637,
+      "positives": 77,
+      "AUC_lift_vs_frozen": 0.0028177179962893817
+    },
+    {
+      "target": "truck120",
+      "feature": "yard_occupancy",
+      "AUC": 0.7040700371057514,
+      "Brier": 0.10632505337006601,
+      "n": 637,
+      "positives": 77,
+      "AUC_lift_vs_frozen": -0.008696660482374718
+    },
+    {
+      "target": "truck120",
+      "feature": "initial_tier",
+      "AUC": 0.7127666975881262,
+      "Brier": 0.10680753876382548,
+      "n": 637,
+      "positives": 77,
+      "AUC_lift_vs_frozen": 0.0
+    },
+    {
+      "target": "truck120",
+      "feature": "initial_stack_height",
+      "AUC": 0.7127666975881262,
+      "Brier": 0.10682076704556162,
+      "n": 637,
+      "positives": 77,
+      "AUC_lift_vs_frozen": 0.0
+    },
+    {
+      "target": "truck120",
+      "feature": "initial_block",
+      "AUC": 0.7127666975881262,
+      "Brier": 0.10679104522080629,
+      "n": 637,
+      "positives": 77,
+      "AUC_lift_vs_frozen": 0.0
+    },
+    {
+      "target": "truck120",
+      "feature": "cohort",
+      "AUC": 0.7053919294990724,
+      "Brier": 0.10735487223869751,
+      "n": 637,
+      "positives": 77,
+      "AUC_lift_vs_frozen": -0.007374768089053796
+    }
+  ],
+  "single_feature_lift_over_003": [],
+  "add_one_feature_lift_over_003": [
+    {
+      "target": "load_s3",
+      "feature": "vessel_queue_size",
+      "AUC": 0.7247289504036909,
+      "Brier": 0.2063137942329269,
+      "n": 2584,
+      "positives": 850,
+      "AUC_lift_vs_frozen": 0.0412968993825904
+    },
+    {
+      "target": "load_s3",
+      "feature": "vessel_port_queue_size",
+      "AUC": 0.7167229798493792,
+      "Brier": 0.18669063984923942,
+      "n": 2584,
+      "positives": 850,
+      "AUC_lift_vs_frozen": 0.033290928828278665
+    },
+    {
+      "target": "load_s3",
+      "feature": "vessel_rotation_index",
+      "AUC": 0.7203843544338151,
+      "Brier": 0.21620714048085976,
+      "n": 2584,
+      "positives": 850,
+      "AUC_lift_vs_frozen": 0.036952303412714604
+    },
+    {
+      "target": "truck120",
+      "feature": "weight_class",
+      "AUC": 0.7456284786641929,
+      "Brier": 0.10634090618930205,
+      "n": 637,
+      "positives": 77,
+      "AUC_lift_vs_frozen": 0.03286178107606674
+    },
+    {
+      "target": "truck120",
+      "feature": "port_of_discharge",
+      "AUC": 0.7509276437847866,
+      "Brier": 0.10669882798371798,
+      "n": 637,
+      "positives": 77,
+      "AUC_lift_vs_frozen": 0.03816094619666044
+    }
+  ],
+  "seconds": 1.3788963750121184,
+  "package_policy": "NumPy already installed; no packages installed.",
+  "notes": [
+    "Only complete 72h/120h observation horizons within each chronological split are used; even observed positives from incomplete horizons are excluded to avoid outcome-dependent sampling.",
+    "S3 target requires the assigned loading window to finish within its split. No-S3 rows are structurally known negatives.",
+    "Initial rows occur only at Day1; validation contains new arrivals only. Initial-specific features have no direct late validation support.",
+    "Arrival batch size is the observed prefix in the current hour/vessel, including the current arrival, never the completed future hourly batch.",
+    "Queue and occupancy features are observed before arrival. Initial queues use the full initial snapshot.",
+    "Baseline horizon probabilities use frozen alpha/mu and its one S3 jump; background risk approximates truck risk because fit off-S3 LOADs were zero.",
+    "All model settings fixed before validation: logistic L2=1 in summed loss; depth3 tree minleaf100; univariate fit-decile/category probabilities shrink by 20 prior observations.",
+    "Mutual information is empirical fit-only discretized MI. Feature screens and three targets create multiple comparisons; AUC lifts are diagnostics, not discoveries or a Bayes bound.",
+    "Container and vessel ID strings/numbers are excluded as predictors. Keys are used only for online inventory/label linkage.",
+    "No estimator output is used in a placement experiment or deployed to solution."
+  ]
+}

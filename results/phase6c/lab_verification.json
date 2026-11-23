@@ -1,0 +1,25 @@
+{
+  "protected_before": {
+    "solution/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "solution/my_strategy.py": "7374aa7db169ac48497c0da8d80af5797dd129b1e81c1f77fc6bfbda4cbb5162",
+    "solution/survival_params.py": "fde79d9871c26f14146cfeaaecaed5899d25858eb05fdc66579b8a3ea74cdd3d",
+    "results/results.json": "4759b8c43aae4ba8db4f38227e47e26dd6adfd03c48a6b93bbd8614001befd11"
+  },
+  "protected_after": {
+    "solution/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "solution/my_strategy.py": "7374aa7db169ac48497c0da8d80af5797dd129b1e81c1f77fc6bfbda4cbb5162",
+    "solution/survival_params.py": "fde79d9871c26f14146cfeaaecaed5899d25858eb05fdc66579b8a3ea74cdd3d",
+    "results/results.json": "4759b8c43aae4ba8db4f38227e47e26dd6adfd03c48a6b93bbd8614001befd11"
+  },
+  "unchanged": true,
+  "test_data_accessed": false,
+  "copy_sha256": "7374aa7db169ac48497c0da8d80af5797dd129b1e81c1f77fc6bfbda4cbb5162",
+  "control_trace_exact": true,
+  "oracle_runs": 4,
+  "control_experiments": 16,
+  "all_errors_violations_failures": 0,
+  "quadratic_traces_identical": true,
+  "C2": "User-confirmed 2x2 C1 upward shielding + positive low-urgency height cost; no separate purity penalty.",
+  "quadratic_note": "For D>=0, D+lambda*D^2 is strictly increasing at these positive lambdas. Rankings and tie-breaking cannot improve.",
+  "oracle_note": "Partial revelations can overlap and interact; their effects do not add to an exact decomposition of the H1 gap."
+}

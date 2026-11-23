@@ -1,0 +1,52 @@
+{
+  "protected_hashes_before": {
+    "solution/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "solution/my_strategy.py": "7374aa7db169ac48497c0da8d80af5797dd129b1e81c1f77fc6bfbda4cbb5162",
+    "solution/survival_params.py": "fde79d9871c26f14146cfeaaecaed5899d25858eb05fdc66579b8a3ea74cdd3d",
+    "results/results.json": "4759b8c43aae4ba8db4f38227e47e26dd6adfd03c48a6b93bbd8614001befd11"
+  },
+  "protected_hashes_after": {
+    "solution/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "solution/my_strategy.py": "7374aa7db169ac48497c0da8d80af5797dd129b1e81c1f77fc6bfbda4cbb5162",
+    "solution/survival_params.py": "fde79d9871c26f14146cfeaaecaed5899d25858eb05fdc66579b8a3ea74cdd3d",
+    "results/results.json": "4759b8c43aae4ba8db4f38227e47e26dd6adfd03c48a6b93bbd8614001befd11"
+  },
+  "all_protected_unchanged": true,
+  "test_data_accessed": false,
+  "test_open_guards_enabled": true,
+  "exact_control_6408_and_trace_match": true,
+  "oracles": 4,
+  "placement_experiments": 16,
+  "all_errors_violations_failures_cache_fallbacks": 0,
+  "C4_all_traces_match_control": true,
+  "feature_table_rows": 15185,
+  "feature_count": 22,
+  "predictor_IDs_excluded": true,
+  "census_reconciles": true,
+  "univariate_screens": 66,
+  "incremental_screens": 66,
+  "all_model_hyperparameters_fixed_before_validation": true,
+  "feature_self_tests": "AUC perfect/reversed/tied; unseen-category prior; simple logistic/tree ordering all passed.",
+  "package_versions": {
+    "python": "3.13.3 (v3.13.3:6280bb54784, Apr  8 2025, 10:47:54) [Clang 15.0.0 (clang-1500.3.9.4)]",
+    "numpy": "2.5.5",
+    "installed_packages_this_phase": []
+  },
+  "source_hashes": {
+    "scripts/phase6c_lab.py": "c5592d0f1d2f0c4956c9ea319b154dffb3552f5812c485e049155f3b3b922f76",
+    "scripts/phase6c_engine_snapshot.py": "7374aa7db169ac48497c0da8d80af5797dd129b1e81c1f77fc6bfbda4cbb5162",
+    "scripts/phase6c_features.py": "366d2fd8d767c0e4801c1e2be34210a9d765517132c468793889d9f845d4d66d",
+    "scripts/phase6c_report.py": "c17c55560ff71873d50ec0a440ec2cdcc79e732a437dcb980e41a5bda19c6f39"
+  },
+  "input_hashes": {
+    "data/yard_layout.json": "ee776c27fdb8a1a56b4fb7fc95fe3e44d23b96877536db59ab9ed5f6623c0af9",
+    "data/train/initial_state.json": "8295c9830ab1481724f575a1695d87e521ed355be601cbc21d4de6b4d740147b",
+    "data/train/events.jsonl": "b3e9f7089ce722ab5984bb27148dfc9870e26cebe15dc70135e57511fa1d1328",
+    "data/vessel_schedule.json": "e1a1a1d3d3d9bb63f47a7a1c0f72b40ac438eea70a29b40e4628f6be64cf1602"
+  },
+  "uncertainty_notes": [
+    "No Bayes floor or exact additive oracle gap decomposition is established.",
+    "Validation has no initial-container rows and only 77 positive truck120 examples.",
+    "The complete add-one-feature audit used the same fixed hyperparameters; no hyperparameters or probabilities were recalibrated against Days13-20 labels."
+  ]
+}
