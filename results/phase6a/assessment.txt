@@ -1,0 +1,48 @@
+PHASE 6A: TRAIN-ONLY MECHANISM ASSESSMENT
+
+1. First priority: observed loading-progress conditioning.
+In Days 1-12, 2696 distinct arrival decisions scan at least one resident whose
+(port, weight) category has already been passed in the current loading window.
+There are 636725 such resident scans and 5089 distinct container/rotation pairs;
+none LOADs later in the same complete window. Equal categories are not passed.
+The current policy can still assign an immediate/near-immediate jump to these
+survivors. A future bounded ablation could cancel that closed-window jump or
+roll to the next public rotation, using only already observed LOAD progression.
+This should apply symmetrically when an incoming container's category is closed.
+Zero observed late LOADs is empirical train evidence, not a simulator guarantee.
+
+2. Second priority: queue-conditioned rotation probability, shared across vessels.
+All-resident rotation alpha ranges 0.1790-0.8177 over 13 completed fit rotations.
+Pearson r with 1/queue is .8711, with window-hours/queue .8914. Within low-alpha
+rotations, origin, age, weight and stack tier separate loaded versus stayed
+containers weakly after subtracting rotation-specific rates. This favors a
+rotation-state calibration over more static per-container buckets or vessel-ID
+parameters. However, alpha itself divides by queue, so the correlation is partly
+algebraic; realized found LOAD share also correlates .8138 with alpha and cannot
+be used before those LOAD outcomes are observed. Queue/duration alone does not
+prove a causal capacity model. Only one completed rotation-2 observation exists.
+Fit any general throughput/queue prior strictly on Days 1-12 and use only public
+schedule duration, live queues, and already observed service at inference time.
+
+3. Smaller, clean optional refinement: resident-age background truck hazard.
+Use all arrivals still resident as the cause-specific risk set, not just those
+later known to exit by truck. Truck hazard is roughly 2-3 times higher before
+72h than during 72-240h, for both origins. Ages are known for new arrivals.
+Initial true dwell age is unknown, so do not pretend snapshot age is true age.
+Initial tier/height/weight screens show little clean separation; unscheduled
+status and due-window exposure explain more and are partly already modeled.
+This is a narrower mechanism than the two rotation-state corrections.
+
+Not a first choice: static low-index catchers or a simple empty-stack penalty.
+Only 14/1515 repeated moves follow a landing in the first fixed position per
+block, 174/1515 in the first 12. There are only 15 empty-stack placements across
+10385 arrivals, and only 15/8874 found retrievals see an empty stack in their own
+block. A large buffer policy would have to CREATE low/empty pads, not merely
+reserve commonly available empties. These observations do not bound a deliberately
+engineered catcher policy: changing geometry can change where relocations land.
+Treat that as a more involved counterfactual experiment rather than an immediate
+low-index tie-breaker justified by the existing landing distribution.
+
+No strategy, parameter, simulator, dataset or design-document files were changed.
+No test files were opened or test replays run. Feature/outcome diagnostics use
+Days 1-12 only; whole-train relocation/empty-stack geometry is descriptive context.

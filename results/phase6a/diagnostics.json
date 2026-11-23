@@ -1,0 +1,1522 @@
+{
+  "fit_cutoff_exclusive": "2025-01-13T00:00:00",
+  "test_data_accessed": false,
+  "source_hashes_before_and_after": {
+    "solution/my_strategy.py": "7374aa7db169ac48497c0da8d80af5797dd129b1e81c1f77fc6bfbda4cbb5162",
+    "solution/survival_params.py": "fde79d9871c26f14146cfeaaecaed5899d25858eb05fdc66579b8a3ea74cdd3d"
+  },
+  "frozen_replay": {
+    "reshuffles": 6408,
+    "placements": 10385,
+    "trace_sha256": "74a6945f533e5cbe55d16fecf93d09fdb0b886da151bd06bfa4fad464fb2f414",
+    "instrumentation_seconds": 17.060507333022542,
+    "errors": 0,
+    "cache_guard_fallbacks": 0
+  },
+  "Q1": {
+    "rotations": [
+      {
+        "vessel_id": "VSL003",
+        "rotation_number": 1,
+        "load_window_hours": 9.764722222222222,
+        "yard_queue_at_load_start": 914,
+        "actual_loads_from_queue": 228,
+        "empirical_alpha": 0.24945295404814005,
+        "total_load_events_in_window": 517,
+        "found_load_events_in_window": 229,
+        "absent_load_events_in_window": 288,
+        "loads_of_containers_not_in_start_queue": 1,
+        "other_exits_from_queue": 7,
+        "queue_still_resident_at_window_end": 679
+      },
+      {
+        "vessel_id": "VSL005",
+        "rotation_number": 1,
+        "load_window_hours": 8.953611111111112,
+        "yard_queue_at_load_start": 677,
+        "actual_loads_from_queue": 163,
+        "empirical_alpha": 0.24076809453471196,
+        "total_load_events_in_window": 304,
+        "found_load_events_in_window": 163,
+        "absent_load_events_in_window": 141,
+        "loads_of_containers_not_in_start_queue": 0,
+        "other_exits_from_queue": 2,
+        "queue_still_resident_at_window_end": 512
+      },
+      {
+        "vessel_id": "VSL012",
+        "rotation_number": 1,
+        "load_window_hours": 9.687222222222223,
+        "yard_queue_at_load_start": 635,
+        "actual_loads_from_queue": 301,
+        "empirical_alpha": 0.47401574803149604,
+        "total_load_events_in_window": 334,
+        "found_load_events_in_window": 301,
+        "absent_load_events_in_window": 33,
+        "loads_of_containers_not_in_start_queue": 0,
+        "other_exits_from_queue": 2,
+        "queue_still_resident_at_window_end": 332
+      },
+      {
+        "vessel_id": "VSL001",
+        "rotation_number": 1,
+        "load_window_hours": 8.3575,
+        "yard_queue_at_load_start": 772,
+        "actual_loads_from_queue": 225,
+        "empirical_alpha": 0.2914507772020725,
+        "total_load_events_in_window": 376,
+        "found_load_events_in_window": 225,
+        "absent_load_events_in_window": 151,
+        "loads_of_containers_not_in_start_queue": 0,
+        "other_exits_from_queue": 2,
+        "queue_still_resident_at_window_end": 545
+      },
+      {
+        "vessel_id": "VSL002",
+        "rotation_number": 1,
+        "load_window_hours": 9.510555555555555,
+        "yard_queue_at_load_start": 792,
+        "actual_loads_from_queue": 260,
+        "empirical_alpha": 0.3282828282828283,
+        "total_load_events_in_window": 479,
+        "found_load_events_in_window": 262,
+        "absent_load_events_in_window": 217,
+        "loads_of_containers_not_in_start_queue": 2,
+        "other_exits_from_queue": 4,
+        "queue_still_resident_at_window_end": 528
+      },
+      {
+        "vessel_id": "VSL004",
+        "rotation_number": 1,
+        "load_window_hours": 9.507222222222222,
+        "yard_queue_at_load_start": 843,
+        "actual_loads_from_queue": 292,
+        "empirical_alpha": 0.34638196915776986,
+        "total_load_events_in_window": 523,
+        "found_load_events_in_window": 292,
+        "absent_load_events_in_window": 231,
+        "loads_of_containers_not_in_start_queue": 0,
+        "other_exits_from_queue": 4,
+        "queue_still_resident_at_window_end": 547
+      },
+      {
+        "vessel_id": "VSL006",
+        "rotation_number": 1,
+        "load_window_hours": 9.50388888888889,
+        "yard_queue_at_load_start": 909,
+        "actual_loads_from_queue": 193,
+        "empirical_alpha": 0.21232123212321233,
+        "total_load_events_in_window": 326,
+        "found_load_events_in_window": 194,
+        "absent_load_events_in_window": 132,
+        "loads_of_containers_not_in_start_queue": 1,
+        "other_exits_from_queue": 8,
+        "queue_still_resident_at_window_end": 708
+      },
+      {
+        "vessel_id": "VSL007",
+        "rotation_number": 1,
+        "load_window_hours": 9.375,
+        "yard_queue_at_load_start": 759,
+        "actual_loads_from_queue": 280,
+        "empirical_alpha": 0.3689064558629776,
+        "total_load_events_in_window": 301,
+        "found_load_events_in_window": 280,
+        "absent_load_events_in_window": 21,
+        "loads_of_containers_not_in_start_queue": 0,
+        "other_exits_from_queue": 7,
+        "queue_still_resident_at_window_end": 472
+      },
+      {
+        "vessel_id": "VSL008",
+        "rotation_number": 1,
+        "load_window_hours": 9.807777777777778,
+        "yard_queue_at_load_start": 533,
+        "actual_loads_from_queue": 433,
+        "empirical_alpha": 0.8123827392120075,
+        "total_load_events_in_window": 458,
+        "found_load_events_in_window": 433,
+        "absent_load_events_in_window": 25,
+        "loads_of_containers_not_in_start_queue": 0,
+        "other_exits_from_queue": 1,
+        "queue_still_resident_at_window_end": 99
+      },
+      {
+        "vessel_id": "VSL013",
+        "rotation_number": 1,
+        "load_window_hours": 9.373888888888889,
+        "yard_queue_at_load_start": 712,
+        "actual_loads_from_queue": 433,
+        "empirical_alpha": 0.6081460674157303,
+        "total_load_events_in_window": 433,
+        "found_load_events_in_window": 433,
+        "absent_load_events_in_window": 0,
+        "loads_of_containers_not_in_start_queue": 0,
+        "other_exits_from_queue": 4,
+        "queue_still_resident_at_window_end": 275
+      },
+      {
+        "vessel_id": "VSL018",
+        "rotation_number": 1,
+        "load_window_hours": 9.536944444444444,
+        "yard_queue_at_load_start": 576,
+        "actual_loads_from_queue": 471,
+        "empirical_alpha": 0.8177083333333334,
+        "total_load_events_in_window": 471,
+        "found_load_events_in_window": 471,
+        "absent_load_events_in_window": 0,
+        "loads_of_containers_not_in_start_queue": 0,
+        "other_exits_from_queue": 2,
+        "queue_still_resident_at_window_end": 103
+      },
+      {
+        "vessel_id": "VSL011",
+        "rotation_number": 1,
+        "load_window_hours": 9.590833333333334,
+        "yard_queue_at_load_start": 552,
+        "actual_loads_from_queue": 373,
+        "empirical_alpha": 0.6757246376811594,
+        "total_load_events_in_window": 373,
+        "found_load_events_in_window": 373,
+        "absent_load_events_in_window": 0,
+        "loads_of_containers_not_in_start_queue": 0,
+        "other_exits_from_queue": 2,
+        "queue_still_resident_at_window_end": 177
+      },
+      {
+        "vessel_id": "VSL003",
+        "rotation_number": 2,
+        "load_window_hours": 8.862222222222222,
+        "yard_queue_at_load_start": 1190,
+        "actual_loads_from_queue": 213,
+        "empirical_alpha": 0.17899159663865546,
+        "total_load_events_in_window": 302,
+        "found_load_events_in_window": 215,
+        "absent_load_events_in_window": 87,
+        "loads_of_containers_not_in_start_queue": 2,
+        "other_exits_from_queue": 25,
+        "queue_still_resident_at_window_end": 952
+      }
+    ],
+    "correlations": {
+      "inverse_queue": {
+        "pearson": 0.871085466846698,
+        "spearman": 0.8241758241758241,
+        "n": 13
+      },
+      "window_hours_over_queue": {
+        "pearson": 0.8913879136104205,
+        "spearman": 0.8516483516483516,
+        "n": 13
+      },
+      "rotation_number": {
+        "pearson": -0.3360970764321221,
+        "spearman": -0.46291004988627577,
+        "n": 13
+      },
+      "window_hours": {
+        "pearson": 0.46751550317181395,
+        "spearman": 0.5384615384615384,
+        "n": 13
+      },
+      "found_LOAD_share": {
+        "pearson": 0.8137782036855821,
+        "spearman": 0.7624425757515653,
+        "n": 13
+      }
+    },
+    "low_alpha_feature_comparison": [
+      {
+        "feature": "age_at_load_start",
+        "level": "24-72h",
+        "n": 1587,
+        "loaded": 536,
+        "not_loaded": 1051,
+        "expected_loaded": 518.5797085592034,
+        "load_rate": 0.3377441713925646,
+        "within_rotation_expected_rate": 0.3267673021797123,
+        "within_rotation_lift": 0.01097686921285232
+      },
+      {
+        "feature": "age_at_load_start",
+        "level": "72-168h",
+        "n": 2186,
+        "loaded": 750,
+        "not_loaded": 1436,
+        "expected_loaded": 757.9837118206991,
+        "load_rate": 0.34309240622140896,
+        "within_rotation_expected_rate": 0.3467446074202649,
+        "within_rotation_lift": -0.0036522011988559533
+      },
+      {
+        "feature": "age_at_load_start",
+        "level": "<24h",
+        "n": 4165,
+        "loaded": 1436,
+        "not_loaded": 2729,
+        "expected_loaded": 1466.0748472751598,
+        "load_rate": 0.34477791116446577,
+        "within_rotation_expected_rate": 0.3519987628511788,
+        "within_rotation_lift": -0.007220851686713026
+      },
+      {
+        "feature": "age_at_load_start",
+        "level": ">=168h",
+        "n": 750,
+        "loaded": 239,
+        "not_loaded": 511,
+        "expected_loaded": 218.361732344904,
+        "load_rate": 0.31866666666666665,
+        "within_rotation_expected_rate": 0.291148976459872,
+        "within_rotation_lift": 0.02751769020679467
+      },
+      {
+        "feature": "origin",
+        "level": "DISCHARGE",
+        "n": 4529,
+        "loaded": 1549,
+        "not_loaded": 2980,
+        "expected_loaded": 1560.0619653700119,
+        "load_rate": 0.34201810554206225,
+        "within_rotation_expected_rate": 0.34446057967984367,
+        "within_rotation_lift": -0.0024424741377813814
+      },
+      {
+        "feature": "origin",
+        "level": "TRUCK_RECV",
+        "n": 668,
+        "loaded": 260,
+        "not_loaded": 408,
+        "expected_loaded": 255.1235142251804,
+        "load_rate": 0.38922155688622756,
+        "within_rotation_expected_rate": 0.38192142848080896,
+        "within_rotation_lift": 0.007300128405418562
+      },
+      {
+        "feature": "origin",
+        "level": "initial",
+        "n": 3491,
+        "loaded": 1152,
+        "not_loaded": 2339,
+        "expected_loaded": 1145.8145204047457,
+        "load_rate": 0.3299914064737898,
+        "within_rotation_expected_rate": 0.32821957043962924,
+        "within_rotation_lift": 0.0017718360341604882
+      },
+      {
+        "feature": "port",
+        "level": "PORT_01",
+        "n": 2009,
+        "loaded": 572,
+        "not_loaded": 1437,
+        "expected_loaded": 578.0181499019371,
+        "load_rate": 0.2847187655550025,
+        "within_rotation_expected_rate": 0.2877143603294859,
+        "within_rotation_lift": -0.0029955947744833926
+      },
+      {
+        "feature": "port",
+        "level": "PORT_02",
+        "n": 2010,
+        "loaded": 818,
+        "not_loaded": 1192,
+        "expected_loaded": 830.5871802973594,
+        "load_rate": 0.40696517412935324,
+        "within_rotation_expected_rate": 0.4132274528842584,
+        "within_rotation_lift": -0.006262278754905172
+      },
+      {
+        "feature": "port",
+        "level": "PORT_03",
+        "n": 398,
+        "loaded": 112,
+        "not_loaded": 286,
+        "expected_loaded": 108.43612313612269,
+        "load_rate": 0.2814070351758794,
+        "within_rotation_expected_rate": 0.2724525706937756,
+        "within_rotation_lift": 0.008954464482103798
+      },
+      {
+        "feature": "port",
+        "level": "PORT_04",
+        "n": 1169,
+        "loaded": 364,
+        "not_loaded": 805,
+        "expected_loaded": 338.02047017163414,
+        "load_rate": 0.31137724550898205,
+        "within_rotation_expected_rate": 0.2891535245266331,
+        "within_rotation_lift": 0.022223720982348892
+      },
+      {
+        "feature": "port",
+        "level": "PORT_05",
+        "n": 120,
+        "loaded": 47,
+        "not_loaded": 73,
+        "expected_loaded": 44.68085106382978,
+        "load_rate": 0.39166666666666666,
+        "within_rotation_expected_rate": 0.3723404255319148,
+        "within_rotation_lift": 0.019326241134751853
+      },
+      {
+        "feature": "port",
+        "level": "PORT_06",
+        "n": 459,
+        "loaded": 173,
+        "not_loaded": 286,
+        "expected_loaded": 172.52774283717704,
+        "load_rate": 0.3769063180827887,
+        "within_rotation_expected_rate": 0.37587743537511337,
+        "within_rotation_lift": 0.0010288827076752852
+      },
+      {
+        "feature": "port",
+        "level": "PORT_07",
+        "n": 515,
+        "loaded": 207,
+        "not_loaded": 308,
+        "expected_loaded": 220.09809894284598,
+        "load_rate": 0.40194174757281553,
+        "within_rotation_expected_rate": 0.42737494940358445,
+        "within_rotation_lift": -0.02543320183076889
+      },
+      {
+        "feature": "port",
+        "level": "PORT_08",
+        "n": 501,
+        "loaded": 123,
+        "not_loaded": 378,
+        "expected_loaded": 118.8883911739988,
+        "load_rate": 0.24550898203592814,
+        "within_rotation_expected_rate": 0.23730217799201356,
+        "within_rotation_lift": 0.008206804043914575
+      },
+      {
+        "feature": "port",
+        "level": "PORT_09",
+        "n": 622,
+        "loaded": 263,
+        "not_loaded": 359,
+        "expected_loaded": 268.44051310798415,
+        "load_rate": 0.4228295819935691,
+        "within_rotation_expected_rate": 0.43157638763341505,
+        "within_rotation_lift": -0.008746805639845893
+      },
+      {
+        "feature": "port",
+        "level": "PORT_10",
+        "n": 174,
+        "loaded": 37,
+        "not_loaded": 137,
+        "expected_loaded": 38.77204751921748,
+        "load_rate": 0.21264367816091953,
+        "within_rotation_expected_rate": 0.2228278593058476,
+        "within_rotation_lift": -0.010184181144928047
+      },
+      {
+        "feature": "port",
+        "level": "PORT_11",
+        "n": 462,
+        "loaded": 155,
+        "not_loaded": 307,
+        "expected_loaded": 148.85735528315055,
+        "load_rate": 0.3354978354978355,
+        "within_rotation_expected_rate": 0.3222020677124471,
+        "within_rotation_lift": 0.013295767785388412
+      },
+      {
+        "feature": "port",
+        "level": "PORT_12",
+        "n": 46,
+        "loaded": 18,
+        "not_loaded": 28,
+        "expected_loaded": 16.009535160905845,
+        "load_rate": 0.391304347826087,
+        "within_rotation_expected_rate": 0.34803337306317056,
+        "within_rotation_lift": 0.04327097476291642
+      },
+      {
+        "feature": "port",
+        "level": "PORT_13",
+        "n": 143,
+        "loaded": 41,
+        "not_loaded": 102,
+        "expected_loaded": 49.13273571660019,
+        "load_rate": 0.2867132867132867,
+        "within_rotation_expected_rate": 0.34358556445174954,
+        "within_rotation_lift": -0.05687227773846285
+      },
+      {
+        "feature": "port",
+        "level": "PORT_14",
+        "n": 60,
+        "loaded": 31,
+        "not_loaded": 29,
+        "expected_loaded": 28.53080568720379,
+        "load_rate": 0.5166666666666667,
+        "within_rotation_expected_rate": 0.4755134281200632,
+        "within_rotation_lift": 0.04115323854660347
+      },
+      {
+        "feature": "raw_etd_relation",
+        "level": "earlier",
+        "n": 350,
+        "loaded": 83,
+        "not_loaded": 267,
+        "expected_loaded": 63.99141630901266,
+        "load_rate": 0.23714285714285716,
+        "within_rotation_expected_rate": 0.18283261802575046,
+        "within_rotation_lift": 0.054310239117106675
+      },
+      {
+        "feature": "raw_etd_relation",
+        "level": "later",
+        "n": 1751,
+        "loaded": 519,
+        "not_loaded": 1232,
+        "expected_loaded": 516.8727781091156,
+        "load_rate": 0.2964020559680183,
+        "within_rotation_expected_rate": 0.2951871948081757,
+        "within_rotation_lift": 0.0012148611598425797
+      },
+      {
+        "feature": "raw_etd_relation",
+        "level": "matches",
+        "n": 6587,
+        "loaded": 2359,
+        "not_loaded": 4228,
+        "expected_loaded": 2380.135805581931,
+        "load_rate": 0.35812964930924546,
+        "within_rotation_expected_rate": 0.3613383642905619,
+        "within_rotation_lift": -0.003208714981316378
+      },
+      {
+        "feature": "stack_tier",
+        "level": "1",
+        "n": 1712,
+        "loaded": 567,
+        "not_loaded": 1145,
+        "expected_loaded": 563.0282671264127,
+        "load_rate": 0.33119158878504673,
+        "within_rotation_expected_rate": 0.32887165135888596,
+        "within_rotation_lift": 0.002319937426160781
+      },
+      {
+        "feature": "stack_tier",
+        "level": "2",
+        "n": 1986,
+        "loaded": 642,
+        "not_loaded": 1344,
+        "expected_loaded": 635.012701978432,
+        "load_rate": 0.32326283987915405,
+        "within_rotation_expected_rate": 0.3197445629297241,
+        "within_rotation_lift": 0.003518276949430007
+      },
+      {
+        "feature": "stack_tier",
+        "level": "3",
+        "n": 3013,
+        "loaded": 1049,
+        "not_loaded": 1964,
+        "expected_loaded": 1064.3352142108902,
+        "load_rate": 0.34815798207766346,
+        "within_rotation_expected_rate": 0.3532476648559211,
+        "within_rotation_lift": -0.0050896827782576076
+      },
+      {
+        "feature": "stack_tier",
+        "level": "4",
+        "n": 1612,
+        "loaded": 596,
+        "not_loaded": 1016,
+        "expected_loaded": 585.4045502117355,
+        "load_rate": 0.369727047146402,
+        "within_rotation_expected_rate": 0.3631541874762627,
+        "within_rotation_lift": 0.006572859670139296
+      },
+      {
+        "feature": "stack_tier",
+        "level": "5",
+        "n": 365,
+        "loaded": 107,
+        "not_loaded": 258,
+        "expected_loaded": 113.21926647248384,
+        "load_rate": 0.29315068493150687,
+        "within_rotation_expected_rate": 0.31018977115748997,
+        "within_rotation_lift": -0.01703908622598312
+      },
+      {
+        "feature": "weight",
+        "level": "HEAVY",
+        "n": 2168,
+        "loaded": 734,
+        "not_loaded": 1434,
+        "expected_loaded": 737.1266536270546,
+        "load_rate": 0.3385608856088561,
+        "within_rotation_expected_rate": 0.34000306901616906,
+        "within_rotation_lift": -0.0014421834073129916
+      },
+      {
+        "feature": "weight",
+        "level": "LIGHT",
+        "n": 2575,
+        "loaded": 898,
+        "not_loaded": 1677,
+        "expected_loaded": 883.5428497329401,
+        "load_rate": 0.3487378640776699,
+        "within_rotation_expected_rate": 0.3431234367894913,
+        "within_rotation_lift": 0.005614427288178597
+      },
+      {
+        "feature": "weight",
+        "level": "MEDIUM",
+        "n": 3945,
+        "loaded": 1329,
+        "not_loaded": 2616,
+        "expected_loaded": 1340.3304966399605,
+        "load_rate": 0.33688212927756656,
+        "within_rotation_expected_rate": 0.3397542450291408,
+        "within_rotation_lift": -0.0028721157515742787
+      }
+    ],
+    "feature_comparison_excludes_other_window_exits": 67,
+    "age_hours": {
+      "not_loaded": {
+        "n": 5727,
+        "p5": 4.447388888888889,
+        "p10": 5.837611111111111,
+        "p25": 8.815972222222221,
+        "p50": 34.68861111111111,
+        "p75": 102.32333333333334,
+        "p90": 159.32,
+        "p95": 236.09277777777777
+      },
+      "loaded": {
+        "n": 2961,
+        "p5": 4.801388888888889,
+        "p10": 6.1725,
+        "p25": 9.088888888888889,
+        "p50": 34.68861111111111,
+        "p75": 102.32333333333334,
+        "p90": 159.32,
+        "p95": 236.09277777777777
+      }
+    },
+    "notes": [
+      "Queues are public live residents immediately before events at load_start; only complete windows before Jan13 are included.",
+      "Feature-table not_loaded means STILL RESIDENT at window end; competing non-LOAD exits are excluded from that comparison and counted separately. Rotation alpha still uses the complete start queue.",
+      "Within-rotation feature lift subtracts LOAD/(LOAD+still resident) in that rotation before pooling, reducing vessel/rotation composition confounding.",
+      "Initial age is time since the initial snapshot, not unknown true dwell. Alpha uses all vessel residents, unlike earlier active-cohort-specific alpha."
+    ]
+  },
+  "Q2": {
+    "truck_exit_dwell_hours": {
+      "DISCHARGE": {
+        "n": 510,
+        "p5": 6.307638888888889,
+        "p10": 10.198472222222222,
+        "p25": 22.64409722222222,
+        "p50": 41.91555555555556,
+        "p75": 102.21201388888889,
+        "p90": 167.13697222222225,
+        "p95": 201.7342916666667
+      },
+      "TRUCK_RECV": {
+        "n": 105,
+        "p5": 7.159666666666666,
+        "p10": 13.236833333333333,
+        "p25": 22.786666666666665,
+        "p50": 39.721666666666664,
+        "p75": 75.45777777777778,
+        "p90": 139.65127777777772,
+        "p95": 161.7967222222222
+      }
+    },
+    "cause_specific_age_hazards": [
+      {
+        "origin": "DISCHARGE",
+        "age": "0-24h",
+        "container_hours": 109356.80194444435,
+        "containers_exposed": 5368,
+        "truck_exits": 137,
+        "competing_LOAD_exits": 1829,
+        "truck_hazard_per_hour": 0.0012527798688699676
+      },
+      {
+        "origin": "DISCHARGE",
+        "age": "24-72h",
+        "container_hours": 142998.48277777754,
+        "containers_exposed": 3402,
+        "truck_exits": 200,
+        "competing_LOAD_exits": 84,
+        "truck_hazard_per_hour": 0.0013986162378436136
+      },
+      {
+        "origin": "DISCHARGE",
+        "age": "72-120h",
+        "container_hours": 122820.1372222222,
+        "containers_exposed": 2627,
+        "truck_exits": 65,
+        "competing_LOAD_exits": 58,
+        "truck_hazard_per_hour": 0.0005292291758508096
+      },
+      {
+        "origin": "DISCHARGE",
+        "age": "120-240h",
+        "container_hours": 174897.51333333325,
+        "containers_exposed": 2504,
+        "truck_exits": 101,
+        "competing_LOAD_exits": 100,
+        "truck_hazard_per_hour": 0.0005774810520462138
+      },
+      {
+        "origin": "DISCHARGE",
+        "age": ">240h",
+        "container_hours": 8062.464444444454,
+        "containers_exposed": 433,
+        "truck_exits": 7,
+        "competing_LOAD_exits": 0,
+        "truck_hazard_per_hour": 0.0008682208831101812
+      },
+      {
+        "origin": "TRUCK_RECV",
+        "age": "0-24h",
+        "container_hours": 32405.084166666653,
+        "containers_exposed": 1461,
+        "truck_exits": 28,
+        "competing_LOAD_exits": 87,
+        "truck_hazard_per_hour": 0.0008640619433663461
+      },
+      {
+        "origin": "TRUCK_RECV",
+        "age": "24-72h",
+        "container_hours": 47978.741111111136,
+        "containers_exposed": 1239,
+        "truck_exits": 47,
+        "competing_LOAD_exits": 149,
+        "truck_hazard_per_hour": 0.0009796005253900988
+      },
+      {
+        "origin": "TRUCK_RECV",
+        "age": "72-120h",
+        "container_hours": 29887.885277777776,
+        "containers_exposed": 825,
+        "truck_exits": 15,
+        "competing_LOAD_exits": 123,
+        "truck_hazard_per_hour": 0.0005018755880715586
+      },
+      {
+        "origin": "TRUCK_RECV",
+        "age": "120-240h",
+        "container_hours": 34341.350555555546,
+        "containers_exposed": 481,
+        "truck_exits": 14,
+        "competing_LOAD_exits": 27,
+        "truck_hazard_per_hour": 0.00040767179430964927
+      },
+      {
+        "origin": "TRUCK_RECV",
+        "age": ">240h",
+        "container_hours": 3338.1444444444464,
+        "containers_exposed": 147,
+        "truck_exits": 1,
+        "competing_LOAD_exits": 1,
+        "truck_hazard_per_hour": 0.0002995676240626028
+      }
+    ],
+    "initial_feature_outcomes": [
+      {
+        "feature": "has_rotations",
+        "level": "False",
+        "n": 724,
+        "LOAD": 0,
+        "TRUCK_DLVR": 138,
+        "unretrieved_Day12": 586,
+        "LOAD_rate": 0.0,
+        "TRUCK_DLVR_rate": 0.19060773480662985
+      },
+      {
+        "feature": "has_rotations",
+        "level": "True",
+        "n": 4076,
+        "LOAD": 1413,
+        "TRUCK_DLVR": 418,
+        "unretrieved_Day12": 2245,
+        "LOAD_rate": 0.34666339548577035,
+        "TRUCK_DLVR_rate": 0.10255152109911678
+      },
+      {
+        "feature": "initial_height",
+        "level": "1",
+        "n": 335,
+        "LOAD": 101,
+        "TRUCK_DLVR": 34,
+        "unretrieved_Day12": 200,
+        "LOAD_rate": 0.30149253731343284,
+        "TRUCK_DLVR_rate": 0.10149253731343283
+      },
+      {
+        "feature": "initial_height",
+        "level": "2",
+        "n": 1348,
+        "LOAD": 411,
+        "TRUCK_DLVR": 148,
+        "unretrieved_Day12": 789,
+        "LOAD_rate": 0.30489614243323443,
+        "TRUCK_DLVR_rate": 0.10979228486646884
+      },
+      {
+        "feature": "initial_height",
+        "level": "3",
+        "n": 1761,
+        "LOAD": 524,
+        "TRUCK_DLVR": 205,
+        "unretrieved_Day12": 1032,
+        "LOAD_rate": 0.2975582055650199,
+        "TRUCK_DLVR_rate": 0.11641113003975014
+      },
+      {
+        "feature": "initial_height",
+        "level": "4",
+        "n": 1056,
+        "LOAD": 293,
+        "TRUCK_DLVR": 131,
+        "unretrieved_Day12": 632,
+        "LOAD_rate": 0.2774621212121212,
+        "TRUCK_DLVR_rate": 0.1240530303030303
+      },
+      {
+        "feature": "initial_height",
+        "level": "5",
+        "n": 300,
+        "LOAD": 84,
+        "TRUCK_DLVR": 38,
+        "unretrieved_Day12": 178,
+        "LOAD_rate": 0.28,
+        "TRUCK_DLVR_rate": 0.12666666666666668
+      },
+      {
+        "feature": "initial_tier",
+        "level": "1",
+        "n": 1920,
+        "LOAD": 582,
+        "TRUCK_DLVR": 215,
+        "unretrieved_Day12": 1123,
+        "LOAD_rate": 0.303125,
+        "TRUCK_DLVR_rate": 0.11197916666666667
+      },
+      {
+        "feature": "initial_tier",
+        "level": "2",
+        "n": 1585,
+        "LOAD": 444,
+        "TRUCK_DLVR": 201,
+        "unretrieved_Day12": 940,
+        "LOAD_rate": 0.2801261829652997,
+        "TRUCK_DLVR_rate": 0.12681388012618297
+      },
+      {
+        "feature": "initial_tier",
+        "level": "3",
+        "n": 911,
+        "LOAD": 272,
+        "TRUCK_DLVR": 97,
+        "unretrieved_Day12": 542,
+        "LOAD_rate": 0.29857299670691545,
+        "TRUCK_DLVR_rate": 0.10647639956092206
+      },
+      {
+        "feature": "initial_tier",
+        "level": "4",
+        "n": 324,
+        "LOAD": 103,
+        "TRUCK_DLVR": 35,
+        "unretrieved_Day12": 186,
+        "LOAD_rate": 0.31790123456790126,
+        "TRUCK_DLVR_rate": 0.10802469135802469
+      },
+      {
+        "feature": "initial_tier",
+        "level": "5",
+        "n": 60,
+        "LOAD": 12,
+        "TRUCK_DLVR": 8,
+        "unretrieved_Day12": 40,
+        "LOAD_rate": 0.2,
+        "TRUCK_DLVR_rate": 0.13333333333333333
+      },
+      {
+        "feature": "raw_etd_minus_t0",
+        "level": "168-288h",
+        "n": 846,
+        "LOAD": 418,
+        "TRUCK_DLVR": 87,
+        "unretrieved_Day12": 341,
+        "LOAD_rate": 0.4940898345153664,
+        "TRUCK_DLVR_rate": 0.10283687943262411
+      },
+      {
+        "feature": "raw_etd_minus_t0",
+        "level": "24-72h",
+        "n": 355,
+        "LOAD": 111,
+        "TRUCK_DLVR": 34,
+        "unretrieved_Day12": 210,
+        "LOAD_rate": 0.3126760563380282,
+        "TRUCK_DLVR_rate": 0.09577464788732394
+      },
+      {
+        "feature": "raw_etd_minus_t0",
+        "level": "72-168h",
+        "n": 1207,
+        "LOAD": 458,
+        "TRUCK_DLVR": 106,
+        "unretrieved_Day12": 643,
+        "LOAD_rate": 0.37945318972659486,
+        "TRUCK_DLVR_rate": 0.08782104391052195
+      },
+      {
+        "feature": "raw_etd_minus_t0",
+        "level": ">=288h",
+        "n": 2392,
+        "LOAD": 426,
+        "TRUCK_DLVR": 329,
+        "unretrieved_Day12": 1637,
+        "LOAD_rate": 0.17809364548494983,
+        "TRUCK_DLVR_rate": 0.13754180602006688
+      },
+      {
+        "feature": "raw_etd_vs_initial_S3",
+        "level": "later",
+        "n": 1567,
+        "LOAD": 505,
+        "TRUCK_DLVR": 185,
+        "unretrieved_Day12": 877,
+        "LOAD_rate": 0.32227185705169115,
+        "TRUCK_DLVR_rate": 0.11805998723675813
+      },
+      {
+        "feature": "raw_etd_vs_initial_S3",
+        "level": "matches",
+        "n": 2509,
+        "LOAD": 908,
+        "TRUCK_DLVR": 233,
+        "unretrieved_Day12": 1368,
+        "LOAD_rate": 0.36189717018732565,
+        "TRUCK_DLVR_rate": 0.09286568353925867
+      },
+      {
+        "feature": "raw_etd_vs_initial_S3",
+        "level": "unscheduled",
+        "n": 724,
+        "LOAD": 0,
+        "TRUCK_DLVR": 138,
+        "unretrieved_Day12": 586,
+        "LOAD_rate": 0.0,
+        "TRUCK_DLVR_rate": 0.19060773480662985
+      },
+      {
+        "feature": "weight",
+        "level": "HEAVY",
+        "n": 1224,
+        "LOAD": 354,
+        "TRUCK_DLVR": 148,
+        "unretrieved_Day12": 722,
+        "LOAD_rate": 0.28921568627450983,
+        "TRUCK_DLVR_rate": 0.12091503267973856
+      },
+      {
+        "feature": "weight",
+        "level": "LIGHT",
+        "n": 1440,
+        "LOAD": 429,
+        "TRUCK_DLVR": 175,
+        "unretrieved_Day12": 836,
+        "LOAD_rate": 0.29791666666666666,
+        "TRUCK_DLVR_rate": 0.12152777777777778
+      },
+      {
+        "feature": "weight",
+        "level": "MEDIUM",
+        "n": 2136,
+        "LOAD": 630,
+        "TRUCK_DLVR": 233,
+        "unretrieved_Day12": 1273,
+        "LOAD_rate": 0.2949438202247191,
+        "TRUCK_DLVR_rate": 0.10908239700374532
+      }
+    ],
+    "notes": [
+      "Dwell quantiles condition on observed truck exits by Day12 and are censoring-biased descriptions.",
+      "Hazard denominator includes all origin arrivals while resident, ending at any exit or Jan13 cutoff; numerator only TRUCK_DLVR. No future exit-mode labels enter risk sets.",
+      "Initial outcomes are known through Day12 only; unretrieved is right-censoring, not permanent storage."
+    ]
+  },
+  "Q3": {
+    "repeated_blocker_prefix": [
+      {
+        "period": "Days1-12",
+        "k": 1,
+        "repeated_moves_from_prefix": 3,
+        "total_repeated_moves": 485,
+        "fraction": 0.006185567010309278,
+        "total_relocation_landings_in_prefix": 27
+      },
+      {
+        "period": "Days1-12",
+        "k": 2,
+        "repeated_moves_from_prefix": 10,
+        "total_repeated_moves": 485,
+        "fraction": 0.020618556701030927,
+        "total_relocation_landings_in_prefix": 59
+      },
+      {
+        "period": "Days1-12",
+        "k": 4,
+        "repeated_moves_from_prefix": 35,
+        "total_repeated_moves": 485,
+        "fraction": 0.07216494845360824,
+        "total_relocation_landings_in_prefix": 135
+      },
+      {
+        "period": "Days1-12",
+        "k": 6,
+        "repeated_moves_from_prefix": 54,
+        "total_repeated_moves": 485,
+        "fraction": 0.11134020618556702,
+        "total_relocation_landings_in_prefix": 205
+      },
+      {
+        "period": "Days1-12",
+        "k": 12,
+        "repeated_moves_from_prefix": 78,
+        "total_repeated_moves": 485,
+        "fraction": 0.16082474226804125,
+        "total_relocation_landings_in_prefix": 339
+      },
+      {
+        "period": "Days13-20",
+        "k": 1,
+        "repeated_moves_from_prefix": 11,
+        "total_repeated_moves": 1030,
+        "fraction": 0.010679611650485437,
+        "total_relocation_landings_in_prefix": 23
+      },
+      {
+        "period": "Days13-20",
+        "k": 2,
+        "repeated_moves_from_prefix": 20,
+        "total_repeated_moves": 1030,
+        "fraction": 0.019417475728155338,
+        "total_relocation_landings_in_prefix": 46
+      },
+      {
+        "period": "Days13-20",
+        "k": 4,
+        "repeated_moves_from_prefix": 44,
+        "total_repeated_moves": 1030,
+        "fraction": 0.04271844660194175,
+        "total_relocation_landings_in_prefix": 100
+      },
+      {
+        "period": "Days13-20",
+        "k": 6,
+        "repeated_moves_from_prefix": 57,
+        "total_repeated_moves": 1030,
+        "fraction": 0.05533980582524272,
+        "total_relocation_landings_in_prefix": 144
+      },
+      {
+        "period": "Days13-20",
+        "k": 12,
+        "repeated_moves_from_prefix": 96,
+        "total_repeated_moves": 1030,
+        "fraction": 0.09320388349514563,
+        "total_relocation_landings_in_prefix": 261
+      },
+      {
+        "period": "all_train",
+        "k": 1,
+        "repeated_moves_from_prefix": 14,
+        "total_repeated_moves": 1515,
+        "fraction": 0.009240924092409241,
+        "total_relocation_landings_in_prefix": 50
+      },
+      {
+        "period": "all_train",
+        "k": 2,
+        "repeated_moves_from_prefix": 30,
+        "total_repeated_moves": 1515,
+        "fraction": 0.019801980198019802,
+        "total_relocation_landings_in_prefix": 105
+      },
+      {
+        "period": "all_train",
+        "k": 4,
+        "repeated_moves_from_prefix": 79,
+        "total_repeated_moves": 1515,
+        "fraction": 0.05214521452145215,
+        "total_relocation_landings_in_prefix": 235
+      },
+      {
+        "period": "all_train",
+        "k": 6,
+        "repeated_moves_from_prefix": 111,
+        "total_repeated_moves": 1515,
+        "fraction": 0.07326732673267326,
+        "total_relocation_landings_in_prefix": 349
+      },
+      {
+        "period": "all_train",
+        "k": 12,
+        "repeated_moves_from_prefix": 174,
+        "total_repeated_moves": 1515,
+        "fraction": 0.11485148514851486,
+        "total_relocation_landings_in_prefix": 600
+      }
+    ],
+    "blockers_per_found_retrieval": [
+      {
+        "period": "Days1-12",
+        "blockers": 0,
+        "retrievals": 3092
+      },
+      {
+        "period": "Days1-12",
+        "blockers": 1,
+        "retrievals": 981
+      },
+      {
+        "period": "Days1-12",
+        "blockers": 2,
+        "retrievals": 703
+      },
+      {
+        "period": "Days1-12",
+        "blockers": 3,
+        "retrievals": 215
+      },
+      {
+        "period": "Days1-12",
+        "blockers": 4,
+        "retrievals": 51
+      },
+      {
+        "period": "Days13-20",
+        "blockers": 0,
+        "retrievals": 2023
+      },
+      {
+        "period": "Days13-20",
+        "blockers": 1,
+        "retrievals": 854
+      },
+      {
+        "period": "Days13-20",
+        "blockers": 2,
+        "retrievals": 641
+      },
+      {
+        "period": "Days13-20",
+        "blockers": 3,
+        "retrievals": 220
+      },
+      {
+        "period": "Days13-20",
+        "blockers": 4,
+        "retrievals": 94
+      }
+    ],
+    "block_empty_stack_frequency": [
+      {
+        "period": "Days1-12",
+        "block": "B01",
+        "all_retrieval_events_zero_empty": 6366,
+        "all_retrieval_events_positive_empty": 2,
+        "own_block_found_retrievals_zero_empty": 591,
+        "own_block_found_retrievals_positive_empty": 0
+      },
+      {
+        "period": "Days1-12",
+        "block": "B02",
+        "all_retrieval_events_zero_empty": 6294,
+        "all_retrieval_events_positive_empty": 74,
+        "own_block_found_retrievals_zero_empty": 614,
+        "own_block_found_retrievals_positive_empty": 12
+      },
+      {
+        "period": "Days1-12",
+        "block": "B03",
+        "all_retrieval_events_zero_empty": 6357,
+        "all_retrieval_events_positive_empty": 11,
+        "own_block_found_retrievals_zero_empty": 458,
+        "own_block_found_retrievals_positive_empty": 0
+      },
+      {
+        "period": "Days1-12",
+        "block": "B04",
+        "all_retrieval_events_zero_empty": 6342,
+        "all_retrieval_events_positive_empty": 26,
+        "own_block_found_retrievals_zero_empty": 525,
+        "own_block_found_retrievals_positive_empty": 0
+      },
+      {
+        "period": "Days1-12",
+        "block": "B05",
+        "all_retrieval_events_zero_empty": 6368,
+        "all_retrieval_events_positive_empty": 0,
+        "own_block_found_retrievals_zero_empty": 548,
+        "own_block_found_retrievals_positive_empty": 0
+      },
+      {
+        "period": "Days1-12",
+        "block": "B06",
+        "all_retrieval_events_zero_empty": 6367,
+        "all_retrieval_events_positive_empty": 1,
+        "own_block_found_retrievals_zero_empty": 564,
+        "own_block_found_retrievals_positive_empty": 0
+      },
+      {
+        "period": "Days1-12",
+        "block": "B07",
+        "all_retrieval_events_zero_empty": 6368,
+        "all_retrieval_events_positive_empty": 0,
+        "own_block_found_retrievals_zero_empty": 533,
+        "own_block_found_retrievals_positive_empty": 0
+      },
+      {
+        "period": "Days1-12",
+        "block": "B08",
+        "all_retrieval_events_zero_empty": 6360,
+        "all_retrieval_events_positive_empty": 8,
+        "own_block_found_retrievals_zero_empty": 420,
+        "own_block_found_retrievals_positive_empty": 1
+      },
+      {
+        "period": "Days1-12",
+        "block": "B09",
+        "all_retrieval_events_zero_empty": 6329,
+        "all_retrieval_events_positive_empty": 39,
+        "own_block_found_retrievals_zero_empty": 386,
+        "own_block_found_retrievals_positive_empty": 2
+      },
+      {
+        "period": "Days1-12",
+        "block": "B10",
+        "all_retrieval_events_zero_empty": 6368,
+        "all_retrieval_events_positive_empty": 0,
+        "own_block_found_retrievals_zero_empty": 388,
+        "own_block_found_retrievals_positive_empty": 0
+      },
+      {
+        "period": "Days13-20",
+        "block": "B01",
+        "all_retrieval_events_zero_empty": 3839,
+        "all_retrieval_events_positive_empty": 0,
+        "own_block_found_retrievals_zero_empty": 456,
+        "own_block_found_retrievals_positive_empty": 0
+      },
+      {
+        "period": "Days13-20",
+        "block": "B02",
+        "all_retrieval_events_zero_empty": 3839,
+        "all_retrieval_events_positive_empty": 0,
+        "own_block_found_retrievals_zero_empty": 459,
+        "own_block_found_retrievals_positive_empty": 0
+      },
+      {
+        "period": "Days13-20",
+        "block": "B03",
+        "all_retrieval_events_zero_empty": 3832,
+        "all_retrieval_events_positive_empty": 7,
+        "own_block_found_retrievals_zero_empty": 381,
+        "own_block_found_retrievals_positive_empty": 0
+      },
+      {
+        "period": "Days13-20",
+        "block": "B04",
+        "all_retrieval_events_zero_empty": 3839,
+        "all_retrieval_events_positive_empty": 0,
+        "own_block_found_retrievals_zero_empty": 359,
+        "own_block_found_retrievals_positive_empty": 0
+      },
+      {
+        "period": "Days13-20",
+        "block": "B05",
+        "all_retrieval_events_zero_empty": 3837,
+        "all_retrieval_events_positive_empty": 2,
+        "own_block_found_retrievals_zero_empty": 443,
+        "own_block_found_retrievals_positive_empty": 0
+      },
+      {
+        "period": "Days13-20",
+        "block": "B06",
+        "all_retrieval_events_zero_empty": 3839,
+        "all_retrieval_events_positive_empty": 0,
+        "own_block_found_retrievals_zero_empty": 420,
+        "own_block_found_retrievals_positive_empty": 0
+      },
+      {
+        "period": "Days13-20",
+        "block": "B07",
+        "all_retrieval_events_zero_empty": 3839,
+        "all_retrieval_events_positive_empty": 0,
+        "own_block_found_retrievals_zero_empty": 453,
+        "own_block_found_retrievals_positive_empty": 0
+      },
+      {
+        "period": "Days13-20",
+        "block": "B08",
+        "all_retrieval_events_zero_empty": 3839,
+        "all_retrieval_events_positive_empty": 0,
+        "own_block_found_retrievals_zero_empty": 293,
+        "own_block_found_retrievals_positive_empty": 0
+      },
+      {
+        "period": "Days13-20",
+        "block": "B09",
+        "all_retrieval_events_zero_empty": 3839,
+        "all_retrieval_events_positive_empty": 0,
+        "own_block_found_retrievals_zero_empty": 289,
+        "own_block_found_retrievals_positive_empty": 0
+      },
+      {
+        "period": "Days13-20",
+        "block": "B10",
+        "all_retrieval_events_zero_empty": 3835,
+        "all_retrieval_events_positive_empty": 4,
+        "own_block_found_retrievals_zero_empty": 279,
+        "own_block_found_retrievals_positive_empty": 0
+      }
+    ],
+    "notes": [
+      "Prefix is fixed lexicographic (bay,row) rank within each block, not a dynamic height-sorted rank.",
+      "Each repeated move is attributed to that blocker last relocation landing; k prefixes are nested and must not be added.",
+      "All-event empty frequencies include absent retrievals; own-block frequencies include only found targets. Whole-train mechanics are descriptive, not fitted."
+    ]
+  },
+  "Q4": {
+    "rows": [
+      {
+        "vessel_id": "VSL003",
+        "rotation_number": 1,
+        "scanned_current_vessel_resident_exposures": 180526,
+        "passed_resident_exposures": 38247,
+        "placements_with_passed_residents": 183,
+        "unique_passed_container_rotation_pairs": 648,
+        "later_LOAD_in_same_window": 0
+      },
+      {
+        "vessel_id": "VSL005",
+        "rotation_number": 1,
+        "scanned_current_vessel_resident_exposures": 29462,
+        "passed_resident_exposures": 7274,
+        "placements_with_passed_residents": 47,
+        "unique_passed_container_rotation_pairs": 290,
+        "later_LOAD_in_same_window": 0
+      },
+      {
+        "vessel_id": "VSL012",
+        "rotation_number": 1,
+        "scanned_current_vessel_resident_exposures": 6462,
+        "passed_resident_exposures": 1662,
+        "placements_with_passed_residents": 8,
+        "unique_passed_container_rotation_pairs": 318,
+        "later_LOAD_in_same_window": 0
+      },
+      {
+        "vessel_id": "VSL001",
+        "rotation_number": 1,
+        "scanned_current_vessel_resident_exposures": 224754,
+        "passed_resident_exposures": 128587,
+        "placements_with_passed_residents": 391,
+        "unique_passed_container_rotation_pairs": 476,
+        "later_LOAD_in_same_window": 0
+      },
+      {
+        "vessel_id": "VSL002",
+        "rotation_number": 1,
+        "scanned_current_vessel_resident_exposures": 250034,
+        "passed_resident_exposures": 32583,
+        "placements_with_passed_residents": 256,
+        "unique_passed_container_rotation_pairs": 494,
+        "later_LOAD_in_same_window": 0
+      },
+      {
+        "vessel_id": "VSL004",
+        "rotation_number": 1,
+        "scanned_current_vessel_resident_exposures": 326300,
+        "passed_resident_exposures": 214719,
+        "placements_with_passed_residents": 552,
+        "unique_passed_container_rotation_pairs": 527,
+        "later_LOAD_in_same_window": 0
+      },
+      {
+        "vessel_id": "VSL006",
+        "rotation_number": 1,
+        "scanned_current_vessel_resident_exposures": 240182,
+        "passed_resident_exposures": 63012,
+        "placements_with_passed_residents": 291,
+        "unique_passed_container_rotation_pairs": 612,
+        "later_LOAD_in_same_window": 0
+      },
+      {
+        "vessel_id": "VSL007",
+        "rotation_number": 1,
+        "scanned_current_vessel_resident_exposures": 179037,
+        "passed_resident_exposures": 41675,
+        "placements_with_passed_residents": 278,
+        "unique_passed_container_rotation_pairs": 400,
+        "later_LOAD_in_same_window": 0
+      },
+      {
+        "vessel_id": "VSL008",
+        "rotation_number": 1,
+        "scanned_current_vessel_resident_exposures": 82733,
+        "passed_resident_exposures": 19926,
+        "placements_with_passed_residents": 380,
+        "unique_passed_container_rotation_pairs": 77,
+        "later_LOAD_in_same_window": 0
+      },
+      {
+        "vessel_id": "VSL013",
+        "rotation_number": 1,
+        "scanned_current_vessel_resident_exposures": 110353,
+        "passed_resident_exposures": 8699,
+        "placements_with_passed_residents": 136,
+        "unique_passed_container_rotation_pairs": 201,
+        "later_LOAD_in_same_window": 0
+      },
+      {
+        "vessel_id": "VSL018",
+        "rotation_number": 1,
+        "scanned_current_vessel_resident_exposures": 4451,
+        "passed_resident_exposures": 1902,
+        "placements_with_passed_residents": 25,
+        "unique_passed_container_rotation_pairs": 93,
+        "later_LOAD_in_same_window": 0
+      },
+      {
+        "vessel_id": "VSL011",
+        "rotation_number": 1,
+        "scanned_current_vessel_resident_exposures": 148864,
+        "passed_resident_exposures": 46147,
+        "placements_with_passed_residents": 488,
+        "unique_passed_container_rotation_pairs": 154,
+        "later_LOAD_in_same_window": 0
+      },
+      {
+        "vessel_id": "VSL003",
+        "rotation_number": 2,
+        "scanned_current_vessel_resident_exposures": 69170,
+        "passed_resident_exposures": 32292,
+        "placements_with_passed_residents": 74,
+        "unique_passed_container_rotation_pairs": 799,
+        "later_LOAD_in_same_window": 0
+      }
+    ],
+    "unique_placements_scanning_loading_vessel": 2842,
+    "unique_placements_with_passed_residents": 2696,
+    "load_category_reversals": 0,
+    "total_resident_exposures": 1852328,
+    "passed_resident_exposures": 636725,
+    "unique_passed_container_rotation_pairs": 5089,
+    "later_LOAD_in_same_window": 0,
+    "notes": [
+      "Fit-period only, complete loading windows. Residents in full stacks are excluded, matching candidate scan eligibility.",
+      "Passed is STRICT category < maximum (port, HEAVY/MEDIUM/LIGHT rank) in an already observed LOAD event in the same window, including absent LOADs. Equal categories are not passed.",
+      "Passed exposure counts can repeat a resident at many arrivals. Outcome confirmation uses fit events only."
+    ]
+  },
+  "Q5": {
+    "rows": [
+      {
+        "cohort": "missed_load",
+        "all_placements": 1333,
+        "empty_stack_placements": 1,
+        "empty_fraction": 0.0007501875468867217,
+        "by_jump_hours": {
+          "<24h": 0,
+          "24-72h": 0,
+          ">72h": 0,
+          "inf": 1
+        }
+      },
+      {
+        "cohort": "sched_disch_active|24-72h",
+        "all_placements": 1820,
+        "empty_stack_placements": 0,
+        "empty_fraction": 0.0,
+        "by_jump_hours": {
+          "<24h": 0,
+          "24-72h": 0,
+          ">72h": 0,
+          "inf": 0
+        }
+      },
+      {
+        "cohort": "sched_disch_active|<24h",
+        "all_placements": 4596,
+        "empty_stack_placements": 1,
+        "empty_fraction": 0.0002175805047867711,
+        "by_jump_hours": {
+          "<24h": 1,
+          "24-72h": 0,
+          ">72h": 0,
+          "inf": 0
+        }
+      },
+      {
+        "cohort": "sched_disch_active|>72h",
+        "all_placements": 650,
+        "empty_stack_placements": 0,
+        "empty_fraction": 0.0,
+        "by_jump_hours": {
+          "<24h": 0,
+          "24-72h": 0,
+          ">72h": 0,
+          "inf": 0
+        }
+      },
+      {
+        "cohort": "sched_truck_active|24-72h",
+        "all_placements": 539,
+        "empty_stack_placements": 4,
+        "empty_fraction": 0.0074211502782931356,
+        "by_jump_hours": {
+          "<24h": 1,
+          "24-72h": 3,
+          ">72h": 0,
+          "inf": 0
+        }
+      },
+      {
+        "cohort": "sched_truck_active|<24h",
+        "all_placements": 144,
+        "empty_stack_placements": 0,
+        "empty_fraction": 0.0,
+        "by_jump_hours": {
+          "<24h": 0,
+          "24-72h": 0,
+          ">72h": 0,
+          "inf": 0
+        }
+      },
+      {
+        "cohort": "sched_truck_active|>72h",
+        "all_placements": 1303,
+        "empty_stack_placements": 9,
+        "empty_fraction": 0.006907137375287797,
+        "by_jump_hours": {
+          "<24h": 0,
+          "24-72h": 1,
+          ">72h": 8,
+          "inf": 0
+        }
+      }
+    ],
+    "total_placements": 10385,
+    "total_empty_stack_placements": 15,
+    "note": "Whole-train placement geometry only. Time-to-jump comes from the actual incoming online descriptor; missing/missed/expired-no-rotation jumps are infinity."
+  }
+}

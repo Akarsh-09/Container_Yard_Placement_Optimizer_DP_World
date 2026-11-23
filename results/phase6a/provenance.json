@@ -1,0 +1,26 @@
+{
+  "train_only": true,
+  "test_data_accessed": false,
+  "solution_modified": false,
+  "sources": {
+    "solution/my_strategy.py": "7374aa7db169ac48497c0da8d80af5797dd129b1e81c1f77fc6bfbda4cbb5162",
+    "solution/survival_params.py": "fde79d9871c26f14146cfeaaecaed5899d25858eb05fdc66579b8a3ea74cdd3d"
+  },
+  "input_hashes": {
+    "data/yard_layout.json": "ee776c27fdb8a1a56b4fb7fc95fe3e44d23b96877536db59ab9ed5f6623c0af9",
+    "data/train/initial_state.json": "8295c9830ab1481724f575a1695d87e521ed355be601cbc21d4de6b4d740147b",
+    "data/train/events.jsonl": "b3e9f7089ce722ab5984bb27148dfc9870e26cebe15dc70135e57511fa1d1328",
+    "data/vessel_schedule.json": "e1a1a1d3d3d9bb63f47a7a1c0f72b40ac438eea70a29b40e4628f6be64cf1602"
+  },
+  "script_sha256": "1c9f3bdf4ad24cae8715c0e9449d2691edfcfecb9698bbfb3fc13b98af1a9cd6",
+  "command": "PYTHONDONTWRITEBYTECODE=1 .venv/bin/python scripts/phase6a_detective.py",
+  "fit_cutoff_exclusive": "2025-01-13T00:00:00",
+  "whole_train_geometry": "Descriptive mechanics only; not feature fitting or model selection.",
+  "exact_frozen_trace_match": true,
+  "fit_found_retrievals": 5042,
+  "full_train_found_retrievals": 8874,
+  "production_errors": 0,
+  "cache_guard_fallbacks": 0,
+  "protected_changes": [],
+  "final_integrity_checked": true
+}
