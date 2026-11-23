@@ -1,0 +1,14 @@
+{
+  "python": "3.13.3 (v3.13.3:6280bb54784, Apr  8 2025, 10:47:54) [Clang 15.0.0 (clang-1500.3.9.4)]",
+  "command": ".venv/bin/python scripts/phase2.py",
+  "sha256": {
+    "solution/my_strategy.py": "5d8d1db496c717362948d1bdeda0936983fe73dc625fbef32e7ad237a8b0fad6",
+    "scripts/phase1.py": "0ecce96c217478bc3ea1a34e537d09afe8db5731b30d4fee640815dbc215e5cc",
+    "scripts/phase2.py": "3ea0e4a4dd4a31ba2c6faf7c7d9fdb5c34d0af89687c64c971b7c5a0402648e7",
+    "data/yard_layout.json": "ee776c27fdb8a1a56b4fb7fc95fe3e44d23b96877536db59ab9ed5f6623c0af9",
+    "data/vessel_schedule.json": "e1a1a1d3d3d9bb63f47a7a1c0f72b40ac438eea70a29b40e4628f6be64cf1602",
+    "data/train/initial_state.json": "8295c9830ab1481724f575a1695d87e521ed355be601cbc21d4de6b4d740147b",
+    "data/train/events.jsonl": "b3e9f7089ce722ab5984bb27148dfc9870e26cebe15dc70135e57511fa1d1328"
+  },
+  "test_data_opened": false
+}

@@ -1,0 +1,17 @@
+{
+  "tests_passed": 65,
+  "new_tests": 38,
+  "leading_mode": "s3_next_feasible",
+  "leading_cli_matches_harness": true,
+  "leading_cli_seconds": 33.02,
+  "all_six_zero_errors_violations_failures": true,
+  "all_cohort_sums_and_inventory_checked": true,
+  "test_data_opened": false,
+  "protected_tracked_files_unchanged": true,
+  "default_choice": "S3 best total; improves both chronological found rates over raw_strict. Still worse than Greedy.",
+  "s2_semantics": "Resident containers roll over; incoming retains S1. Explicit verification run gave same total as all-container preliminary run.",
+  "strategy_sha256": "81cc1e4f5330a3353c2fce49ae25a0c5318e27f44fd70172eefe84d27d5ba1b2",
+  "script_sha256": "cc5443ed045f8458944790827e8dda137d2928551f7e4dbd976ebe8982e92ce0",
+  "tests_sha256": "ca28439c9308237ca81099a87240544036d5b480b8f497a114bbffa81f7ce848",
+  "python": "3.13.3 (v3.13.3:6280bb54784, Apr  8 2025, 10:47:54) [Clang 15.0.0 (clang-1500.3.9.4)]"
+}
