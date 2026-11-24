@@ -1,0 +1,8 @@
+{
+  "evaluations": 120,
+  "objective_recomputed": true,
+  "stage1_best_verified": true,
+  "final_best_verified": true,
+  "seed": 42,
+  "fit_simulator_uses_strict_prefix": true
+}

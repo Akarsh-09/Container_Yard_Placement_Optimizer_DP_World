@@ -1,0 +1,56 @@
+{
+  "unchanged": true,
+  "before": {
+    "files": {
+      "data/train/events.jsonl": "b3e9f7089ce722ab5984bb27148dfc9870e26cebe15dc70135e57511fa1d1328",
+      "data/train/initial_state.json": "8295c9830ab1481724f575a1695d87e521ed355be601cbc21d4de6b4d740147b",
+      "data/vessel_schedule.json": "e1a1a1d3d3d9bb63f47a7a1c0f72b40ac438eea70a29b40e4628f6be64cf1602",
+      "data/yard_layout.json": "ee776c27fdb8a1a56b4fb7fc95fe3e44d23b96877536db59ab9ed5f6623c0af9",
+      "docs/design.md": "148cda8ba33cbd082549e47d4760f0babab9536555c526569a5cff579cc7ce5f",
+      "results/results.json": "4759b8c43aae4ba8db4f38227e47e26dd6adfd03c48a6b93bbd8614001befd11",
+      "solution/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "solution/my_strategy.py": "7374aa7db169ac48497c0da8d80af5797dd129b1e81c1f77fc6bfbda4cbb5162",
+      "solution/survival_params.py": "fde79d9871c26f14146cfeaaecaed5899d25858eb05fdc66579b8a3ea74cdd3d",
+      "src/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "src/baseline_greedy.py": "4c5a2757c0cac70cf8d7362cf31af6432cbb68b7af186f509abbbf188d17d687",
+      "src/baseline_random.py": "f827ef8e41eb5773f32c8203977e36d9e2aa778aad02565865e34ee10a2f5b26",
+      "src/event_reader.py": "7fa47a958ab0570a89ee6dc21bad217ff268d2d2d8a4cff16fdd78ea34632c58",
+      "src/external_adapter.py": "f8a9c560616af968b708cfaac3234a848f316ff8cc736da3a1aa9a3b68580ede",
+      "src/models.py": "8fe4ef003248208fc5111c133429ec3d0c9c4bd820c06cfe9ba65f4688e8853c",
+      "src/placement_interface.py": "82d31870cc6cec77eb7256323ed3e8280a3a618f36b60e69e9cac4fc6418a0d8",
+      "src/run.py": "f6535e4608d1b43c1fde61fcaa6a9b68ae4b29f40e1da33273e9e661905d7d00",
+      "src/scoring.py": "4d6a03639733b01f1e752d19865b77fddd4768b4c54042501c7d9984dd2a7fcd",
+      "src/simulator.py": "ffb752f4fd6648eefdfe022d11ee97fd7f5372c03f0b6a8fdb86e6f3832e1f08",
+      "src/yard_state.py": "1ee174266af87a961c0e3cfd11cf8699f3992871fb6599d77331a8baa3765a78",
+      "validate_submission.sh": "42011c848f6d26f73c48f71890e75788b89eef81eb014bcecf9260377e9bafb6"
+    },
+    "test_index": "100644 b749b53d6e4ec677a39dca978a8ae7db1eaacf39 0\tdata/test/events.jsonl\n100644 84a6c5a6a0e0b29be39fbc38298c29de02477a7a 0\tdata/test/initial_state.json\n"
+  },
+  "after": {
+    "files": {
+      "data/train/events.jsonl": "b3e9f7089ce722ab5984bb27148dfc9870e26cebe15dc70135e57511fa1d1328",
+      "data/train/initial_state.json": "8295c9830ab1481724f575a1695d87e521ed355be601cbc21d4de6b4d740147b",
+      "data/vessel_schedule.json": "e1a1a1d3d3d9bb63f47a7a1c0f72b40ac438eea70a29b40e4628f6be64cf1602",
+      "data/yard_layout.json": "ee776c27fdb8a1a56b4fb7fc95fe3e44d23b96877536db59ab9ed5f6623c0af9",
+      "docs/design.md": "148cda8ba33cbd082549e47d4760f0babab9536555c526569a5cff579cc7ce5f",
+      "results/results.json": "4759b8c43aae4ba8db4f38227e47e26dd6adfd03c48a6b93bbd8614001befd11",
+      "solution/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "solution/my_strategy.py": "7374aa7db169ac48497c0da8d80af5797dd129b1e81c1f77fc6bfbda4cbb5162",
+      "solution/survival_params.py": "fde79d9871c26f14146cfeaaecaed5899d25858eb05fdc66579b8a3ea74cdd3d",
+      "src/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "src/baseline_greedy.py": "4c5a2757c0cac70cf8d7362cf31af6432cbb68b7af186f509abbbf188d17d687",
+      "src/baseline_random.py": "f827ef8e41eb5773f32c8203977e36d9e2aa778aad02565865e34ee10a2f5b26",
+      "src/event_reader.py": "7fa47a958ab0570a89ee6dc21bad217ff268d2d2d8a4cff16fdd78ea34632c58",
+      "src/external_adapter.py": "f8a9c560616af968b708cfaac3234a848f316ff8cc736da3a1aa9a3b68580ede",
+      "src/models.py": "8fe4ef003248208fc5111c133429ec3d0c9c4bd820c06cfe9ba65f4688e8853c",
+      "src/placement_interface.py": "82d31870cc6cec77eb7256323ed3e8280a3a618f36b60e69e9cac4fc6418a0d8",
+      "src/run.py": "f6535e4608d1b43c1fde61fcaa6a9b68ae4b29f40e1da33273e9e661905d7d00",
+      "src/scoring.py": "4d6a03639733b01f1e752d19865b77fddd4768b4c54042501c7d9984dd2a7fcd",
+      "src/simulator.py": "ffb752f4fd6648eefdfe022d11ee97fd7f5372c03f0b6a8fdb86e6f3832e1f08",
+      "src/yard_state.py": "1ee174266af87a961c0e3cfd11cf8699f3992871fb6599d77331a8baa3765a78",
+      "validate_submission.sh": "42011c848f6d26f73c48f71890e75788b89eef81eb014bcecf9260377e9bafb6"
+    },
+    "test_index": "100644 b749b53d6e4ec677a39dca978a8ae7db1eaacf39 0\tdata/test/events.jsonl\n100644 84a6c5a6a0e0b29be39fbc38298c29de02477a7a 0\tdata/test/initial_state.json\n"
+  },
+  "test_access_blocked_by_audit_hook": true
+}

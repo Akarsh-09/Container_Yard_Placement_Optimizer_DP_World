@@ -1,0 +1,40 @@
+{
+  "names": [
+    "jump_240",
+    "bg_240",
+    "jump_48",
+    "bg_48",
+    "init_risk",
+    "overdue_risk",
+    "max_risk",
+    "strict_inv",
+    "compat_gap",
+    "is_empty",
+    "u_empty",
+    "h1_active",
+    "u_tier5",
+    "longstay_compact",
+    "same_vessel_top",
+    "is_reloc_target"
+  ],
+  "theta": [
+    1.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "objective": 3236.0,
+  "evaluations": 61
+}

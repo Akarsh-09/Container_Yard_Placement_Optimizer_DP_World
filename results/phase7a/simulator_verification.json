@@ -1,0 +1,8 @@
+{
+  "internal_fast_simulator_used": false,
+  "optimization_simulator": "unchanged src.simulator.Simulator + src.yard_state.YardState",
+  "prefix_trace_identical": true,
+  "prefix_trace_sha256": "0cfbadbc5c832801b7c196d0221f472bdd963335c21ac2522e66f7dfc80d0d44",
+  "prefix_reshuffles": 3236,
+  "full_trace_sha256": "74a6945f533e5cbe55d16fecf93d09fdb0b886da151bd06bfa4fad464fb2f414"
+}

@@ -1,0 +1,9 @@
+{
+  "fit_time_min": 1735712644.0,
+  "fit_time_max": 1736374407.0,
+  "validation_time_min": 1736748817.0,
+  "validation_time_max": 1737071924.0,
+  "fit_positive_rate": 0.15141333333333334,
+  "validation_positive_rate": 0.201725,
+  "all_features_finite": true
+}

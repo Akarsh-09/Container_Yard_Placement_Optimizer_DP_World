@@ -1,0 +1,357 @@
+{
+  "metrics": [
+    {
+      "model": "M0_frozen_raw",
+      "slice": "overall",
+      "n": 80000,
+      "positives": 16138,
+      "AUC": 0.7911249628223213,
+      "Brier": 0.1364596751860247
+    },
+    {
+      "model": "M0_frozen_raw",
+      "slice": "initial",
+      "n": 31807,
+      "positives": 5610,
+      "AUC": 0.7743703899366088,
+      "Brier": 0.12717164121440167
+    },
+    {
+      "model": "M0_frozen_raw",
+      "slice": "new",
+      "n": 48193,
+      "positives": 10528,
+      "AUC": 0.7961982096404997,
+      "Brier": 0.14258970437149587
+    },
+    {
+      "model": "M0_frozen_cal",
+      "slice": "overall",
+      "n": 80000,
+      "positives": 16138,
+      "AUC": 0.7911249628223213,
+      "Brier": 0.13723485762214188
+    },
+    {
+      "model": "M0_frozen_cal",
+      "slice": "initial",
+      "n": 31807,
+      "positives": 5610,
+      "AUC": 0.7743703899366088,
+      "Brier": 0.12727653712107737
+    },
+    {
+      "model": "M0_frozen_cal",
+      "slice": "new",
+      "n": 48193,
+      "positives": 10528,
+      "AUC": 0.7961982096404997,
+      "Brier": 0.14380727063186027
+    },
+    {
+      "model": "M1_pairwise_logistic",
+      "slice": "overall",
+      "n": 80000,
+      "positives": 16138,
+      "AUC": 0.6741869908104731,
+      "Brier": 0.16026542812264355
+    },
+    {
+      "model": "M1_pairwise_logistic",
+      "slice": "initial",
+      "n": 31807,
+      "positives": 5610,
+      "AUC": 0.6500168917574144,
+      "Brier": 0.13936188298799237
+    },
+    {
+      "model": "M1_pairwise_logistic",
+      "slice": "new",
+      "n": 48193,
+      "positives": 10528,
+      "AUC": 0.7313892101702862,
+      "Brier": 0.17406160308784288
+    },
+    {
+      "model": "M2_pairwise_gbdt",
+      "slice": "overall",
+      "n": 80000,
+      "positives": 16138,
+      "AUC": 0.8023747922865607,
+      "Brier": 0.13909280725777348
+    },
+    {
+      "model": "M2_pairwise_gbdt",
+      "slice": "initial",
+      "n": 31807,
+      "positives": 5610,
+      "AUC": 0.7909572825996799,
+      "Brier": 0.12411000094612486
+    },
+    {
+      "model": "M2_pairwise_gbdt",
+      "slice": "new",
+      "n": 48193,
+      "positives": 10528,
+      "AUC": 0.8050626193583087,
+      "Brier": 0.14898134128459498
+    }
+  ],
+  "gate_passed": false,
+  "winner": null,
+  "gate": "AUC lift >= .015 and lower Brier than one-parameter calibrated baseline; largest validation AUC wins among gate passers",
+  "calibration_slope": 1.2228417174489794,
+  "logistic_top_features": [
+    {
+      "feature": "logit_p_frozen_240",
+      "standardized_coefficient": 1.5659049203828743
+    },
+    {
+      "feature": "p_tot_48",
+      "standardized_coefficient": -0.8192976384636806
+    },
+    {
+      "feature": "p_jump_240",
+      "standardized_coefficient": 0.680345349933296
+    },
+    {
+      "feature": "p_frozen_240",
+      "standardized_coefficient": 0.6653353239855178
+    },
+    {
+      "feature": "tau_x_lt_tau_c",
+      "standardized_coefficient": -0.5400455742059507
+    },
+    {
+      "feature": "has_finite_tau_x",
+      "standardized_coefficient": -0.49153746006368465
+    },
+    {
+      "feature": "vessel_total_rotations_x",
+      "standardized_coefficient": -0.4591990069284297
+    },
+    {
+      "feature": "is_overdue_x",
+      "standardized_coefficient": 0.42178743350840914
+    },
+    {
+      "feature": "vessel_queue_ratio_x",
+      "standardized_coefficient": -0.35602021228118685
+    },
+    {
+      "feature": "tau_x_capped",
+      "standardized_coefficient": 0.2507033637639082
+    },
+    {
+      "feature": "p_bg_240",
+      "standardized_coefficient": -0.24596956369242456
+    },
+    {
+      "feature": "is_initial_x",
+      "standardized_coefficient": 0.20440504135678178
+    },
+    {
+      "feature": "tau_diff_clipped",
+      "standardized_coefficient": -0.12907620205061038
+    },
+    {
+      "feature": "overdue_hours_x",
+      "standardized_coefficient": -0.12451800879406372
+    },
+    {
+      "feature": "is_expired_x",
+      "standardized_coefficient": -0.07080594136257432
+    },
+    {
+      "feature": "tau_x_eq_tau_c",
+      "standardized_coefficient": -0.06403758764395352
+    },
+    {
+      "feature": "vessel_queue_ratio_c",
+      "standardized_coefficient": 0.061251884876390224
+    },
+    {
+      "feature": "vessel_total_rotations_c",
+      "standardized_coefficient": 0.047581000106679684
+    },
+    {
+      "feature": "is_truck_recv_c",
+      "standardized_coefficient": 0.03673489185014712
+    },
+    {
+      "feature": "raw_etd_minus_s3_hours_x",
+      "standardized_coefficient": -0.030110111966349974
+    },
+    {
+      "feature": "tau_c_capped",
+      "standardized_coefficient": 0.02893535426547246
+    },
+    {
+      "feature": "resident_age_hours_x",
+      "standardized_coefficient": -0.028858558726629634
+    },
+    {
+      "feature": "is_missed_load_c",
+      "standardized_coefficient": -0.026967214266906972
+    },
+    {
+      "feature": "has_finite_tau_c",
+      "standardized_coefficient": 0.026967214266905907
+    },
+    {
+      "feature": "port_weight_diff",
+      "standardized_coefficient": -0.01573883771368356
+    },
+    {
+      "feature": "same_vessel",
+      "standardized_coefficient": 0.011200335360814396
+    },
+    {
+      "feature": "same_rotation",
+      "standardized_coefficient": 0.011200335360814396
+    },
+    {
+      "feature": "same_port",
+      "standardized_coefficient": 0.008698845687509924
+    },
+    {
+      "feature": "age_x_minus_lead_c",
+      "standardized_coefficient": -0.007645764712740142
+    },
+    {
+      "feature": "lead_time_hours_c",
+      "standardized_coefficient": -0.007393631742211828
+    },
+    {
+      "feature": "is_missed_load_x",
+      "standardized_coefficient": -0.00034381016796283825
+    }
+  ],
+  "gbdt_top_features": [
+    {
+      "feature": "tau_x_capped",
+      "split_gain": 76544.01445825258
+    },
+    {
+      "feature": "p_tot_48",
+      "split_gain": 27520.804192538926
+    },
+    {
+      "feature": "vessel_total_rotations_x",
+      "split_gain": 11969.783236023555
+    },
+    {
+      "feature": "p_frozen_240",
+      "split_gain": 9124.24475057279
+    },
+    {
+      "feature": "p_jump_240",
+      "split_gain": 6228.322890944423
+    },
+    {
+      "feature": "vessel_queue_ratio_x",
+      "split_gain": 4618.125898862639
+    },
+    {
+      "feature": "tau_x_lt_tau_c",
+      "split_gain": 2493.0182990581875
+    },
+    {
+      "feature": "raw_etd_minus_s3_hours_x",
+      "split_gain": 1994.7531438970457
+    },
+    {
+      "feature": "vessel_total_rotations_c",
+      "split_gain": 738.3073209007189
+    },
+    {
+      "feature": "tau_diff_clipped",
+      "split_gain": 732.5901510013526
+    },
+    {
+      "feature": "age_x_minus_lead_c",
+      "split_gain": 311.7260036213164
+    },
+    {
+      "feature": "p_bg_240",
+      "split_gain": 166.78319769801848
+    },
+    {
+      "feature": "resident_age_hours_x",
+      "split_gain": 142.74743209333042
+    },
+    {
+      "feature": "lead_time_hours_c",
+      "split_gain": 139.55746582985807
+    },
+    {
+      "feature": "tau_c_capped",
+      "split_gain": 42.08047323398114
+    },
+    {
+      "feature": "vessel_queue_ratio_c",
+      "split_gain": 29.387699928991836
+    },
+    {
+      "feature": "logit_p_frozen_240",
+      "split_gain": 0.0
+    },
+    {
+      "feature": "is_initial_x",
+      "split_gain": 0.0
+    },
+    {
+      "feature": "is_overdue_x",
+      "split_gain": 0.0
+    },
+    {
+      "feature": "is_missed_load_x",
+      "split_gain": 0.0
+    },
+    {
+      "feature": "is_expired_x",
+      "split_gain": 0.0
+    },
+    {
+      "feature": "overdue_hours_x",
+      "split_gain": 0.0
+    },
+    {
+      "feature": "has_finite_tau_x",
+      "split_gain": 0.0
+    },
+    {
+      "feature": "is_truck_recv_c",
+      "split_gain": 0.0
+    },
+    {
+      "feature": "is_missed_load_c",
+      "split_gain": 0.0
+    },
+    {
+      "feature": "has_finite_tau_c",
+      "split_gain": 0.0
+    },
+    {
+      "feature": "tau_x_eq_tau_c",
+      "split_gain": 0.0
+    },
+    {
+      "feature": "same_vessel",
+      "split_gain": 0.0
+    },
+    {
+      "feature": "same_rotation",
+      "split_gain": 0.0
+    },
+    {
+      "feature": "same_port",
+      "split_gain": 0.0
+    },
+    {
+      "feature": "port_weight_diff",
+      "split_gain": 0.0
+    }
+  ],
+  "fit_only": true
+}

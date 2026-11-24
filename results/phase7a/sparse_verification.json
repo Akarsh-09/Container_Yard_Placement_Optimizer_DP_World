@@ -1,0 +1,45 @@
+{
+  "checks": [
+    {
+      "policy": "ADP_theta0",
+      "sparse_checks": 9,
+      "passed": true
+    },
+    {
+      "policy": "ADP_dense",
+      "sparse_checks": 9,
+      "passed": true
+    },
+    {
+      "policy": "CD1_aggressive_compact",
+      "sparse_checks": 9,
+      "passed": true
+    },
+    {
+      "policy": "CD2_drain_and_shield",
+      "sparse_checks": 9,
+      "passed": true
+    },
+    {
+      "policy": "CD3_sink_blocks",
+      "sparse_checks": 9,
+      "passed": true
+    },
+    {
+      "policy": "CD4_init_quarantine",
+      "sparse_checks": 9,
+      "passed": true
+    },
+    {
+      "policy": "ADP_final",
+      "sparse_checks": 9,
+      "passed": true
+    },
+    {
+      "policy": "ADP_dense",
+      "scalar_vector_identical_placements": 96,
+      "passed": true
+    }
+  ],
+  "passed": true
+}
